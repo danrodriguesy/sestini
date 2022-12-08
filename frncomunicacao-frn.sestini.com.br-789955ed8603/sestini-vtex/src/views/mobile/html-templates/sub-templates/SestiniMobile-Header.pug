@@ -1,0 +1,15 @@
+header(class='x-header js--header')
+  div(class='x-header-top')
+    div(class='x-header-container')
+      include ./../../_partials/header/_left.pug
+      include ./../../_partials/header/_logo.pug
+      include ./../../_partials/header/_right.pug
+
+  div(class='x-header-bottom')
+    include ./../../_partials/header/_search__box.pug
+
+include ./../../_partials/header/_submenu.pug
+
+//- Vtex Helpers
+div(style='display: none;')
+    <vtex.cmc:welcomeMessage/>

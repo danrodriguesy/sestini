@@ -1,0 +1,79 @@
+.tokidoki {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 80px auto;
+    padding: 30px;
+    &__left {
+        flex: 0 0 20%;
+        display: flex;
+        flex-direction: column;
+        &__menu {
+            &-item {
+                padding: 10px;
+                border-bottom: 1px solid #e5e5e5;
+                font-family: $font-primary;
+                font-size: 14px;
+                font-weight: 600;
+                &.active {
+                    color: $color-red;
+                }
+            }
+        }
+    }
+    &__right {
+        flex: 0 0 75%;
+        &__content {
+            &-title {
+                font-family: $font-primary;
+                font-size: 26px;
+                font-weight: bold;
+                margin-bottom: 35px;
+                margin-top: 25px;
+            }
+            &-middle {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                &-left {
+                    flex: 0 0 55%;
+                    p {
+                        font-family: $font-primary;
+                        font-weight: normal;
+                        font-size: 14px;
+                        margin-top: 25px;
+                        &.bold {
+                            font-weight: 600;
+                        }
+                    }
+                }
+                &-right {
+                    flex: 0 0 40%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            &-bottom {
+                h2 {
+                    font-family: $font-primary;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+                img {
+                    width: auto;
+                    height: 50px;
+                    margin: 30px;
+                }
+            }
+        }
+    }
+}

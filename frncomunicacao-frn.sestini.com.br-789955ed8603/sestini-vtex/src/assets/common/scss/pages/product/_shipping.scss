@@ -1,0 +1,154 @@
+.x-product__shipping {
+    margin-bottom: 15px;
+    min-height: 60px;
+    &.has--placeholder * {
+        opacity: 0;
+        @extend %product-common-placeholder-transition;
+    }
+    &-erro {
+        font-size: 12px;
+        color: #c12a21;
+        font-family: $font-primary;
+        font-weight: bold;
+    }
+    &-wrapper {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        width: 100%;
+        @include mq("sm", max) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &-label {
+        color: $color-black;
+        font-family: $font-primary;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        @include mq("sm", max) {
+            font-size: 12px;
+            line-height: 14px;
+            margin-bottom: 10px;
+        }
+    }
+    &-input {
+        color: $color-black;
+        font-weight: 700;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: capitalize;
+        &-wrapper {
+            position: relative;
+            width: 100%;
+            border: solid 1px #d9d9d9;
+            border-radius: 4px;
+            padding: 7px 15px;
+        }
+    }
+    &-submit {
+        position: absolute;
+        background-color: #d9d9d9;
+        color: $color-black;
+        font-family: $font-primary;
+        top: 0;
+        right: 0;
+        font-weight: 600;
+        border-radius: 4px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        height: 36px;
+        font-size: 10px;
+        line-height: 16px;
+        transition: 0.5s all;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    &-discovery {
+        &-link {
+            text-decoration: underline;
+            color: $color-black;
+            font-family: $font-primary;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            @include mq("sm", max) {
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+    }
+    &-result {
+        display: table;
+        margin-top: 15px;
+        width: 100%;
+        @include mq("sm", max) {
+            display: block;
+        }
+    }
+    &-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px;
+        border: 1px solid #ebebeb;
+        &:nth-of-type(even) {
+            background-color: #eaeaea;
+        }
+        &:last-of-type {
+            @include mq("sm", max) {
+                margin-bottom: 40px;
+            }
+        }
+        @include mq("sm", max) {
+            padding: 5px;
+        }
+    }
+    &-value {
+        flex: 0 0 25%;
+        text-transform: capitalize;
+        color: $color-black;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        @include mq("sm", max) {
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+    &-type {
+        flex: 0 0 35%;
+    }
+    &-sla {
+        flex: 0 0 40%;
+    }
+    &-type,
+    &-sla {
+        text-transform: capitalize;
+        color: $color-black;
+        vertical-align: middle;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        @include mq("sm", max) {
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+    &-value {
+        vertical-align: middle;
+    }
+}

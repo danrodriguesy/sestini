@@ -1,0 +1,46 @@
+.x-account__content {
+    .myo-order-header.cf.w-100.pa3.ph4-ns.bb.b--black-20.bg-near-white.o-100 {
+        @include mq('sm', max) {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+    }
+
+    .dib.br2.pv1.ph2.f7.fw5.black-70.tc.bg-light-red {
+        background-color: $color-black !important;
+    }
+
+    .myo-order-card.myo-order-status-canceled.w-100.mv4.ba.br3.br--top.overflow-hidden.b--black-20 {
+        border-bottom: 1px solid $color-gray-light;
+    }
+
+    .pa0.tl.w-60.w-50-ns.pb2 span {
+        display: block;
+        @include rem(padding-top, 12px);
+    }
+
+    .myo-details-btn.db.ba.tc.pv2.ph3.br2.w-100.f6.fw4.mid-gray.link.bg-near-white.hover-blue.b--light-silver.mt3 {
+        background-color: $color-black;
+        text-transform: uppercase;
+
+        * {
+            text-align: center;
+            color: $color-white;
+            width: 100%;
+            font-weight: bold;
+            @include rem(font-size, 12px);
+        }
+    }
+
+    .myo-progress-bar .myo-progress-bar__blue-line-color,
+    .myo-progress-bar .myo-progress-bar__blue-circle-color,
+    .myo-progress-bar .myo-progress-bar__ma-inner-circle::before {
+        border-color: $color-black;
+    }
+
+    .myo-progress-bar .myo-progress-bar__blue-circle-color,
+    .myo-progress-bar .myo-progress-bar__ma-inner-circle::before {
+        background-color: $color-black;
+    }
+}

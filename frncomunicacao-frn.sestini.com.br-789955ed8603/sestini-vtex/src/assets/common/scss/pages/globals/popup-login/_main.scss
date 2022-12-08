@@ -1,0 +1,130 @@
+#vtexIdUI-global-loader {
+    z-index: 9999 !important;
+}
+
+#vtexIdContainer {
+    position: fixed !important;
+    z-index: 9999 !important;
+}
+
+.vtexIdUI {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 7px 3px rgba($color-black, 0.15) !important;
+    margin: 0 !important;
+    @include mq("sm", max) {
+        width: 100% !important;
+        @include rem(max-width, 315px !important);
+    }
+    &-providers-list {
+        display: flex;
+        flex-wrap: wrap;
+        @include rem(padding, 0 14px !important);
+        @include mq("sm", max) {
+            @include rem(padding, 0 15px !important);
+        }
+        li {
+            width: 100%;
+            margin-bottom: 20px !important;
+            button>span {
+                font-size: 14px !important;
+            }
+            &:first-of-type {
+                order: 0;
+            }
+            &:nth-of-type(2) {
+                order: 3;
+            }
+            &:nth-of-type(3) {
+                order: 2;
+            }
+            &:nth-of-type(4) {
+                order: 1;
+            }
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                @include mq("sm") {
+                    width: 100%
+                }
+            }
+        }
+    }
+    .vtexid-icon-lock {
+        display: none;
+    }
+    &*:not(.vtexid-icon-arrow-left) {
+        font-family: $font-main;
+    }
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        @include rem(padding, 20px !important);
+        border: 0 !important;
+        background: $color-white !important;
+        text-align: center;
+        .alert {
+            border-radius: 0;
+            @include font-weight(light);
+        }
+        .dead-link {
+            &,
+            span {
+                font-family: $font-primary;
+                @include rem(font-size, 12px);
+                @include font-weight(light);
+                color: $color-gray-dark;
+                text-transform: none;
+            }
+        }
+        .vtexIdUI-user-email,
+        .info-why,
+        .vtexid-password-requirements {
+            @include rem(font-size, 12px);
+            font-weight: 300 !important;
+            text-align: left;
+            .vtexid-password-requirements-description {
+                @include rem(font-size, 13px);
+            }
+        }
+    }
+    .modal-header,
+    .modal-footer {
+        .vtexIdUI-user-email,
+        .vtexIdUI-back-link {
+            .vtexid-icon-user,
+            .vtexid-icon-arrow {
+                @include rem(padding-right, 4px);
+            }
+            &:hover {
+                text-decoration: none;
+            }
+            span {
+                position: relative;
+                top: -2px;
+            }
+        }
+    }
+    .modal-header {
+        @include rem(padding-top, 30px !important);
+        @include rem(padding-bottom, 0 !important);
+        .vtexIdUI-close {
+            @include rem(top, 10px !important);
+            @include rem(right, 10px !important);
+            display: inline-block !important;
+            @include rem(height, 20px);
+            background: transparent !important;
+            @include rem(font-size, 36px !important);
+            @include font-weight(light);
+            @include rem(line-height, 20px !important);
+            color: $color-black !important;
+            cursor: pointer;
+            &:hover,
+            &:active {
+                @include link-hover($color-black);
+            }
+        }
+    }
+}

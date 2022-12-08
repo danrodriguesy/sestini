@@ -1,0 +1,15 @@
+.x-home,
+.x-product,
+.x-empty-search {
+  .x-shelf__placeloader {
+    &.has--placeloader {
+      padding: 50% 50%;
+    }
+  }
+
+  .x-shelf__img-back {
+    &.has--placeloader {
+      padding: 0;
+    }
+  }
+}

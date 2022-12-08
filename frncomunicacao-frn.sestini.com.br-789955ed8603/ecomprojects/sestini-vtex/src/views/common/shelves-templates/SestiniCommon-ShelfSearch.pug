@@ -1,0 +1,14 @@
+
+//- Id:	a36d5fb9-67e0-4a5b-ac23-c32b8f0bff1a
+extends ./../../common/_layouts/_common-shelf-base.pug
+
+
+block vars
+  - var $customClass = 'has--search'
+  - var $shelfType = 'all'
+  - var $getImageTag = '$product.GetImageTag(93, 110)'
+
+
+block append shelfImage
+  a(href='$productLink', class='x-shelf__link', title='$productTitle')
+    != $getImageTag

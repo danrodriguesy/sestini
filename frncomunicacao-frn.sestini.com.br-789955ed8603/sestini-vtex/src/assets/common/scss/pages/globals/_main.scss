@@ -1,0 +1,217 @@
+.__high_contrast {
+    filter: grayscale(1)
+}
+
+.__invert {
+    filter: invert(100%)
+}
+
+.__zoom {
+    zoom: 1.05;
+}
+
+body {
+    &.has--loader {
+        .x-ajax-loader {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &.has--no-scroll {
+        height: 100%;
+        overflow: hidden;
+        @include mq("sm") {
+            @include rem(margin-right, 17px);
+        }
+    }
+    main {
+        &:not(.x-maintenance__main) {
+            // @include rem(margin-top, 83px);
+            @include mq("sm", max) {
+                @include rem(margin-top, 95px);
+            }
+        }
+        &.x-product__main {
+            @include rem(margin-top, 110px);
+        }
+    }
+}
+
+#vtexIdUI-global-loader {
+    height: 0 !important;
+    width: 0 !important;
+}
+
+#vtexIdContainer {
+    position: fixed !important;
+    z-index: 9999 !important;
+}
+
+#ajaxBusy {
+    position: absolute !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translate(100%, 100%) !important;
+    will-change: transform;
+}
+
+.zx_mediaslot {
+    display: none;
+}
+
+.zopim {
+    z-index: z("chat-button") !important;
+    @include mq(sm, max) {
+        bottom: 67px !important;
+    }
+}
+
+
+/**
+ * Slick prevent rendering
+ */
+
+// Banners with lazy
+.x-main-banner__small,
+.x-main-banner__big {
+    opacity: 0;
+    visibility: hidden;
+    &.slick-initialized {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// Slick for Shelves - 3 items only
+// .x-home__main-shelf ul,
+// .x-product__main-shelf ul {
+//     &:not(.slick-initialized) {
+//         display: flex;
+//         flex-wrap: wrap;
+//         li {
+//             width: 30%;
+//             margin: 0 1.5%;
+//             width: calc(33.33% - 20px);
+//             @include rem(margin, 0 10px);
+//             &:nth-child(n + 4) {
+//                 display: none;
+//             }
+//             @include mq('sm', max) {
+//                 width: calc(50% - 16px);
+//                 @include rem(margin, 0 8px);
+//                 &:nth-child(n + 3) {
+//                     display: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+.x-empty-search__suggestion-shelf ul {
+    &:not(.slick-initialized) {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 30%;
+            margin: 0 1.5%;
+            width: calc(33.33% - 20px);
+            @include rem(margin, 0 10px);
+            @include mq("sm", max) {
+                width: calc(50% - 16px);
+                @include rem(margin, 0 8px);
+            }
+        }
+    }
+}
+
+// Product images
+.x-product__img-main {
+    &:not(.slick-initialized) {
+        .x-product__img-main-content {
+            &:nth-child(n + 2) {
+                @include mq("sm", max) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.icon-spike {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/arquivos/assistente-virtual.png");
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    display: none;
+    z-index: 16;
+    @include mq("sm",
+    max) {
+        left: -10px;
+        background-image: url("/arquivos/assistente-virtual-fem.png");
+        height: 60px;
+        mask-border-width: 60px;
+    }
+    span {
+        display: none;
+        background: green;
+        color: $color-white;
+        font-family: $font-primary;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 5px;
+        width: 210px;
+        border-radius: 5px;
+        text-align: center;
+        position: absolute;
+        left: 82%;
+        top: 33%;
+        &.active {
+            display: block !important;
+        }
+    }
+}
+
+#md-app-widget.md-chat-widget-wrapper .md-chat-widget-container {
+    height: 580px !important;
+    left: 120px !important;
+    bottom: 150px !important;
+    z-index: 9999999999999999999999999999999999999;
+    @include mq("sm",
+    max) {
+        bottom: 70px !important;
+        left: 20px !important;
+    }
+}
+
+#md-app-widget.md-chat-widget-wrapper {
+    bottom: 0 !important;
+    right: 100px !important;
+    @include mq("sm",
+    max) {
+        bottom: 60px !important;
+        right: 15px !important;
+    }
+}
+
+.md-chat-widget-btn-container .md-chat-widget-btn-wrapper {
+    display: none !important
+}
+
+#_hj-f5b2a1eb-9b07_feedback[data-device="phone"][data-minimized-position^="middle_"] #_hj-f5b2a1eb-9b07_feedback_minimized {
+    top: 0;
+    bottom: 250px !important;
+}
+
+// hotjar
+#_hj-f5b2a1eb-9b07_feedback[data-viewmode="desktop"][data-minimized-position="middle_left"] #_hj-f5b2a1eb-9b07_feedback_minimized {
+    bottom: 170px !important;
+}
+
+#reputation-ra>div {
+    display: none;
+}

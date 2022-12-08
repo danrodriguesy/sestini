@@ -1,0 +1,58 @@
+.x-institutional {
+  &__container {
+    display: block;
+  }
+  &__top {
+    width: 100%;
+
+    &-text {
+      font-family: $font-primary;
+      color: rgba($color-black, 0.5);
+      @include font-weight(400);
+      @include rem(font-size, 14px);
+      @include rem(line-height, 18px);
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.x-brands {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    @include rem(margin-bottom, 75px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__budget {
+    @include flex-centered;
+    margin: auto;
+    font-family: $font-primary;
+    background-color: $color-red;
+    color: $color-white;
+    text-transform: uppercase;
+    width: 100%;
+    @include font-weight(bold);
+    @include rem(height, 40px);
+    @include rem(font-size, 14px);
+    @include rem(max-width, 290px);
+    @include rem(margin-top, 10px);
+    @include rem(line-height, 19px);
+    @include rem(border-radius, 4px);
+    @include rem(letter-spacing, 2px);
+    transition: 0.5s all;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

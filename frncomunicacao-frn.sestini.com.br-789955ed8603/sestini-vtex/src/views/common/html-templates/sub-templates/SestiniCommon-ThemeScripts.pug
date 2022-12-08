@@ -1,0 +1,13 @@
+
+script(type='text/javascript').
+    window.Sestini = window.Sestini || {};
+    Sestini.pathname = window.location.pathname;
+    Sestini.baseImage = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    Sestini.slickLazyDesktop = 'progressive';
+    Sestini.slickLazyMobile = 'ondemand';
+    Sestini.setCache = false;
+    Sestini.eventTime = 0;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('body').classList.remove('has--loader');
+    });

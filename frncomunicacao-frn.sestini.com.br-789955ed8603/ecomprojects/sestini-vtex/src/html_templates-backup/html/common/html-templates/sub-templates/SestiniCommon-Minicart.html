@@ -1,0 +1,65 @@
+
+<div class="x-minicart js--minicart">
+  <div class="x-minicart__top">
+    <div class="x-minicart__header">
+      <p class="x-minicart__title">minha <strong>sacola</strong></p><span class="x-minicart__close js--minicart-close"><vtex.cmc:svgIconClosePopup /></span>
+    </div>
+  </div>
+  <div class="x-minicart__middle" rv-show="cart.itemCount | gt 0">
+    <div class="x-minicart__content">
+      <ul class="x-minicart__items">
+        <li class="x-minicart__item-container" rv-each-item="cart.items">
+          <div class="x-minicart__item">
+            <div class="x-minicart__item-left">
+              <div class="x-minicart__item-img-wrapper"><a class="x-minicart__item-img-link" rv-href="item.detailUrl" rv-title="item.name"><img class="x-minicart__item-img" rv-src="item.imageUrl | getResizeImageByRatio 'width' 70 0.8306" rv-alt="item.name" rv-title="item.name"/></a></div>
+            </div>
+            <div class="x-minicart__item-right">
+              <div class="x-minicart__item-info">
+                <div class="x-minicart__item-name">
+                  <h4 class="x-minicart__item-title" rv-text="item.productFullInfo.productName"></h4>
+                </div>
+                <div class="x-minicart__item-price-wrapper">
+                  <p class="x-minicart__item-best-price" rv-text="item.sellingPrice | formatPrice"></p>
+                </div>
+              </div>
+              <div class="x-minicart__item-actions">
+                <div class="x-minicart__item-qty-wrapper"><a class="x-minicart__item-qty-btn has--minus" href="#" data-minicart-item-qty="-"></a>
+                  <input class="x-minicart__item-qty-val" type="text" readonly="readonly" data-minicart-item-qty-val="" rv-value="item.quantity" rv-data-minicart-availablequantity="item.availablequantity" rv-data-minicart-index="item.index"/><a class="x-minicart__item-qty-btn has--plus" href="#" data-minicart-item-qty="+"></a>
+                </div>
+                <button class="x-minicart__item-remove" role="remove" title="Remover" data-minicart-item-remove="" rv-data-minicart-index="item.index">Remover</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="x-minicart__bottom" rv-show="cart.itemCount | gt 0">
+    <div class="x-minicart__footer">
+      <div class="x-minicart__total-price">
+        <div class="x-minicart__gift-area js--minicart-gift">
+          <form class="x-minicart__gift-form" rv-hide="coupon.value">
+            <div>
+              <input class="x-minicart__gift-input js--minicart-gift-input" type="text" required="true" placeholder="Cupom de desconto"/>
+              <button class="x-minicart__gift-button" type="submit">OK</button>
+            </div>
+            <div class="x-minicart__gift-erro" rv-show="coupon.error">Cupom inválido</div>
+          </form>
+          <div class="x-minicart__gift-list" rv-show="coupon.value"><span rv-text="coupon.value"></span>
+            <button class="x-minicart__gift-list-button">remover</button>
+          </div>
+        </div>
+        <div class="x-minicart__subtotal">
+          <p class="x-minicart__subtotal-text">Total:</p>
+          <p class="x-minicart__subtotal-price" data-minicart-subtotal="">R$ 0,00</p>
+        </div><a class="x-minicart__btn-checkout" href="/checkout/#/cart">Finalizar Compra</a>
+      </div>
+    </div>
+  </div>
+  <div class="x-minicart__empty" rv-hide="cart.itemCount | gt 0">
+    <div class="x-minicart__empty-text-container">
+      <p class="x-minicart__empty-icon"><vtex.cmc:svgIconMinicartEmpty /></p>
+      <p class="x-minicart__empty-text">sacola vazia</p><a class="x-minicart__empty-button" href="/roupas" title="voltar às compras">voltar às compras</a>
+    </div>
+  </div>
+</div>

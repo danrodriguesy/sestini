@@ -1,0 +1,16 @@
+//- Id:	15ccf2f9-1b8c-4472-a1e9-d4ca6a615e37
+
+extends ./../_layouts/_desktop-shelf-base.pug
+
+block vars
+  - var $customClass = 'has--carousel is--offer'
+  - var $shelfType = 'all'
+  - var $isOffer = true
+
+
+block append shelfImage
+  a(href='$productLink', class='x-shelf__link', title='$productTitle')
+    div(class='x-shelf__placeloader has--placeloader js--shelf-carousel',
+      data-product-id='$productId',
+      data-image-width='240',
+      data-image-ratio='0.8306')

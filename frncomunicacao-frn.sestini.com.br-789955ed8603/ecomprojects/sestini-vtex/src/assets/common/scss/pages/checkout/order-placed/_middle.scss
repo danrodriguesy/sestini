@@ -1,0 +1,104 @@
+.body-checkout-confirmation {
+    // Confirmation Info Container
+    #app-container {
+        // Wrapper
+        .ph3-ns.w-70-ns.db.center {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            >.cf {
+                // Order Title
+                >.mb2 {
+                    margin: 0;
+                    padding: 0;
+                    @include rem(margin-bottom, 15px);
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        font-family: $font-primary;
+                        text-transform: uppercase;
+                        color: $color-gray-darken;
+                        @include font-weight(700);
+                        @include rem(font-size, 18px);
+                        @include rem(line-height, 18px);
+                        @include mq("sm", max) {
+                            display: initial;
+                        }
+                    }
+                    // Order Information Wrapper
+                    &+.cf {
+                        display: flex;
+                        width: 100%;
+                        @include mq("sm") {
+                            justify-content: space-between;
+                        }
+                        @include mq("sm", max) {
+                            flex-direction: column;
+                        }
+                        // Each Information Wrapper
+                        .cconf-profile,
+                        .cconf-payment,
+                        .cconf-summary {
+                            margin: 0;
+                            background-color: $color-white-darker;
+                            width: 100%;
+                            @include rem(padding, 35px);
+                            @include rem(border-radius, 4px);
+                            @include mq("sm", max) {
+                                @include rem(padding, 35px 20px);
+                            }
+                            @include mq("sm", max) {
+                                @include rem(margin-bottom, 25px);
+                            }
+                            // Each section title
+                            h3 {
+                                margin: 0;
+                                padding: 0;
+                                text-align: center;
+                                font-family: $font-primary;
+                                color: $color-black;
+                                text-transform: uppercase;
+                                @include font-weight(600);
+                                @include rem(font-size, 12px);
+                                @include rem(line-height, 17px);
+                                @include rem(margin-bottom, 20px);
+                                @include mq("sm", max) {
+                                    @include rem(margin-bottom, 10px);
+                                }
+                            }
+                            // Each Content
+                            .lh-copy {
+                                &,
+                                & * {
+                                    margin: 0;
+                                    padding: 0;
+                                    border: 0;
+                                }
+                                text-align: center;
+                                font-family: $font-primary;
+                                color: $color-gray-darkest;
+                                @include font-weight(400);
+                                @include rem(font-size, 13px);
+                                @include rem(line-height, 24px);
+                            }
+                        }
+                        // Payment Info Wrapper
+                        .cconf-payment {
+                            max-width: 50% !important;
+                            @include mq("sm", max) {
+                                max-width: 100% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lh-copy {
+    .ma0 {
+        display: flex !important;
+        justify-content: space-around !important;
+    }
+}

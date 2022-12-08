@@ -1,0 +1,9 @@
+#set($productId = $product.Id)
+#set($productTitle = $product.HtmlEscapedName)
+#set($productLink = $product.Uri)
+
+<article class="x-shelf__item x-autocomplete__search js--shelf-item" data-product-id="$productId"><a class="x-shelf__link" href="$productLink" title="$productTitle" data-product-id="$productId">
+    <div class="x-shelf__img-container">$product.GetImageTag(75, 75)</div>
+    <div class="x-shelf__content">
+      <h2 class="x-shelf__title">$productTitle</h2>
+    </div></a></article>

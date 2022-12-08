@@ -1,0 +1,15 @@
+//- Id:	0060e766-3f4b-4546-9173-957b291b90fc
+
+extends ./../_layouts/_mobile-shelf-base.pug
+
+block vars
+  - var $customClass = 'has--carousel is--offer'
+  - var $shelfType = 'all'
+  - var $isOffer = true
+
+block append shelfImage
+  a(href='$productLink', class='x-shelf__link', title='$productTitle')
+    div(class='x-shelf__placeloader has--placeloader js--shelf-carousel',
+      data-product-id='$productId',
+      data-image-width='240',
+      data-image-ratio='0.8306')

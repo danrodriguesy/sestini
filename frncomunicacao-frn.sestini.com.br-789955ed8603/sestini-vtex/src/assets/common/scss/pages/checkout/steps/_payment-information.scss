@@ -1,0 +1,459 @@
+.body-order-form {
+    .orderform-template {
+        // Main Container
+        .payment-data {
+            @include mq("sm") {
+                margin-left: auto;
+            }
+            @include mq("sm", max) {
+                @include rem(margin-bottom, 30px);
+            }
+            .accordion-inner {
+                @include mq("sm") {
+                    @include rem(padding-left, 85px);
+                    @include rem(padding-right, 85px);
+                }
+                @include mq("sm", max) {
+                    @include rem(padding-left, 20px);
+                    @include rem(padding-right, 20px);
+                }
+                // Main Form
+                .form-step {
+                    display: flex;
+                    align-items: flex-start;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    @include mq("sm", max) {
+                        flex-direction: column;
+                    }
+                    // Payment Options Container
+                    .payment-group {
+                        display: flex;
+                        margin: 0;
+                        width: 100%;
+                        background-color: unset;
+                        margin-top: 55px;
+                        @include mq("md", max) {
+                            margin-top: 5px;
+                            flex-wrap: wrap;
+                        }
+                        @include mq("sm") {
+                            flex-direction: column;
+                            @include rem(max-width, 220px);
+                            @include rem(margin-right, 50px);
+                        }
+                        .payment-group-list-btn {
+                            width: 100%;
+                            @include mq("md", max) {
+                                display: flex;
+                                @include rem(margin-bottom, 30px);
+                                flex-wrap: wrap;
+                            }
+                            // Each Option
+                            .payment-group-item {
+                                @include mq("md", max) {
+                                    flex: 0 0 100% !important;
+                                    margin-bottom: 15px !important;
+                                }
+                                position: relative;
+                                background-image: unset;
+                                background-color: unset;
+                                padding: 0;
+                                border: 0;
+                                margin: 0;
+                                text-decoration: none;
+                                color: $color-black;
+                                text-transform: uppercase;
+                                border: 1px solid $color-black;
+                                text-align: center;
+                                opacity: 1;
+                                border-radius: 6px;
+                                padding: 5px 0;
+                                @include rem(font-size, 10px);
+                                @include rem(line-height, 17px);
+                                font-weight: 600;
+                                &::after {
+                                    @include mq("sm", max) {
+                                        content: "";
+                                        position: absolute;
+                                        background-color: $color-black;
+                                        bottom: 0;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        transition: all 225ms ease-in-out;
+                                        will-change: width;
+                                        @include rem(height, 2px);
+                                        @include rem(width, 0px);
+                                    }
+                                }
+                                @include mq("sm", max) {
+                                    flex: 1;
+                                    text-align: center;
+                                    @include font-weight(bold);
+                                    @include rem(padding, 5px 0);
+                                }
+                                &+.payment-group-item {
+                                    @include mq("sm") {
+                                        @include rem(margin-top, 10px);
+                                    }
+                                }
+                                // Option Active
+                                &.active {
+                                    background: $color-black;
+                                    font-family: $font-primary;
+                                    border: 1px solid $color-black;
+                                    color: $color-white;
+                                    &::after {
+                                        @include mq("sm", max) {
+                                            content: "";
+                                            position: absolute;
+                                            background-color: $color-black;
+                                            bottom: 0;
+                                            left: 50%;
+                                            transform: translateX(-50%);
+                                            @include rem(height, 2px);
+                                            @include rem(width, 60px);
+                                        }
+                                    }
+                                }
+                                // Removing icons
+                                .payment-group-item-text {
+                                    background-image: unset !important;
+                                    background-color: unset;
+                                    padding: 0;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                    // Payment Option Selected Container
+                    .steps-view {
+                        background-color: #f7f7f7 !important;
+                        border: 1px solid #e5e5e5 !important;
+                        padding: 20px !important;
+                        width: 100% !important;
+                        flex: 0 0 60% !important;
+                        margin: 0;
+                        padding: 0;
+                        border: 0;
+                        background: unset;
+                        // Boleto Bancario Container
+                        .bankInvoicePaymentGroup {
+                            .sight,
+                            .payment-description {
+                                font-family: $font-primary;
+                                color: $color-black;
+                                @include font-weight(400);
+                                @include rem(font-size, 12px);
+                                @include rem(line-height, 20px);
+                            }
+                            .sight {
+                                @include font-weight(bold);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Credit Card Option
+#app-container {
+    background-color: #f7f7f7;
+    // Hiding the security icon
+    .SecurityEnvironmentIcon {
+        display: none;
+    }
+    // Main Container
+    .CardForm {
+        display: flex;
+        flex-direction: column;
+        // Default Label style
+        label {
+            width: 100%;
+            font-family: $font-primary;
+            color: $color-black;
+            margin: 0;
+            @include font-weight(600);
+            @include rem(font-size, 10px);
+            @include rem(line-height, 20px);
+            @include rem(margin, 5px 0);
+        }
+        // Main Input Style
+        select {
+            border: 0;
+            box-shadow: unset;
+            text-shadow: unset;
+            font-family: $font-primary;
+            border: 1px solid #e5e5e5;
+            background-color: $color-white;
+            color: rgba($color-gray-darkest, 0.4);
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            @include rem(padding, 10px);
+            @include rem(font-size, 11px);
+            @include rem(line-height, 11px);
+            @include rem(border-radius, 4px);
+        }
+        input {
+            &[type="tel"],
+            &[type="text"],
+            &[type="email"] {
+                border: 0;
+                box-shadow: unset;
+                text-shadow: unset;
+                font-family: $font-primary;
+                border: 1px solid #e5e5e5;
+                background-color: $color-white;
+                color: rgba($color-gray-darkest, 0.4);
+                height: auto;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                text-align: left;
+                @include rem(padding, 10px);
+                @include rem(font-size, 11px);
+                @include rem(line-height, 11px);
+                @include rem(border-radius, 4px);
+            }
+        }
+        // Credit Card Number
+        .PaymentCardNumber {
+            @include rem(margin-bottom, 15px);
+        }
+        // Credit Card Flags
+        .PaymentCardFlags {
+            @include rem(margin-bottom, 20px);
+            // Credit Card Flags Container
+            .card-flags {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                // Each Option
+                .card-flag-label {
+                    position: relative;
+                    margin: 0;
+                    width: auto;
+                    @include rem(padding-top, 20px);
+                    @include rem(margin-right, 20px);
+                    @include mq("sm", max) {
+                        margin-right: 3px;
+                    }
+                    // Hiding default input
+                    input {
+                        display: none;
+                        &:checked+span {
+                            &::after {
+                                content: "";
+                                background-color: $color-black;
+                                border-radius: 50%;
+                                position: absolute;
+                                @include rem(top, 2px);
+                                @include rem(left, 15px);
+                                @include rem(width, 8px);
+                                @include rem(height, 8px);
+                            }
+                        }
+                    }
+                    // Flag Icon
+                    .card-flag {
+                        margin: 0;
+                        &::before {
+                            content: "";
+                            border: solid 1px $color-black;
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 0;
+                            @include rem(left, 13px);
+                            @include rem(width, 10px);
+                            @include rem(height, 10px);
+                        }
+                    }
+                }
+            }
+        }
+        .PaymentCardCVV {
+            input#creditCardpayment-card-0Code {
+                width: 120px !important;
+            }
+            .PaymentCardCVVHelp {
+                padding-bottom: 30px;
+            }
+        }
+        // Credit Card Month and Year container
+        .PaymentCardDueDate {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            // Hiding Slash
+            .payment-card-lash {
+                display: none;
+            }
+            //Month Select
+            .payment-card-due-month {
+                width: 75%;
+                @include mq("sm", max) {
+                    width: 70%;
+                }
+            }
+            // Year Select
+            .payment-card-due-year {
+                width: 20%;
+                margin-left: auto;
+                @include mq("sm", max) {
+                    width: 25%;
+                }
+            }
+        }
+        // Billing Address Container
+        .BillingAddress {
+            input[type="checkbox"] {
+                display: none;
+                &:checked+label[for="address-toggle-0"] {
+                    &::after {
+                        content: "";
+                        background-color: $color-black;
+                        border-radius: 50%;
+                        position: absolute;
+                        @include rem(top, 5px);
+                        @include rem(left, 5px);
+                        @include rem(width, 8px);
+                        @include rem(height, 8px);
+                    }
+                }
+            }
+            label[for="address-toggle-0"] {
+                position: relative;
+                @include font-weight(400);
+                @include rem(font-size, 12px);
+                @include rem(line-height, 20px);
+                @include rem(padding-left, 25px);
+                strong {
+                    @include font-weight(400);
+                    @include rem(font-size, 12px);
+                    @include rem(line-height, 20px);
+                }
+                &::before {
+                    content: "";
+                    border: solid 1px $color-black;
+                    border-radius: 50%;
+                    position: absolute;
+                    @include rem(top, 3px);
+                    @include rem(left, 3px);
+                    @include rem(width, 10px);
+                    @include rem(height, 10px);
+                }
+            }
+        }
+        // Default Link Style
+        a {
+            color: $color-black;
+            text-decoration: underline;
+            @include font-weight(400);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 17px);
+        }
+    }
+    // Change Amount Cards
+    .ChangeNumberOfPayments {
+        // Default Link Style
+        a {
+            color: $color-black;
+            text-decoration: underline;
+            @include font-weight(400);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 17px);
+        }
+    }
+}
+
+.link-gift-card {
+    border: 1px solid $color-black;
+    padding: 5px 0;
+    left: 0;
+    top: 0;
+    width: 220px;
+    border-radius: 6px;
+    text-align: center;
+    @include mq("sm", max) {
+        width: 100%;
+        margin: 0;
+    }
+    a {
+        text-transform: uppercase;
+        font-family: $font-primary;
+        font-size: 12px;
+        line-height: 28px;
+        color: $color-black;
+        font-weight: 600;
+    }
+}
+
+.gift-card-section {
+    margin: 0 !important;
+    background-color: #f7f7f7 !important;
+    border: 1px solid #e5e5e5 !important;
+    width: 99% !important;
+    margin-bottom: 10px !important;
+}
+
+.payment-discounts {
+    width: 100% !important;
+}
+
+.payment-discounts-options {
+    position: relative;
+    &>label {
+        color: #5bb75b !important;
+        text-transform: uppercase;
+        width: 100% !important;
+        font-weight: 600 !important;
+        font-family: $font-primary !important;
+        font-size: 12px !important;
+    }
+    &>input {
+        border: 0;
+        box-shadow: unset;
+        text-shadow: unset;
+        margin-top: 0px;
+        font-family: $font-primary;
+        background-color: #fff !important;
+        border: 1px solid #e5e5e5 !important;
+        color: $color-black;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        text-align: left;
+        @include rem(padding, 10px);
+        @include rem(font-size, 11px);
+        @include rem(line-height, 11px);
+        @include rem(border-radius, 4px);
+    }
+    &>button {
+        background: transparent;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 68%;
+        box-shadow: none;
+        font-weight: 600;
+        z-index: 10;
+        font-size: 12px;
+        transform: translate(50%, -50%);
+        right: 60px;
+        text-transform: uppercase;
+        font-family: $font-primary;
+        &:hover,
+        &:active {
+            background: none;
+            box-shadow: none;
+            border: none;
+            outline: none;
+        }
+    }
+}

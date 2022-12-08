@@ -1,0 +1,44 @@
+
+mixin generalBreadcrumb(pageType)
+    div(class='x-breadcrumb')
+        ul(class='x-breadcrumb__items')
+            li(class='x-breadcrumb__item')
+                a(class='x-breadcrumb__link', href='/', title='Home') Lancome
+
+            //- Account type
+            if pageType == 'account'
+                li(class='x-breadcrumb__item')
+                    a(class='x-breadcrumb__link', href='/account', title='Minha conta') Minha conta
+                li(class='x-breadcrumb__item')
+                    p(class='x-breadcrumb__link', title='Meu Cadastro') Meu Cadastro
+
+            //- Orders type
+            if pageType == 'orders'
+                li(class='x-breadcrumb__item')
+                    a(class='x-breadcrumb__link', href='/account', title='Minha conta') Minha conta
+                li(class='x-breadcrumb__item')
+                    p(class='x-breadcrumb__link', title='Meus pedidos') Meus pedidos
+
+            //- Wishlist type
+            if pageType == 'wishlist'
+                li(class='x-breadcrumb__item')
+                    a(class='x-breadcrumb__link', href='/account', title='Minha conta') Minha conta
+                li(class='x-breadcrumb__item')
+                    p(class='x-breadcrumb__link', title='Wishlist') Wishlist
+
+            //- How-To Page type
+            if pageType == 'how-to'
+                li(class='x-breadcrumb__item')
+                    a(class='x-breadcrumb__link', href='/account', title='Minha conta') Minha conta
+                li(class='x-breadcrumb__item')
+                    p(class='x-breadcrumb__link', title='Minhas dicas') Meus Conteúdos
+
+            //- Institutional type
+            if pageType == 'institutional'
+                li(class='x-breadcrumb__item')
+                    p(class='x-breadcrumb__link', title='Institucional') Institucional
+
+            //- Store Locator type
+            if pageType == 'store-locator'
+                li(class='x-breadcrumb__item')
+                    p(class='x-breadcrumb__link', title='Lojas') Lojas

@@ -1,0 +1,115 @@
+.x-wishlist {
+    margin-bottom: 150px;
+    &__empty-msg {
+        display: block !important;
+        font-family: $font-primary;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    &__items {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: space-around !important;
+    }
+    &__item {
+        flex: 0 0 20%;
+        @include mq("sm", max) {
+            flex: 0 0 100%;
+        }
+        margin-right: 20px;
+        margin-top: 40px;
+        border: 1px solid #ebebeb;
+        border-radius: 4px;
+        padding: 5px;
+        min-height: 350px;
+        &-img-container {
+            text-align: center;
+            position: relative;
+            img {
+                max-height: 200px;
+                width: auto;
+                margin-bottom: 15px;
+            }
+        }
+        &-product-info {
+            height: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .product-name {
+                color: $color-black;
+                overflow: hidden;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 12px;
+                margin-bottom: 5px;
+                font-family: $font-primary;
+            }
+            .product-price {
+                font-family: $font-primary;
+                color: #5aa03e;
+                font-size: 14px;
+                line-height: 14px;
+                font-weight: 600;
+                margin: 10px 0;
+            }
+            .product-buy-btn {
+                width: 100%;
+                background-color: #5aa03e;
+                font-family: $font-primary;
+                color: $color-white;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 10px 0 !important;
+                border-radius: 4px;
+                text-align: center;
+            }
+        }
+    }
+    &__amount {
+        color: $color-black;
+        @include rem(font-size, 11px);
+        @include font-weight(bold);
+        @include rem(margin-left, 6px);
+        position: absolute;
+        top: -7px;
+        left: 7px;
+    }
+    &__add-btn {
+        display: block;
+        position: absolute;
+        @include mq('sm') {
+            @include rem(top, 5px);
+            @include rem(right, 15px);
+        }
+        @include mq('sm', max) {
+            @include rem(top, 8px);
+            @include rem(right, 12px);
+        }
+        .has--wishlist-list & {
+            top: 0;
+            right: 0;
+        }
+        &.has--wishlist-loader {
+            .icon-wishlist,
+            .icon-wishlist-remove {
+                display: none !important;
+            }
+            .icon-wishlist-loader {
+                display: inline-block;
+            }
+        }
+        &.is--active {
+            .icon-wishlist__full {
+                display: block;
+            }
+            .icon-wishlist__outline {
+                display: none;
+            }
+        }
+        .icon-wishlist__full,
+        .icon-wishlist-loader {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+.x-home__instagram {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-top: 0;
+
+  &-user-info {
+    flex: 0 0 25%;
+    align-items: center;
+    justify-content: center;
+
+    @include mq("sm", max) {
+      flex: 0 0 100%;
+    }
+
+    a {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s all;
+
+      h2 {
+        flex: 0 0 65%;
+        font-family: $font-primary;
+        font-weight: 600;
+        font-size: 22px;
+        text-align: center;
+
+        @include mq("sm", max) {
+          font-size: 18px;
+        }
+      }
+
+      img {
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+
+        @include mq("sm", max) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    p {
+      font-family: $font-primary;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: center;
+
+      @include mq("sm", max) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &-images {
+    flex: 0 0 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq("sm", max) {
+      flex: 0 0 100%;
+      margin-top: 20px;
+    }
+
+    a {
+      flex: 0 0 23%;
+      margin-bottom: 20px;
+      box-shadow: 5px 5px 15px -3px $color-gray;
+      border-radius: 6px;
+      transition: 0.3s all;
+
+      @include mq("sm", max) {
+        flex: 0 0 29%;
+        box-shadow: none;
+      }
+
+      img,
+      video {
+        border-radius: 6px;
+        width: 100%;
+        height: auto;
+
+        @include mq("sm", max) {
+          box-shadow: 5px 5px 15px -3px $color-gray;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.lozad {
+  background: #e9e7e9;
+  height: 100%;
+  width: 100%;
+
+  &.loaded {
+    background: transparent;
+    animation: fadein;
+    transition: 1.5s;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

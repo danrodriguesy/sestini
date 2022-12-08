@@ -1,0 +1,37 @@
+.x-copyright {
+    background-color: $color-gray-lighten;
+    @include mq("sm", max) {
+        border-top: 1px solid $color-gray-light-medium-2;
+    }
+    &__container {
+        max-width: 1300px;
+        padding: 15px 30px;
+        margin: 0 auto;
+        display: flex;
+    }
+    &-text {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 95%;
+        font-size: 10px;
+        line-height: 14px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: $font-primary;
+        @include mq("sm", max) {
+            flex: 0 0 100%;
+        }
+        order: 1;
+        &>strong {
+            margin-bottom: 5px;
+        }
+    }
+    &-logo {
+        order: 0;
+        flex: 0 0 5%;
+        @include mq("sm", max) {
+            display: none
+        }
+    }
+}

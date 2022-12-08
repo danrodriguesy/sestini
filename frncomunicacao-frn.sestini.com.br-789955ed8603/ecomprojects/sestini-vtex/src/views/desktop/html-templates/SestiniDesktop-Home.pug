@@ -1,0 +1,30 @@
+
+extends ./../_layouts/_desktop-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'home'
+  - var $templateClass = 'home'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block content
+  div(class='x-home__content')
+    include ../_partials/home/_main-banner.pug
+    include ../_partials/home/_benefits.pug
+    include ../_partials/home/_tabbed-shelfs.pug
+    include ../_partials/home/_category-bullets.pug
+    include ../_partials/home/_week-offer.pug
+    include ../_partials/home/_bottom-banners.pug
+    include ../_partials/home/_products-searched.pug
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

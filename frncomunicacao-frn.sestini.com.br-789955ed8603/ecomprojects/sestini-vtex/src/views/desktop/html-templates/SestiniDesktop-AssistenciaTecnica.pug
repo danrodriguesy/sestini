@@ -1,0 +1,23 @@
+
+extends ./../_layouts/_desktop-institutional-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'assistencia-tecnica'
+  - var $templateClass = 'assistencia-tecnica'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block institutionalContent
+  include ../_partials/institutional/assistencia-tecnica/_main.pug
+  include ../_partials/institutional/assistencia-tecnica/_accordion.pug
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

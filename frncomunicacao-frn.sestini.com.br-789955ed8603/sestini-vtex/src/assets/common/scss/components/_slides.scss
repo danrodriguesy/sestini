@@ -1,0 +1,251 @@
+%slick {
+  &-arrows {
+    .slick-arrow {
+      background-color: rgba($color-gray-light-medium, 0.5);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      @include flex-centered;
+      height: 35px;
+      width: 35px;
+    }
+
+    .slick-prev {
+      @include mq("sm") {
+        left: calc(50% - 582.5px);
+      }
+
+      @include mq("sm", max) {
+        left: 16px;
+      }
+
+      &::before {
+        content: "";
+        @include arrow-generate(left, 7px, 2px);
+        border-color: $color-white;
+      }
+    }
+
+    .slick-next {
+      @include mq("sm") {
+        right: calc(50% - 582.5px);
+      }
+
+      @include mq("sm", max) {
+        right: 16px;
+      }
+
+      &::before {
+        content: "";
+        @include arrow-generate(right, 7px, 2px);
+        border-color: $color-white;
+      }
+    }
+
+    &-secondary {
+      .slick-arrow {
+        background-color: #c7c7c7;
+        border-radius: 50%;
+        top: 35%;
+        transform: translateY(-50%);
+        @include flex-centered;
+        height: 35px;
+        width: 35px;
+
+        @include mq("sm", max) {
+          top: 50%;
+        }
+      }
+
+      .slick-prev {
+        @include mq("sm") {
+          left: -35px;
+        }
+
+        @include mq("sm", max) {
+          left: -5px;
+        }
+
+        &::before {
+          content: "";
+          @include arrow-generate(left, 7px, 2px);
+          border-color: $color-black;
+        }
+      }
+
+      .slick-next {
+        @include mq("sm") {
+          right: -35px;
+        }
+
+        @include mq("sm", max) {
+          right: -5px;
+        }
+
+        &::before {
+          content: "";
+          @include arrow-generate(right, 7px, 2px);
+          border-color: $color-black;
+        }
+      }
+
+      .slick-list {
+        padding: 8px;
+
+        @include mq("sm") {
+          padding-bottom: 35px;
+        }
+
+        @include mq("sm", max) {
+          padding: 0 12px;
+        }
+      }
+
+      .slick-slide {
+        @include mq("sm") {
+          border-left: solid 1px transparent;
+        }
+      }
+
+      .slick-active + .slick-active {
+        .x-shelf__item.has--carousel {
+          &::before {
+            @include mq("sm", max) {
+              content: "";
+              position: absolute;
+              left: 0;
+              background-color: $color-gray-lighter;
+              top: 25px;
+              width: 1px;
+              height: 188px;
+            }
+          }
+        }
+      }
+    }
+
+    &-product {
+      @include mq("sm") {
+        .slick-arrow {
+          &,
+          &:hover {
+            background-color: #c7c7c7;
+          }
+          border-radius: 50%;
+          transform: translateY(-50%);
+          @include flex-centered;
+          height: 35px;
+          width: 35px;
+        }
+
+        .slick-prev {
+          @include rem(top, -20px);
+          &::before {
+            content: "";
+            @include arrow-generate(up, 7px, 2px);
+            border-color: $color-black;
+          }
+        }
+
+        .slick-next {
+          top: unset !important;
+          @include rem(bottom, -50px);
+          &::before {
+            content: "";
+            @include arrow-generate(down, 7px, 2px);
+            border-color: $color-black;
+          }
+        }
+      }
+
+      @include mq("sm", max) {
+        .slick-arrow {
+          &,
+          &:hover {
+            background-color: #c7c7c7;
+          }
+          border-radius: 50%;
+          top: 35%;
+          transform: translateY(-50%);
+          @include flex-centered;
+          height: 35px;
+          width: 35px;
+
+          @include mq("sm", max) {
+            top: 50%;
+          }
+        }
+
+        .slick-prev {
+          @include mq("sm") {
+            left: -35px;
+          }
+
+          @include mq("sm", max) {
+            left: -5px;
+          }
+
+          &::before {
+            content: "";
+            @include arrow-generate(left, 7px, 2px);
+            border-color: $color-black;
+          }
+        }
+
+        .slick-next {
+          @include mq("sm") {
+            right: -35px;
+          }
+
+          @include mq("sm", max) {
+            right: -5px;
+          }
+
+          &::before {
+            content: "";
+            @include arrow-generate(right, 7px, 2px);
+            border-color: $color-black;
+          }
+        }
+      }
+    }
+  }
+
+  &-dots {
+    .slick-dots {
+      display: flex !important;
+      @include flex-centered;
+
+      li {
+        transition: all 300ms ease-in-out;
+        @include rem(width, 8px);
+        @include rem(height, 8px);
+        @include rem(margin, 0 4px);
+        @include flex-centered;
+
+        &.slick-active {
+          border: solid 1px $color-black;
+          border-radius: 50%;
+
+          button {
+            background-color: $color-black;
+          }
+        }
+
+        button {
+          margin: auto;
+          padding: 0;
+          font-size: 0;
+          background-color: $color-gray-light-medium;
+          border-radius: 50%;
+          @include rem(width, 4px);
+          @include rem(height, 4px);
+
+          &::before {
+            content: unset;
+          }
+        }
+      }
+    }
+  }
+}

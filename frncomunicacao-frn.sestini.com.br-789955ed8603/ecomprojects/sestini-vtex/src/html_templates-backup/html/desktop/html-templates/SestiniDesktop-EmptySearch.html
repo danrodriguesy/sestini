@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniDesktop-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-empty-search.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniDesktop-Header"/>
+    <main class="x-empty-search__main" role="main">
+      <article class="x-empty-search__main-container">
+        <div class="x-empty-search__top">
+          <div class="x-empty-search__top-wrapper">
+            <h1 class="x-empty-search__title">Você <strong>buscou por: </strong> <span class="js--searched-text"></span></h1>
+            <p class="x-empty-search__not-found">Nenhum resultado encontrado</p>
+          </div>
+        </div>
+        <section class="x-empty-search__content">
+          <p class="x-empty-search__recomendation-text">Mas confira algumas sugestões que selecionamos para você ;)</p>
+          <div class="x-empty-search__content-shelfs" data-col="5"><vtex:contentPlaceHolder id='Recomendações - Busca vazia'/></div>
+        </section>
+      </article>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniDesktop-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniDesktop-Scripts"/>
+    <vtex:template id="SestiniDesktop-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-empty-search.js"></script>
+  </body>
+</html>

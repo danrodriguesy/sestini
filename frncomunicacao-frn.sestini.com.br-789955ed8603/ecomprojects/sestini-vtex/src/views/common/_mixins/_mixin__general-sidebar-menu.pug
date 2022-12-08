@@ -1,0 +1,10 @@
+
+mixin generalSidebarMenu(prop)
+    div(class=`x-${prop.pageType}-menu`)
+        ul(class=`x-${prop.pageType}-menu__items js--${prop.pageType}-menu-items`)
+            each item in prop.items
+                li(class=`x-${prop.pageType}-menu__item js--${prop.pageType}-menu-item`)
+                    a(class=`x-${prop.pageType}-menu__link js--${prop.pageType}-menu-link`,
+                        href=`${item.link}`,
+                        title=`${item.name}`)
+                            != item.name

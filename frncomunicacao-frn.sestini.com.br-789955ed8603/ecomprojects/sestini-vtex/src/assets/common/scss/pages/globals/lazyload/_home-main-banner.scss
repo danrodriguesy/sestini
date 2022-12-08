@@ -1,0 +1,16 @@
+@include mq("sm") {
+  .x-home__main-banner {
+    img.has--placeloader {
+      padding: 14% 50%;
+    }
+  }
+}
+
+// Mobile
+@include mq("sm", max) {
+  .x-home__main-banner {
+    img.has--placeloader {
+      padding: 40% 50%;
+    }
+  }
+}

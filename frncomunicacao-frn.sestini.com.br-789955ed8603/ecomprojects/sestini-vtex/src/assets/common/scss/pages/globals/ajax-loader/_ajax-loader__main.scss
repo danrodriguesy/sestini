@@ -1,0 +1,44 @@
+
+/**
+ * Markup
+ *
+ * <div class="x-ajax-loader__loading">
+ *     <span class="x-ajax-loader__loading-dot">
+ *     <span class="x-ajax-loader__loading-dot">
+ *     <span class="x-ajax-loader__loading-dot">
+ * </div>
+ */
+
+@keyframes ajax-loader {
+    0 { transform: translate(0, 0); }
+    50% { transform: translate(0, 10px); }
+    100% { transform: translate(0, 0); }
+}
+
+.x-ajax-loader {
+    &__loading {
+        @include rem(margin-top, 5px);
+        @include rem(margin-bottom, 5px);
+    }
+
+    &__loading-dot {
+        display: inline-block;
+        @include rem(height, 12px);
+        @include rem(width, 12px);
+        border-radius: 50%;
+        @include rem(margin-left, 7px);
+        background-color: $color-black;
+
+        &:nth-last-child(1) {
+            animation: ajax-loader .6s .1s linear infinite;
+        }
+
+        &:nth-last-child(2) {
+            animation: ajax-loader .6s .2s linear infinite;
+        }
+
+        &:nth-last-child(3) {
+            animation: ajax-loader .6s .3s linear infinite;
+        }
+    }
+}

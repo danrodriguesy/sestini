@@ -1,0 +1,132 @@
+.myo-details-btn {
+  background: transparent;
+  border-radius: 0;
+  color: $colorPink;
+  font-weight: 600;
+  text-decoration: underline;
+  outline: none;
+}
+
+.bg-warning {
+  background: $color-red;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  .c-on-base {
+    color: #fff;
+  }
+}
+
+.c-danger {
+  color: $color-red;
+  font-family: $font-primary;
+  font-size: 10px;
+  margin-top: 0;
+}
+
+.vtex-pageHeader {
+  &__children {
+    .vtex-button {
+      background: $color-white;
+      color: $color-red;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      outline: none;
+      padding: 0;
+      font-family: $font-primary;
+      border: solid 1px $color-black;
+      height: 40px;
+      font-size: 14px;
+      line-height: 19px;
+      border-radius: 4px;
+      @include mq("sm", max) {
+        height: 30px;
+        line-height: 30px;
+      }
+      transition: 0.4s all;
+
+      &:hover {
+        opacity: 0.6;
+      }
+      .flex {
+        font-weight: bold !important;
+        color: $color-black !important;
+        text-transform: uppercase !important;
+        font-size: 14px !important;
+        line-height: 19px !important;
+      }
+    }
+  }
+}
+
+.vtex-input {
+  &-prefix__group {
+    border: 0;
+  }
+
+  &__label {
+    color: $color-gray-darkest;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 10px;
+  }
+
+  input[type="password"],
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    border: 1px solid #dee3e9;
+    color: #707070;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 17px;
+  }
+}
+
+.vtex-dropdown {
+  .br2 {
+    border: 1px solid #dee3e9;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  label {
+    width: 100%;
+  }
+}
+
+.vtex-input {
+  &__label {
+    color: $color-gray-darken;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+}
+.vtex-dropdown {
+  &__label {
+    color: $color-gray-darken;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  &__button {
+    color: #707070;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+  }
+}

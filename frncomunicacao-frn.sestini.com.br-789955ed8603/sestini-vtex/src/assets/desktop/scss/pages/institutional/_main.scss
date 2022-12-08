@@ -1,0 +1,61 @@
+.x-institutional {
+    &__content {
+        display: flex;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__option-menu {
+        display: none;
+    }
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 20%;
+        margin: 40px 0;
+    }
+    &__container {
+        flex-direction: column;
+        display: flex;
+        width: 70%;
+        margin: 40px 0;
+    }
+    &__menu {
+        width: 100%;
+    }
+    &__nav {
+        &-items {
+            display: flex;
+            flex-direction: column;
+        }
+        &-item {
+            padding-bottom: 10px;
+            @include rem(margin-bottom, 10px);
+            border-bottom: 1px solid #e5e5e5;
+            &-link {
+                position: relative;
+                display: flex;
+                width: 100%;
+                font-family: $font-primary;
+                color: $color-black;
+                @include font-weight(400);
+                @include rem(font-size, 14px);
+                @include rem(line-height, 19px);
+                &:hover,
+                &.is--active {
+                    color: $color-red;
+                    @include font-weight(bold);
+                }
+            }
+        }
+    }
+    .x-breadcrumb__custom {
+        margin-top: 0 !important;
+    }
+    .x-newsletter {
+        display: none;
+    }
+}

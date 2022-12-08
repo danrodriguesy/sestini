@@ -1,0 +1,25 @@
+
+extends ./../_layouts/_desktop-account-base.pug
+
+block append vars
+  - var $isWishlistPage = true
+
+
+//- Page styles
+block append styles
+    link(rel='stylesheet', href='/arquivos/sestini-desktop-category.css', media='all')/
+
+block accountContent
+  div(class='x-account__content')
+    div(class='x-wishlist')
+      div(class='x-wishlist__top')
+        div(class='x-wishlist__top-amount')
+          span(class='js--wishlist-amount')
+          | favoritos
+        div(class='x-wishlist__top-name')
+          |Produtos favoritos
+
+      div(class='x-wishlist__content')
+        ul(class='x-wishlist__items x-shelf', data-wishlist-items='data-wishlist-items', data-col='4')
+
+

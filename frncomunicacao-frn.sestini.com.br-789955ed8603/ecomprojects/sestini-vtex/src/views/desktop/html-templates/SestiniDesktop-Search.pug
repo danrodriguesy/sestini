@@ -1,0 +1,39 @@
+
+extends ./../_layouts/_desktop-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'search'
+  - var $templateClass = 'search'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block content
+  article(class='x-search__main-container')
+    div(class='hidden-heading') <vtex.cmc:searchTitle/>
+    div(class='x-search__top')
+      include ./../_partials/search/_top.pug
+
+    div(class='x-search__options')
+      include ./../_partials/search/_options.pug
+
+    section(class='x-search__content')
+      include ./../_partials/search/_products.pug
+
+//- Footer
+block append footer
+  div(class='x-search__filters-vtex is--hide')
+    <vtex.cmc:searchNavigator/>
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript').
+    var scriptContent = $('.resultItemsWrapper').children('script').html();
+    eval('window.'+ /(PageClick_)([0-9]+)/g.exec(scriptContent)[0] +' = function() {}');
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

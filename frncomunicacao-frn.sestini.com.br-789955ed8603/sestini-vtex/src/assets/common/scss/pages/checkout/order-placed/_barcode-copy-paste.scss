@@ -1,0 +1,62 @@
+#app-top>div>div.cconf-bank-invoice-data.pt3.dn.db-ns>div.cconf-bank-invoice-data__top.flex-ns.justify-between.items-center.mb3>h4 {
+    flex: 0 0 60%;
+}
+
+.copy-paste-btn {
+    padding: 1.2rem 1rem;
+    border-radius: .25rem;
+    font-size: 14px;
+    background: rgb(23, 98, 179);
+    color: $color-white;
+    border: none;
+    outline: none;
+    transition: .4s all;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @include mq("sm", max) {
+        width: 100%;
+    }
+    #copy-icon {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width='478' height='478' viewBox='0 0 478 478' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M341.333 85.333H51.2C22.923 85.333 0 108.256 0 136.533V426.666C0 454.943 22.923 477.866 51.2 477.866H341.333C369.61 477.866 392.533 454.943 392.533 426.666V136.533C392.533 108.256 369.61 85.333 341.333 85.333ZM358.4 426.667C358.4 436.093 350.759 443.734 341.333 443.734H51.2C41.774 443.734 34.133 436.093 34.133 426.667V136.533C34.133 127.107 41.774 119.466 51.2 119.466H341.333C350.759 119.466 358.4 127.107 358.4 136.533V426.667Z' fill='white'/%3E%3Cpath d='M426.667 0H119.467C91.19 0 68.267 22.923 68.267 51.2C68.267 60.626 75.908 68.267 85.334 68.267C94.76 68.267 102.4 60.626 102.4 51.2C102.4 41.774 110.041 34.133 119.467 34.133H426.667C436.093 34.133 443.734 41.774 443.734 51.2V358.4C443.734 367.826 436.093 375.467 426.667 375.467C417.241 375.467 409.6 383.108 409.6 392.534C409.6 401.96 417.241 409.601 426.667 409.601C454.944 409.601 477.867 386.678 477.867 358.401V51.2C477.867 22.923 454.944 0 426.667 0Z' fill='white'/%3E%3C/svg%3E%0A");
+        margin-right: 5px;
+    }
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.dn {
+    @include mq("sm",
+    max) {
+        display: block;
+        margin: 0 30px;
+        .cconf-bank-invoice-data__embedded {
+            margin: 0 !important;
+        }
+    }
+}
+
+#app-top>div>div.cconf-bank-invoice-data.pt3.dn.db-ns>div.cconf-bank-invoice-data__top.flex-ns.justify-between.items-center.mb3>div>div {
+    @include mq("sm",
+    max) {
+        display: none;
+    }
+}
+
+#app-top>div>div.cconf-bank-invoice-data.pt3.dn.db-ns>div.c-muted-1.mt1.t-small.mb4.flex {
+    @include mq("sm",
+    max) {
+        margin-bottom: 0px !important;
+    }
+}
+
+#app-container>div:nth-child(1)>div>div>div:nth-child(2)>div.cconf-payment.w-third-l.w-70-m.cf.mb3.mb0-l.fl-l.pr2-l.pl2-l>div>p>section {
+    display: none;
+}

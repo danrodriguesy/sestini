@@ -1,0 +1,560 @@
+.x-account {
+    &-title {
+        display: none;
+    }
+    &__nav-link {
+        display: flex;
+        align-items: center;
+        color: $color-black;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 1px;
+        @include mq("sm") {
+            position: absolute;
+            left: 0;
+            top: 70px;
+        }
+        @include mq("sm", max) {
+            color: #817e7b;
+        }
+        &::before {
+            content: "";
+            @include arrow-generate(left, 8px, 2px);
+            border-color: $color-black;
+            margin-right: 5px;
+            @include mq("sm", max) {
+                @include arrow-generate(left, 8px, 1px);
+                border-color: #817e7b;
+            }
+        }
+    }
+    &__main {
+        margin-top: 20px;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        margin-top: 20px;
+        @include mq("sm", max) {
+            padding: 35px 0 25px;
+        }
+    }
+    &__title {
+        width: 100%;
+        text-align: left;
+        font-family: $font-primary;
+        color: $color-gray-darkest;
+        font-size: 26px;
+        line-height: 26px;
+        margin-bottom: 40px;
+        text-transform: capitalize;
+        strong {
+            color: $color-red;
+        }
+        @include mq("sm", max) {
+            font-size: 20px;
+            line-height: 20px;
+            padding-top: 10px;
+            margin-bottom: 40px;
+        }
+    }
+    &__container {
+        background: $color-white;
+    }
+    &__content {
+        width: 100%;
+    }
+    &__user {
+        .render-provider {
+            .vtex-account {
+                >.w-100 {
+                    padding-top: 0;
+                }
+                &__user {
+                    &-info {
+                        padding: 20px;
+                        align-items: center;
+                        padding-bottom: 0px;
+                        @include mq("sm", max) {
+                            margin-bottom: 20px;
+                        }
+                    }
+                    &-greeting {
+                        font-family: $font-primary;
+                        text-transform: uppercase;
+                        color: $color-black;
+                        margin: 0;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 22px;
+                        @include mq("sm", max) {
+                            font-size: 15px;
+                            line-height: 26px;
+                        }
+                    }
+                    &-name {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-family: $font-primary;
+                        text-transform: uppercase;
+                        color: $color-red;
+                        margin: 0;
+                        width: 200px;
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 30px;
+                        @include mq("sm", max) {
+                            font-weight: bold;
+                            font-size: 19px;
+                            line-height: 26px;
+                        }
+                    }
+                    &-image {
+                        display: none;
+                    }
+                }
+                &_menu {
+                    &-link {
+                        position: relative;
+                        border: none;
+                        color: #666;
+                        margin: 0;
+                        font-family: $font-primary;
+                        padding: 0;
+                        font-size: 16px;
+                        line-height: 18px;
+                        margin-bottom: 15px;
+                        font-weight: 600;
+                        padding: 7px;
+                        text-align: center;
+                        @include mq("sm", max) {
+                            font-size: 16px;
+                            line-height: 22px;
+                            padding-left: 10px;
+                            margin-bottom: 10px;
+                        }
+                        &.c-on-base {
+                            border-left: 3px solid $color-red;
+                            color: $color-red;
+                        }
+                    }
+                }
+                &__address-list {
+                    .address-summary {
+                        color: $color-gray-darkest;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 20px;
+                    }
+                    footer {
+                        margin-top: 25px;
+                    }
+                }
+                &__page {
+                    .vtex-pageHeader {
+                        &__container {
+                            @include mq("sm", max) {
+                                margin-bottom: 20px;
+                            }
+                            @include rem(padding, 0);
+                            .vtex-button {
+                                &:hover {
+                                    background-color: unset;
+                                }
+                                @include mq("sm", max) {
+                                    height: 100%;
+                                }
+                                .flex {
+                                    font-family: $font-primary;
+                                    color: $color-red;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 19px;
+                                    text-transform: capitalize;
+                                    margin-bottom: 5px;
+                                    @include mq("sm", max) {
+                                        margin-bottom: 0;
+                                    }
+                                    >span.mr3 {
+                                        border-top: 2px solid $color-red;
+                                        border-left: 2px solid $color-red;
+                                        border-right: 0;
+                                        border-bottom: 0;
+                                        will-change: transform;
+                                        transform: rotate(-45deg);
+                                        margin-top: 4px;
+                                        margin-right: 3px;
+                                        width: 8px;
+                                        height: 8px;
+                                        svg {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &__title {
+                            position: relative;
+                            font-family: $font-primary;
+                            text-transform: uppercase;
+                            @include mq("sm") {
+                                color: $color-black;
+                                top: -6px;
+                                font-size: 24px;
+                            }
+                            @include mq("sm", max) {
+                                color: $color-red;
+                                text-align: center;
+                                text-transform: capitalize;
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                    &-body {
+                        footer {
+                            padding: 0;
+                        }
+                        .w-60-ns,
+                        .w-40-ns {
+                            @include mq("sm") {
+                                width: 50%;
+                            }
+                            @include mq("sm", max) {
+                                border: solid 1px #dee3e9;
+                                border-radius: 5px;
+                                padding: 25px 45px;
+                            }
+                            .pb5 {
+                                @include mq("sm", max) {
+                                    padding-bottom: 0;
+                                }
+                            }
+                        }
+                        .w-60-ns {
+                            @include mq("sm", max) {
+                                margin-bottom: 20px;
+                            }
+                        }
+                        .w-40-ns {
+                            main {
+                                >div {
+                                    padding-top: 0;
+                                    font-family: $font-primary;
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    .mb7 {
+                                        margin: 0;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                                .f6 {
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    .flex {
+                                        flex-direction: column;
+                                        margin-bottom: 0;
+                                        .w-50 {
+                                            width: 100%;
+                                            flex-direction: row;
+                                            margin-bottom: 5px;
+                                        }
+                                    }
+                                }
+                                >.vtex-button {
+                                    border: solid 1px $color-red;
+                                    background-color: $color-white;
+                                    color: $color-red;
+                                }
+                            }
+                        }
+                        &,
+                        & main {
+                            padding: 0;
+                            margin: 0;
+                        }
+                        article {
+                            &.b--muted-4 {
+                                border: 0;
+                                img {
+                                    width: 50px;
+                                }
+                            }
+                        }
+                        .vtex-profile-form__profile-summary,
+                        .vtex-account__password-box {
+                            .mb8 {
+                                margin-bottom: 10px;
+                            }
+                            label {
+                                &.db {
+                                    margin: 0;
+                                    font-family: $font-primary;
+                                    color: $color-gray-darken;
+                                    font-weight: bold;
+                                    font-size: 12px;
+                                    line-height: 20px;
+                                }
+                            }
+                            .light {
+                                font-family: $font-primary;
+                                color: $color-gray-darken;
+                                font-weight: 400;
+                                font-size: 12px;
+                                line-height: 20px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .flex {
+                            .vtex-button {
+                                font-family: $font-primary;
+                                font-weight: 600;
+                                transition: 0.6s all;
+                                &:hover {
+                                    opacity: 0.6;
+                                }
+                                @include mq("sm", max) {
+                                    background-color: $color-white;
+                                    width: 100%;
+                                    margin: 0 auto;
+                                    text-transform: capitalize;
+                                    cursor: pointer;
+                                    color: $color-red;
+                                    border: solid 1px $color-red;
+                                    padding: 0;
+                                    height: 40px;
+                                    font-size: 14px;
+                                    line-height: 40px;
+                                    border-radius: 4px;
+                                }
+                                @include mq("sm") {
+                                    background: $color-black;
+                                    color: $color-white;
+                                    text-transform: uppercase;
+                                    cursor: pointer;
+                                    width: 100%;
+                                    margin: 0 auto;
+                                    text-align: center;
+                                    outline: none;
+                                    border: 0;
+                                    padding: 0;
+                                    height: 40px;
+                                    font-size: 14px;
+                                    line-height: 19px;
+                                    border-radius: 4px;
+                                    letter-spacing: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            aside {
+                border: 1px solid #ebebeb;
+                border-radius: 4px;
+                @include mq("sm") {
+                    padding: 0;
+                    margin-right: 45px;
+                }
+                @include mq("sm", max) {
+                    margin: 20px;
+                    padding: 0 25px;
+                }
+            }
+        }
+    }
+    .vtex-profile-form {
+        &__toggle-business-btn__wrapper {
+            text-align: center;
+            .vtex-button {
+                width: 350px;
+            }
+        }
+        &__field-wrapper {
+            padding-bottom: 15px;
+            .vtex-input {
+                &__label {
+                    font-family: $font-primary !important;
+                    color: $color-gray-darken;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 20px;
+                    margin-bottom: 5px;
+                }
+            }
+            .vtex-dropdown {
+                &__label {
+                    font-family: $font-primary;
+                    color: $color-gray-darken;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 20px;
+                    margin-bottom: 5px;
+                }
+                &__button {
+                    color: #707070;
+                    width: 100%;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    padding: 0 10px;
+                    height: 30px;
+                    line-height: 30px;
+                    &+select {
+                        color: #707070;
+                        width: 100%;
+                        border-radius: 4px;
+                        font-size: 12px;
+                        padding: 0 10px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .vtex-address-form {
+        &__postalCode {
+            .vtex-button {
+                border: 0 !important;
+                background-color: unset !important;
+                color: $color-black !important;
+                text-transform: capitalize !important;
+                cursor: pointer !important;
+                text-align: left !important;
+                outline: none !important;
+                padding: 0 !important;
+                letter-spacing: 0 !important;
+                font-weight: bold !important;
+                text-decoration: underline !important;
+                height: 20px !important;
+                font-size: 11px !important;
+                line-height: 20px !important;
+            }
+        }
+    }
+    .vtex-modal {
+        &__modal {
+            border-radius: 0;
+            @include mq("sm", max) {
+                padding: 0 !important;
+            }
+            .t-heading-5 {
+                @include mq(sm, max) {
+                    line-height: 63px !important;
+                }
+            }
+            .vtex-styleguide-8-x-scrollBar {
+                @include mq("sm", max) {
+                    padding: 0 !important;
+                    overflow: unset;
+                }
+            }
+            .b--dashed {
+                border: 0;
+            }
+            .items-center {
+                .b--muted-4 {
+                    background-color: rgba($color-black, 0.44);
+                }
+            }
+            .lh-copy {
+                color: #707070;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                @include mq("sm", max) {
+                    color: $color-gray-darkest;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 27px;
+                    margin-bottom: 15px;
+                }
+            }
+            .vtex-button {
+                @include mq("sm", max) {
+                    background-color: $color-white;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                    color: $color-red;
+                    border: solid 1px $color-red;
+                    padding: 0;
+                    height: 40px;
+                    font-size: 14px;
+                    line-height: 40px;
+                    border-radius: 4px;
+                }
+                @include mq("sm") {
+                    background: $color-red;
+                    color: $color-white;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    outline: none;
+                    border: 0;
+                    padding: 0;
+                    height: 40px;
+                    font-size: 14px;
+                    line-height: 19px;
+                    border-radius: 4px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        @include mq(sm, max) {
+            &__confirmation {
+                padding: 0 30px 30px;
+                &.mt8 {
+                    margin: 0;
+                }
+            }
+            &__close-icon {
+                &.pa5 {
+                    padding: 7px;
+                }
+            }
+        }
+    }
+}
+
+tbody {
+    tr {
+        &.myo-product-row {
+            .myo-product-info {
+                .myo-product-image {
+                    &.mw4-ns {
+                        @media screen and (min-width: 40em) {
+                            max-width: 3rem !important;
+                        }
+                        @media (max-width: 768px) {
+                            max-width: 4rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.myo-progress-bar {
+    .pt7 {
+        padding: 30px;
+    }
+}
+
+.c-link,
+.hover-c-link:focus,
+.hover-c-link:hover {
+    color: $color-black;
+}
+
+.list.tl.tr-ns {
+    .db.dib-ns.mb5.mb0-ns {
+        a {
+            display: none;
+        }
+    }
+}

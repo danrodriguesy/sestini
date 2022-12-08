@@ -1,0 +1,59 @@
+%common__light-style {
+  display: inline-block;
+  font-size: 11px;
+  margin-right: 14px;
+  text-decoration: none;
+  position: relative;
+  @include prevent-rendering;
+}
+
+%price-style {
+  &__old-price {
+    position: relative;
+    color: #939393;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #707070;
+      height: 1px;
+      width: 70px;
+    }
+  }
+
+  &__best-price {
+    text-decoration: none;
+    color: $color-black;
+    font-weight: bold;
+    @include mq("sm") {
+      font-size: 22px;
+      line-height: 28px;
+    }
+    @include mq("sm", max) {
+      font-size: 18px;
+    }
+  }
+
+  &__installments {
+    display: block;
+    width: 100%;
+    color: $color-black;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+
+    @include mq("sm", max) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}

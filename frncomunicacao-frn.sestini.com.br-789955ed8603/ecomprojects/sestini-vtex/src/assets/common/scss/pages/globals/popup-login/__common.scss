@@ -1,0 +1,43 @@
+%popup-login-common {
+  &__title {
+    color: $color-gray-darkest !important;
+    @include rem(font-size, 26px !important);
+    @include font-weight(400);
+    line-height: 26px;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-transform: inherit;
+
+    @include mq("sm", max) {
+      @include rem(font-size, 20px !important);
+    }
+  }
+
+  &__btn-base {
+    @include flex-centered;
+    @include rem(height, 35px);
+    padding: 8px 15px;
+    background: $color-white;
+    border: 1px solid $color-black !important;
+    border-radius: 4px !important;
+    line-height: 14px !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+    i {
+      display: none;
+    }
+
+    &,
+    span {
+      @include rem(font-size, 16px !important);
+      @include font-weight(400);
+      font-family: $font-primary;
+      color: $color-black;
+
+      @include mq("sm", max) {
+        @include rem(font-size, 14px !important);
+      }
+    }
+  }
+}

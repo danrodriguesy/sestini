@@ -1,0 +1,77 @@
+
+extends ./../_layouts/_desktop-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'product'
+  - var $templateClass = 'product'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+  style(type='text/css').
+    .trustvox-widget-rating .ts-shelf-container,
+    .trustvox-widget-rating .trustvox-shelf-container {display: inline-block;}
+    .trustvox-widget-rating span.rating-click-here {
+        top: -3px;
+        display: inline-block;
+        position: relative;
+        color: #DAA81D;
+        font-size: 12px;
+    }
+    .trustvox-widget-rating:hover span.rating-click-here {text-decoration: underline;}
+    .trustvox-container_review{
+        width:70%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+//- Main Content
+block content
+  article(class='x-product__main-container js--product')
+    section(class='x-product__container')
+      include ./../_partials/product/_breadcrumb.pug
+      article(class='x-product__left')
+        include ./../_partials/product/_image-container.pug
+
+      article(class='x-product__right')
+        include ./../_partials/product/_main-info.pug
+
+    section(class='x-product__description-container')
+        include ./../_partials/product/_description.pug
+
+    div(class='x-product__buy-together')
+      include ./../_partials/product/_buy-together.pug
+
+    section(class='x-product__most-searched')
+      include ./../_partials/product/_main-shelf.pug
+
+    section(class='x-product__reviews')
+      include ./../_partials/product/_reviews.pug
+
+    include ./../_partials/product/_colors-shelf.pug
+
+
+//- Page scripts
+block append scripts
+  //- script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.20/jquery.zoom.min.js')
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)
+  script(type='text/javascript').
+    window._trustvox =  [];
+    _trustvox.push(['_storeId', '81534']);
+
+    _trustvox.push(['_productId',  skuJson.productId]);
+    _trustvox.push(['_productName', skuJson.name]);
+    _trustvox.push(['_productPhotos', [skuJson.skus[0].image]]);
+
+    $(document).ready(function() {
+      $('.trustvox-fluid-jump').on('click', function(event) {
+          event.preventDefault();
+          var offset = $($(this).attr('href')).offset().top;
+          $('html, body').animate({scrollTop:offset}, 500);
+      });
+    });
+
+  script(type='text/javascript', async="true", src=`//static.trustvox.com.br/sincero/sincero.js`)

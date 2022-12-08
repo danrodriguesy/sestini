@@ -1,0 +1,30 @@
+
+extends ./../_layouts/_desktop-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'empty-search'
+  - var $templateClass = 'empty-search'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block content
+  article(class='x-empty-search__main-container')
+    div(class='x-empty-search__top')
+      include ./../_partials/empty-search/_top.pug
+
+    section(class='x-empty-search__content')
+      p(class='x-empty-search__recomendation-text')
+        |Mas confira algumas sugestões que selecionamos para você ;)
+
+      include ./../_partials/empty-search/_recomendation.pug
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

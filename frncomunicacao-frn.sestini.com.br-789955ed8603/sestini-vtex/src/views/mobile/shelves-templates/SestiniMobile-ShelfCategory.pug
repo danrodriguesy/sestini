@@ -1,0 +1,15 @@
+//- id: a23159eb-b388-4155-9f52-0101ac1fc517
+
+extends ./../_layouts/_mobile-shelf-base.pug
+
+block vars
+  - var $customClass = 'has--category'
+  - var $shelfType = 'all'
+
+
+block append shelfImage
+  a(href='$productLink', class='x-shelf__link', title='$productTitle')
+    div(class='x-shelf__placeloader has--placeloader js--shelf-category',
+      data-product-id='$productId',
+      data-image-width='157',
+      data-image-ratio='0.8306')

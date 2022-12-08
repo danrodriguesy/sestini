@@ -1,0 +1,149 @@
+%shelves-container {
+  .main {
+    width: 100%;
+  }
+
+  &.x-shelf,
+  .x-shelf {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+
+      &.has--shelf-loader {
+        opacity: 0.5;
+        transition: all 0.3s ease;
+      }
+    }
+
+     .slick-slider {
+
+       .slick-next,
+       .slick-prev {
+         z-index: 0;
+       }
+     }
+  }
+
+  &[data-col="1"] {
+    &.x-shelf,
+    .x-shelf {
+      li {
+        &:not(.is--shelf-item-preload) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &[data-col="2"] {
+    &.x-shelf,
+    .x-shelf {
+      li {
+        &:not(.is--shelf-item-preload) {
+          position: relative;
+          width: calc(50% - 8px);
+          margin: 16px 16px 16px 0;
+
+          @include mq("sm", max) {
+            margin-top: 0;
+          }
+
+          &:nth-child(2n) {
+            margin-right: 0;
+
+            &::after {
+              @include mq("sm", max) {
+                content: "";
+                position: absolute;
+                background-color: $color-gray-lighter;
+                height: 60%;
+                top: 30px;
+                left: -6px;
+                width: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &[data-col="3"] {
+    &.x-shelf,
+    .x-shelf {
+      li {
+        &:not(.is--shelf-item-preload) {
+          width: 31%;
+          width: calc(33.33% - 8px);
+          margin: 12px 12px 12px 0;
+
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &[data-col="4"] {
+    &.x-shelf,
+    .x-shelf {
+      ul {
+        justify-content: flex-start;
+      }
+
+      li {
+        &:not(.is--shelf-item-preload) {
+          position: relative;
+          width: calc(25% - 6px);
+          margin: 8px 8px 8px 0;
+
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $color-gray-lighter;
+            height: calc(100% - 75px);
+            top: 55px;
+            right: -6px;
+            width: 1px;
+          }
+
+
+          &:last-of-type,
+          &:nth-child(4n){
+            &::after{
+              content: unset;
+            }
+          }
+
+          &:nth-child(4n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &[data-col="5"] {
+    &.x-shelf,
+    .x-shelf {
+      ul {
+        justify-content: flex-start;
+      }
+
+      li {
+        &:not(.is--shelf-item-preload) {
+          width: 100%;
+          max-width: 215px;
+          margin-right: 22px;
+          margin-bottom: 70px;
+
+          &:nth-child(5n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+#set($productId = $product.Id)
+#set($productTitle = $product.HtmlEscapedName)
+#set($productLink = $product.Uri)
+#set($productListPrice = $product.ListPrice)
+#set($productBestPrice = $product.BestPrice)
+#set($productInstallmentValue = $product.InstallmentValue)
+
+<article class="x-shelf__item has--carousel js--shelf-item" data-product-id="$productId">
+  <input class="js--shelf-product-id" type="hidden" value="$productId"/>
+  <input class="js--shelf-product-departament" type="hidden" value="$product.DepartmentName"/>
+  <input class="js--shelf-product-category" type="hidden" value="$product.CategoryName"/>
+  <input class="js--shelf-product-name" type="hidden" value="$product.Name"/>
+  <div class="x-shelf__img-container"><a class="x-shelf__link" href="$productLink" title="$productTitle">
+      <div class="x-shelf__placeloader has--placeloader js--shelf-carousel" data-product-id="$productId" data-image-width="157" data-image-ratio="0.8306"></div></a>
+    <div class="x-wishlist__add-btn-wrapper">
+      <button class="x-wishlist__add-btn" title="Adicionar a wishlist" data-wishlist-add="data-wishlist-add" data-wishlist-product-id="$productId"><svg xmlns="http://www.w3.org/2000/svg" width="15.756" height="14.571" viewBox="0 0 15.756 14.571">
+<path id="Path_112" data-name="Path 112" d="M20.756,13.037A4.5,4.5,0,0,0,16.34,8.384a3.831,3.831,0,0,0-3.462,2.157A3.831,3.831,0,0,0,9.416,8.384,4.5,4.5,0,0,0,5,13.037v.027c-.015.574.071,5.721,7.7,9.842a.332.332,0,0,0,.122.045.276.276,0,0,0,.056,0,.338.338,0,0,0,.176-.05c7.611-4.112,7.714-9.244,7.7-9.838Zm-7.878,9.2c-7.137-3.916-7.221-8.629-7.207-9.168v-.033A3.838,3.838,0,0,1,9.416,9.055a3.249,3.249,0,0,1,3.14,2.469.335.335,0,0,0,.643,0,3.249,3.249,0,0,1,3.14-2.469,3.839,3.839,0,0,1,3.745,3.989v.038C20.1,13.609,20.014,18.322,12.878,22.238Z" transform="translate(-5 -8.384)" fill="#c12a21"/>
+</svg>
+      </button>
+    </div>
+  </div>
+  <div class="x-shelf__content">
+    <h2 class="x-shelf__title">$productTitle</h2>
+#if ($product.IsInStock)
+
+    <p class="x-shelf__price-container">
+#if ($product.HasBestPrice)
+
+      <del class="x-shelf__old-price">$productListPrice</del><span class="x-shelf__best-price">$productBestPrice</span>
+#else
+
+      <del class="x-shelf__old-price is--empty">&nbsp;</del><span class="x-shelf__best-price">$productBestPrice</span>
+#end
+
+      <div class="x-shelf__buy-wrapper"><a class="x-shelf__buy" href="$productLink" title="$productTitle" data-product-id="$productId">comprar</a></div>
+    </p>
+#else
+
+    <div class="x-shelf__out-of-stock">
+      <p class="x-shelf__out-of-stock-text">produto indisponível</p>
+    </div>
+#end
+
+  </div>
+</article>

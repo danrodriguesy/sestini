@@ -1,0 +1,118 @@
+.x-register {
+    &__main {
+        padding: 20px;
+    }
+
+    &-form{
+        background: $color-white;
+        font-family: $font-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1{
+            font-size: 28px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: 600;
+
+            strong{
+                color: $color-red;
+            }
+        }
+
+        h2{
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            color: #757575;
+            padding: 20px;
+            padding-top: 10px;
+        }
+
+        &-container{
+            display: flex;
+            flex-direction: column;
+            font-family: $font-primary;
+        }
+
+        &-label{
+            font-weight: 600;
+            font-size: 14px;
+            padding-bottom: 5px;
+        }
+
+        &-help{
+            color: #757575;
+            font-size: 10px;
+            padding-bottom: 5px;
+            font-weight: 500;
+        }
+
+        &-input{
+            border: 2px solid #757575;
+            color: #111;
+            border-radius: 4px;
+            height: 40px;
+            font-weight: 500;
+            margin: 15px 0;
+            margin-top: 0;
+            padding: 3px 10px;
+        }
+
+        &-checkbox{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 5px;
+
+            label{
+                margin-left: 5px;
+                font-size: 10px;
+
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .message{
+            display: none;
+            font-size: 10px;
+            color: $color-red;
+            margin-bottom: 10px;
+
+            a{
+                color: #4380c7;
+                text-decoration: underline;
+            }
+        }
+
+        button{
+            background: $color-green;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            color: $color-white;
+            transition: .6s all;
+            width: 50%;
+
+            &:hover{
+                opacity: .6;
+            }
+        }
+    }
+}
+
+#message-form{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+
+    &.success{
+        color: $color-green;
+    }
+}

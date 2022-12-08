@@ -1,0 +1,13 @@
+.x-category__grid {
+  display: flex;
+
+  &-btn {
+    @include flex-centered;
+    @include mq("sm") {
+      margin-left: 10px;
+    }
+    & + & {
+      margin-left: 10px;
+    }
+  }
+}

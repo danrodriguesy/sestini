@@ -1,0 +1,24 @@
+
+extends ./../_layouts/_mobile-institutional-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'seja-franqueado'
+  - var $templateClass = 'seja-franqueado'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-mobile-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block institutionalContent
+  include ../_partials/institutional/seja-franqueado/_main.pug
+  include ../_partials/institutional/seja-franqueado/_form.pug
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-mobile-${$templateName}.js`)

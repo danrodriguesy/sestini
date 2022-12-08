@@ -1,0 +1,21 @@
+@import "./__common";
+@import "./top";
+@import "./main";
+@import "./products";
+
+.smarthint .slick-prev,
+.smarthint .slick-next {
+    background-color: transparent !important;
+
+    &:before {
+        border-color: $color-red !important;
+    }
+}
+
+.smarthint .slick-next {
+    right: -20px !important;
+}
+
+.smarthint .slick-prev {
+    left: -20px !important;
+}

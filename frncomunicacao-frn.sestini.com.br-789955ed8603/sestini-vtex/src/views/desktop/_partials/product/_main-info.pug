@@ -1,0 +1,165 @@
+section(class='x-product__main-info')
+  div(class='x-product__name-wrapper has--placeholder',
+    rv-class-has--placeholder="product.isLoading")
+    h1(class='x-product__name', rv-text='product.name')
+      div(class='hidden-heading')
+        <vtex.cmc:productName/>
+
+    small(class='x-product__reference') Cod. Referência: <vtex.cmc:skuReference/>
+
+    //- div(class="trustvox-rating")
+    //-   a(class="trustvox-fluid-jump trustvox-widget-rating" href="#trustvox-reviews" title="Pergunte e veja opiniões de quem já comprou")
+    //-     div(class="trustvox-shelf-container" data-trustvox-product-code-js="skuJson.productId" data-trustvox-should-skip-filter="true" data-trustvox-display-rate-schema="true")
+    //-     span(class="rating-click-here") Clique e veja!
+
+  div(class='x-product__bottom-info-wrapper has--placeholder',
+    rv-class-has--placeholder="product.isLoading")
+    div(class='x-product__info')
+      div(class='x-product__price-info')
+        div(class='x-product__price-wrapper has--placeholder', rv-if='product.available',
+          rv-class-has--placeholder="product.isLoading")
+          del(class='x-product__old-price', rv-if='product.listPrice | gt 0')
+            | #[span(rv-text='product.listPrice | formatPrice')]
+          ins(class='x-product__best-price', rv-if='product.bestPrice | gt 0')
+            | #[span(rv-text='product.bestPrice | formatPrice')]
+
+        div(class='x-product__installments-wrapper', rv-if='product.installments | gt 1')
+          | Em até #[span(rv-text='product.installments')]X de #[span(rv-text='product.installmentsValue | formatPrice')]
+
+  //- div(class='x-product__sizes has--placeholder',
+  //-   rv-class-has--placeholder="product.isLoading")
+    //- div(class='x-product__sizes-container')
+    //-   div(class='x-product__sizes--items js--product-sizes')
+    //-     div(class='x-product__sizes-content js--product-sizes-container')
+    //-       div(class='x-product__select-sizes',
+    //-           rv-class-is--available='color.available',
+    //-           rv-on-click='controller.selectSku',
+    //-           rv-each-color='product.skuJson.skus',
+    //-           rv-data-sku='color.sku' rv-html='color.size',
+    //-           rv-product-color='color.color')
+    //- div(class='x-product__sizes js--product-sizes')
+    //-   vtex:contentPlaceHolder(id='Produtos Similares')/
+  div(class='x-product__colors-wrapper')
+    div(
+      rv-hide='product.currentSize | lte 1'
+      class='x-product__colors has--placeholder',
+      rv-class-has--placeholder="product.isLoading"
+    )
+      div(class='x-product__colors-container')
+        div(class='x-product__colors--items js--product-color')
+          div(class='x-product__colors-content js--product-color-container')
+            a(
+              class='x-product__select-color',
+              rv-each-color="product.currentSize"
+              rv-href="color.link"
+            )
+              img(rv-src='color.image', alt='color.skuname')/
+
+    div(
+      rv-hide='product.skuJson.skus | lte 1'
+      class='x-product__colors has--placeholder',
+      rv-class-has--placeholder="product.isLoading"
+    )
+      div(class='x-product__colors-container')
+        div(class='x-product__colors--items js--product-color')
+          div(class='x-product__colors-content js--product-color-container')
+            div(class='x-product__select-color',
+                rv-class-is--available='color.available',
+                rv-on-click='controller.selectSku',
+                rv-each-color='product.skuJson.skus',
+                rv-data-sku='color.sku'
+                )
+              img(rv-src='color.image', alt='color.skuname')/
+
+  div(
+    rv-show="product.categoryId | eq '3'",
+    class='x-product__sizes has--placeholder',
+    rv-class-has--placeholder="product.isLoading"
+  )
+    div(class='x-product__sizes js--product-sizes')
+      div(class='x-product__sizes-content')
+        div(class='x-product__select-sizes', rv-each-size='product.sizes | propertyList')
+          a(
+            rv-each-value='size.value | firstItem',
+            rv-html='size.key',
+            rv-href='value.link | stripHost',
+            rv-title='size.key',
+          )
+
+  div(class='x-product__buy-btn-wrapper has--placeholder' rv-hide='product.skuNotAvailable',
+  rv-class-has--placeholder="product.isLoading")
+    button(class='x-product__buy-btn js--add-to-cart'
+        rv-on-click='controller.addToCart',
+        rv-disabled='product.skuNotAvailable',
+        rv-data-product-qty='product.qty',
+        rv-data-product-sku='product.skuId',
+        rv-text='product.buyBtn')
+    button(class='x-product-wishlist__add-btn', title='Adicionar a wishlist',
+      data-wishlist-add='data-wishlist-add',
+      rv-data-wishlist-product-id='product.skuJson.productId')
+      p(class="x-product-wishlist__add-btn-add") Adicionar a wishlist
+      p(class="x-product-wishlist__add-btn-remove") Remover da wishlist
+
+  div(class='x-product__qty-amount-left has--placeholder',
+    rv-class-has--placeholder="product.isLoading")
+    span(rv-html='product.skuQtyText')
+
+  div(class='x-product__shipping has--placeholder', rv-hide="product.skuNotAvailable",
+    rv-class-has--placeholder="product.isLoading")
+    div(class='x-product__shipping-wrapper')
+      form(class='x-product__shipping-form'
+        rv-on-submit='controller.calculateShipping')
+        label(class='x-product__shipping-label', for='x-product-postal') Calcular frete:
+        div(class='x-product__shipping-input-wrapper')
+          input(class='x-product__shipping-input',
+            type='text',
+            maxlength='9',
+            minlength='9',
+            required="true",
+            placeholder="digite seu CEP",
+            rv-on-keyup='controller.formatPostalCode')/
+          button(class='x-product__shipping-submit',
+            type="submit") Calcular
+        div(class='x-product__shipping-erro' rv-show='product.shippingCalculatedError') preencha um CEP válido
+      div(class='x-product__shipping-discovery')
+        a(class='x-product__shipping-discovery-link', target='_blank', title='Não sei meu CEP', href="http://www.buscacep.correios.com.br/sistemas/buscacep/") Não sei meu CEP
+
+    div(class='x-product__shipping-result', rv-show='product.isShippingCalculated')
+      div(class='x-product__shipping-row', rv-each-shipping='product.shippingResult')
+        div(class='x-product__shipping-value', rv-html='shipping.shippingValue')
+        div(class='x-product__shipping-type', rv-html='shipping.shippingType')
+        div(class='x-product__shipping-sla', rv-html='shipping.shippingText')
+
+  div(class='x-product__notifyme has--placeholder' rv-show='product.skuNotAvailable' rv-class-has--placeholder="product.isLoading")
+    div(class='x-product__notifyme-header')
+      button(class='x-product__notifyme-title' rv-on-click='controller.enableNotifyMe')
+        <vtex.cmc:svgIconEmail/>
+        |Me avise quando chegar
+    div(class='x-product__notifyme-wrapper' rv-show='product.notifyMeActive')
+      form(class='x-product__notifyme-form' rv-on-submit='controller.sendNotifyMe' rv-hide='product.notifyMeSent')
+        label(class='x-product__notifyme-label')
+          |Nome
+          input(type='text' class='x-product__notifyme-input js--notifyme-input-name' required="true")/
+        label(class='x-product__notifyme-label')
+          |E-mail
+          input(type='email' class='x-product__notifyme-input js--notifyme-input-email' required="true" )/
+        input(type='hidden' class='x-product__notifyme-input js--notifyme-input-skuId' data-sku='' )/
+        input(type='submit'  class='x-product__notifyme-input js--notifyme-button' value='Enviar')/
+      div(class='x-product__notifyme-success' rv-show='product.notifyMeSent')
+        |Obrigado! Você recebera um e-mail #[br/] quando o produto estiver #[br/]disponível novamente.
+
+  div(class='x-product__tech-information-container has--placeholder',
+    rv-class-has--placeholder="product.isLoading", rv-show='product.hasSpecs')
+    h5(
+      class='x-product__tech-information-title'
+      ) Informações técnicas
+    div(
+      class='x-product__tech-information-wrapper'
+      )
+      ul(class='x-product__tech-information-items')
+        li(class='x-product__tech-information-item' rv-each-spec="product.specs")
+          img(class='x-product__tech-information-image',
+              rv-src='spec.imageUrl',
+              rv-title='spec.name',
+              rv-alt='spec.name')/
+          p(class='x-product__tech-information-name', rv-html='spec.name')

@@ -1,0 +1,135 @@
+.body-checkout-confirmation {
+  // Top Information
+  #app-top {
+    position: relative;
+    @include rem(margin-top, 85px);
+    @include rem(margin-bottom, 55px);
+
+    @include mq("sm") {
+      @include rem(padding, 0 50px);
+    }
+
+    @include mq("sm", max) {
+      @include rem(margin-top, 50px);
+      @include rem(margin-bottom, 50px);
+    }
+
+    // Main Title
+    &::before {
+      content: "Dados do Pedido";
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      font-family: $font-primary;
+      align-items: center;
+      color: $color-gray-darkest;
+      left: 25%;
+      right: 25%;
+      @include rem(top, -42px);
+      @include rem(font-size, 16px);
+      @include rem(line-height, 22px);
+      font-weight: 600;
+
+      @include mq("sm", max) {
+        left: calc(50% - 60px);
+        @include rem(top, -30px);
+      }
+    }
+
+    // Main div
+    .ph3-ns.w-70-ns.db.center {
+      padding: 0;
+      width: 100%;
+      margin: 0 auto;
+
+      // Order Date (doesn't show in the current layout)
+      > .mb4 {
+        display: none;
+      }
+
+      // Green box confirmation
+      .cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green {
+        width: 100%;
+        height: auto;
+        background-color: $color-white-darker;
+        border: unset;
+        padding: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include mq("sm") {
+          @include rem(border-radius, 4px);
+          padding: 20px;
+        }
+
+        @include mq("sm", max) {
+          text-align: center;
+          @include rem(padding, 35px);
+        }
+
+        > div {
+          // Confirmation Title
+          .db.f4.fw6.mb4 {
+            font-family: $font-primary;
+            text-align: center;
+            color: $color-gray-darken;
+            text-transform: uppercase;
+            @include font-weight(bold);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 17px);
+            @include rem(margin-bottom, 15px);
+            @include rem(letter-spacing, 1.5px);
+          }
+
+          // Confiration Description
+          .fl.w-100 {
+            * {
+              margin: 0;
+            }
+            font-family: $font-primary;
+            color: $color-gray-medium-3;
+            text-align: center;
+            @include font-weight(400);
+            @include rem(font-size, 13px);
+            @include rem(line-height, 17px);
+
+            p {
+              @include mq("sm", max) {
+                @include rem(margin-bottom, 15px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.cconf-bank-invoice-description{
+  font-family: $font-primary;
+  text-align: center;
+}
+
+.cconf-bank-invoice__open{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.cconf-button{
+  background: #5bb75b;
+  font-family: $font-primary;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  transition: .6s all;
+  &:hover{
+    opacity: .6;
+  }
+}

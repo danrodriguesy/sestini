@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniMobile-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-mobile-institutional.css" media="all"/>
+    <link rel="stylesheet" href="/arquivos/sestini-mobile-trabalhe-conosco.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniMobile-Header"/>
+    <main class="x-trabalhe-conosco__main" role="main">
+      <div class="x-institutional__content">
+        <vtex:template id="SestiniCommon-Breadcrumb"/>
+        <section class="x-institutional__container">
+          <div class="x-institutional__top">
+            <h1 class="x-title">Trabalhe <strong>conosco</strong></h1>
+            <div class="x-institutional__top-text"><vtex:contentPlaceHolder id="Texto - Trabalhe conosco" /></div>
+          </div>
+          <div class="x-institutional__bottom">
+            <h2 class="x-title">Preencha o <strong>formulário</strong></h2>
+            <form class="x-institutional__form js--institutional-form">
+              <div class="x-institutional__form-row">
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-name">Nome
+                  <input class="x-institutional__form-input js--input-name" name="x-input-name" id="x-input-name" placeholder="Nome" required="true" type="text"/>
+                </label>
+              </div>
+              <div class="x-institutional__form-row">
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-email">E-mail
+                  <input class="x-institutional__form-input js--input-email" name="x-input-email" id="x-input-email" placeholder="E-mail" required="true" type="email"/>
+                </label>
+              </div>
+              <div class="x-institutional__form-row">
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-uf">UF
+                  <input class="x-institutional__form-input js--input-uf" name="x-input-uf" id="x-input-uf" placeholder="Estado" required="true" type="text"/>
+                </label>
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-cidade">Cidade
+                  <input class="x-institutional__form-input js--input-cidade" name="x-input-cidade" id="x-input-cidade" placeholder="Cidade" required="true" type="text"/>
+                </label>
+              </div>
+              <div class="x-institutional__form-row">
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-date">Data de nascimento
+                  <input class="x-institutional__form-input js--input-date" name="x-input-date" id="x-input-date" placeholder="00/00/0000" required="true" type="text"/>
+                </label>
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-genero">Gênero
+                  <input class="x-institutional__form-input js--input-genero" name="x-input-genero" id="x-input-genero" placeholder="Opcional" required="false" type="text"/>
+                </label>
+              </div>
+              <div class="x-institutional__form-row">
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-telephone">Telefone
+                  <input class="x-institutional__form-input js--input-telephone" name="x-input-telephone" id="x-input-telephone" placeholder="Opcional" required="false" type="text"/>
+                </label>
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-cellphone">Celular
+                  <input class="x-institutional__form-input js--input-cellphone" name="x-input-cellphone" id="x-input-cellphone" placeholder="9.0000.0000" required="true" type="text"/>
+                </label>
+              </div>
+              <div class="x-institutional__form-row">
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-cellphone">Área de interesse
+                  <input class="x-institutional__form-input js--input-cellphone" name="x-input-cellphone" id="x-input-cellphone" required="true" type="text"/>
+                </label>
+                <label class="x-institutional__form-label x-institutional__form-half" for="x-input-cv"><br/>
+                  <input class="x-institutional__form-input-file js--input-cv" name="x-input-cv" id="x-input-cv" required="false" type="file"/>
+                  <label class="x-institutional__form-label-file js--label-cv" for="x-input-cv">Anexar cv</label>
+                </label>
+              </div>
+              <div class="x-institutional__form-row">
+                <button class="x-institutional__form-button" type="submit" title="Enviar">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniMobile-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniMobile-Scripts"/>
+    <vtex:template id="SestiniCommon-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-mobile-institutional.js"></script>
+    <script type="text/javascript" src="/arquivos/sestini-mobile-trabalhe-conosco.js"></script>
+  </body>
+</html>

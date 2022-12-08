@@ -1,0 +1,53 @@
+.x-institutional {
+  &__top {
+    width: 100%;
+    @include rem(margin-bottom, 30px);
+
+    &-text {
+      color: rgba($color-black, 0.5);
+      @include font-weight(400);
+      @include rem(font-size, 12px);
+      @include rem(line-height, 22px);
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    @include rem(margin-bottom, 75px);
+  }
+}
+
+.x-brands {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    @include rem(margin-bottom, 50px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    svg {
+      width: auto;
+      @include rem(height, 52px);
+    }
+  }
+
+  &__budget {
+    @include flex-centered;
+    margin: auto;
+    background-color: $color-red;
+    color: $color-white;
+    text-transform: uppercase;
+    width: 100%;
+    @include font-weight(bold);
+    @include rem(height, 40px);
+    @include rem(font-size, 14px);
+    @include rem(line-height, 19px);
+    @include rem(border-radius, 4px);
+    @include rem(letter-spacing, 2px);
+  }
+}

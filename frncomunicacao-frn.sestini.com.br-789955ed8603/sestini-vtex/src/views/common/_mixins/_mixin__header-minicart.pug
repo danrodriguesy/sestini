@@ -1,0 +1,7 @@
+
+mixin headerMinicart($device)
+  button(class='x-header__minicart js--minicart-open', title='Minha sacola')
+    <vtex.cmc:svgIconMinicart/>
+    span(class='x-minicart__amount', data-minicart-amount='0')
+    if !$device
+      |sacola

@@ -1,0 +1,170 @@
+/**
+ * vtexCategoryFilter classes
+ */
+li.is--shelf-item-preload,
+.is--load-btn-hide {
+  display: none;
+}
+
+// Buttons Load More/Less
+.cf-load-less__wrapper,
+.cf-load-more__wrapper {
+  @include flex-centered;
+}
+
+.cf-load-more {
+  border-radius: 4px;
+  background-color: $color-white;
+  font-family: $font-primary;
+  border-color: $color-black;
+  color: $color-black;
+  margin-bottom: 30px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: 1px solid $color-black;
+}
+
+.cf-load-less {
+  border: 1px solid $color-black;
+  border-radius: 4px;
+  background-color: $color-white;
+  font-family: $font-primary;
+  border-color: $color-black;
+  color: $color-black;
+  margin: 10px 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+// Back to Top
+.cf-back-to-top {
+  @extend %btn--white-fill;
+  @include rem(font-size, 7px);
+  text-transform: uppercase;
+  padding: 0;
+  letter-spacing: 0.5px;
+  position: fixed;
+  bottom: 14px;
+  right: 14px;
+  height: 36px;
+  width: 36px;
+  z-index: z("return-to-top");
+
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+
+  &:after {
+    @extend %iconfont;
+    content: "\EA05";
+    font-size: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.is--visible {
+    // the button becomes visible
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.has--fade-out {
+    // If the user keeps scrolling down, the button is out of focus and becomes less visible
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Pagination
+
+.x-viewQuantity {
+  color: #292929;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  will-change: transform;
+  transform: translateY(10px);
+  font-size: 12px;
+  max-width: 200px;
+  padding-left: 6px;
+  @include mq("sm", max) {
+    display: none;
+  }
+}
+
+.cf-pagination {
+  @include flex-centered;
+  margin: 0;
+
+  &__button-first,
+  &__button-last {
+    display: none;
+  }
+
+  &__button-prev,
+  &__button-next {
+    @include flex-centered;
+    background-color: rgba($color-gray-light-medium, 0.32);
+    border-radius: 50%;
+    font-size: 0;
+    width: 35px;
+    height: 35px;
+  }
+
+  &__button-prev {
+    margin-right: 50px;
+
+    &::before {
+      content: "";
+      @include arrow-generate(left, 7px, 2px);
+      border-color: $color-black;
+    }
+  }
+
+  &__button-next {
+    margin-left: 50px;
+
+    &::before {
+      content: "";
+      @include arrow-generate(right, 7px, 2px);
+      border-color: $color-black;
+    }
+  }
+  &__button-page {
+    font-weight: 400;
+    color: $color-gray-darkest;
+    margin: 0 15px;
+    font-size: 16px;
+    line-height: 38px;
+  }
+
+  &__button-current {
+    font-weight: bold;
+    color: $color-red;
+    margin: 0 15px;
+    font-size: 16px;
+    line-height: 38px;
+  }
+}
+
+// Empty Search
+.cf-empty-search {
+  @include flex-centered;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  width: 100% !important;
+
+  &__title {
+    @include rem(font-size, 12px);
+    text-transform: uppercase;
+  }
+}

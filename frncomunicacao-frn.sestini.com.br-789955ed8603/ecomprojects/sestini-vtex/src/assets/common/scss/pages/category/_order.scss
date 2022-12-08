@@ -1,0 +1,95 @@
+.x-category {
+  &__order {
+    position: absolute;
+    margin-left: 20px;
+    right: 92px;
+    @include mq(sm, max) {
+      right: 37px;
+      top: -35px;
+    }
+
+    &-text {
+      z-index: z("category-order-button");
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      padding-right: 20px;
+
+      &.is--active {
+        z-index: 6000;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 4;
+        @include arrow-generate(down, 7px, 2px);
+        border-color: $color-black;
+        will-change: transform;
+        transition: transform 600ms ease-in-out;
+      }
+    }
+  }
+
+  &__order-drop {
+    @include flex-centered;
+    flex-direction: column;
+    position: absolute;
+    background: $color-white;
+    will-change: max-height;
+    transition: all 600ms ease-in-out;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: 0 3px 6px rgba($color-black, 0.1);
+    max-height: 0;
+    top: -10px;
+    width: 145px;
+    padding-top: 40px;
+
+    &.is--active {
+      z-index: 5999;
+    }
+
+    @include mq("sm") {
+      left: -35px;
+    }
+
+    @include mq("sm", max) {
+      right: -16px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.19);
+    }
+
+    &.is--active {
+      opacity: 1;
+      max-height: 1000px;
+    }
+
+    label {
+      @include flex-centered;
+      width: 100%;
+      transition: all 225ms ease-in-out;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 7px 0;
+      font-size: 10px;
+      line-height: 14px;
+
+      &:hover {
+        background-color: $color-gray-lighten;
+      }
+
+      &:nth-of-type(even) {
+        @include mq("sm", max) {
+          background-color: rgba($color-gray-lighten, 0.89);
+        }
+      }
+      input {
+        display: none;
+      }
+    }
+  }
+}

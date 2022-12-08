@@ -1,0 +1,68 @@
+
+.x-form {
+    &__group {
+        @extend %form__elements;
+        @extend %form__group;
+    }
+
+    &__group-left,
+    &__group-right {
+        @extend %form__group-position;
+        position: relative;
+    }
+
+    &__group-left {
+        @extend %form__group-left;
+    }
+
+    /**
+     * Checkbox default
+     */
+    &__checkbox-default-group {
+        @extend %form__checkbox-default-group;
+    }
+
+    /**
+     * Checkbox custom
+     */
+    &__checkbox-field {
+        @extend %form__checkbox-field;
+    }
+
+    &__checkbox {
+        @extend %form__checkbox;
+    }
+
+    &__checkbox-label {
+        @extend %form__checkbox-label;
+    }
+
+    &__checkbox-text {
+        @extend %form__checkbox-text;
+    }
+
+    &__radio-group,
+    &__radio-field {
+        @extend %form__radio-position;
+    }
+
+    &__radio-field {
+        @extend %form__radio-field;
+    }
+
+    &__file {
+        @extend %form__file;
+    }
+
+    &__file-input {
+        @extend %form__file-input;
+    }
+
+    &__file-control {
+        @extend %form__file-control;
+    }
+
+    &__submit {
+        @extend %form__submit;
+    }
+}

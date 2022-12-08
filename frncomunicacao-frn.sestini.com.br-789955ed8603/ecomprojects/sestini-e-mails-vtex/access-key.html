@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <!-- So that mobile webkit will display zoomed in -->
+    <meta name="format-detection" content="telephone=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{_accountInfo.TradingName}}</title>
+    <style type="text/css">
+        body {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            padding: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        .yshortcuts a {
+            border-bottom: none !important;
+        }
+
+        /* Constrain email width for small screens */
+        @media screen and (max-width: 600px) {
+            table[class="container"] {
+                width: 100% !important;
+            }
+        }
+
+        /* Styles for forcing columns to rows */
+        @media only screen and (max-width : 600px) {
+
+            /* force container columns to (horizontal) blocks */
+            .container {
+                border-radius: 0 !important;
+            }
+
+            .no-padding-top-bottom-mobile {
+                padding-top: 0;
+                padding-bottom: 0;
+                padding: 0 !important;
+            }
+
+            .side-border td {
+                padding-left: 0;
+            }
+
+            td[class="force-col"] {
+                display: block;
+                padding-right: 0 !important;
+            }
+
+            table[class="col-3"] {
+                /* unset table align="left/right" */
+                float: none !important;
+                width: 100% !important;
+                /* change left/right padding and margins to top/bottom ones */
+                padding-bottom: 12px;
+                border-bottom: 1px solid #eee;
+            }
+
+        }
+
+        .x-footer__network-- {
+            width: 8%;
+            display: inline-block;
+            padding: 15px 0;
+            margin-left: 50px;
+        }
+
+
+        .x-footer__logo {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .x-footer__message {
+            color: #717171;
+            display: inline;
+            padding: 5px 0px;
+
+        }
+
+        .x-footer__bottom-bar {
+            height: 100%;
+            background-color: #000;
+            display: block;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .x-footer__network-- {
+            width: 5%;
+            align-items: center;
+            display: inline-block;
+            padding: 15px 0;
+            margin-left: 5%;
+        }
+
+        .x-footer_banner span {
+            font-weight: bolder;
+            display: block;
+            margin-top: -5px;
+        }
+
+        @media(max-width:768px) {
+            .x-footer__message {
+                padding: 10px 9px;
+
+            }
+
+            .x-footer__network-- {
+                padding: 10px 0px;
+                margin-left: 5%;
+
+            }
+        }
+
+        @media(max-width:768px) {
+            .x-barra-title {
+                padding: 10px 12px;
+
+            }
+        }
+    </style>
+</head>
+
+<body marginwidth="0" marginheight="0" bgcolor="#fff" style="padding:0px 0px;color:#333;" leftmargin="0" topmargin="0">
+    <!-- 100% wrapper (grey background) -->
+    <table width="100%" cellspacing="0" border="0" bgcolor="#fff">
+        <tbody>
+            <tr>
+                <td valign="top" bgcolor="#fff" align="center" class="no-padding-top-bottom-mobile"
+                    style="background-color: #fff;color:#333;">
+                    <!-- 600px container (white background) -->
+                    <table cellspacing="0" cellpadding="0" border="0" bgcolor="#fff" class="container"
+                        style="max-width:600px;">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#ffffff" align="left" class="container-padding"
+                                    style="background-color: #ffffff; padding-left: 10px; padding-right: 3px; font-size: 13px; line-height: 19px; font-family: Montserrat, sans-serif; color: #333;">
+                                    <br />
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <!-- INICIO HEADER -->
+                                            <tr>
+                                                <td width="100%" cellspacing="0" cellpadding="0" border="0"
+                                                    align="left">
+                                                    <table style='width: 100%;'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center" colspan='4'>
+                                                                    <!-- logo da empresa -->
+                                                                    <p class='x-header__logo'
+                                                                        style="padding-top: 10px;padding-bottom: 10px; margin: 0 auto; max-width:650px;text-align:center;">
+                                                                        <img alt="Sestini" border="0" width="auto"
+                                                                            src="https://sestini.vteximg.com.br/arquivos/name.png"
+                                                                            style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; border: none; max-height:30px !important;"></img>
+                                                                    </p>
+                                                                    <!-- Fim logo da empresa -->
+                                                                </td>
+                                                            </tr>
+                                                            <tr style='padding-top: 10px;'>
+                                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0;'
+                                                                    align="center">
+                                                                    <a href='https://www.sestini.com.br/busca/juvenil'
+                                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>JOVEM</a>
+                                                                </td>
+                                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc'
+                                                                    align="center">
+                                                                    <a href='https://www.sestini.com.br/infantil'
+                                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>INFANTIL</a>
+                                                                </td>
+                                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc'
+                                                                    align="center">
+                                                                    <a href='https://www.sestini.com.br/viagem/malas'
+                                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>VIAGEM</a>
+                                                                </td>
+                                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc'
+                                                                    align="center">
+                                                                    <a href='https://www.sestini.com.br/executivo'
+                                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>EXECUTIVO</a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- FINAL HEADER -->
+                                            <tr>
+                                                <td class="force-col">
+                                                    <!-- ### BEGIN CONTENT ### -->
+                                                    <table width="100%" cellspacing="0" cellpadding="0" border="0"
+                                                        bgcolor="#ffffff" align="left"
+                                                        style="padding-bottom:0;margin-bottom:0;" class="col-3">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left">
+                                                                    <br />
+                                                                    <p>Olá, <strong>{{to.0.name}}</strong>.</p>
+                                                                    <p>Precisamos da sua confirmação para liberar a
+                                                                        página que você está tentando acessar.</p>
+                                                                    <p>Retorne à página e digite o código:</p>
+                                                                    <div
+                                                                        style='color: #FF0000;text-align:center;font-size:42px;padding:10px;'>
+                                                                        <strong>{{aditionalData.accessKey}}</strong>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <br>
+                                                                    <strong>Obrigado,</strong><br>
+                                                                    <strong>Equipe
+                                                                        {{_accountInfo.TradingName}}</strong>.<br><br><br><br>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- INICIO FOOTER -->
+                                                            <table style='width: 100%'>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align='center'>
+                                                                            <img style='border-radius: 50%; width: 100px; height: auto'
+                                                                                src='https://sestini.vteximg.com.br/arquivos/Escolar.png'
+                                                                                alt='Baixinho na escola' />
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <img style='border-radius: 50%; width: 100px; height: auto'
+                                                                                src='https://sestini.vteximg.com.br/arquivos/Trabalho.png'
+                                                                                alt='Baixinho na escola' />
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <img style='border-radius: 50%; width: 100px; height: auto'
+                                                                                src='https://sestini.vteximg.com.br/arquivos/Viagem.png'
+                                                                                alt='Baixinho na escola' />
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <img style='border-radius: 50%; width: 100px; height: auto'
+                                                                                src='https://sestini.vteximg.com.br/arquivos/Universidade.png'
+                                                                                alt='Baixinho na escola' />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align='center'>
+                                                                            <p
+                                                                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                                                                BAIXINHO NA ESCOLA</p>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <p
+                                                                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                                                                RUMO AO TRABALHO</p>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <p
+                                                                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                                                                VOU VIAJAR</p>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <p
+                                                                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                                                                ENTREI NA FACUL</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan='4'>
+                                                                            <p
+                                                                                style='margin-top: 30px; margin-bottom: 20px; text-align: center; font-family: Montserrat; font-size: 14px; font-weight: bold; color: rgb(135, 135, 135)'>
+                                                                                CONFIRA AS VANTAGENS DO NOSSO SITE</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align='center'>
+                                                                            <img style='height: 50px; width: auto' src='https://sestini.vteximg.com.br/arquivos/shipping-email-icon.png' alt='Frete Grátis'/>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <img style='height: 50px; width: auto' src='https://sestini.vteximg.com.br/arquivos/credit-card-email-icon.png' alt='Cartão de crédito'/>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <img style='height: 50px; width: auto' src='https://sestini.vteximg.com.br/arquivos/location-email-icon.png' alt='Localização'/>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <img style='height: 50px; width: auto' src='https://sestini.vteximg.com.br/arquivos/chat-email-icon.png' alt='Chat'/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align='center'>
+                                                                            <p style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>Frete Grátis</p>
+                                                                            <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>ou com valor reduzido</p>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <p style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>Parcele</p>
+                                                                            <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>Em até 10x sem juros</p>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <p style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>Endereço</p>
+                                                                            <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>Conheça nossas lojas</p>
+                                                                        </td>
+                                                                        <td align='center'>
+                                                                            <p style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>Atendimento</p>
+                                                                            <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>Entre em contato conosco</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align='center' colspan='4'>
+                                                                            <a href='https://pt-br.facebook.com/sestinioficial'><img style='width: 25px;height: auto;margin-top: 25px;' src='https://sestini.vteximg.com.br/arquivos/facebook-email-icon.png' alt='Facebook'/></a>
+                                                                            <a href='https://www.instagram.com/sestinioficial/'><img style='width: 25px;margin: 0 10px;height: auto;' src='https://sestini.vteximg.com.br/arquivos/instagram-email-icon.png' alt='Instagram'/></a>
+                                                                            <a href='https://www.linkedin.com/company/sestini-mercantil/mycompany/'><img style='width: 25px;height: auto;' src='https://sestini.vteximg.com.br/arquivos/linkedin-email-icon.png' alt='Linkedin'/></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan='4'>
+                                                                            <p
+                                                                            style='margin-top: 20px; text-align: center; font-family: Montserrat; font-size: 10px; margin-bottom: 10px; font-weight: bold; color: rgb(65, 65, 65)'>
+                                                                            Sestini Mercantil LTDA | Av. Pascoal
+                                                                            Thomeu, 1.141, Villa Nova Bonsucesso |
+                                                                            Guarulhos - SP</p>
+                                                                            <p
+                                                                            style='text-align: center; font-family: Montserrat; font-size: 10px;font-weight: normal; color: rgb(65, 65, 65)'>
+                                                                                As Imagens deste site são meramente ilustrativas, fotos poderão conter itens não inclusos no produto. Preços válidos apenas para compras neste site. Sestini® 2013 – 2020. Todos os direitos reservados.
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!-- FINAL FOOTER -->
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--/600px container -->
+    <!--/100% wrapper-->
+</body>
+
+</html>

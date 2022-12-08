@@ -1,0 +1,41 @@
+.body-checkout-confirmation {
+    // Confirmation Info Container
+    #app-container {
+        position: relative;
+        background-color: $color-white;
+        @include rem(padding, 0 50px);
+        @include mq("sm", max) {
+            @include rem(padding, 0 30px);
+        }
+        // Wrapper
+        .ph3-ns.w-70-ns.db.center {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+    }
+}
+
+.cconf-product-table {
+    thead {
+        @include mq("sm", max) {
+            display: none;
+        }
+        tr {
+            position: relative;
+            td {
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            td:nth-child(2) {
+                position: absolute;
+                left: 62%;
+            }
+            td:nth-child(3) {
+                position: absolute;
+                left: 85.5%;
+            }
+        }
+    }
+}

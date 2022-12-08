@@ -1,0 +1,50 @@
+.icon {
+  &--visa {
+    svg {
+      width: 36px;
+      height: 12px;
+    }
+  }
+
+  &--master-card {
+    svg {
+      width: 26px;
+      height: 20px;
+    }
+  }
+
+  &--amex {
+    svg {
+      width: 24px;
+      height: 20px;
+    }
+  }
+
+  &--elo {
+    svg {
+      width: 43px;
+      height: 16px;
+    }
+  }
+
+  &--hipercard {
+    svg {
+      width: 38px;
+      height: 16px;
+    }
+  }
+
+  &--boleto {
+    svg {
+      width: 31px;
+      height: 19px;
+    }
+  }
+
+  &--vtex-security {
+    svg {
+      width: 58px;
+      height: 35px;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.x-ajax-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba($color-black, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  perspective: 600;
+  z-index: z("ajax-loader");
+
+  &-spinner {
+    display: block;
+    position: relative;
+    z-index: 5881;
+    border: solid 3px transparent;
+    border-top-color: $color-red;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+    @include rem(width, 200px);
+    @include rem(height, 200px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: solid 3px transparent;
+      border-radius: 50%;
+      border-top-color: $color-gray-medium;
+      animation: spin 2s linear infinite;
+      @include rem(top, 5px);
+      @include rem(left, 5px);
+      @include rem(right, 5px);
+      @include rem(bottom, 5px);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: solid 3px transparent;
+      border-top-color: $color-gray-lighten;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      @include rem(top, 15px);
+      @include rem(left, 15px);
+      @include rem(right, 15px);
+      @include rem(bottom, 15px);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include rem(width, 115px);
+    @include rem(height, 32px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

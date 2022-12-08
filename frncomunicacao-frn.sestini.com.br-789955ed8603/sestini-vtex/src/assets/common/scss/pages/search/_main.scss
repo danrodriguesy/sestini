@@ -1,0 +1,16 @@
+.x-search {
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 79px;
+  }
+}
+
+.cf-pagination{
+  font-family: $font-primary;
+
+  &__button{
+    background-color: $color-white !important;
+  }
+}

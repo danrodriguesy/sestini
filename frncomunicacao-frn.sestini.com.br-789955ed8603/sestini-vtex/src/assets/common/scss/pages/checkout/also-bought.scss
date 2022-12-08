@@ -1,0 +1,81 @@
+.also-bought {
+    flex: 0 0 93.5%;
+    margin-bottom: 20px;
+
+    &-title {
+        color: #333;
+        font-family: $font-primary;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 14px;
+        margin-bottom: 15px;
+    }
+
+    &-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 0 0 18%;
+            min-height: 250px;
+
+            img {
+                height: 130px;
+                width: auto;
+            }
+
+            &-title {
+                color: #000;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 12px;
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
+            &-de {
+                color: #939393;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: 12px;
+                text-decoration: line-through;
+                margin: 0;
+            }
+
+            &-buybtn{
+                color: $color-white;          
+                font-family: $font-primary;
+                text-transform: uppercase;
+                font-style: italic;
+                text-align: center;
+                width: 100%;
+                background: $color-green;
+                margin-top: auto;
+                padding: 5px;
+                border-radius: 4px;
+
+                &:hover{
+                    cursor: pointer;
+                    color: $color-white;
+                }
+            }
+
+            &-por {
+                color: $color-green;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+}

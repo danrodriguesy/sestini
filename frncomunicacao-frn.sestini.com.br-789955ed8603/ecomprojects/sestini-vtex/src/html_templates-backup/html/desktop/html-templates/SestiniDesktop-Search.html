@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniDesktop-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-search.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniDesktop-Header"/>
+    <main class="x-search__main" role="main">
+      <article class="x-search__main-container">
+        <div class="hidden-heading"><vtex.cmc:searchTitle/></div>
+        <div class="x-search__top">
+          <div class="x-search__top-wrapper">
+            <h1 class="x-search__title">Você <strong>buscou por: </strong> <span class="js--searched-text"></span></h1>
+            <p class="x-search__amount-finded"><span class="js--searched-results-num"></span> resultado(s) encontrado(s)</p>
+            <h4 class="x-category__search-title js--searched-text is--hide"></h4>
+          </div>
+        </div>
+        <div class="x-search__options">
+          <div class="x-search__options-wrapper">
+            <div class="x-category__filters is--hide">
+              <button class="x-category__filter-button js--open-category" title="filtar">Filtrar</button>
+              <div class="x-category__filters-content">
+                <div class="x-category__filters-dinamics js--append-filter"></div>
+              </div>
+            </div>
+            <p class="x-search__amount"><span class="js--searched-results-num"></span> itens foram encontrados para sua busca: "<span class="js--searched-text"></span>"</p>
+                        <div class="x-category__order">
+                          <div class="x-category__order-text js--order-text">ordenar</div>
+                          <nav class="x-category__order-drop js--order-drop">
+                                        <label><span>Menor Preço</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByPriceASC"/>
+                                        </label>
+                                        <label><span>Maior Preço</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByPriceDESC"/>
+                                        </label>
+                                        <label><span>Mais Vendidos</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByTopSaleDESC"/>
+                                        </label>
+                                        <label><span>Data de Lançamento</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByReleaseDateDESC"/>
+                                        </label>
+                                        <label><span>Melhor Desconto</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByBestDiscountDESC"/>
+                                        </label>
+                                        <label><span>A - Z</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByNameASC"/>
+                                        </label>
+                                        <label><span>Z - A</span>
+                                          <input class="js--order-by" name="orderby" type="radio" value="OrderByNameDESC"/>
+                                        </label>
+                          </nav>
+                        </div>
+          </div>
+        </div>
+        <section class="x-search__content">
+          <div class="x-search__content-shelfs" data-col="5"><vtex.cmc:searchResult layout="f6693d5f-783b-4594-985b-80eb9b261065" itemCount="16" columnCount="16"/></div>
+        </section>
+      </article>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniDesktop-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <div class="x-search__filters-vtex is--hide"><vtex.cmc:searchNavigator/></div>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniDesktop-Scripts"/>
+    <vtex:template id="SestiniDesktop-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript">
+      var scriptContent = $('.resultItemsWrapper').children('script').html();
+      eval('window.'+ /(PageClick_)([0-9]+)/g.exec(scriptContent)[0] +' = function() {}');
+    </script>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-search.js"></script>
+  </body>
+</html>

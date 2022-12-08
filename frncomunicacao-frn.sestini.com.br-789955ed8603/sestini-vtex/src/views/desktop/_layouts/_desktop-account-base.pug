@@ -1,0 +1,38 @@
+
+extends ./_desktop-base.pug
+
+include ./../../common/_mixins/_mixin__account-script.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'account'
+  - var $templateClass = 'account'
+  - var $isWishlistPage
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+block append themeScripts
+  //- Mixin Account Script
+  +accountScript
+
+//- Main Content
+block content
+  section(class='x-account-title')
+    if $isWishlistPage
+      h1(class='x-account__title') meus #[strong favoritos]
+      a(class='x-account__nav-link', title='Minha Conta', href="/account") Minha Conta
+    else
+      h1(class='x-account__title') minha #[strong conta]
+
+  section(class='x-account__container')
+    block accountContent
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

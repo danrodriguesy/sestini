@@ -1,0 +1,12 @@
+
+mixin headerSearch()
+  div(class='x-search js--search')
+    form(class='x-search__form js--search-form')
+      input(type='text', id='searchInput', class='x-search__input js--search-input', autocomplete='off', placeholder='O que você está procurando?')/
+      label(class='x-search__icon', for='searchInput')
+        button(type='submit', class='x-search__form-submit')
+          <vtex.cmc:svgIconSearch/>
+
+    div(class='x-search__result js--search-result')
+      div(class='x-search__result-title') produtos #[strong sugeridos]
+      div(class='x-search__result-list js--search-result-list')

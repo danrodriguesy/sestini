@@ -1,0 +1,66 @@
+%sidebar-menu {
+    &__items {
+        @include mq("sm") {
+            padding: 4px 0 4px 16px;
+            border-left: 1px solid $color-gray;
+        }
+
+        @include mq("sm", max) {
+            border: 1px solid $color-black;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__item {
+        color: $color-black;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: light;
+        letter-spacing: 2px;
+
+        &.is--active {
+            @include mq("sm", max) {
+                @include flex-centered;
+
+                &:after {
+                    @include arrow-generate(down, 8px, 2px);
+                    border-color: $color-black;
+                    margin-right: 12px;
+                    transition: all 0.3s;
+                    position: absolute;
+                    top: 15px;
+                    right: 0;
+                }
+
+                &.is--rotate {
+                    &:after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        @include mq("sm", max) {
+            margin-bottom: 6px;
+            display: none;
+            position: relative;
+        }
+    }
+
+    &__link {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        display: inline-block;
+
+        @extend %link-hover;
+
+        @include mq("sm", max) {
+            display: block;
+            @include link-hover($color-black);
+            padding-bottom: 2px;
+            text-align: center;
+        }
+    }
+}

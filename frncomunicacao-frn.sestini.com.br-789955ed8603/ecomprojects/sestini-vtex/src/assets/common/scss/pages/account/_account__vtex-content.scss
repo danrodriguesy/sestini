@@ -1,0 +1,271 @@
+/**
+ * Default styles
+ * Responsive
+ */
+.x-account {
+    &__content {
+
+        // Vtex AJAX Loader
+        #accountAjaxBusy {
+            @include flex-centered;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            will-change: visibility;
+            z-index: 2;
+        }
+
+        .modal-header .close {
+            display: none;
+        }
+
+        .new-address-link {
+            margin: 0 !important;
+        }
+    }
+
+
+    &__user,
+    &__address,
+    &__orders {
+        margin: 0 2px;
+
+        // Popup
+        #editar-perfil,
+        #address-edit {
+            background: $color-white;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            border: 0;
+            width: 80%;
+            z-index: 1;
+            padding: 100px 50px 51px 150px;
+            @include mq('sm', max) {
+                width: 100%;
+                top: 60px;
+                padding: 60px 19px 30px;
+            }
+        }
+
+        #editar-perfil {
+            &::before {
+                content: 'Meus Dados';
+                position: absolute;
+                left: 150px;
+                background: $color-white;
+                font-weight: bold;
+                width: 100%;
+                top: 50px;
+                font-size: 22px;
+                @include mq('sm', max) {
+                    top: 19px;
+                    left: 19px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        #address-edit {
+            max-height: 550px;
+            @include mq('sm', max) {
+                max-height: 100%;
+            }
+
+            &::before {
+                content: 'Meus Endereços';
+                position: absolute;
+                left: 150px;
+                background: $color-white;
+                font-weight: bold;
+                width: 100%;
+                top: 50px;
+                font-size: 22px;
+                @include mq('sm', max) {
+                    top: 19px;
+                    left: 19px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        label {
+            font-size: 14px !important;
+            font-weight: 900;
+            @include mq('sm', max) {
+                text-transform: uppercase;
+                padding-bottom: 5px;
+            }
+        }
+
+        .profile-detail-display,
+        .address-display-block,
+        .render-provider,
+        #editar-perfil-conteudo {
+            @include headings(2, 4) {
+                text-transform: uppercase;
+                font-size: 18px;
+                padding-bottom: 24px;
+
+                @include mq('sm', max) {
+                    display: none;
+                    font-size: 14px;
+                    padding-bottom: 20px;
+                    font-weight: 700;
+                }
+            }
+
+            @include headings(5, 6) {
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+
+        .profile-detail-display,
+        .address-display-block,
+        .render-provider {
+            @include headings(5, 6) {
+                text-transform: none;
+            }
+
+            .page-header {
+                display: none;
+            }
+        }
+
+
+        .address-display-block {
+            @include headings(5, 6) {
+                margin-bottom: 15px;
+            }
+        }
+
+        // Form Popup
+        #form-address,
+        .profile-detail-form {
+            @extend %form__elements;
+            flex-direction: column;
+
+            @include headings(5, 6) {
+                padding-bottom: 16px;
+            }
+        }
+
+        .edit-profile-link,
+        .new-address-link {
+            a {
+                display: block;
+                text-transform: uppercase;
+                text-align: center;
+                background: #916A35;
+                color: #fff;
+                width: 100%;
+                border-radius: 3px;
+                cursor: pointer;
+                outline: none;
+                margin: 0 auto;
+                height: 36px;
+                line-height: 36px;
+                font-size: 14px;
+                max-width: 218px;
+                @include mq('sm', max) {
+                    margin: 0 auto 20px;
+                }
+            }
+        }
+
+        // Address remove modal
+        #address-remove {
+            background: rgba($color-white, .75);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+
+        #exclude {
+            background-color: $color-white;
+            @include absolute-centered;
+            position: fixed;
+            box-shadow: 0 0 10px 0 rgba($color-gray-dark, .75);
+            padding: 24px 24px 8px 24px;
+
+            .address-label {
+                display: none;
+            }
+        }
+
+        #exclude-message {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        // Footer Modal Buttons
+        .save-cancel-buttons {
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            @include mq('sm') {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        // Save buttons
+        .btn-primary {
+            background: #916A35 !important;
+            border: 1px solid #916A35;
+            color: #fff;
+            border-radius: 3px;
+            width: 100%;
+            outline: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 0 10px;
+            font-size: 14px;
+            max-width: 218px;
+            height: 36px;
+            line-height: 36px;
+            @include mq('sm', max) {
+                max-width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+
+        // Cancel buttons
+        .btn-link {
+            background: #fff;
+            border: 1px solid #916A35;
+            color: #916A35;
+            border-radius: 3px;
+            width: 100%;
+            outline: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 0 10px;
+            font-size: 14px;
+            max-width: 218px;
+            height: 36px;
+            line-height: 36px;
+            @include mq('sm', max) {
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+
+        // Hide all modals
+        .modal.hide.fade {
+            display: none;
+        }
+    }
+
+}

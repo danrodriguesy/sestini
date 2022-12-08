@@ -1,0 +1,17 @@
+.x-search {
+    &__amount {
+        font-family: $font-primary;
+        color: $color-gray-darkest;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    &__options {
+        &-wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            display: flex;
+            padding-top: 0px;
+        }
+    }
+}

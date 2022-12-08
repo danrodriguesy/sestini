@@ -1,0 +1,23 @@
+
+%link-hover {
+    @include mq('sm') {
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: $color-black;
+            position: absolute;
+            right: 100%;
+            transition: all .5s;
+        }
+
+        &.is--active:after,
+        &:hover:after {
+            right: 0;
+            width: 100%;
+        }
+    }
+}

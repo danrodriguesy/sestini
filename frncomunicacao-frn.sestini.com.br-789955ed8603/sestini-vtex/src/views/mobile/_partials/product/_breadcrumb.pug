@@ -1,0 +1,7 @@
+div(class='x-product__breadcrumb has--placeholder' rv-class-has--placeholder="product.isLoading")
+  ul(class='x-product__breadcrumb-items')
+    li(class='x-product__breadcrumb-item')
+      a(class='x-product__breadcrumb-link', href='/', title='Home') Home
+    li(class='x-product__breadcrumb-item' rv-each-category='product.categories')
+      a(class='x-product__breadcrumb-link', rv-href='category.link', rv-title='category.name', rv-text='category.name')
+

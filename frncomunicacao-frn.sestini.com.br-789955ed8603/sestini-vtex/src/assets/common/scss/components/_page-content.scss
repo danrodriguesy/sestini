@@ -1,0 +1,166 @@
+%page-content {
+    &__container {
+        @include container;
+
+        @include mq("sm") {
+            display: flex;
+            padding-top: 42px;
+            padding-bottom: 42px;
+        }
+
+        @include mq("sm", max) {
+            padding-top: 16px;
+            padding-bottom: 32px;
+        }
+    }
+
+    &__left {
+        .x-breadcrumb {
+            ul {
+                justify-content: flex-start;
+            }
+        }
+
+        @include mq("sm") {
+            max-width: 296px;
+            padding-right: 16px;
+            width: 100%;
+        }
+    }
+
+    &__left-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+
+        @include mq("sm", max) {
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+    }
+
+    &__right {
+        flex: 1;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__formats {
+        font-size: 14px;
+        font-weight: light;
+        line-height: 2;
+
+        @include headings {
+            letter-spacing: 2px;
+            line-height: 1;
+            text-transform: uppercase;
+
+            @include mq("sm") {
+                padding-bottom: 12px;
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        h4 {
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        h5 {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        h6 {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 24px;
+        }
+
+        p a,
+        a {
+            color: $color-black;
+            text-decoration: underline;
+
+            &:hover {
+                @include link-hover($color-black);
+            }
+        }
+
+        ol,
+        ul {
+            padding-left: 32px;
+            margin-bottom: 24px;
+        }
+
+        ul {
+            list-style: circle;
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        blockquote {
+            border-left: 4px solid $color-black;
+            border-bottom: 1px solid $color-black;
+            margin-bottom: 16px;
+            padding: 12px;
+        }
+
+        .vve-video__container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+
+            iframe,
+            object,
+            embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__accordion {
+        .vve-accordion {
+            &__container {
+                @extend %accordion__container;
+            }
+
+            &__title {
+                @extend %accordion__title;
+            }
+
+            &__content {
+                @extend %accordion__content;
+            }
+        }
+    }
+}

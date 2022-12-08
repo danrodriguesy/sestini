@@ -1,0 +1,84 @@
+.body-checkout-confirmation {
+  // Confirmation Info Container
+  #app-container {
+    // Wrapper
+    .ph3-ns.w-70-ns.db.center {
+      > .cf {
+        .cf.mt4.mt0-ns.mb3 {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          @include rem(margin-bottom, 75px);
+
+          @include mq("sm", max) {
+            flex-direction: column;
+            @include rem(margin-bottom, 45px);
+          }
+
+          // Order Page Button
+          .cconf-myorders-button {
+            @include flex-centered;
+            padding: 0;
+            margin: 0;
+            border: solid 1px $color-black;
+            color: $color-black;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+            background-color: $color-white;
+            @include font-weight(bold);
+            @include rem(margin, 0 10px);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 17px);
+            @include rem(border-radius, 4px);
+            @include rem(padding, 15px 50px);
+
+            @include mq("sm") {
+              @include rem(max-width, 270px);
+            }
+
+            @include mq("sm", max) {
+              @include rem(margin-bottom, 25px);
+            }
+            transition: .6s all;
+
+            &:hover{
+              background: $color-black;
+              color: $color-white;
+            }
+          }
+
+          // New Order Button
+          .cconf-continue-button {
+            @include flex-centered;
+            padding: 0;
+            margin: 0;
+            border: solid 1px $color-green;
+            color: $color-white;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+            background-color: $color-green;
+            @include font-weight(bold);
+            @include rem(margin, 0 10px);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 17px);
+            @include rem(border-radius, 4px);
+            @include rem(padding, 15px 50px);
+
+            @include mq("sm") {
+              @include rem(max-width, 270px);
+            }
+
+            transition: .6s all;
+
+            &:hover{
+              opacity: .6;
+            }
+          }
+        }
+      }
+    }
+  }
+}

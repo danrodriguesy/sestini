@@ -1,0 +1,11 @@
+//- Id: 96cad45a-1905-4a7a-bb6e-b3e8d9fcc974
+
+- var $customClass = ''
+- var $shelfType = ''
+
+block vars
+
+!= '#set($productId = $product.Id)\n'
+
+article(class=`x-shelf__item ${$customClass} js--shelf-item-buy-together`, data-product-id='$productId')
+  input(type='hidden', class='js--shelf-buy-together-product-id', value='$productId')/

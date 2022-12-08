@@ -1,0 +1,10 @@
+
+%shelf-common {
+    &__light-style {
+        @include rem(font-size, 11px);
+        @include rem(margin-right, 14px);
+        text-decoration: none;
+        position: relative;
+        @include prevent-rendering;
+    }
+}

@@ -1,0 +1,14 @@
+.x-home__middle-minibanners{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1450px;
+    padding: 20px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    .box-banner{
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+}

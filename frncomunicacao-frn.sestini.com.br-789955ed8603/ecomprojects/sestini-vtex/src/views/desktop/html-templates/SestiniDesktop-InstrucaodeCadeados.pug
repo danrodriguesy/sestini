@@ -1,0 +1,23 @@
+
+extends ./../_layouts/_desktop-institutional-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'instrucao-de-cadeado'
+  - var $templateClass = 'instrucao-de-cadeado'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block institutionalContent
+  include ../_partials/institutional/instrucao-de-cadeado/_main.pug
+  include ../_partials/institutional/instrucao-de-cadeado/_accordion.pug
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

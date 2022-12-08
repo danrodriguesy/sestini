@@ -1,0 +1,18 @@
+
+//- Id:	0551f522-70f0-4622-9bb9-c2d74c7d67de
+extends ./../_layouts/_common-shelf-base.pug
+include ./../_mixins/_mixin__general-wishlist-button.pug
+
+
+block vars
+  - var $customClass = 'has--wishlist-list'
+  - var $shelfType = 'wishlist'
+  - var $getImageTag = '$product.GetImageTag(230, 275)'
+
+
+block append shelfImage
+  div(class='x-wishlist__add-btn-wrapper')
+    +generalWishlistButton('$productId', $shelfType)
+
+  a(href='$productLink', class='x-shelf__link', title='$productTitle')
+    != $getImageTag

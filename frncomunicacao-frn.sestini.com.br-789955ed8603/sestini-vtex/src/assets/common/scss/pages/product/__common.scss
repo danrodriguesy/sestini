@@ -1,0 +1,15 @@
+%product-common {
+  &-container {
+    @include mq("sm") {
+      display: flex;
+      width: 100%;
+      margin: auto;
+      max-width: 1165px;
+    }
+  }
+  &-placeholder-transition {
+    will-change: opacity;
+    opacity: 1;
+    transition: opacity 225ms ease-in-out;
+  }
+}

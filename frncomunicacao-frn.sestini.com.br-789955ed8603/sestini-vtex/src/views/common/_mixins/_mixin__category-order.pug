@@ -1,0 +1,78 @@
+
+mixin orderItems
+  label
+    span Menor Preço
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByPriceASC')/
+
+  label
+    span Maior Preço
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByPriceDESC')/
+
+  label
+    span Mais Vendidos
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByTopSaleDESC')/
+
+  label
+    span Data de Lançamento
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByReleaseDateDESC')/
+
+  label
+    span Melhor Desconto
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByBestDiscountDESC')/
+
+  label
+    span A - Z
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByNameASC')/
+
+  label
+    span Z - A
+    input(class='js--order-by', name='orderby', type='radio', value='OrderByNameDESC')/
+
+mixin amountItens
+  label
+    span 2
+    input(class='js--order-by', name='orderby', type='radio', value='2')/
+
+  label
+    span 3
+    input(class='js--order-by', name='orderby', type='radio', value='3')/
+
+  label
+    span 4
+    input(class='js--order-by', name='orderby', type='radio', value='4')/
+
+
+mixin categoryOrder(pageType)
+  div(class='x-category__order')
+    div(class='x-category__order-text js--order-text') ordenar
+
+    if pageType == 'category'
+      nav(class='x-category__order-drop js--order-drop')
+        +orderItems
+
+    if pageType == 'wishlist'
+      nav(class='x-category__order-drop js--order-drop')
+        +orderItems
+
+    if pageType == 'howto'
+      nav(class='x-category__order-drop js--order-drop')
+        +orderCategory(rv-each-category='howTo.categories')
+
+mixin orderCategory
+  label
+    span(rv-html='category.categoryName')
+      input(class='js--category-filter', name='howtocategory', type='radio', value='category.categoryName', id='category.categoryName')/
+
+mixin categoryShow(pageType)
+  if pageType == 'howto'
+    ul(class='x-howto__category', rv-each-category='howTo.categories')
+      li(class='x-howto__category-li')
+        input(class='js--category-filter', name='howtocategory', type='radio', rv-value='category.categoryName', rv-id='category.categoryName')/
+        label(rv-html='category.categoryName', rv-for='category.categoryName')
+
+  if pageType == 'wishlist'
+    ul(class='x-wishlist__filter-items')
+      li(class='x-wishlist__filter-item', rv-each-category='wishlistItem.categories')
+        input(class='js--category-filter', name='wishlistCategoryFilter', type='radio', rv-value='category.categoryName', rv-id='category.categoryName', rv-on-click="controller.filterList")/
+        label(rv-html='category.categoryName', rv-for='category.categoryName')
+

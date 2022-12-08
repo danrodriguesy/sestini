@@ -1,0 +1,24 @@
+
+script(type='application/ld+json').
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "https://www.sestini.com.br/",
+    "sameAs": [
+      "https://www.facebook.com/sestinioficial/",
+      "https://instagram.com/sestinioficial"
+    ]
+  }
+
+script(type='application/ld+json').
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Store",
+    "url": "https://www.sestini.com.br/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.sestini.com.br/?ft={search_term}",
+      "query-input": "required name=search_term"
+    }
+  }

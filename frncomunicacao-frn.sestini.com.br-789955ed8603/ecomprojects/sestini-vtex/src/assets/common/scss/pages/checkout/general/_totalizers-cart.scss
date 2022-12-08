@@ -1,0 +1,504 @@
+.body-cart {
+    // Main Container for totalizers
+    .summary-totalizers {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include rem(max-width, 350px);
+        @include mq("md", max) {
+            max-width: 100%;
+        }
+        // Cupom Field and Form
+        .summary-coupon {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            // Cupom Button
+            .coupon-data {
+                display: none;
+                .link-coupon-add {
+                    display: none;
+                }
+            }
+            // Cupom Form Fieldset
+            .coupon-fieldset {
+                >div {
+                    display: flex !important;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    @include rem(margin-bottom, 5px);
+                    // Main Label
+                    .coupon-label {
+                        @include rem(margin-bottom, 5px !important);
+                        &,
+                        & label {
+                            font-family: $font-primary;
+                            margin: 0;
+                            padding: 0;
+                            border: 0;
+                            color: rgb(108, 108, 108);
+                            @include font-weight(600);
+                            @include rem(font-size, 12px);
+                            @include rem(line-height, 17px);
+                        }
+                    }
+                    // Main Form
+                    .coupon-fields {
+                        display: flex;
+                        width: 100%;
+                        position: relative;
+                        i {
+                            display: none;
+                        }
+                        span {
+                            display: flex;
+                            width: 100%;
+                            input {
+                                width: 100%;
+                                border: solid 1px #ebebeb;
+                                color: #4b4b4b;
+                                height: 40px;
+                                box-shadow: unset;
+                                text-shadow: unset;
+                                font-family: $font-primary;
+                                @include rem(padding, 10px 15px);
+                                @include rem(font-size, 11px);
+                                @include rem(line-height, 15px);
+                                @include rem(border-radius, 4px);
+                            }
+                            button {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                margin: 0;
+                                padding: 0;
+                                border: 0;
+                                height: 40px;
+                                background: none;
+                                font-family: $font-primary;
+                                background-color: transparent;
+                                color: #5bb75b;
+                                text-transform: uppercase;
+                                @include font-weight(bold);
+                                @include rem(padding, 0 20px);
+                                @include rem(font-size, 12px);
+                                @include rem(line-height, 29px);
+                                &:active,
+                                &:hover,
+                                &:focus {
+                                    border: none;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .table {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border: 1px solid #ebebeb;
+            padding: 10px 10px 0px;
+            border-radius: 4px;
+            tbody {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                &.shipping-calculate {
+                    display: none;
+                }
+                tr {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    border: 0;
+                    padding: 0;
+                    justify-content: space-between;
+                    @include rem(padding-bottom, 10px);
+                    td {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+                        border: 0;
+                        text-transform: uppercase;
+                        @include font-weight(bold);
+                        @include rem(font-size, 12px);
+                        @include rem(line-height, 17px);
+                        &.space,
+                        &.empty {
+                            display: none;
+                        }
+                        &.info {
+                            font-weight: 600;
+                            text-align: left;
+                            justify-content: flex-start;
+                            flex-direction: column;
+                            font-family: $font-primary;
+                            //SLA INFO
+                            .postal-code-for-sla {
+                                font-size: 0;
+                                min-width: unset;
+                                &::before {
+                                    content: "frete";
+                                    @include rem(font-size, 12px);
+                                }
+                                a,
+                                span {
+                                    display: none;
+                                }
+                            }
+                            .shipping-selected-sla-estimate {
+                                position: absolute;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                text-transform: capitalize;
+                                @include font-weight(400);
+                            }
+                        }
+                        &.monetary {
+                            text-align: right;
+                            justify-content: flex-end;
+                            letter-spacing: 0;
+                            @include font-weight(400);
+                            font-family: $font-primary;
+                            @include rem(font-size, 13px);
+                            @include rem(line-height, 17px);
+                        }
+                    }
+                }
+            }
+            tfoot {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                @include rem(margin-bottom, 25px);
+                @include mq("sm", max) {
+                    @include rem(margin-bottom, 45px);
+                }
+                tr {
+                    display: flex;
+                    width: 100%;
+                    border: 0;
+                    padding: 0;
+                    justify-content: space-between;
+                    border-top: solid 1px $color-gray-light-3;
+                    @include rem(padding-top, 15px);
+                    td {
+                        display: flex;
+                        padding: 0;
+                        margin: 0;
+                        border: 0;
+                        text-transform: uppercase;
+                        @include font-weight(bold);
+                        font-family: $font-primary;
+                        @include rem(font-size, 12px);
+                        @include rem(line-height, 17px);
+                        @include rem(letter-spacing, 1px);
+                        &.space,
+                        &.empty {
+                            display: none;
+                        }
+                        &.info {
+                            text-align: left;
+                            justify-content: flex-start;
+                            flex-direction: column;
+                        }
+                        &.monetary {
+                            text-align: right;
+                            justify-content: flex-end;
+                            @include font-weight(bold);
+                            @include rem(font-size, 14px);
+                            @include rem(line-height, 17px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Main Container Buttons
+    .cart-links-bottom {
+        margin: 0;
+        padding: 0;
+        display: flex !important;
+        flex-direction: column-reverse;
+        width: 100%;
+        @include rem(max-width, 350px);
+        @include rem(margin-bottom, 55px);
+        @include mq("sm", max) {
+            max-width: 100%;
+            @include rem(margin-bottom, 40px);
+        }
+        // OrderPlaced Button
+        .btn-place-order-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            text-align: unset;
+            width: 100%;
+            @include mq("sm") {
+                @include rem(margin-bottom, 20px);
+            }
+            @include mq("sm", max) {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+            }
+            .btn-place-order {
+                width: 100%;
+                box-shadow: unset;
+                text-shadow: unset;
+                background: unset;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                background-color: $color-green;
+                color: $color-white;
+                text-transform: uppercase;
+                @include font-weight(bold);
+                @include rem(font-size, 14px);
+                @include rem(line-height, 50px);
+                @include rem(letter-spacing, 1px);
+                @include mq("sm") {
+                    @include rem(border-radius, 4px);
+                }
+                @include mq("sm", max) {
+                    border-radius: 0;
+                }
+            }
+        }
+        // Choose more products
+        .link-choose-more-products-wrapper {
+            .link-choose-more-products {
+                @include flex-centered;
+                position: relative;
+                font-size: 0;
+                margin: 0;
+                @include font-weight(bold);
+                &::before {
+                    content: "";
+                    position: absolute;
+                    @include arrow-generate(left, 5px, 2px);
+                    border-color: $color-black;
+                    @include rem(top, 7px);
+                    @include rem(left, 85px);
+                    @include mq("sm", max) {
+                        @include rem(top, 9px);
+                        @include rem(left, 40px);
+                    }
+                }
+                &::after {
+                    content: "escolher mais produtos";
+                    color: $color-black;
+                    text-decoration: underline;
+                    text-align: center;
+                    @include rem(font-size, 12px);
+                    @include rem(line-height, 17px);
+                    @include rem(letter-spacing, 1px);
+                }
+            }
+        }
+    }
+    // Delivery Simulation
+    .cart-more-options {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        // Main Wrapper
+        .srp-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            @include mq("md", max) {
+                max-width: 100%;
+                @include rem(margin-bottom, 0px);
+            }
+            .srp-main-title {
+                text-transform: none;
+                color: rgb(108, 108, 108);
+                @include font-weight(600);
+                @include rem(font-size, 12px);
+                @include rem(line-height, 12px);
+                font-family: $font-primary;
+            }
+            .srp-data {
+                margin: 0;
+                // Main Button;
+                #shipping-calculate-link {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    background: none;
+                    background-color: $color-red;
+                    color: $color-white;
+                    text-transform: uppercase;
+                    font-family: $font-primary;
+                    height: auto;
+                    @include font-weight(bold);
+                    @include rem(padding, 0 20px);
+                    @include rem(font-size, 12px);
+                    @include rem(line-height, 37px);
+                    @include rem(letter-spacing, 1px);
+                }
+                .srp-postal-code__form {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .ship-country {
+                        display: none;
+                    }
+                    .vtex-shipping-preview-0-x-postalCodeForgotten {
+                        position: relative;
+                        margin-bottom: 5px;
+                        align-items: flex-start !important;
+                        .ship-postalCode {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            label {
+                                display: none;
+                            }
+                            a {
+                                color: $color-black;
+                                text-decoration: underline;
+                                font-family: $font-primary;
+                                @include font-weight(400);
+                                @include rem(font-size, 10px);
+                                @include rem(line-height, 15px);
+                            }
+                        }
+                        // Main Input;
+                        input {
+                            width: 100%;
+                            border: solid 1px #ebebeb;
+                            color: #4b4b4b;
+                            font-family: $font-primary;
+                            height: auto;
+                            box-shadow: unset;
+                            text-shadow: unset;
+                            @include rem(padding, 10px 15px);
+                            @include rem(font-size, 11px);
+                            @include rem(line-height, 15px);
+                            @include rem(border-radius, 4px);
+                            height: 40px;
+                        }
+                        // Main Button;
+                        button {
+                            color: #5bb75b;
+                            text-transform: uppercase;
+                            height: 40px;
+                            font-family: $font-primary;
+                            border: solid 1px #5bb75b;
+                            @include font-weight(bold);
+                            @include rem(padding, 0 20px);
+                            @include rem(font-size, 12px);
+                            @include rem(line-height, 29px);
+                            &:active,
+                            &:hover,
+                            &:focus {
+                                border: solid 1px #5bb75b;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+                .srp-result {
+                    .srp-delivery-select-container {
+                        position: relative;
+                        margin-bottom: 5px;
+                        .srp-delivery-current-many {
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                @include rem(width, 2px);
+                                @include rem(height, 10px);
+                                @include rem(right, 100px);
+                                background: $color-gray-medium-2;
+                                @include rem(top, 22px);
+                                border-radius: 5px;
+                                transform: rotate(50deg);
+                            }
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                @include rem(width, 2px);
+                                @include rem(height, 10px);
+                                @include rem(right, 106px);
+                                background: $color-gray-medium-2;
+                                @include rem(top, 22px);
+                                border-radius: 5px;
+                                transform: rotate(130deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.onda-v1 .mw5,
+.row-fluid .span7 {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.onda-v1 .black-70 {
+    font-family: $font-primary;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 5px;
+    &>strong {
+        font-weight: normal;
+    }
+}
+
+.shipping-sla-selector {
+    display: none !important;
+}
+
+.link-choose-more-products,
+.link-print-cart {
+    margin: 5px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: rgb(108, 108, 108);
+    text-decoration: none;
+    font-size: 12px;
+    font-family: $font-primary;
+    font-weight: 600;
+    transition: .6s all;
+    &:hover {
+        opacity: .7;
+        text-decoration: none;
+        color: rgb(108, 108, 108);
+    }
+}
+
+#cart-to-orderform {
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    background-color: #5bb75b;
+    background-image: none;
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .4s all;
+    &:hover {
+        opacity: .5;
+        transition: .4s all;
+    }
+}
+
+.onda-v1 .b--light-gray {
+    border-color: #ebebeb !important;
+}

@@ -1,0 +1,20 @@
+@import "./main-banners";
+@import "./benefits";
+@import "./shelf";
+@import "./category-bullets";
+@import "./week-offers";
+@import "./products-searched";
+@import "./horizontal-banner";
+@import "./middle-minibanners";
+@import "./instagram";
+.smarthint li {
+    height: unset !important;
+}
+
+.smarthint li article {
+    min-height: 260px !important;
+}
+
+#smarthint-last-viewed>div>div>div>div>ul>div {
+    height: 350px;
+}

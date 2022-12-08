@@ -1,0 +1,9 @@
+%placeholder {
+  &.has--placeholder {
+    * {
+      opacity: 0;
+      visibility: hidden;
+      will-change: opacity;
+    }
+  }
+}

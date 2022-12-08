@@ -1,0 +1,20 @@
+.x-partners {
+  background-color: $color-gray-lighten;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__items {
+    @include flex-centered;
+    @include rem(margin, 0 auto 40px);
+
+    @include mq("sm", max) {
+      @include rem(margin, 0 auto 10px);
+    }
+  }
+
+  &__item {
+    @include rem(margin, 0 15px);
+  }
+}

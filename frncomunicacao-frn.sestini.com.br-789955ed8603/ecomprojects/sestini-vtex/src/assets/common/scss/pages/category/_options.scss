@@ -1,0 +1,18 @@
+.x-category__options {
+  position: relative;
+  margin-bottom: 75px;
+
+  @include mq("sm", max) {
+    margin-bottom: 40px;
+  }
+
+  &-wrapper {
+    @extend %container;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include mq("sm", max) {
+      justify-content: space-between;
+    }
+  }
+}

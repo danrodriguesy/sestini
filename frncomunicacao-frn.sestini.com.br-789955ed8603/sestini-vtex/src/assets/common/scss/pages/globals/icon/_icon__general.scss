@@ -1,0 +1,39 @@
+
+.icon-minus,
+.icon-plus {
+    @include rem(width, 22px);
+    @include rem(height, 22px);
+}
+
+.icon-minicart-close {
+    @include rem(width, 24px);
+    @include rem(height, 24px);
+}
+
+.icon-close-popup {
+    @include rem(width, 32px);
+}
+
+.icon-wishlist-product {
+    &__outline,
+    &__full,
+    &__loader {
+        @include rem(height, 16px);
+        @include rem(width, 16px);
+        position: relative;
+        top: 1px;
+
+        path {
+            fill: $color-gray-darken;
+        }
+    }
+
+    &__full,
+    &__loader {
+        display: none;
+    }
+}
+
+.icon-hamburger-menu {
+    @include rem(width, 16px);
+}

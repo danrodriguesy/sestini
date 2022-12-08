@@ -1,0 +1,363 @@
+.body-order-form {
+  .orderform-template {
+    // Main Shipping Container
+    .shipping-data {
+      @include mq("sm") {
+        margin-bottom: 10px;
+      }
+
+      // Main Container
+      .shipping-container {
+        .box-step {
+          display: flex;
+          flex-direction: column;
+
+          // Shipping Resume Container
+          &.shipping-summary-placeholder {
+            @include mq("sm", max) {
+              @include rem(padding, 0 10px);
+            }
+          }
+
+          // Postal Code Container
+          .vtex-omnishipping-1-x-addressFormPart1 {
+            display: flex;
+            flex-direction: column;
+            order: 0;
+            @include rem(margin-bottom, 20px);
+
+            //Hide the country selector
+            .ship-country {
+              display: none;
+            }
+
+            // Postal Code
+            .ship-postalCode {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              margin: 0;
+
+              input {
+              }
+
+              small {
+                &,
+                & a {
+                  font-family: $font-primary;
+                  margin-left: auto;
+                  text-decoration: underline;
+                  color: $color-black;
+                  width: 100%;
+                  @include rem(font-size, 10px);
+                  @include rem(line-height, 15px);
+                }
+              }
+            }
+          }
+
+          // Selected Address
+          .vtex-omnishipping-1-x-addressSummary {
+            .address-summary {
+              position: relative;
+              padding: 0;
+              border: 0;
+              margin: 0;
+              background: none;
+              font-family: $font-primary;
+              color: $color-black;
+              @include font-weight(400);
+              @include rem(font-size, 11px);
+              @include rem(line-height, 15px);
+              @include rem(margin-bottom, 20px);
+
+              a {
+                text-transform: capitalize;
+                position: absolute;
+                top: 0;
+                right: 0;
+                text-decoration: underline;
+                color: $color-black;
+                @include font-weight(400);
+                @include rem(font-size, 11px);
+                @include rem(line-height, 15px);
+              }
+            }
+          }
+
+          // Delivery Type Container
+          .vtex-omnishipping-1-x-deliveryGroup {
+            margin: 0;
+            order: 2;
+
+            p {
+              width: 100%;
+              font-family: $font-primary;
+              color: $color-black;
+              @include font-weight(bold);
+              @include rem(font-size, 12px);
+              @include rem(line-height, 20px);
+              @include rem(margin-bottom, 5px);
+            }
+
+            .vtex-omnishipping-1-x-leanShippingGroupList {
+              border: 0;
+              margin: 0;
+
+              label {
+                padding: 0;
+                margin: 0;
+                border: 0;
+                display: flex;
+                align-items: center;
+                background: unset;
+              }
+
+              // Radio Icon
+              .vtex-omnishipping-1-x-leanShippingIcon {
+                @include rem(margin-right, 10px);
+
+                svg {
+                  @include rem(width, 10px);
+                  @include rem(height, 10px);
+
+                  * {
+                    fill: $color-black;
+                  }
+                }
+              }
+
+              // Option Label
+              .vtex-omnishipping-1-x-leanShippingText,
+              .vtex-omnishipping-11-x-leanShippingText {
+                border: 0;
+                display: flex;
+                align-items: center;
+                color: $color-black;
+                flex: unset;
+                @include font-weight(400);
+                @include rem(font-size, 13px);
+                @include rem(line-height, 26px);
+
+                @include mq("md", max) {
+                  @include rem(font-size, 11px);
+                }
+
+                // Shipping Type
+                .vtex-omnishipping-1-x-leanShippingTextLabel {
+                  margin: 0;
+                  margin-right: 5px;
+                  color: $color-black;
+                  @include font-weight(400);
+                  @include rem(font-size, 13px);
+                  @include rem(line-height, 26px);
+
+                  &::after {
+                    content: " -";
+                  }
+                }
+
+                // Shipping SLA
+                .shp-option-text-package {
+                  &::after {
+                    content: " -";
+                    @include rem(margin-right, 5px);
+                  }
+                }
+              }
+
+              // Shipping Price
+              .vtex-omnishipping-1-x-optionPrice,
+              .vtex-omnishipping-11-x-optionPrice,
+              .shp-option-text-price {
+                margin: 0;
+                color: $color-black;
+                @include font-weight(400);
+                @include rem(font-size, 13px);
+                @include rem(line-height, 26px);
+              }
+            }
+          }
+
+          // Address Information Container
+          .vtex-omnishipping-1-x-addressForm {
+            order: 1;
+            margin: 0;
+            border-bottom: solid 2px $color-white;
+            @include rem(margin-bottom, 20px);
+
+            @include mq("sm", max) {
+              border-bottom: solid 1px #d6d6d6;
+            }
+
+            p {
+              width: 100%;
+              font-family: $font-primary;
+              color: $color-black;
+              @include font-weight(bold);
+              @include rem(font-size, 12px);
+              @include rem(line-height, 20px);
+              @include rem(margin-bottom, 5px);
+            }
+
+            // Address Fields Container
+            .vtex-omnishipping-1-x-address {
+              margin: 0;
+
+              > div {
+                display: flex;
+                flex-wrap: wrap;
+              }
+
+              p {
+                width: 100%;
+                margin: 0;
+                @include rem(margin-bottom, 10px);
+              }
+
+              .ship-number {
+                @include rem(max-width, 80px);
+              }
+
+              .ship-complement {
+                width: calc(100% - 90px);
+                @include rem(margin-left, 10px);
+              }
+
+              .ship-state {
+                select {
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          // Main Button
+          .btn-submit-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            text-align: unset;
+            width: 100%;
+            order: 3;
+            @include rem(margin-top, 25px);
+
+            button {
+              width: 100%;
+              box-shadow: unset;
+              text-shadow: unset;
+              background: unset;
+              padding: 0;
+              margin: 0;
+              border: 0;
+              font-family: $font-primary;
+              background-color: $color-green;
+              color: $color-white;
+              text-transform: uppercase;
+              @include font-weight(bold);
+              @include rem(font-size, 12px);
+              @include rem(line-height, 40px);
+              @include rem(border-radius, 4px);
+              @include rem(letter-spacing, 1px);
+            }
+          }
+        }
+
+        // Default Label style
+        label {
+          width: 100%;
+          font-family: $font-primary;
+          color: $color-black;
+          @include font-weight(400);
+          @include rem(font-size, 12px);
+          @include rem(line-height, 20px);
+          @include rem(margin-bottom, 5px);
+
+          &[for="ship-complement"] {
+            @include rem(font-size, 11px);
+          }
+        }
+
+        // Main Input Style
+        select {
+          border: 0;
+          box-shadow: unset;
+          text-shadow: unset;
+          background-color: $color-white;
+          color: rgba($color-gray-darkest, 0.4);
+          height: auto;
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+          @include rem(padding, 10px);
+          @include rem(font-size, 11px);
+          @include rem(line-height, 11px);
+          @include rem(border-radius, 4px);
+        }
+        input {
+          &[type="tel"],
+          &[type="text"],
+          &[type="email"] {
+            border: 0;
+            box-shadow: unset;
+            text-shadow: unset;
+            font-weight: 600;
+            background-color: #f7f7f7;
+            border: 1px solid #e5e5e5;
+            color: rgb(108, 108, 108);
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            @include rem(padding, 10px);
+            @include rem(font-size, 11px);
+            @include rem(line-height, 11px);
+            @include rem(border-radius, 4px);
+          }
+        }
+      }
+
+      // Shipping Resume
+      .shp-summary-group {
+        border-bottom: solid 2px $color-white;
+
+        @include mq("sm", max) {
+          border-bottom: solid 1px #d6d6d6;
+          @include rem(padding, 0 0 25px);
+        }
+
+        .shp-summary-group-price {
+          font-family: $font-primary;
+          color: $color-black;
+        }
+
+        * {
+          font-family: $font-primary;
+          color: #606060;
+          @include rem(font-size, 13px);
+          @include rem(line-height, 20px);
+        }
+      }
+
+      // Change Shipping Method
+      .link-change-shipping {
+        display: none;
+        font-family: $font-primary;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        color: $color-black;
+        text-decoration: underline;
+        @include font-weight(400);
+        @include rem(font-size, 10px);
+        @include rem(line-height, 17px);
+
+        @include mq("sm", max) {
+          text-align: left;
+          @include font-weight(bold);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.x-quick-view {
+  &__name {
+    font-family: $font-primary;
+    color: $color-black;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 34px;
+
+    @include mq("sm") {
+      margin-bottom: 10px;
+    }
+
+    @include mq("sm", max) {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &-wrapper {
+      min-height: 34px;
+
+      @include mq("sm") {
+        max-width: 390px;
+      }
+
+      @include mq("sm", max) {
+        margin-bottom: 10px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      &.has--placeholder * {
+        opacity: 0;
+        @extend %product-common-placeholder-transition;
+      }
+    }
+  }
+
+  &__pre-description-text {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-black;
+    font-family: $font-primary;
+    text-overflow: ellipsis;
+  }
+}

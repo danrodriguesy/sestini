@@ -1,0 +1,128 @@
+.x-home__instagram {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  margin-bottom: 20px;
+
+  &-user-info {
+    flex: 0 0 25%;
+    align-items: center;
+    justify-content: center;
+
+    @include mq("sm", max) {
+      flex: 0 0 100%;
+    }
+
+    h2 {
+      font-family: $font-primary;
+      font-weight: 600;
+      font-size: 22px;
+      text-align: center;
+
+      @include mq("sm", max) {
+        font-size: 18px;
+      }
+    }
+
+    a {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s all;
+
+      img {
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+
+        @include mq("sm", max) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    p {
+      font-family: $font-primary;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: center;
+
+      @include mq("sm", max) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-images {
+    flex: 0 0 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+
+    @include mq("sm", max) {
+      flex: 0 0 100%;
+      margin-top: 20px;
+    }
+
+    a {
+      flex: 0 0 30%;
+
+      @include mq("sm", max) {
+        flex: 0 0 29%;
+      }
+
+      img,
+      video {
+        box-shadow: 5px 5px 15px -3px $color-gray;
+        border-radius: 6px;
+        height: 275px;
+        width: 275px;
+        transition: 0.3s all;
+
+        @media (min-width: 1025px) and (max-width: 1400px) {
+          height: 260px;
+          width: 260px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+
+.lozad {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+
+  &.loaded {
+    background: transparent;
+    animation:fadein;
+    transition: 1.5s;
+  }
+}
+
+@keyframes fadein{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

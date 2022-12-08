@@ -1,0 +1,42 @@
+/**
+ * Colors
+ */
+$color-white: #fff;
+$color-white-dark: #f8f8f8;
+$color-white-darker: #f7f7f7;
+$color-gray-lighten: #f4f4f4;
+$color-gray-light: #eee;
+$color-gray-light-2: #efefef;
+$color-gray-light-3: #e3e3e3;
+$color-gray-lighter: #d9d9d9;
+$color-gray-light-medium: #c7c7c7;
+$color-gray-light-medium-2: #c9c9c9;
+$color-gray-medium: #afafaf;
+$color-gray-medium-2: #939393;
+$color-gray-medium-3: #606060;
+$color-gray: #777777;
+$color-gray-dark: #656667;
+$color-gray-darkest: #3e3e3e;
+$color-gray-darkest-2: #292929;
+$color-gray-darken: #222;
+$color-black: #000;
+
+$color-red: #c12a21;
+$color-red-light: #b2192c;
+$color-red-dark: #860000;
+
+$color-brown-lighten: #e9e5df;
+$color-brown-light: #dfd5c8;
+$color-brown: #8e8168;
+$color-brown-dark: #736347;
+
+$color-primary: $color-black;
+$color-secondary: $color-brown;
+$color-gray-canal: #525252;
+
+$color-gold: #d2be7f;
+
+$color-green: #5aa03e;
+// Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+$font-primary: 'Montserrat';

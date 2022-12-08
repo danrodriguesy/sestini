@@ -1,0 +1,31 @@
+.x-search {
+    &__content-shelfs {
+        .didyoumean,
+        .searchResultsTime,
+        .sub,
+        .pager {
+            display: none;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        @extend %shelves-container;
+    }
+}
+
+.x-shelf {
+    ul {
+        justify-content: space-between !important;
+        li {
+            @include mq("sm", min) {
+                max-width: 260px !important;
+            }
+            .x-shelf__img-front,
+            .x-shelf__img-back {
+                height: auto;
+            }
+        }
+    }
+}

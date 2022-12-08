@@ -1,0 +1,9 @@
+.x-product {
+  &__facebook-share-btn {
+    &:before {
+      @extend %iconfont;
+      content: "\EB02";
+      font-size: 14px;
+    }
+  }
+}

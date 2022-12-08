@@ -1,0 +1,24 @@
+
+extends ./_desktop-base.pug
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-institutional.css`, media='all')/
+
+//- Main Content
+block content
+  div(class='x-institutional__option-menu js--option-menu')
+    <vtex:contentPlaceHolder id="Opção ativa no menu lateral" />
+
+  div(class='x-institutional__content')
+    vtex:template(id='SestiniCommon-Breadcrumb')/
+    section(class='x-institutional__navigation')
+      vtex:template(id='SestiniCommon-InstitutionalMenu')/
+
+    section(class='x-institutional__container')
+      block institutionalContent
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-institutional.js`)

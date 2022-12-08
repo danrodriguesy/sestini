@@ -1,0 +1,35 @@
+.x-empty-search {
+  &__title {
+    font-family: $font-primary;
+    text-align: center;
+    color: $color-black;
+    @include font-weight(400);
+    @include rem(font-size, 24px);
+    @include rem(line-height, 44px);
+    @include rem(margin-bottom, 15px);
+
+    strong {
+      font-weight: 400;
+    }
+  }
+
+  &__not-found {
+    font-family: $font-primary;
+    color: $color-black;
+    text-align: center;
+    @include font-weight(700);
+    @include rem(font-size, 16px);
+    @include rem(line-height, 26px);
+  }
+
+  &__top {
+    @include rem(margin-bottom, 30px);
+
+    &-wrapper {
+      @extend %container;
+      flex-direction: column;
+      align-items: center;
+      @include rem(padding-top, 30px);
+    }
+  }
+}

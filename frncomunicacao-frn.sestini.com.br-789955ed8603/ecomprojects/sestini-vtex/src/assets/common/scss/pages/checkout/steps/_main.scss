@@ -1,0 +1,175 @@
+.error{
+  font-family: $font-primary;
+  font-size: 10px;
+}
+
+.icon-edit{
+  color: $color-black;
+}
+
+.body-order-form {
+  .orderform-template {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include rem(min-height, 550px);
+
+    @include mq("sm", max) {
+      flex-direction: column;
+      @include rem(padding, 0 30px);
+    }
+  }
+
+  // Reseting Main Containers
+  .mini-cart {
+    width: calc(33% - 50px);
+    margin-top: 0 !important;
+    position: relative !important;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 20px;
+    height: 100% !important;
+
+    @include mq("sm") {
+      @include rem(margin-left, 10px);
+    }
+
+    @include mq("sm", max) {
+      margin: 0;
+    }
+    .cart-fixed {
+      width: 100%;
+      height: 100% !important;
+    }
+  }
+
+  .orderform-template-holder {
+    width: calc(100% - 33% - 50px);
+
+    > .row-fluid {
+      @include mq("sm") {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    @include mq("sm", max) {
+      width: 100%;
+    }
+
+    .span6 {
+      margin: 0;
+      margin-bottom: 10px;
+
+      @include mq("sm") {
+        width: 48%;
+      }
+
+      @include mq("sm", max) {
+        width: 100%;
+        @include rem(margin-bottom, 25px);
+      }
+    }
+  }
+  .step {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    border: 1px solid #e5e5e5;
+    @include rem(border-radius, 4px);
+    @include rem(padding, 20px);
+    height: 100% ;
+
+    // Step Title
+    .accordion-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+
+      .accordion-toggle {
+        @include flex-centered;
+        padding: 0;
+        width: 100%;
+
+        // Hidding main icon
+        > i {
+          display: none;
+        }
+        &,
+        span {
+          text-transform: uppercase;
+          color: #5bb75b;
+          font-family: $font-primary;
+          font-style: italic;
+          @include font-weight(bold);
+          @include rem(font-size, 14px);
+          @include rem(line-height, 22px);
+          width: 100%;
+          text-align: left;
+          display: flex;
+          justify-content: flex-start;
+
+          @include mq("sm", max) {
+            text-transform: uppercase;
+            @include rem(letter-spacing, 2px);
+          }
+        }
+
+        // Edit Button
+        .link-box-edit {
+          background: unset;
+          box-shadow: unset;
+          border: 0;
+          opacity: 1;
+          padding: 0;
+          color: $color-red;
+          z-index: 6;
+          @include rem(font-size, 18px);
+
+          @include mq("sm") {
+            @include rem(top, 60px);
+            @include rem(right, 10px);
+          }
+
+          @include mq("sm", max) {
+            right: 0;
+          }
+        }
+      }
+    }
+
+    // Step Body
+    .accordion-inner {
+      background-color: transparent;
+      padding: 0px !important;
+
+      @include mq("sm", max) {
+        @include rem(padding, 20px 10px);
+      }
+
+      .notification {
+        color: $color-black;
+        text-align: center;
+        margin: 0 auto;
+        @include rem(font-size, 13px);
+        @include rem(line-height, 20px);
+
+        @include mq("sm", max) {
+          @include rem(padding, 15px 0);
+        }
+      }
+    }
+  }
+}
+
+
+#payment-data > div{
+  margin-left: 16px;
+  @include mq("sm", max) {
+    margin-left: 0;
+  }
+}

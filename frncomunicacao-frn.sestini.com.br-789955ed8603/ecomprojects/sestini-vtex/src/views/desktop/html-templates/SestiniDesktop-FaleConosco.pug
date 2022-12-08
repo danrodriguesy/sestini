@@ -1,0 +1,25 @@
+
+extends ./../_layouts/_desktop-institutional-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'fale-conosco'
+  - var $templateClass = 'fale-conosco'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block institutionalContent
+  include ../_partials/institutional/fale-conosco/_main.pug
+  include ../_partials/institutional/fale-conosco/_form.pug
+  include ../_partials/institutional/fale-conosco/_popup.pug
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

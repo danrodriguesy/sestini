@@ -1,0 +1,3 @@
+select(class='x-store-locator__select', rv-on-change='storeLocator.controller.changeCity')
+  option(disabled='disabled', selected='selected') Selecionar a cidade
+  option(rv-each-city='storeLocator.availableCities', rv-text='city.nome', rv-value='city.nome')

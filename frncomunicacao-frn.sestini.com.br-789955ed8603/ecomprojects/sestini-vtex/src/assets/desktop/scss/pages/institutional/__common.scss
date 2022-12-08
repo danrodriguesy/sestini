@@ -1,0 +1,29 @@
+.x-institutional__top-text {
+    img {
+        width: auto;
+        max-width: 100%;
+        padding: 20px 0;
+
+    }
+}
+
+body.no--scrollable {
+    .x-institutional {
+        &__container {
+            padding: 0;
+        }
+        
+        &__top {
+            max-width: none;
+            &-text {
+                overflow-y: hidden;
+                max-height: none;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.x-title {
+    max-width: none;
+}

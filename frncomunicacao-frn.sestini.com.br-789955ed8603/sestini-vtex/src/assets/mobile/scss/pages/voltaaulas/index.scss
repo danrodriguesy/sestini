@@ -1,0 +1,47 @@
+.slick-prev:before,
+.slick-next:before {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: black 2px 2px 1px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+    & > li {
+        background: #fff;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+
+        & > button {
+            opacity: 0;
+        }
+    }
+
+    .slick-active {
+        background: #c12a21;
+    }
+}
+
+.x-category__banner{
+    display: block;
+}
+
+.x-category__title {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    padding-top: 0;
+
+    h1 {
+        font-family: "Montserrat";
+        color: #3e3e3e;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 26px;
+
+        b {
+            font-weight: 700;
+        }
+    }
+}

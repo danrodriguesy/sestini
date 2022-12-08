@@ -1,0 +1,39 @@
+.x-search {
+    &__title {
+        font-family: $font-primary;
+        color: $color-black;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 30px;
+        margin-bottom: 10px;
+        @include mq("sm", max) {
+            margin-bottom: 5px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        strong {
+            font-weight: 600;
+            color: $color-red;
+        }
+    }
+    &__amount-finded {
+        color: #666;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: $font-primary;
+        @include mq("sm", max) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+    &__top {
+        &-wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+
+%scroll-style {
+    .mCSB_scrollTools {
+        opacity: 1 !important;
+    }
+
+    .mCSB_draggerRail {
+        width: 3px !important;
+        background-color: #efeeee!important;
+    }
+
+    .mCSB_dragger_bar {
+        background-color: $color-black !important;
+        margin: 0 5px !important;
+        width: 7px !important;
+        height: 7px !important;
+    }
+}

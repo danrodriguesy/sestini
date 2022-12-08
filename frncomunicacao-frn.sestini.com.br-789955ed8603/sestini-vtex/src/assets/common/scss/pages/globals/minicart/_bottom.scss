@@ -1,0 +1,151 @@
+.x-minicart {
+
+  &__continue-buy{
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    font-family: $font-primary;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-message {
+      text-align: center;
+      text-transform: uppercase;
+      @include font-weight(bold);
+      @include rem(font-size, 11px);
+      @include rem(margin, 5px 0);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    @include rem(padding, 16px);
+  }
+
+  &__gift{
+
+    &-erro{
+      font-family: $font-primary;
+      font-size: 12px;
+      margin-top: 3px;
+      color: #C12A21;
+      font-weight: bold;
+    }
+
+    &-area{
+      margin-bottom: 10px;
+
+    }
+
+    &-list{
+      display: flex;
+      justify-content: space-between;
+
+      &-button{
+        font-family: $font-primary;
+        color: $color-black;
+        @include rem(font-size, 14px);
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+
+    }
+
+    &-form{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+
+      div:nth-child(1){
+        display: flex;
+      }
+    }
+
+    &-input{
+      width: 100%;
+      border: solid 1px #dddddd;
+      color: $color-black;
+      height: auto;
+      box-shadow: unset;
+      text-shadow: unset;
+      @include rem(padding, 10px 15px);
+      @include rem(font-size, 11px);
+      @include rem(line-height, 15px);
+      @include rem(border-radius, 4px);
+    }
+
+    &-button{
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      margin: 0;
+      padding: 0;
+      background: none;
+      font-family: $font-primary;
+      color: $color-black;
+      border: 1px solid $color-black;
+      text-transform: uppercase;
+      @include font-weight(bold);
+      @include rem(padding, 0 20px);
+      @include rem(font-size, 12px);
+      @include rem(line-height, 37px);
+      @include rem(letter-spacing, 1px);
+      transition: .6s all;
+      &:hover{
+        background: $color-black;
+        border: 1px solid $color-black;
+        color: $color-white;
+      }
+    }
+
+  }
+  &__installments{
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px;
+    padding-top: 0px !important;
+  }
+
+  &__subtotal, &__installments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(248, 248, 248);
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding: 5px;
+    font-family: $font-primary;
+    color: $color-black;
+    @include font-weight(bold);
+    @include rem(font-size, 16px);
+    @include rem(line-height, 20px);
+
+    &-text {
+      @include rem(margin-right, 5px);
+    }
+  }
+
+  &__btn-checkout {
+    @include flex-centered;
+    width: 100%;
+    font-family: $font-primary;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-green;
+    @include font-weight(bold);
+    @include rem(padding, 10px);
+    @include rem(font-size, 14px);
+    @include rem(line-height, 20px);
+    @include rem(border-radius, 4px);
+  }
+}

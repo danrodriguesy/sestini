@@ -1,0 +1,20 @@
+section(class='x-product__img-container has--placeholder' rv-class-has--placeholder="product.isLoading")
+  div(class='x-product__img-content')
+    div(class='x-product__img-left')
+      div(class='x-product__img-nav js--product-img-nav')
+        div(class='x-product__img-nav-content', rv-each-nav-img='product.navImgs')
+          img(class='x-product__img-nav-item',
+              rv-src='nav-img.imageUrl',
+              rv-title='product.name',
+              rv-alt='product.name')/
+
+    div(class='x-product__img-right')
+      div(class='x-product__img-main js--product-img-main')
+        div(class='x-product__img-main-content js--product-img-main-content',
+            rv-each-main-img='product.mainImgs',
+            rv-data-src='main-img.imageUrl | productImgSize 475 530')
+          img(class='x-product__img-main-item',
+              rv-src='main-img.imageUrl',
+              rv-title='product.name',
+              rv-alt='product.name')/
+      div(class='x-product__img-disclaimer') Imagem Meramente Ilustrativa

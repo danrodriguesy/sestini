@@ -1,0 +1,46 @@
+.x-header-container__benefits {
+    display: flex !important;
+    background: $color-black;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+
+    &-wrapper {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    &-item {
+        color: $color-white;
+        font-family: $font-primary;
+        text-align: center;
+        text-decoration: none;
+
+        b {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .rules {
+            font-size: 11px;
+            font-weight: 300;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+    }
+
+    .slick-next, .slick-prev{
+        top: 41%;
+        transform: translate(50%, -50%);
+    }
+
+    .slick-next::before,
+    .slick-prev::before {
+        color: $color-white;
+        font-size: 14px;
+    }
+}

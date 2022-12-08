@@ -1,0 +1,15 @@
+%shelves-carousel {
+    &__main-shelf {
+        @include rem(margin-top, 42px);
+        @include rem(margin-bottom, 42px);
+    }
+
+    &__main-shelf-container {
+        @include container;
+
+        @include mq("sm") {
+            @include rem(padding-left, 32px);
+            @include rem(padding-right, 32px);
+        }
+    }
+}

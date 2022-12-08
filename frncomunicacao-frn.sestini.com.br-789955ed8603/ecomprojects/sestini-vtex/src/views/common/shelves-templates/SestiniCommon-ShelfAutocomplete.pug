@@ -1,0 +1,16 @@
+
+//- Id: f786efd5-b36f-4180-b905-9b47bb67d72d
+
+- var $customClass = 'x-autocomplete__search'
+
+!= '#set($productId = $product.Id)\n'
+!= '#set($productTitle = $product.HtmlEscapedName)\n'
+!= '#set($productLink = $product.Uri)\n'
+
+article(class=`x-shelf__item ${$customClass} js--shelf-item`, data-product-id='$productId')
+  a(href='$productLink', class='x-shelf__link', title='$productTitle', data-product-id='$productId')
+    div(class='x-shelf__img-container')
+      | $product.GetImageTag(75, 75)
+
+    div(class='x-shelf__content')
+      h2(class='x-shelf__title') $productTitle

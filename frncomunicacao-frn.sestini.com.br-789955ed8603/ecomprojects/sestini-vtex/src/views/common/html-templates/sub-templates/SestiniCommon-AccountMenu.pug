@@ -1,0 +1,15 @@
+
+include ./../../_mixins/_mixin__general-sidebar-menu.pug
+
+-
+  var prop = {
+    pageType: 'account',
+    items: [
+      {name: 'Meu cadastro', link: '/account'},
+      {name: 'Meus pedidos', link: '/account/orders'},
+      {name: 'Minha Wishlist', link: '/account/wishlist'},
+      {name: 'Meus Conteúdos', link: '/account/minhas-dicas'},
+    ],
+  }
+
++generalSidebarMenu(prop)

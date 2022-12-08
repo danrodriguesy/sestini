@@ -1,0 +1,16 @@
+include ./../../../common/_mixins/_mixin__header-minicart.pug
+
+div(class='x-header__right')
+  div(class='x-header__utilities')
+    ul(class='x-header__utilities-list')
+      li(class='x-header__utilities-item')
+        a(class='x-header__utilities-link', href='/Institucional/nossas-lojas', title='Nossas lojas')
+          <vtex.cmc:svgIconStore/>
+
+      li(class='x-header__utilities-item is--login')
+        a(class='x-header__login-btn js--login-btn', href='/account', title='Login')
+          <vtex.cmc:svgIconLogin/>
+
+      li(class='x-header__utilities-item')
+        //- Mixin Header Minicart
+        +headerMinicart(true)

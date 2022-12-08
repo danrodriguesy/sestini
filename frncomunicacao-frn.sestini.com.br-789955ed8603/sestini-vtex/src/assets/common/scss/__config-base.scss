@@ -1,0 +1,52 @@
+/**
+ * Settings
+ */
+@import "./settings/_colors.scss";
+@import "./settings/_typography.scss";
+@import "./settings/_alert-messages.scss";
+@import "./settings/_social-media-colors.scss";
+@import "./settings/_variables.scss";
+
+/**
+  * Tools
+  */
+@import "./tools/_functions.scss";
+@import "./tools/_mixins.scss";
+
+/**
+  * Vendor | Mixins
+  */
+@import "./vendor/form-reset/_form-reset.scss";
+@import "./vendor/sass-rem/_rem.scss";
+@import "./vendor/scss-animate/_animate.scss";
+@import "./vendor/slick-carousel/_slick-carousel.scss";
+@import "./vendor/slick-carousel/_slick-carousel-theme.scss";
+
+/**
+  * Placeholder Components
+  */
+@import "./components/_accordion.scss";
+@import "./components/_buttons.scss";
+@import "./components/_banners-collection.scss";
+@import "./components/_container.scss";
+@import "./components/_forms.scss";
+@import "./components/_icons.scss";
+@import "./components/_iconfonts.scss";
+@import "./components/_price-styles.scss";
+@import "./components/_sheves-carousel.scss";
+@import "./components/_shelves-container.scss";
+@import "./components/_slides.scss";
+@import "./components/_scroll-style.scss";
+@import "./components/_newsletter.scss";
+@import "./components/_qty-selector.scss";
+@import "./components/_titles.scss";
+@import "./components/_texts.scss";
+@import "./components/_link-hover.scss";
+@import "./components/_table.scss";
+@import "./components/_off-canvas.scss";
+@import "./components/_page-content.scss";
+@import "./components/_placeholder.scss";
+@import "./components/_sidebar-menu.scss";
+@import "./components/_rotated-text.scss";
+@import "./components/_tabs.scss";
+@import "./components/_drop.scss";

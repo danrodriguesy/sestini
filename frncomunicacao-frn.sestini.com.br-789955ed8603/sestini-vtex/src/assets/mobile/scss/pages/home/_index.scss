@@ -1,0 +1,21 @@
+@import "./main-banners";
+@import "./benefits";
+@import "./category-bullets";
+@import "./category-offer";
+@import "./week-offers";
+@import "./products-searched";
+@import "./smarthint";
+@import "./shelf";
+@import "./instagram";
+@import "./horizontal-banner";
+@import "./middle-minibanners";
+
+.slick-track {
+    & > li {
+        margin: 0 10px !important;
+    }
+}
+
+.slick-prev {
+    left: -15px !important;
+}

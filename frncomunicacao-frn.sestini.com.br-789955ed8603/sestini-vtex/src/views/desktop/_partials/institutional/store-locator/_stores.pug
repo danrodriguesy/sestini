@@ -1,0 +1,8 @@
+label(class='x-store-locator__store-detail',
+    rv-each-store='storeLocator.stores',
+    rv-title='store.nome')
+  input(type='radio', name='store', rv-on-change='storeLocator.controller.changeStore', rv-value='store.id', class='visually-hidden')/
+  h3(class='x-store-locator__store-name', rv-html='store.nome')
+  p(class='x-store-locator__store-address', rv-html='store.address')
+  p(class='x-store-locator__store-contact',) Contatos: #[span(rv-html='store.contato')]
+  p(class='x-store-locator__store-email', rv-html='store.email')

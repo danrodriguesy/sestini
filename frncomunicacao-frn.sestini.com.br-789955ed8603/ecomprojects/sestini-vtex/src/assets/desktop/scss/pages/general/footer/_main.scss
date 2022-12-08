@@ -1,0 +1,12 @@
+.x-footer {
+    background-color: $color-gray-lighten;
+    border-bottom: 1px solid $color-gray-light-medium-2;
+    &__container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

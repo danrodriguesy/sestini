@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoResponder LastSave="2020-12-15T12:18:21.985894-03:00" FiddlerVersion="5.0.0.0">
+  <State Enabled="true" AcceptAllConnects="false" Fallthrough="true" UseLatency="false">
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-home.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-home.js" Enabled="true" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-home.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-home.css" Enabled="true" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-common-globals.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-common-globals.css" Enabled="true" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-general.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-general.css" Enabled="true" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-common-globals.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-common-globals.js" Enabled="true" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-general.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-general.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-general.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-general.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-home.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-home.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-home.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-home.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-product.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-product.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-product.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-product.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-product.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-product.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-product.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-product.js" Enabled="false" />
+    <ResponseRule Match="https://www.sestini.com.br/files/checkout6-custom.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\files\checkout6-custom.css" Enabled="false" />
+    <ResponseRule Match="https://www.sestini.com.br/files/checkout6-custom.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\files\checkout6-custom.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-general.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-general.js" Enabled="false" />
+    <ResponseRule Match="https://www.sestini.com.br/files/checkout-confirmation4-custom.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\files\checkout-confirmation4-custom.css" Enabled="false" />
+    <ResponseRule Match="https://www.sestini.com.br/files/checkout-confirmation4-custom.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\files\checkout-confirmation4-custom.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-register.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-register.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-register.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-register.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-register.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-register.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-register.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-register.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-contador.css" Action="C:\Users\raiso\Desktop\sestini-mobile-contador.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-category.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-category.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-category.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-category.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-category.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-category.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-category.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-category.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-search.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-search.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-search.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-search.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-search.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-search.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-search.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-search.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-empty-search.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-empty-search.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-empty-search.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-empty-search.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-empty-search.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-empty-search.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-empty-search.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-empty-search.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-account.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-account.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-account.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-account.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-account.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-account.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-account.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-account.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-institutional.js" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-institutional.js" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-institutional.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-institutional.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-quem-somos.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-quem-somos.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-regulamentos-e-promocoes.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-regulamentos-e-promocoes.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-seja-franqueado.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-seja-franqueado.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-representantes.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-representantes.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-vendas-corporativas.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-vendas-corporativas.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-fale-conosco.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-fale-conosco.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-desktop-store-locator.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-desktop-store-locator.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-regulamentos-e-promocoes.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-regulamentos-e-promocoes.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-quem-somos.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-quem-somos.css" Enabled="false" />
+    <ResponseRule Match="https://sestini.vteximg.com.br/arquivos/sestini-mobile-seja-franqueado.css" Action="C:\Users\raiso\Documents\Projects\sestini-vtex\dist\arquivos\sestini-mobile-seja-franqueado.css" Enabled="false" />
+  </State>
+</AutoResponder>

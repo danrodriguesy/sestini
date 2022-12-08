@@ -1,0 +1,24 @@
+
+extends ./../_layouts/_desktop-institutional-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'quem-somos'
+  - var $templateClass = 'quem-somos'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block institutionalContent
+  include ../_partials/institutional/quem-somos/_main.pug
+  include ../_partials/institutional/quem-somos/_valores.pug
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

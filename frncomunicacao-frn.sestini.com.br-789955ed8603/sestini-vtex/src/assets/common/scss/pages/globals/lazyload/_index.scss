@@ -1,0 +1,13 @@
+@import "./__common.scss";
+@import "./main";
+
+// General
+@import "./general-shelf";
+@import "./carousel-shelf";
+
+// Home
+@import "./home-main-banner";
+@import "./home-banners-collection";
+
+// Category
+@import "./category";

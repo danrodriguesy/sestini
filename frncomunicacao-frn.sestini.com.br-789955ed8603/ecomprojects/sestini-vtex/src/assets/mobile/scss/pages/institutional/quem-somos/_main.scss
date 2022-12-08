@@ -1,0 +1,64 @@
+.x-institutional {
+  &__top {
+    width: 100%;
+    margin: auto;
+    @include rem(margin-bottom, 40px);
+
+    &-text {
+      font-family: $font-primary;
+      color: $color-gray-darkest;
+      @include font-weight(400);
+      @include rem(font-size, 12px);
+      @include rem(line-height, 22px);
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    @include rem(margin-bottom, 40px);
+
+    &-text {
+      font-family: $font-primary;
+      color: $color-gray-darkest;
+      @include font-weight(400);
+      @include rem(font-size, 12px);
+      @include rem(line-height, 22px);
+    }
+  }
+}
+
+.x-values {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    @include rem(margin-bottom, 40px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-icon {
+      @include flex-centered;
+      background-color: rgba($color-gray-lighter, 0.45);
+      border-radius: 50%;
+      @include rem(width, 85px);
+      @include rem(height, 85px);
+      @include rem(margin-bottom, 25px);
+
+      svg {
+        @include rem(height, 52px);
+      }
+    }
+
+    &-text {
+      font-family: $font-primary;
+      text-align: center;
+      color: $color-gray-darkest;
+      @include rem(font-size, 12px);
+      @include rem(line-height, 22px);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.x-category {
+  &__content-shelfs {
+    .didyoumean,
+    .searchResultsTime,
+    .sub,
+    .pager {
+      display: none;
+    }
+
+    @extend %container;
+    @extend %shelves-container;
+  }
+}

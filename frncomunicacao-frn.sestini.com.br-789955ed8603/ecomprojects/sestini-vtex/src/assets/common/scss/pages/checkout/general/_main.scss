@@ -1,0 +1,514 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    .cart-title {
+        font-weight: 600;
+        font-family: $font-primary;
+        color: #333;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 14px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    
+    .row-fluid .orderform-template.inactive {
+        display: none;
+    }
+    
+    .progress-bar,
+    .progress-bar-checkout {
+        @include mq("md", max) {
+            display: none;
+        }
+        display: flex;
+        flex: 0 0 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        &-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 120px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -110px;
+                height: 2px;
+                background: black;
+                width: 100px;
+            }
+            &:nth-child(1) {
+                margin-left: 0;
+                &::after {
+                    display: none;
+                }
+            }
+            &.active {
+                &>span {
+                    background: #5bb75b;
+                }
+                &>p {
+                    color: #5bb75b;
+                }
+                &::after {
+                    background: #5bb75b;
+                }
+            }
+            &>span {
+                font-weight: 600;
+                color: #fff;
+                font-family: $font-primary;
+                width: 26px;
+                height: 26px;
+                line-height: 26px;
+                font-size: 10px;
+                margin-right: 10px;
+                border-radius: 50%;
+                text-align: center;
+                background: #8d8d8d;
+            }
+            &>p {
+                font-weight: 600;
+                color: #6c6c6c;
+                font-family: $font-primary;
+                font-style: italic;
+                font-size: 10px;
+                line-height: 26px;
+                height: 26px;
+                margin: 0;
+                text-transform: uppercase;
+            }
+        }
+    }
+    
+    body {
+        h1 {
+            display: none !important;
+        }
+        &.body-cart {
+            @include mq("md", max) {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .cart-template {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                @include mq("md", max) {
+                    margin-top: 20px;
+                }
+                .extensions-checkout-buttons-container {
+                    display: none;
+                    width: 0;
+                }
+                &-holder {
+                    flex: 0 0 60%;
+                    width: 60%;
+                    @include mq("md", max) {
+                        flex: 0 0 100%;
+                        width: 100%;
+                        padding: 20px;
+                    }
+                }
+                .summary-template-holder {
+                    flex: 0 0 25%;
+                    width: 25%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    @include mq("md", max) {
+                        flex: 0 0 100%;
+                        width: 100%;
+                        padding: 20px;
+                    }
+                    .summary {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                }
+            }
+            .cart {
+                border: 0;
+                padding: 0;
+                @include rem(margin-bottom, 60px);
+                @include mq("md", max) {
+                    @include rem(margin-bottom, 10px);
+                }
+                .cart-items {
+                    display: flex;
+                    flex-direction: column;
+                    .shipping-date {
+                        display: none;
+                    }
+                    // Cart Titles
+                    thead {
+                        display: flex;
+                        width: 100%;
+                        margin-bottom: 5px;
+                        @include mq("md", max) {
+                            display: none;
+                        }
+                        tr {
+                            display: flex;
+                            width: 100%;
+                            @include rem(padding, 0 35px);
+                            th {
+                                color: rgb(108, 108, 108);
+                                padding: 0;
+                                text-align: center;
+                                font-family: $font-primary;
+                                @include font-weight(700);
+                                @include rem(font-size, 10px);
+                                @include rem(line-height, 17px);
+                                padding: 5px 0;
+                                text-transform: uppercase;
+                                letter-spacing: 0.5px;
+                                // Product Name / Product image
+                                &.product {
+                                    width: 35%;
+                                    text-align: left;
+                                }
+                                // Product Price
+                                &.product-price {
+                                    width: 20%;
+                                }
+                                // Quantity Selector
+                                &.quantity {
+                                    width: 18%;
+                                }
+                                // Quantity Total
+                                &.quantity-price {
+                                    width: 20%;
+                                }
+                            }
+                        }
+                    }
+                    // Cart Items
+                    tbody {
+                        display: flex;
+                        flex-direction: column;
+                        border: 1px solid #ebebeb;
+                        border-radius: 4px;
+                        tr {
+                            &+tr {
+                                @include mq("md", max) {}
+                            }
+                            // Each Item
+                            &.product-item:nth-child(1) {
+                                @include mq("md", max) {
+                                    @include rem(padding, 15px 18px 20px 80px);
+                                }
+                            }
+                            &.product-item {
+                                display: flex;
+                                align-items: center;
+                                width: 100%;
+                                margin: 0;
+                                @include rem(padding, 10px);
+                                @include mq("md") {}
+                                @include mq("md", max) {
+                                    position: relative;
+                                    flex-direction: row;
+                                    align-items: flex-start;
+                                    justify-content: flex-start;
+                                    flex-wrap: wrap;
+                                    @include rem(padding, 15px 18px 40px 80px);
+                                }
+                                td {
+                                    padding: 0;
+                                    // Product Image
+                                    &.product-image {
+                                        background-image: none;
+                                        background: none;
+                                        position: absolute;
+                                        @include flex-centered;
+                                        @include mq("md") {
+                                            position: relative;
+                                            @include rem(width, 15%);
+                                            @include rem(height, 75px);
+                                        }
+                                        @include mq("md", max) {
+                                            left: 0;
+                                            @include rem(width, 70px);
+                                            @include rem(height, 85px);
+                                        }
+                                        a,
+                                        img {
+                                            @include flex-centered;
+                                            object-fit: contain;
+                                            max-width: unset;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+                                    // Product Name
+                                    &.product-name {
+                                        width: 20% !important;
+                                        @include mq("md", max) {
+                                            position: relative;
+                                            margin: 0;
+                                            padding: 0 !important;
+                                            width: 100% !important;
+                                            order: 1;
+                                        }
+                                        a {
+                                            display: flex;
+                                            color: #444;
+                                            font-family: $font-primary;
+                                            @include font-weight(600);
+                                            @include rem(font-size, 12px);
+                                            @include rem(line-height, 20px);
+                                            // @include mq("md", min) {
+                                            //   @include rem(font-size, 13px);
+                                            //   @include rem(line-height, 18px);
+                                            // }
+                                        }
+                                        // Seller name
+                                        .seller {
+                                            display: none;
+                                        }
+                                    }
+                                    // Product Price
+                                    &.product-price {
+                                        width: 18.5%;
+                                        text-align: center;
+                                        margin-left: 10px;
+                                        color: $color-black;
+                                        @include font-weight(bold);
+                                        display: flex;
+                                        font-family: $font-primary;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        &>br {
+                                            display: none;
+                                        }
+                                        .old-product-price-label,
+                                        .new-product-price-label {
+                                            display: none;
+                                        }
+                                        .old-product-price {
+                                            color: rgb(174, 174, 174);
+                                            font-size: 12px;
+                                        }
+                                        .new-product-price {
+                                            font-family: $font-primary;
+                                            color: rgb(108, 108, 108);
+                                            @include mq("md", max) {
+                                                line-height: 24px;
+                                            }
+                                        }
+                                        @include mq("md", max) {
+                                            width: auto;
+                                            margin: 0;
+                                            position: relative;
+                                            text-align: left;
+                                            line-height: 0.8;
+                                            display: inline-flex;
+                                            flex-direction: column;
+                                            order: 3;
+                                            @include rem(margin-top, 5px);
+                                        }
+                                    }
+                                    // Quantity Selector
+                                    &.quantity {
+                                        width: 18%;
+                                        display: flex;
+                                        justify-content: center;
+                                        @include mq("md", max) {
+                                            width: auto;
+                                            position: relative;
+                                            margin: 0;
+                                            display: inline-flex;
+                                            order: 2;
+                                            margin-right: auto;
+                                        }
+                                        input {
+                                            color: rgb(108, 108, 108);
+                                            border: 0;
+                                            font-family: $font-primary;
+                                            box-shadow: none;
+                                            cursor: not-allowed;
+                                            @include font-weight(bold);
+                                            @include rem(font-size, 14px);
+                                            @include rem(line-height, 28px);
+                                            margin: 0;
+                                            padding: 0;
+                                        }
+                                        .item-quantity-change {
+                                            position: relative;
+                                            @include flex-centered;
+                                            padding: 10px;
+                                            border-radius: 50%;
+                                            @include mq("md") {
+                                                @include rem(width, 15px);
+                                                @include rem(height, 15px);
+                                            }
+                                            @include mq("md", max) {
+                                                padding: 0;
+                                            }
+                                            i {
+                                                // display: none;
+                                            }
+                                            &::before {
+                                                @include mq("md") {
+                                                    content: "";
+                                                    background-color: $color-black;
+                                                    @include rem(width, 11px);
+                                                    @include rem(height, 2px);
+                                                }
+                                            }
+                                            &-decrement {
+                                                top: initial !important;
+                                                bottom: initial !important;
+                                                left: initial !important;
+                                                right: initial !important;
+                                            }
+                                            &-increment {
+                                                top: initial !important;
+                                                bottom: initial !important;
+                                                left: initial !important;
+                                                right: initial !important;
+                                                &::after {
+                                                    @include mq("md") {
+                                                        content: "";
+                                                        position: absolute;
+                                                        @include rem(width, 2px);
+                                                        @include rem(height, 12px);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    // Total Quantity
+                                    &.quantity-price {
+                                        width: 17%;
+                                        @include font-weight(bold);
+                                        @include rem(font-size, 12px);
+                                        font-family: $font-primary;
+                                        @include rem(line-height, 28px);
+                                        color: rgb(108, 108, 108);
+                                        @include mq("md", max) {
+                                            display: none;
+                                        }
+                                    }
+                                    // Item Remove
+                                    &.item-remove {
+                                        display: flex;
+                                        margin-left: auto;
+                                        width: auto;
+                                        @include mq("md", max) {
+                                            @include rem(top, 20px);
+                                            @include rem(right, 20px);
+                                        }
+                                        a {
+                                            @include flex-centered;
+                                            position: relative;
+                                            @include rem(width, 12px);
+                                            @include rem(height, 12px);
+                                            background-size: cover;
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                            background-image: url("data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M424 64H336V48C336 21.533 314.467 0 288 0H224C197.533 0 176 21.533 176 48V64H88C65.944 64 48 81.944 48 104V160C48 168.836 55.164 176 64 176H72.744L86.567 466.283C87.788 491.919 108.848 512 134.512 512H377.488C403.153 512 424.213 491.919 425.433 466.283L439.256 176H448C456.836 176 464 168.836 464 160V104C464 81.944 446.056 64 424 64ZM208 48C208 39.178 215.178 32 224 32H288C296.822 32 304 39.178 304 48V64H208V48ZM80 104C80 99.589 83.589 96 88 96H424C428.411 96 432 99.589 432 104V144C427.069 144 100.433 144 80 144V104ZM393.469 464.761C393.062 473.306 386.042 480 377.488 480H134.512C125.957 480 118.937 473.306 118.531 464.761L104.78 176H407.22L393.469 464.761Z' fill='%23E4332D'/%3E%3Cpath d='M256 448C264.836 448 272 440.836 272 432V224C272 215.164 264.836 208 256 208C247.164 208 240 215.164 240 224V432C240 440.836 247.163 448 256 448Z' fill='%23E4332D'/%3E%3Cpath d='M336 448C344.836 448 352 440.836 352 432V224C352 215.164 344.836 208 336 208C327.164 208 320 215.164 320 224V432C320 440.836 327.163 448 336 448Z' fill='%23E4332D'/%3E%3Cpath d='M176 448C184.836 448 192 440.836 192 432V224C192 215.164 184.836 208 176 208C167.164 208 160 215.164 160 224V432C160 440.836 167.163 448 176 448Z' fill='%23E4332D'/%3E%3C/svg%3E%0A");
+                                            @include mq("md",
+                                            max) {
+                                                @include rem(width,
+                                                15px);
+                                                @include rem(height,
+                                                15px);
+                                            }
+                                            i {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    .add-service {
+                                        &-container {
+                                            @include mq("md",
+                                            max) {
+                                                position: absolute;
+                                                width: 100%;
+                                                top: calc(100% + 40px);
+                                            }
+                                        }
+                                        &.btn {
+                                            max-width: 30% !important;
+                                            line-height: 1.8 !important;
+                                            margin: 0;
+                                            font-family: $font-primary;
+                                            padding: 0;
+                                            border: 0;
+                                            background: none;
+                                            border: 1px solid $color-red;
+                                            color: $color-red !important;
+                                            text-transform: uppercase;
+                                            height: auto;
+                                            text-shadow: none;
+                                            max-width: initial !important;
+                                            display: inline-block;
+                                            @include mq("md",
+                                            min) {
+                                                margin: 0;
+                                            }
+                                            @include font-weight(bold);
+                                            @include rem(padding,
+                                            0 20px);
+                                            @include rem(font-size,
+                                            8px !important);
+                                            @include rem(line-height,
+                                            10px);
+                                            &:hover {
+                                                opacity: 0.5;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.item-service {
+                                margin-top: -20px;
+                                border: none;
+                                display: inline-block;
+                                align-items: center;
+                                @include rem(padding,
+                                0 0 0 80px);
+                                @include mq("md") {
+                                    @include rem(padding,
+                                    0 0 0 135px);
+                                }
+                                .bundle-item-name span {
+                                    text-transform: uppercase;
+                                    font-family: $font-primary;
+                                    color: $color-red;
+                                    @include font-weight(bold);
+                                    @include rem(font-size,
+                                    8px !important);
+                                }
+                                .bundle-quantity-price {
+                                    font-family: $font-primary;
+                                    font-size: 10px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

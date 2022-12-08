@@ -1,0 +1,108 @@
+#root {
+    .flex-ns,
+    .mv6 {
+        .vtex-button[type="submit"] {
+            background: $color-red;
+            color: $color-white;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            outline: none;
+            border: 0;
+            padding: 0;
+            height: 40px;
+            font-size: 11px;
+            line-height: 19px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            @include mq("sm", max) {
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+        .vtex-button[type="button"] {
+            border: solid 1px $color-red;
+            background-color: $color-white;
+            color: $color-red;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            outline: none;
+            padding: 0;
+            height: 40px;
+            font-size: 14px;
+            line-height: 19px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            @include mq("sm", max) {
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.vtex-address-form {
+    &__complement {
+        padding-bottom: 15px;
+    }
+    &__postalCode {
+        margin-bottom: 20px;
+        div {
+            padding: 0;
+        }
+        a {
+            font-size: 12px;
+        }
+        .vtex-button {
+            margin-top: 10px;
+            border: solid 1px $color-red;
+            background-color: $color-white;
+            color: $color-red;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            outline: none;
+            padding: 0;
+            height: 40px;
+            font-size: 14px;
+            line-height: 19px;
+            border-radius: 4px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+.vtex-dropdown {
+    &__label {
+        color: $color-gray-darken;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    &__button {
+        color: #707070;
+        width: 100%;
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        &+select {
+            color: #707070;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 12px;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+}

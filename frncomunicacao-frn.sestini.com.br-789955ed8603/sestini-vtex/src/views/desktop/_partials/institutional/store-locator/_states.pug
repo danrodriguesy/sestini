@@ -1,0 +1,3 @@
+select(class='x-store-locator__select', rv-on-change='storeLocator.controller.changeState')
+  option(disabled='disabled', selected='selected') Selecionar o estado
+  option(rv-each-state='storeLocator.states', rv-text='state.nome', rv-value='state.nome')

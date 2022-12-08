@@ -1,0 +1,196 @@
+.body-checkout-confirmation {
+  // Confirmation Info Container
+  #app-container {
+    // Wrapper
+    .ph3-ns.w-70-ns.db.center {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+
+      > .cf {
+        .cf.pv4-ns {
+          position: relative;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          @include rem(margin-bottom, 45px);
+
+          &::before {
+            content: "Pedido";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-family: $font-primary;
+            color: $color-black;
+            @include font-weight(bold);
+            @include rem(font-size, 16px);
+            @include rem(line-height, 22px);
+            @include rem(margin, 55px auto 35px);
+
+            @include mq("sm", max) {
+              @include rem(margin, 0px auto 35px);
+            }
+          }
+
+          // Hidding Address from Checkout V6
+          .fl-l.w-third-l.w-70-m.pr3-l.mb3.mb0-l {
+            display: none;
+          }
+
+          // Products Container
+          .fr-l.w-100.w-two-thirds-l.pl2-l.mb4 {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            border:1px solid $color-white-darker;
+            border-radius: 4px;
+            @include rem(padding, 20px);
+
+            @include mq("sm", max) {
+              @include rem(padding, 30px 20px);
+            }
+
+            // SLA Shipping
+            .bg-light-gray.ph3.pv2.w-50-l.w-70-m.mb3.fw5.br2 {
+              position: absolute;
+              left: 50%;
+              width: auto;
+              padding: 0;
+              margin: 0;
+              font-family: $font-primary;
+              transform: translateX(-50%);
+              background-color: $color-white;
+              text-align: center;
+              @include rem(top, 76px);
+
+              @include mq("sm", max) {
+                @include rem(top, 20px);
+              }
+
+              * {
+                color: rgba($color-black, 0.5);
+                @include font-weight(400);
+                @include rem(font-size, 12px);
+                @include rem(line-height, 17px);
+              }
+
+              & > div {
+                display: none;
+              }
+            }
+
+            // Products Table
+            .cconf-product-table {
+              tbody {
+                display: flex;
+                flex-direction: column;
+
+                // Each Product
+                .cconf-product {
+                  position: relative;
+                  display: flex;
+                  @include rem(padding, 15px 0);
+
+                  @include mq("sm") {
+                    align-items: center;
+                    border-bottom: solid 1px $color-gray-light-3;
+                  }
+
+                  & + .cconf-product {
+                    border-top: solid 1px $color-gray-light-3;
+                  }
+
+                  td {
+                    padding: 0;
+                    margin: 0;
+
+                    // Product Image
+                    &:first-of-type {
+                      @include rem(margin-right, 35px);
+
+                      @include mq("sm", max) {
+                        @include rem(margin-right, 20px);
+                      }
+                      &,
+                      & * {
+                        @include flex-centered;
+                        width: 100%;
+                        @include rem(max-width, 125px);
+
+                        @include mq("sm", max) {
+                          @include rem(max-width, 70px);
+                        }
+                      }
+                    }
+
+                    // Product Information
+                    &:last-of-type {
+                      display: flex;
+                      width: 100%;
+
+                      @include mq("sm") {
+                        align-items: center;
+                      }
+
+                      // Product Name
+                      .f6.lh-title.mv1-ns {
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        font-family: $font-primary;
+                        a {
+                          color: $color-black;
+                        }
+                        @include font-weight(400);
+                        @include rem(font-size, 14px);
+                        @include rem(line-height, 26px);
+
+                        @include mq("sm") {
+                        }
+
+                        // Product QTY
+                        & + .gray {
+                          display: flex;
+                          justify-content: space-around;
+                          align-items: center;
+                          font-family: $font-primary;
+                          color: rgba($color-black, 0.5);
+                          width: 100%;
+                          @include font-weight(bold);
+                          @include rem(font-size, 14px);
+                          @include rem(line-height, 28px);
+
+                          @include mq("sm", max) {
+                            position: absolute;
+                            bottom: 0;
+                            max-width: calc(100% - 90px);
+                          }
+
+                          // Hidding Unity info
+                          span {
+                            &:first-of-type {
+                              display: none;
+                            }
+
+                            // Product Total price
+                            color: $color-black;
+                            @include font-weight(bold);
+                            @include rem(font-size, 12px);
+                            @include rem(line-height, 28px);
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

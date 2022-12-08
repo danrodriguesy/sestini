@@ -1,0 +1,35 @@
+.x-pre__header {
+    background-color: $color-black;
+    color: $color-white;
+    z-index: z("menu-mobile");
+    @include flex-centered;
+
+    @include mq("sm", max) {
+        @include rem(height, 35px);
+        @include rem(padding, 0 7px);
+    }
+
+    &-itens,
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        @include rem(max-width, 860px);
+    }
+
+    &-container {
+        @include mq("sm") {
+            @include rem(padding, 10px 0);
+        }
+    }
+
+    &-item {
+        @include rem(font-size, 12px);
+
+        strong {
+            text-transform: uppercase;
+            @include rem(margin-right, 5px);
+        }
+    }
+}

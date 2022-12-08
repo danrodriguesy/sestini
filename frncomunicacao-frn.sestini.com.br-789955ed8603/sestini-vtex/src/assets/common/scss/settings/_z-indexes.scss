@@ -1,0 +1,39 @@
+/**
+ * Registros dos z-indexes
+ * Ordem decrescente
+ */
+$z-indexes: (
+  /** Search Autocomplete */ "autocomplete",
+  /** Common z-indexes */ "ajax-loader",
+  /** Common z-indexes */ "quickview",
+  /** Off Canvas */ "off-canvas",
+  // Default Overlay
+    "overlay",
+  /* Newsletter Popup*/ "newsletter-popup",
+  /* minicart */ "minicart",
+  /* Menu Mobile */ "menu-mobile-active",
+  /* Overlay Mobile */ "overlay-mobile",
+  /* Menu */ "menu-mobile",
+  /** Main popups */ "product-popup",
+  /** Header Menu */ "main-menu-submenu-items",
+  "main-menu-submenu-wrapper",
+  /** Newsletter / Side Newsletter bar */ "side-newsletter-bar",
+  "side-newsletter",
+  "category-filter-mobile",
+  "category-filter-button",
+  "category-filter",
+  "category-order-button",
+  "category-order",
+  "product-buy-btn",
+  "header-account-drop",
+  "pre-header",
+  "fixed-header-mobile",
+  "fixed-header",
+  "return-to-top",
+  /** Desktop Menu Overlay **/ "menu-overlay",
+  "search-overlay",
+  /** Home main banners */ "main-banner-small-container",
+  "main-banner-controls",
+  "wishlist-btn",
+  "chat-button"
+);

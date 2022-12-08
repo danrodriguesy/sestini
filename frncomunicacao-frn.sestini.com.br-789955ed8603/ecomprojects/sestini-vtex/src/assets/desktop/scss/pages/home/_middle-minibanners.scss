@@ -1,0 +1,12 @@
+.x-home__middle-minibanners {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1300px;
+    padding: 25px 30px;
+    margin: 0 auto;
+    margin-top: 25px !important;
+    .box-banner {
+        flex: 0 0 33%;
+    }
+}

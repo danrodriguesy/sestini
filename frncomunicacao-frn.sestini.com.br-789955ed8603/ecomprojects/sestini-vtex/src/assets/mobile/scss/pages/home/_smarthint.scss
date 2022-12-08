@@ -1,0 +1,36 @@
+.smarthint {
+    li {
+        height: auto !important;
+    }
+    .x-shelf {
+        .slick-slider {
+            .slick-track {
+                .slick-track {
+                    margin: 0 10px;
+                }
+            }
+            .slick-prev,
+            .slick-next {
+                background: transparent;
+                z-index: 5;
+                &:before {
+                    color: $color-red;
+                    border: none;
+                    content: "〈";
+                    color: $color-red;
+                    font-size: 28px;
+                    line-height: 1;
+                    opacity: 0.75;
+                    -webkit-font-smoothing: antialiased;
+                    transform: rotate(0deg);
+                }
+            }
+            .slick-prev {
+                left: -20px;
+            }
+            .slick-next {
+                right: -20px;
+            }
+        }
+    }
+}

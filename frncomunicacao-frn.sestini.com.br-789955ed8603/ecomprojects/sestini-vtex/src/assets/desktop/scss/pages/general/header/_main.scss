@@ -1,0 +1,181 @@
+
+.x-header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: z("menu-mobile");
+  width: 100%;
+  background-color: $color-white;
+  transition: all 600ms ease-in-out;
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.16);
+  @include flex-centered;
+
+
+  &__right,
+  &__left {
+    .x-header:not(.is--active) & {
+      padding-bottom: 10px;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 15px 40px 14px;
+  }
+
+  &__top-banner {
+    position: fixed;
+    z-index: 100;
+    top: 119px;
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  &.is--active + &__top-banner {
+    top: 80px;
+  }
+
+  & ~ main {
+    margin-top: 129px;
+  }
+
+  body.is--home &,
+  body.is--product & {
+    &__top-banner {
+      display: block;
+
+      &:not(:empty) {
+        & ~ main {
+          margin-top: (119px + 49px);
+          margin-top: calc(119px + (49 / 1366 * 100vw));
+          margin-top: calc((119 / 16em) + (49 / 1366 * 100vw));
+        }
+      }
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 40px;
+
+    .x-header:not(.is--active) {
+      max-width: 721px;
+    }
+
+    .is--active & {
+      flex-direction: row-reverse;
+      margin: 0 20px 0 40px;
+    }
+  }
+
+  &__logo {
+    &,
+    &-link,
+    svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      transition: all 600ms ease-in-out;
+      width: 174px;
+      height: 48px;
+
+      .is--active & {
+        width: 115px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__utilities {
+    display: flex;
+    width: 100%;
+    text-transform: capitalize;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &-item {
+      @include flex-centered;
+      color: $color-black;
+      white-space: nowrap;
+      @include flex-centered;
+      font-size: 13px;
+      line-height: 18px;
+      & + & {
+        margin-left: 18px;
+      }
+
+      .is--active & {
+        font-size: 10px;
+        line-height: 14px;
+      }
+
+      &:first-of-type {
+        svg {
+          .is--active & {
+            width: 13px;
+            height: 18px;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        svg {
+          .is--active & {
+            width: 19px;
+            height: 17px;
+          }
+        }
+      }
+    }
+  }
+
+  &__login {
+    &-btn {
+      @include flex-centered;
+
+      svg {
+        margin-right: 13px;
+
+        .is--active & {
+          margin-right: 6px;
+          width: 16px;
+          height: 17px;
+        }
+      }
+    }
+  }
+
+  &__minicart {
+    position: relative;
+    border: 0;
+    background: transparent;
+    @include flex-centered;
+    text-transform: capitalize;
+
+    svg {
+      width: 23px;
+      height: 30px;
+      margin-right: 5px;
+
+      .is--active & {
+        width: 14px;
+        height: 19px;
+      }
+    }
+  }
+}

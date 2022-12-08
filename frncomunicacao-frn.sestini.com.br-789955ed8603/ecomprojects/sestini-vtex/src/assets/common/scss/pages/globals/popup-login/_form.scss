@@ -1,0 +1,48 @@
+.vtexIdUI {
+    .vtexIdUI-main-content {
+        .vtexIdUI-classic-login-control,
+        .vtexIdUI-change-pswd,
+        .vtexIdUI-email-field,
+        .vtexIdUI-auth-code,
+        .vtexIdUI-code-field {
+            label {
+                font-family: $font-primary;
+                font-size: 12px;
+                text-align: left;
+                text-transform: uppercase;
+                color: $color-black;
+                &.text-center {
+                    text-align: center;
+                    strong {
+                        @include font-weight(black);
+                    }
+                }
+            }
+            input {
+                font-family: $font-primary;
+                @extend %form__input;
+                padding-top: 0;
+                padding-bottom: 0;
+                border-radius: 0;
+                @include font-weight(light);
+                @include rem(height, 42px);
+                @include placeholder($color-gray-dark, 1);
+                border-radius: 6px;
+                &:focus {
+                    border: 1px solid $color-gray;
+                    box-shadow: 0 0 1px 1px rgba($color-gray, .35);
+                }
+            }
+        }
+        .vtexIdUI-auth-code,
+        .vtexIdUI-code-field {
+            input {
+                @include rem(font-size, 32px);
+                @include rem(height, 54px);
+                line-height: 120%;
+                text-align: center;
+                @include font-weight(black);
+            }
+        }
+    }
+}

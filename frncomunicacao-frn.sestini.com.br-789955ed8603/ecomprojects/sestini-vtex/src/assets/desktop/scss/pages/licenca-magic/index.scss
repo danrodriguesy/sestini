@@ -1,0 +1,141 @@
+.magic {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 80px auto;
+    padding: 20px 30px;
+    &__left {
+        flex: 0 0 20%;
+        display: flex;
+        flex-direction: column;
+        &__menu {
+            &-item {
+                padding: 10px;
+                border-bottom: 1px solid #e5e5e5;
+                font-family: $font-primary;
+                font-size: 14px;
+                font-weight: 600;
+                &.active {
+                    color: $color-red;
+                }
+            }
+        }
+    }
+    &__right {
+        flex: 0 0 75%;
+        &__content {
+            &-title {
+                font-family: $font-primary;
+                font-size: 26px;
+                font-weight: bold;
+                margin-bottom: 35px;
+                margin-top: 25px;
+            }
+            &-middle {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                &-left {
+                    flex: 0 0 55%;
+                    p {
+                        font-family: $font-primary;
+                        font-weight: normal;
+                        font-size: 14px;
+                        margin-top: 25px;
+                        &.bold {
+                            font-weight: 600;
+                            margin-top: 0px;
+                        }
+                    }
+                }
+                &-right {
+                    flex: 0 0 40%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+            &-bottom {
+                display: flex;
+                flex-direction: column;
+                margin: 40px 0;
+                h2 {
+                    font-family: $font-primary;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                &-item-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+                &-item {
+                    flex: 0 0 18%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        height: 98px;
+                        width: auto;
+                        border-radius: 50%;
+                    }
+                    p {
+                        margin-top: 5px;
+                        font-family: $font-primary;
+                        font-weight: 600;
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                }
+            }
+            &-estampas,
+            &-materiais {
+                h2 {
+                    font-family: $font-primary;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                &-items-container {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                &-item {
+                    flex: 0 0 25%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    img {
+                        height: 157px;
+                        width: auto;
+                    }
+                    p {
+                        margin-top: 5px;
+                        font-family: $font-primary;
+                        font-weight: 600;
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                }
+            }
+            &-video {
+                h2 {
+                    font-family: $font-primary;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                }
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

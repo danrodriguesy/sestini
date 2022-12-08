@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniDesktop-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-institutional.css" media="all"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-store-locator.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniDesktop-Header"/>
+    <main class="x-store-locator__main" role="main">
+      <div class="x-store-locator__content">
+        <vtex:template id="SestiniCommon-Breadcrumb"/>
+        <div class="x-store-locator__container js--store-locator">
+            <div class="x-store-locator__selection">
+                <div class="x-store-locator__bread-crumb">Nossas <strong>Lojas</strong></div>
+                <h2 class="x-store-locator__title"> Encontre a unidade mais próxima de você</h2>
+                <form class="x-store-locator__form js--store-locator-form" autocomplete="off">
+                    <div class="x-store-locator__form-group x-form__group"><label class="x-store-locator__form-label" for="storeLocatorState">Selecione o estado</label><select class="x-store-locator__form-select" id="storeLocatorState" name="storeLocatorState"><option value="">Estado</option><option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option><option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option><option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option><option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option></select></div>
+                    <!-- <div
+                        class="x-store-locator__form-group x-form__group"><label class="x-store-locator__form-label" for="storeLocatorState">Selecione a cidade</label><select class="x-store-locator__form-select is--city-select" id="storeLocatorCity" name="storeLocatorCity"><option value="">Cidade</option></select></div> -->
+            </form>
+            <div class="x-store-locator__results-content js--store-locator-results-content">
+                <div class="x-store-locator__results js--store-locator-results mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="AC">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="AL">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="AP">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="AM">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="BA">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="CE">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="DF">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="ES">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="GO">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="MA">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="MT">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="MS">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="MG">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="PA">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="PB">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="PR">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="PE">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="PI">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="RJ">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="RN">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="RS">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="RO">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="RR">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="SC">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="SP">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"> </ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="SE">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"></ul>
+                    </div>
+                    <div class="x-store-locator__group js--store-locator-group" data-store-group="TO">
+                        <ul class="x-store-locator__state-group js--store-locator-state-group"> </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x-store-locator__map-container">
+            <div class="x-store-locator__map" id="map"></div>
+        </div>
+        </div>
+      </div>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniDesktop-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniDesktop-Scripts"/>
+    <vtex:template id="SestiniDesktop-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-institutional.js"></script>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-store-locator.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDkQpl8zs9YmQtVXyHPQ90QoehJNVicCy8" ></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
+  </body>
+</html>

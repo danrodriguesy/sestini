@@ -1,0 +1,97 @@
+@import "../../../../common/scss/pages/category/index";
+@import "./pagination";
+.x-category {
+    &__content,
+    &__right,
+    &__left {
+        display: flex;
+        flex-direction: column;
+    }
+    &__content {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__left {
+        flex: 0 0 17%;
+    }
+    &__right {
+        justify-content: center;
+        flex: 0 0 80%;
+        position: relative;
+    }
+    &__order {
+        top: 0;
+        right: 0;
+        text-transform: capitalize;
+    }
+    &__filters {
+        margin-left: 0 !important;
+        &-content {
+            opacity: 1 !important;
+            visibility: visible !important;
+            position: relative;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            box-shadow: unset;
+        }
+        &-dinamics {
+            display: flex !important;
+            flex-direction: column !important;
+            &-item {
+                display: flex;
+                margin: 0 !important;
+                margin-bottom: 10px !important;
+            }
+        }
+    }
+    &__btn-wrapper {
+        position: relative !important;
+        left: 0 !important;
+        right: unset !important;
+        bottom: unset !important;
+    }
+    &__clear-btn {
+        width: 100%;
+    }
+    &__content-shelfs {
+        @include rem(padding-top, 40px);
+        .vitrine {
+            .x-shelf > ul {
+                li {
+                    margin-right: 0 !important;
+                    @include rem(margin-left, 22px);
+                    max-width: 215px !important;
+                }
+            }
+        }
+    }
+}
+
+.x-shelf__img-front,
+.x-shelf__img-back {
+    height: auto;
+    width: auto;
+    max-width: unset !important;
+}
+
+.x-shelf__item {
+    min-height: 300px !important;
+}
+
+#quantity-view-product {
+    font-family: $font-primary;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    font-weight: regular;
+    margin-bottom: 15px;
+    span {
+        font-size: 20px;
+        font-weight: bold;
+        color: $color-red;
+    }
+}

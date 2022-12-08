@@ -1,0 +1,82 @@
+.x-quick-view__description {
+    &-container {
+        width: 100%;
+        @include mq("sm") {
+            background-color: $color-gray-lighten;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+        @include mq("sm", max) {
+            padding: 20px 16px;
+        }
+    }
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 30px;
+    }
+    &-item {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: max-height 300ms ease-in-out;
+        will-change: max-height;
+        border-bottom: solid 1px $color-gray-lighter;
+        max-height: 32px;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        &.is--opened {
+            max-height: 1000px;
+            margin-bottom: 0;
+        }
+    }
+    &-items {
+        margin-top: 15px;
+        @include mq("sm", max) {
+            padding: 0 20px;
+        }
+    }
+    &-content {
+        color: $color-gray-darkest;
+        font-family: $font-primary;
+        padding: 15px 10px 30px;
+        font-size: 12px;
+        line-height: 22px;
+        @include mq("sm", max) {
+            color: $color-gray-medium-2;
+            line-height: 20px;
+            padding: 5px 5px 25px;
+        }
+    }
+    &-button {
+        position: relative;
+        display: flex;
+        flex: 1;
+        font-family: $font-primary;
+        color: $color-black;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 26px;
+        &::after {
+            content: "+";
+            font-size: 23px;
+            font-family: $font-primary;
+            font-weight: 400 !important;
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            will-change: transform;
+            transition: transform 600ms ease-in-out;
+        }
+        .is--opened & {
+            &::after {
+                top: -3px;
+                right: 14px;
+                content: "-";
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+div(class='x-quick-view js--quick-view', style='display: none')
+  div(class='x-quick-view__container')
+    button(class='x-quick-view__close js--quick-view-close')
+      <vtex.cmc:svgIconClosePopup />
+    div(class='x-quick-view__wrapper')
+      div(class='x-quick-view__left')
+        include ./_image-container.pug
+
+      div(class='x-quick-view__right')
+        include ./_main-info.pug
+        include ./_description.pug
+
+    //- div(class='x-quick-view__bottom')
+    //-   include ./_description.pug

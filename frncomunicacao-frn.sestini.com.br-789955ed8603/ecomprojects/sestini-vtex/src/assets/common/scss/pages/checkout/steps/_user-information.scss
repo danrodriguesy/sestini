@@ -1,0 +1,217 @@
+.client-first-name, .client-last-name{
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.body-order-form {
+  .client-profile-data {
+    // User Display Info
+    .box-info {
+
+      @include mq('sm', max){
+        @include rem(padding-left, 5px);
+      }
+
+      .client-profile-email {
+        margin: 0;
+        font-family: $font-primary;
+        color: $color-black;
+        @include font-weight(400);
+        @include rem(font-size, 13px);
+        @include rem(line-height, 26px);
+
+        &::before {
+          content: "E-mail: ";
+          font-family: $font-primary;
+          color: $color-black;
+          @include font-weight(400);
+          @include rem(font-size, 13px);
+          @include rem(line-height, 26px);
+        }
+      }
+
+      .client-profile-summary {
+        margin: 0;
+        font-family: $font-primary;
+        color: $color-black;
+        @include font-weight(400);
+        @include rem(font-size, 13px);
+        @include rem(line-height, 26px);
+
+        .tel-label {
+          display: inline !important;
+        }
+      }
+    }
+
+    // User Form Edit
+    .form-step {
+      display: flex;
+      flex-direction: column;
+
+      .client-notice {
+        display: none;
+        color: $color-black;
+        @include font-weight(400);
+        @include rem(font-size, 13px);
+        @include rem(line-height, 20px);
+        @include rem(margin-bottom, 25px);
+      }
+
+      label {
+        font-family: $font-primary;
+        color: $color-black;
+        @include font-weight(400);
+        @include rem(font-size, 10px);
+        @include rem(line-height, 20px);
+        @include rem(margin-bottom, 5px);
+        margin-top: 10px;
+      }
+
+      // Main Width
+      .client-company-document,
+      .client-company-ie,
+      .client-first-name,
+      .client-last-name,
+      .client-document,
+      .client-phone {
+        width: 48%;
+        margin: 0;
+        @include rem(margin-bottom, 10px);
+
+        &.pull-left{
+          @include mq('sm', max){
+            float: left !important;
+          }
+        }
+      }
+
+      .client-email {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .client-company-document,
+      .client-last-name,
+      .client-phone {
+        margin-left: 4%;
+      }
+
+      // Main Input Style
+      input {
+        &[type="tel"],
+        &[type="text"],
+        &[type="email"] {
+          border: 0;
+          box-shadow: unset;
+          text-shadow: unset;    
+          background-color: #f7f7f7;
+          border: 1px solid #e5e5e5;
+          color: rgb(108, 108, 108);
+          height: auto;
+          width: 100% !important;
+          margin: 0;
+          @include rem(padding, 10px);
+          @include rem(font-size, 11px);
+          @include rem(line-height, 11px);
+          @include rem(border-radius, 4px);
+          font-weight: 600;
+        }
+      }
+
+      // Newsletter Optin and B2B Optin
+      .exempt-si-label,
+      .newsletter-label {
+        display: flex;
+        align-items: center;
+        @include font-weight(400);
+        @include rem(font-size, 12px);
+        @include rem(line-height, 20px);
+
+        input {
+        }
+
+        span {
+          position: relative;
+          margin-left: 5px;
+
+          // &::before {
+          //   content: "";
+          //   position: absolute;
+          //   border: solid 1px $color-black;
+          //   border-radius: 50%;
+          //   @include rem(top, 4px);
+          //   @include rem(left, -20px);
+          //   @include rem(width, 10px);
+          //   @include rem(height, 10px);
+          // }
+        }
+      }
+
+      h5{
+        @include mq('sm', max){
+          color: $color-black;
+          text-transform: uppercase;
+          @include font-weight(bold);
+          font-family: $font-primary;
+          @include rem(font-size, 12px);
+          @include rem(line-height, 20px);
+          @include rem(margin-right, 30px);
+          @include rem(margin-bottom, 15px);
+        }
+      }
+
+      ul {
+        margin: 0;
+
+        a {
+          font-family: $font-primary;
+          color: $color-black;
+          text-decoration: underline;
+          @include font-weight(bold);
+          @include rem(font-size, 10px);
+          @include rem(line-height, 17px);
+
+          &:first-of-type {
+            display: flex;
+            @include rem(margin-bottom, 15px);
+
+            @include mq('sm'){
+              @include font-weight(400);
+            }
+          }
+        }
+      }
+
+      // Main Button
+      .btn-submit-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        text-align: unset;
+        width: 100%;
+        @include rem(margin-top, 25px);
+
+        button {
+          width: 100%;
+          box-shadow: unset;
+          text-shadow: unset;
+          background: unset;
+          padding: 0;
+          margin: 0;
+          border: 0;
+          background-color: $color-green;
+          color: $color-white;
+          text-transform: uppercase;
+          font-family: $font-primary;
+          @include font-weight(bold);
+          @include rem(font-size, 12px);
+          @include rem(line-height, 40px);
+          @include rem(border-radius, 4px);
+          @include rem(letter-spacing, 1px);
+        }
+      }
+    }
+  }
+}

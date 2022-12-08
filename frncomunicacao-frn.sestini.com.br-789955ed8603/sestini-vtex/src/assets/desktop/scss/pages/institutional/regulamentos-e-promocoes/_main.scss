@@ -1,0 +1,66 @@
+.x-institutional {
+    &__top {
+        width: 100%;
+        display: flex;
+        &-text {
+            width: 100%;
+            font-family: $font-primary;
+            color: rgba($color-black, 0.9);
+            overflow-y: auto;
+            .x-image-desconto {
+                width: 100%;
+            }
+            .x-garatia__img,
+            .x-institucional-imagem {
+                width: 100px;
+            }
+            @include scrollbar(5px, $color-red, rgba(#939393, 0.43));
+            font-weight: 400;
+            font-size: 14px;
+            max-height: 700px;
+            line-height: 18px;
+            padding-right: 70px;
+        }
+        object {
+            &.interno {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+    .gallery {
+        .control-operator {
+            &:target~.item {
+                display: none;
+            }
+            &:nth-of-type(1):target~.item:nth-of-type(1) {
+                display: block;
+            }
+            &:nth-of-type(2):target~.item:nth-of-type(2) {
+                display: block;
+            }
+            &:nth-of-type(3):target~.item:nth-of-type(3) {
+                display: block;
+            }
+            &:nth-of-type(4):target~.item:nth-of-type(4) {
+                display: block;
+            }
+            &:nth-of-type(5):target~.item:nth-of-type(5) {
+                display: block;
+            }
+        }
+    }
+}
+
+.x-gallery {
+    &__tab {
+        &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &-content {
+            padding-right: 20px;
+        }
+    }
+}

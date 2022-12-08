@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniDesktop-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-institutional.css" media="all"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-quem-somos.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniDesktop-Header"/>
+    <main class="x-quem-somos__main" role="main">
+      <div class="x-institutional__option-menu js--option-menu"><vtex:contentPlaceHolder id="Opção ativa no menu lateral" /></div>
+      <div class="x-institutional__content">
+        <vtex:template id="SestiniCommon-Breadcrumb"/>
+        <section class="x-institutional__navigation">
+          <vtex:template id="SestiniCommon-InstitutionalMenu"/>
+        </section>
+        <section class="x-institutional__container">
+          <div class="x-institutional__top">
+            <h1 class="x-title">Quem <strong>somos</strong></h1>
+            <div class="x-institutional__top-text"><vtex:contentPlaceHolder id="Texto - Quem Somos" /></div>
+          </div>
+          <div class="x-institutional__bottom">
+            <h2 class="x-title">Nossos <strong>valores</strong></h2>
+            <ul class="x-values__items">
+              <li class="x-values__item">
+                <div class="x-values__item-icon"><vtex.cmc:svgIconLamp/></div><span class="x-values__item-text"><strong>inovação</strong> e <br/> <strong>conhecimento</strong></span>
+              </li>
+              <li class="x-values__item">
+                <div class="x-values__item-icon"><vtex.cmc:svgIconFaith/></div><span class="x-values__item-text"><strong>qualidade</strong> e <br/> <strong>confiança</strong></span>
+              </li>
+              <li class="x-values__item">
+                <div class="x-values__item-icon"><vtex.cmc:svgIconAccess/></div><span class="x-values__item-text"><strong>capilaridade</strong> e <br/> <strong>acesso</strong></span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniDesktop-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniDesktop-Scripts"/>
+    <vtex:template id="SestiniDesktop-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-institutional.js"></script>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-quem-somos.js"></script>
+  </body>
+</html>

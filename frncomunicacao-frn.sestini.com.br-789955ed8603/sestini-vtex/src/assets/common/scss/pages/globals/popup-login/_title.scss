@@ -1,0 +1,39 @@
+.vtexIdUI {
+    #vtexIdUI-auth-selector.vtexIdUI-page-active {
+        .vtexIdUI-heading {
+            @include flex-centered;
+            height: 50px;
+            span {
+                display: none;
+            }
+            &::after {
+                display: flex;
+                align-content: center;
+                justify-content: flex-start;
+                content: "LOGIN";
+                margin: 0 auto !important;
+                font-family: $font-primary;
+                @include rem(padding-left, 2.5px !important);
+                @include font-weight(bold);
+            }
+            &:before,
+            &:after {
+                @extend %popup-login-common__title;
+                @include rem(font-size, 26px !important);
+                @include rem(line-height, 26px !important);
+            }
+        }
+    }
+    .modal-header {
+        h4 {
+            margin: 0;
+            @include rem(padding, 0 40px);
+            @include mq("sm", max) {
+                @include rem(padding, 0 12px);
+            }
+        }
+        .vtexIdUI-heading {
+            @extend %popup-login-common__title;
+        }
+    }
+}

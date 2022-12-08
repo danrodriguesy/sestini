@@ -1,0 +1,62 @@
+.x-home {
+    &__main-banner {
+        position: relative;
+        &-items {
+            margin-bottom: 0 !important;
+        }
+        img {
+            height: auto !important;
+            width: 100% !important;
+        }
+        .slick-slider {
+            .slick-next,
+            .slick-prev {
+                z-index: 1;
+                &:before {
+                    color: $color-white;
+                    font-weight: bold;
+                    text-shadow: black 2px 2px 1px;
+                }
+            }
+            .slick-dots {
+                bottom: 0;
+                li {
+                    font-size: 0;
+                    text-indent: 9999px;
+                    cursor: pointer;
+                    margin: 2px;
+                    background-color: #fff;
+                    width: 10px;
+                    height: 10px;
+                    border: 1px solid $color-red;
+                    transform: skewX(10deg) skewY(0);
+                    &.slick-active {
+                        background: $color-red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lozad {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+  
+    &.loaded {
+      background: transparent;
+      animation:fadein;
+      transition: 1.5s;
+    }
+  }
+  
+  @keyframes fadein{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

@@ -1,0 +1,80 @@
+.x-account {
+    &__orders {
+        .link {
+            display: flex;
+            align-items: center;
+        }
+
+        #my-orders-container {
+            .w-100.pv4.fl {
+                display: flex;
+                flex-direction: column;
+
+                table {
+                    order: 10;
+                }
+
+                .x-orders__info-shipping {
+                    font-size: 12px;
+                }
+            }
+
+            h2,
+            h2.lh-copy span {
+                font-size: 14px;
+                margin-bottom: 8px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            span {
+                font-size: 11px;
+            }
+
+            .mid-gray,
+            .lh-copy + p {
+                > span {
+                    font-size: 17px;
+                    margin-right: 8px;
+
+                    @include mq("sm", max) {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .mid-gray {
+                color: $color-black;
+
+                .db.mt0.mb2.f6.fw6 {
+                    font-size: 12px;
+                    font-weight: normal;
+                }
+            }
+        }
+        thead {
+            th {
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+        }
+
+        tbody {
+            td {
+                &:first-child {
+                    div {
+                        padding-right: 12px;
+
+                        @include mq("sm", max) {
+                            margin-top: 8px;
+                        }
+                    }
+                }
+
+                font-size: 11px;
+            }
+        }
+    }
+}

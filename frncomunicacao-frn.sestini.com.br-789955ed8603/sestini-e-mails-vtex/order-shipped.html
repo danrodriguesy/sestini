@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <!-- So that mobile webkit will display zoomed in -->
+    <meta name="format-detection" content="telephone=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- disable auto telephone linking in iOS -->
+    <title>{{_accountInfo.TradingName}}</title>
+    <style type="text/css">
+        /* Resets: see reset.css for details */
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #ebebeb;
+        }
+
+        .ExternalClass {
+            width: 100%;
+            background-color: #ebebeb;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+        }
+
+        body {
+            padding: 0;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        .yshortcuts a {
+            border-bottom: none !important;
+        }
+
+        /* Constrain email width for small screens */
+        @media screen and (max-width: 600px) {
+            table[class="container"] {
+                width: 100% !important;
+            }
+        }
+
+        /* Give content more room on mobile */
+        @media screen and (max-width: 480px) {
+            .status {
+                padding-bottom: 0px;
+            }
+        }
+
+        /* Styles for forcing columns to rows */
+        @media only screen and (max-width : 600px) {
+
+            /* force container columns to (horizontal) blocks */
+            .container {
+                border-radius: 0 !important;
+            }
+
+            .no-padding-top-bottom-mobile {
+                padding-top: 0;
+                padding-bottom: 0;
+                padding: 0 !important;
+            }
+
+            .img-product {
+                width: 70px;
+            }
+
+            .side-border {
+                padding-left: 0 !important;
+                border: none !important;
+            }
+
+            .button {
+                padding: 11px 0 !important;
+                font-size: 13px;
+                width: 100%;
+            }
+
+            .table-button {
+                width: 100% !important;
+            }
+
+            td[class="force-col"] {
+                display: block;
+                padding-right: 0 !important;
+            }
+
+            table[class="col-3"] {
+                /* unset table align="left/right" */
+                float: none !important;
+                width: 100% !important;
+                /* change left/right padding and margins to top/bottom ones */
+                padding-bottom: 12px;
+                border-bottom: 1px solid #eee;
+            }
+
+            /* remove bottom border for last column/row */
+            table[id="last-col-3"] {
+                border-bottom: none !important;
+            }
+
+            /* align images right and shrink them a bit */
+            img[class="col-3-img"] {
+                float: right;
+                margin-left: 6px;
+                max-width: 130px;
+            }
+        }
+
+        @media only screen and (max-width : 800px) {
+            .status {
+                width: 100% !important;
+            }
+
+            .status div {
+                width: 200px !important;
+            }
+        }
+
+
+        .x-header__logo img,
+        .x-footer__logo img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .x-fake-header {
+            height: 40px;
+            display: block;
+            width: 100%;
+            position: relative;
+        }
+
+        .x-title__logo {
+            color: #EC0000;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1;
+
+        }
+
+        .x-title__logo span {
+            line-height: 1;
+            font-weight: 700;
+            color: #EC0000;
+            text-decoration: none;
+        }
+
+        .x-title {
+            color: #EC0000;
+            font-size: 17px;
+            font-family: Montserrat;
+            text-transform: uppercase;
+
+        }
+
+        .x-order-id {
+            color: #000000;
+        }
+
+        .x-footer__logo {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .x-footer__message {
+            color: #717171;
+            display: inline;
+
+        }
+
+        .x-footer__bottom-bar {
+            height: 100%;
+            background-color: #000;
+            display: block;
+            margin-top: -5px;
+        }
+
+        .x-footer__network-- {
+            width: 8%;
+            align-items: center;
+            display: inline-block;
+            padding: 15px 0;
+
+        }
+
+        @media(max-width:768px) {
+            .x-footer__message {
+                padding: 5px 1px;
+            }
+
+            .x-footer__network-- {
+                padding: 7px 0px;
+            }
+
+        }
+    </style>
+    <style type="text/css">
+        .emailContainer {
+            max-width: 594px;
+        }
+
+        .emailContainer2 {
+            max-width: 650px;
+        }
+
+        .flexibleGrid {
+            max-width: 10px;
+        }
+
+        .flexibleGrid-menor {
+            max-width: 10px;
+        }
+
+        @media only screen and (max-width:550px) {
+            img.m-full {
+                width: 100% !important;
+            }
+
+            .bga {
+                background: #0FC !important;
+            }
+
+            .bgb {
+                background: #6F9 !important;
+            }
+
+            .m-auto {
+                margin: 0 auto !important;
+            }
+
+            table.m-full {
+                width: 600px !important
+            }
+
+            table.m-center {
+                float: none !important;
+                margin: auto !important;
+            }
+
+            table.m-hide {
+                display: none !important;
+            }
+
+            td.m-center {
+                text-align: center !important;
+            }
+
+            td.m-left {
+                text-align: left !important;
+            }
+
+            td.m-fonte {
+                font-size: 14px !important;
+            }
+
+            td.m-hide {
+                display: none !important;
+            }
+
+            td.cor {
+                color: #CFF
+            }
+
+            td.coll {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            td.t-padding {
+                padding-top: 20px !important;
+            }
+
+            td.b-padding {
+                padding-bottom: 20px !important;
+            }
+
+            td.l-padding {
+                padding-right: 20px !important;
+                padding-left: 20px !important;
+            }
+
+            td.nl-padding {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+    </style>
+    <style>
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+    </style>
+    <style>
+        @media (max-width: 600px) {
+
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+    </style>
+    <style>
+        @media screen and (min-width: 30em) {
+
+            .ph4-ns {
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
+
+            .mv4-ns {
+                margin-top: 2rem !important;
+                margin-bottom: 2rem !important;
+            }
+        }
+
+        /*custom style*/
+        .x-header__logo {
+            width: 100%;
+            box-shadow: 0 4px 4px -2px #F4F4F4;
+            -moz-box-shadow: 0 4px 4px -2px #F4F4F4;
+            -webkit-box-shadow: 0 4px 4px -2px #F4F4F4;
+        }
+
+        .x-header__logo img,
+        .x-footer__logo img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .x-fake-header {
+            height: 40px;
+            display: block;
+            width: 100%;
+            position: relative;
+        }
+
+        .x-title__logo {
+            color: #EC0000;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 1;
+
+        }
+
+        .x-title__logo span {
+            line-height: 1;
+            font-weight: 700;
+            color: #EC0000;
+            text-decoration: none;
+        }
+
+        .x-title {
+            color: #EC0000;
+            font-size: 17px;
+            font-family: Montserrat;
+            text-transform: uppercase;
+
+        }
+
+        .x-barra-title {
+
+            box-shadow: 0 4px 4px -2px #F4F4F4;
+            -moz-box-shadow: 0 4px 4px -2px #F4F4F4;
+            -webkit-box-shadow: 0 4px 4px -2px #F4F4F4;
+        }
+
+        .x-order-id {
+            color: #000000;
+        }
+
+        .x-footer__logo {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .x-footer__message {
+            color: #717171;
+            display: inline;
+            padding: 5px 0px;
+
+        }
+
+        .x-footer__bottom-bar {
+            height: 100%;
+            background-color: #000;
+            display: block;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .x-footer_banner span {
+            font-weight: bolder;
+            display: block;
+            margin-top: -5px;
+        }
+
+        @media(max-width:768px) {
+            .x-footer__message {
+                padding: 10px 9px;
+
+            }
+
+            .x-footer__network-- {
+                padding: 10px 0px;
+                margin-left: 5%;
+
+            }
+        }
+
+        @media(max-width:768px) {
+            .x-barra-title {
+                padding: 10px 12px;
+
+            }
+        }
+
+        .x-footer__bottom-bar {
+            height: 100%;
+            background-color: #000;
+            display: block;
+            text-align: center;
+        }
+
+        .x-footer__network-- {
+            width: 8%;
+            display: inline-block;
+            padding: 15px 0;
+            margin-left: 50px;
+        }
+
+        .x-footer_banner span {
+            font-weight: bolder;
+            display: block;
+            margin-top: -5px;
+        }
+
+        @media(max-width:768px) {
+            .x-footer__message {
+                padding: 10px 9px;
+
+            }
+
+            .x-footer__network-- {
+                padding: 10px 10px;
+
+            }
+        }
+
+        @media(max-width:768px) {
+            .x-barra-title {
+                padding: 10px 12px;
+
+            }
+        }
+    </style>
+</head>
+
+<body marginwidth="0" marginheight="0" bgcolor="#fff" style="padding:0px 0px;color:#333;" leftmargin="0" topmargin="0">
+    <!-- 100% wrapper (grey background) -->
+    <table width="100%" cellspacing="0" border="0" bgcolor="#fff" style='max-width: 600px; margin: 0 auto;'>
+        <tbody>
+
+            <tr>
+                <td bgcolor="#ffffff" align="left" class="container-padding"
+                    style="background-color: #ffffff; padding-left: 10px; padding-right: 3px; font-size: 13px; line-height: 19px; font-family: Montserrat, sans-serif; color: #333;">
+                    <br />
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="columns-container">
+                        <tbody>
+                            <tr>
+                                <td width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                    <table style='width: 100%;'>
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" colspan='4'>
+                                                    <!-- logo da empresa -->
+                                                    <p class='x-header__logo'
+                                                        style="padding-top: 10px;padding-bottom: 10px; margin: 0 auto; max-width:650px;text-align:center;">
+                                                        <img alt="Sestini" border="0" width="auto"
+                                                            src="https://sestini.vteximg.com.br/arquivos/name.png"
+                                                            style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; border: none; max-height:30px !important;"></img>
+                                                    </p>
+                                                    <!-- Fim logo da empresa -->
+                                                </td>
+                                            </tr>
+                                            <tr style='padding-top: 10px;'>
+                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0;'
+                                                    align="center">
+                                                    <a href='https://www.sestini.com.br/busca/juvenil'
+                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>JOVEM</a>
+                                                </td>
+                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc'
+                                                    align="center">
+                                                    <a href='https://www.sestini.com.br/infantil'
+                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>INFANTIL</a>
+                                                </td>
+                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc'
+                                                    align="center">
+                                                    <a href='https://www.sestini.com.br/viagem/malas'
+                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>VIAGEM</a>
+                                                </td>
+                                                <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc'
+                                                    align="center">
+                                                    <a href='https://www.sestini.com.br/executivo'
+                                                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>EXECUTIVO</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="force-col">
+                                    <!-- ### BEGIN CONTENT ### -->
+                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff"
+                                        align="left" style="padding-bottom:0;margin-bottom:0;" class="col-3">
+                                        <tbody>
+
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <h1 style='font-family: Montserrat;margin: 0; margin-top: 30px;font-size: 24px; color: #43C300; text-align:center;'>PEDIDO EM TRANSPORTE</h1>
+                                    <p
+                                        style="font-family: Montserrat,sans-serif;font-size: 17px;color: #848484;margin: 5px 0;text-align: center;">
+                                        Olá, <strong>{{clientProfileData.firstName}}!</strong><br>
+                                        Foi dada a largada! Seu pedido {{orderId}}, foi entregue ao transportador.
+                                        Dentro de alguns dias sua entrega será concluída.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="box-sizing: border-box !important;">
+                                <td class="ph4-ns"
+                                    style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; width: 100%; padding-bottom: 2rem; text-align: center !important; font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"
+                                    align="center">
+                                    <div style="box-sizing: border-box; margin-top: 2rem !important;">
+                                        <img src="https://sestini.vteximg.com.br/arquivos/TransacionalEnviado.png"
+                                            alt="pedido enviado">
+                                    </div>
+                                </td>
+                            <tr>
+                                <td style="padding-top:5px;padding-bottom:5px;">
+                                    {{#if giftRegistryData}}
+                                    <table cellspacing="0" cellspacing="0"
+                                        style="width:100%;padding-bottom:5px;padding-right:10px;" border="0"
+                                        align="left" class="side-border">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-bottom:0;">
+                                                    <div
+                                                        style="color:#000;font-family:Montserrat;font-size:12px;font-weight:bold;text-transform:uppercase;">
+                                                        Endereço de retirada
+                                                    </div>
+                                                    <span>{{giftRegistryData.description}}</span><br /><br />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    {{else}}
+                                    <table cellspacing="0" cellspacing="0"
+                                        style="width:100%;padding-top:5px;padding-bottom:5px;" border="0" align="left"
+                                        class="side-border">
+                                        <tbody>
+                                            <tr style="color:#848484; font-size:12px;">
+                                                <td
+                                                    style="padding-bottom:0;background:#FAFAFA;padding:12px;width:100%;">
+                                                    <div
+                                                        style="font-family:Montserrat;font-size:12px;font-weight:bold;text-transform:uppercase;padding-bottom: 10px; color: black;">
+                                                        Endereço de retirada
+                                                    </div>
+                                                    {{shippingData.address.receiverName}}<br />
+                                                    {{shippingData.address.street}} - {{shippingData.address.number}} -
+                                                    {{shippingData.address.neighborhood}}<br />
+                                                    {{shippingData.address.city}} - {{shippingData.address.state}}<br />
+                                                    {{shippingData.address.postalCode}}<br />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    {{/if}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table width="100%" cellspacing="0" border="0" style="margin-bottom:15px;">
+                        <tbody>
+                            <tr>
+                                <td style="background-color:#f9f9f9;padding-left:10px;">
+                                    <table align="left" style="padding-bottom:0px;padding-top:10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        <strong
+                                                            style="font-size:12px;font-family:Montserrat;display:inline-block;color:#000;">HISTÓRICO
+                                                            DE MOVIMENTAÇÃO</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="color: #848484;">
+                                                <td>
+                                                    {{#if package.courier}}
+                                                    <div
+                                                        style="display:inline-block;line-height:12px;font-size:12px;padding-left:3px;width:200px;">
+                                                        <p>Transportadora: <strong>{{package.courier}}</strong></p>
+                                                    </div>
+                                                    {{/if}}
+                                                    <div
+                                                        style="display:inline-block;line-height:12px;font-size:12px;padding-left:3px;width:200px;">
+                                                        <p>Cód Rastreio: <strong><a style="color:#000;margin-left: 5px"
+                                                                    href="{{package.trackingUrl}}">{{package.trackingNumber}}</a></strong>
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:0;">
+                                    <table width="100%" style="padding-top:5px;padding-bottom:20px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-left:10px;background-color:#f9f9f9;">
+                                                    <table cellpadding="10" align="left" style="width: 100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding-left:0;padding-bottom:0;font-size:14px;">
+                                                                    <strong>
+                                                                        <span
+                                                                            style="font-size:12px;font-family:Montserrat;display:inline-block;color:#000">MOVIMENTAÇÃO:
+                                                                        </span>
+                                                                    </strong>
+                                                                    <span>{{package.courierStatus.data.0.description}}</span><br>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table cellpadding="15" align="left" style="padding-top:5px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding-left:0;padding-bottom:0;padding-top:0;font-size:14px;">
+                                                                    <strong>
+                                                                        <span style="display:inline-block;">
+                                                                            Data:
+                                                                        </span>
+                                                                    </strong>
+                                                                    <span>{{formatDateTime
+                                                                        package.courierStatus.data.0.lastChange}}</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table class="status" style="padding-top:5px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding-left:0;padding-bottom:0;padding-top:0;font-size:14px;">
+                                                                    {{#if package.courierStatus.data.0.city}}
+                                                                    <strong>
+                                                                        <span style="display:inline-block;">
+                                                                            Cidade:
+                                                                        </span>
+                                                                    </strong>
+                                                                    <span>{{package.courierStatus.data.0.city}}</span>
+                                                                    {{/if}}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table width="100%" cellspacing="0" border="0" style="">
+                        <tbody>
+                            <tr>
+                                <td style="background-color:#f9f9f9;padding-left:10px;">
+                                    <table align="left" style="padding-bottom:0px;padding-top:10px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        <strong
+                                                            style="font-size:12px;font-family:Montserrat;display:inline-block;color:#000;">PRODUTOS
+                                                            ENCAMINHADOS</strong>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:0;background:#FAFAFA">
+                                    {{#each items}}
+                                    <table width="100%" style="padding-top:5px;padding-bottom:5px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-left:15px;color:#848484;font-size:14px !important;">
+                                                    <span>{{name}}</span><br>
+                                                    <table cellpadding="10" align="left" style="padding-top:5px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding-left:0;padding-bottom:0;padding-top:0;color:#000;font-size:14px">
+                                                                    Retirada {{#each ../shippingData.logisticsInfo}}
+                                                                    {{#eq itemId ../id}}
+                                                                    {{#each slas}}
+                                                                    {{#eq ../selectedSla id}}
+                                                                    {{#if deliveryWindow}}
+                                                                    agendada entre <strong>
+                                                                        {{formatDateTime deliveryWindow.startDateUtc}} e
+                                                                        {{formatDateTime deliveryWindow.endDateUtc}}
+                                                                    </strong>
+                                                                    {{else}}
+                                                                    <span style="display:inline-block;">
+                                                                        {{#unless shippingEstimateDate}}
+                                                                        </strong> em até <strong>
+                                                                            {{#hasSubStr shippingEstimate 'bd'}}
+                                                                            {{replace shippingEstimate 'bd' ' dias
+                                                                            úteis.'}}
+                                                                            {{else}}
+                                                                            {{replace shippingEstimate 'd' ' dias.'}}
+                                                                            {{/hasSubStr}}
+                                                                            {{else}}
+                                                                        </strong> até <strong>
+                                                                            {{formatDate shippingEstimateDate}}
+                                                                            {{/unless}}
+                                                                        </strong>
+                                                                        {{/if}}
+                                                                        {{/eq}}
+                                                                        {{/each}}
+                                                                        {{/eq}}
+                                                                        {{/each}}
+                                                                    </span>
+                                                                    </strong><br>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table cellpadding="5" align="right"
+                                                        style="padding-top:5px;color: #848484;font-size:14px !important;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding-left:0;padding-bottom:0;padding-top:0;">
+                                                                    <span>{{quantity}}x R$
+                                                                        {{formatCurrency sellingPrice}}</span><br>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    {{/each}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table cellspacing="0" cellpadding="4" border="0" align="right"
+                        style="margin-bottom:15px;padding-top:7px;padding-bottom:7px;padding-left:7px;padding-right:7px;background:#f4f4f4;font-size:14px !important;">
+                        <tbody>
+                            {{#each totals}}
+                            {{#if value}}
+                            <tr>
+                                <td valign="top" align="left"
+                                    style="color:#000;font-weight: 600;font-size:14px !important;">
+                                    {{#eq id "Items"}}Itens{{/eq}}
+                                    {{#eq id "Shipping"}}Retirada{{/eq}}
+                                    {{#eq id "Discounts"}}Descontos{{/eq}}
+                                    {{#eq id "Tax"}}Taxas{{/eq}}
+                                </td>
+                                <td valign="top" align="right" style="text-align:left;color:#848484">
+                                    R$ {{formatCurrency value}}
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    <table align="left" class="table-button">
+                        <tbody>
+                            <tr>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; height: 40px; font-size:11px; letter-spacing:px; padding-bottom: 37px;">
+                    <a href="https://www.sestini.com.br/_secure/account/orders#/" title="Acompanhar meu Pedido"
+                        style="margin-top: 2px; border-radius: 4px;font-family: Montserrat,sans-serif; text-decoration: none; padding: 13px 30px; font-weight: bold;font-size: 14px;text-transform: uppercase; color:#fff; background-color: #43C300;">ACOMPANHE
+                        O SEU PEDIDO</a>
+                </td>
+            </tr>
+            <!-- INICIO FOOTER -->
+            <table style='width: 100%'>
+                <tbody>
+                    <tr>
+                        <td align='center'>
+                            <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                                src='https://sestini.vteximg.com.br/arquivos/Escolar.png' alt='Baixinho na escola' />
+                        </td>
+                        <td align='center'>
+                            <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                                src='https://sestini.vteximg.com.br/arquivos/Trabalho.png' alt='Baixinho na escola' />
+                        </td>
+                        <td align='center'>
+                            <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                                src='https://sestini.vteximg.com.br/arquivos/Viagem.png' alt='Baixinho na escola' />
+                        </td>
+                        <td align='center'>
+                            <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                                src='https://sestini.vteximg.com.br/arquivos/Universidade.png'
+                                alt='Baixinho na escola' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align='center'>
+                            <p
+                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                BAIXINHO NA ESCOLA</p>
+                        </td>
+                        <td align='center'>
+                            <p
+                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                RUMO AO TRABALHO</p>
+                        </td>
+                        <td align='center'>
+                            <p
+                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                VOU VIAJAR</p>
+                        </td>
+                        <td align='center'>
+                            <p
+                                style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                                ENTREI NA FACUL</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan='4'>
+                            <p
+                                style='margin-top: 30px; margin-bottom: 20px; text-align: center; font-family: Montserrat; font-size: 14px; font-weight: bold; color: rgb(135, 135, 135)'>
+                                CONFIRA AS VANTAGENS DO NOSSO SITE</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align='center'>
+                            <img style='height: 50px; width: auto'
+                                src='https://sestini.vteximg.com.br/arquivos/shipping-email-icon.png'
+                                alt='Frete Grátis' />
+                        </td>
+                        <td align='center'>
+                            <img style='height: 50px; width: auto'
+                                src='https://sestini.vteximg.com.br/arquivos/credit-card-email-icon.png'
+                                alt='Cartão de crédito' />
+                        </td>
+                        <td align='center'>
+                            <img style='height: 50px; width: auto'
+                                src='https://sestini.vteximg.com.br/arquivos/location-email-icon.png'
+                                alt='Localização' />
+                        </td>
+                        <td align='center'>
+                            <img style='height: 50px; width: auto'
+                                src='https://sestini.vteximg.com.br/arquivos/chat-email-icon.png' alt='Chat' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align='center'>
+                            <p
+                                style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                                Frete Grátis</p>
+                            <p
+                                style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>
+                                ou com valor reduzido</p>
+                        </td>
+                        <td align='center'>
+                            <p
+                                style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                                Parcele</p>
+                            <p
+                                style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>
+                                Em até 10x sem juros</p>
+                        </td>
+                        <td align='center'>
+                            <p
+                                style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                                Endereço</p>
+                            <p
+                                style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>
+                                Conheça nossas lojas</p>
+                        </td>
+                        <td align='center'>
+                            <p
+                                style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                                Atendimento</p>
+                            <p
+                                style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>
+                                Entre em contato conosco</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align='center' colspan='4'>
+                            <a href='https://pt-br.facebook.com/sestinioficial'><img
+                                    style='width: 25px;height: auto;margin-top: 25px;'
+                                    src='https://sestini.vteximg.com.br/arquivos/facebook-email-icon.png'
+                                    alt='Facebook' /></a>
+                            <a href='https://www.instagram.com/sestinioficial/'><img
+                                    style='width: 25px;margin: 0 10px;height: auto;'
+                                    src='https://sestini.vteximg.com.br/arquivos/instagram-email-icon.png'
+                                    alt='Instagram' /></a>
+                            <a href='https://www.linkedin.com/company/sestini-mercantil/mycompany/'><img
+                                    style='width: 25px;height: auto;'
+                                    src='https://sestini.vteximg.com.br/arquivos/linkedin-email-icon.png'
+                                    alt='Linkedin' /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan='4'>
+                            <p
+                                style='margin-top: 20px; text-align: center; font-family: Montserrat; font-size: 10px; margin-bottom: 10px; font-weight: bold; color: rgb(65, 65, 65)'>
+                                Sestini Mercantil LTDA | Av. Pascoal
+                                Thomeu, 1.141, Villa Nova Bonsucesso |
+                                Guarulhos - SP</p>
+                            <p
+                                style='text-align: center; font-family: Montserrat; font-size: 10px;font-weight: normal; color: rgb(65, 65, 65)'>
+                                As Imagens deste site são meramente ilustrativas, fotos poderão conter itens não
+                                inclusos no produto. Preços válidos apenas para compras neste site. Sestini® 2013 –
+                                2020. Todos os direitos reservados.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- FINAL FOOTER -->
+        </tbody>
+    </table>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <!--/600px container -->
+    <!--/100% wrapper-->
+</body>
+
+</html>

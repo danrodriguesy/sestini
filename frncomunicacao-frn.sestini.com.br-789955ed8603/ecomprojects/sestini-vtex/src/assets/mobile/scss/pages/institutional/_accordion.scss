@@ -1,0 +1,83 @@
+.x-institutional {
+
+	&__bottom {
+		width: 100%;
+	}
+
+	&-nav {
+	// @include rem(padding, 0 15px);
+  
+	// &__bottom {
+	//   display: flex;
+	//   flex-direction: column;
+	//   position: relative;
+	// }
+  
+	&__items {
+	  display: flex;
+	  flex-direction: column;
+	  margin: auto;
+	  width: 100%;
+	  @include rem(margin, 40px 0);
+	}
+  
+	&__item {
+	  display: flex;
+	  flex-direction: column;
+	  width: 100%;
+	  will-change: max-height;
+	  transition: max-height 600ms ease-in-out;
+	  overflow: hidden;
+	  border-bottom: solid 1px $color-gray-lighter;
+	  @include rem(max-height, 32px);
+  
+	  & + & {
+		@include rem(margin-top, 15px);
+	  }
+  
+	  &.is--opened {
+		@include rem(max-height, 1000px);
+	  }
+  
+	  &-title {
+		position: relative;
+		color: $color-black;
+		text-align: left;
+		@include font-weight(600);
+		@include rem(font-size, 14px);
+		@include rem(line-height, 26px);
+		@include rem(margin-bottom, 15px);
+		@include rem(padding-left, 10px);
+		// cursor: pointer;
+  
+		&::after {
+		  content: "";
+		  position: absolute;
+		  @include rem(right, 10px);
+		  @include rem(top, 7px);
+		  @include arrow-generate(down, 7px, 2px);
+		  border-color: $color-black;
+		  will-change: transform;
+		  transition: transform 600ms ease-in-out;
+		}
+  
+		.is--opened & {
+		  &::after {
+			transform: rotate(-45deg);
+		  }
+		}
+	  }
+	}
+  
+	&__content {
+	  @include rem(padding-left, 10px);
+	  @include rem(margin-bottom, 15px);
+	  @include rem(font-size, 14px);
+	  
+	  img {
+		//   max-width: 100px;
+		  padding: 20px 0;
+	  }
+	}
+  }
+}

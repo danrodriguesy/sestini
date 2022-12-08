@@ -1,0 +1,40 @@
+@include mq("sm") {
+  .x-category__banner {
+    img.has--placeloader {
+      padding: 12% 100%;
+    }
+  }
+
+  .x-search__content-shelfs,
+  .x-category__content-shelfs {
+    img,
+    .x-shelf__placeloader {
+      .has--placeloader {
+        padding: 92.5px 82.5px;
+      }
+    }
+
+    .x-shelf__img-back {
+      &.has--placeloader {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include mq("sm", max) {
+  .x-category__banner {
+    img.has--placeloader {
+      padding: 30% 50%;
+    }
+  }
+
+  .x-category__products {
+    img,
+    .x-shelf__placeloader {
+      &.has--placeloader {
+        padding: 75% 50%;
+      }
+    }
+  }
+}

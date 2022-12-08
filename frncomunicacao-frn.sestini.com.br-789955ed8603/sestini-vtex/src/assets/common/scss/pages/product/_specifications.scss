@@ -1,0 +1,102 @@
+.x-product__specifications {
+    &-wrapper {
+        display: flex !important;
+        flex-direction: column;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px 30px;
+    }
+    &-description {
+        margin-bottom: 20px;
+        &>h2 {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family: $font-primary;
+            font-size: 18px;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        &>div {
+            padding: 0;
+            font-weight: regular;
+            font-family: $font-primary;
+            font-size: 14px;
+            line-height: 22px;
+            color: #3e3e3e;
+        }
+    }
+    &-characteristics,
+    &-dimensions {
+        &>h2 {
+            margin: 15px 0;
+            font-family: $font-primary;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        &-content {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        &-text {
+            padding: 0;
+            font-family: $font-primary;
+            font-weight: regular;
+            font-size: 14px;
+            line-height: 22px;
+            color: #3e3e3e;
+            &>strong {
+                margin-right: 5px;
+            }
+        }
+    }
+    &-tech {
+        &>h2 {
+            margin: 15px 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: $font-primary;
+            text-transform: uppercase;
+            font-style: normal;
+        }
+        &-content {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            margin-bottom: 20px;
+        }
+        &-items {
+            display: flex;
+            flex: 0 0 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px 20px;
+        }
+        &-item {
+            flex: 0 0 15%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            &>img {
+                width: 50px;
+                height: 50px;
+            }
+            &>p {
+                font-weight: 400;
+                font-family: $font-primary;
+                font-size: 9px;
+                color: #3e3e3e;
+                text-align: center;
+                h2 {
+                    font-weight: 600;
+                    font-size: 10px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

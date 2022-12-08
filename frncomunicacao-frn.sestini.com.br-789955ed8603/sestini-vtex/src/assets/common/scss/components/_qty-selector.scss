@@ -1,0 +1,57 @@
+%qty-selector {
+  &__wrapper {
+    @include flex-centered;
+    background-color: #eaeaea;
+    padding: 6px 8px;
+  }
+
+  &__val {
+    width: 5ch;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  &__btn {
+    position: relative;
+    @include flex-centered;
+    height: 24px;
+    width: 24px;
+
+    &.has--minus {
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $color-black;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 1px;
+        width: 8px;
+      }
+    }
+
+    &.has--plus {
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $color-black;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 1px;
+        width: 8px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $color-black;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 8px;
+        width: 1px;
+      }
+    }
+  }
+}

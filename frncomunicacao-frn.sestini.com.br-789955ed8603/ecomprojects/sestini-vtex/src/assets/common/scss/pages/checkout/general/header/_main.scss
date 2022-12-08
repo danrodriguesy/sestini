@@ -1,0 +1,55 @@
+.x-header {
+  box-shadow: 1px 0 1px 2px $color-gray-light-2;
+
+  &,
+  &__left,
+  &__middle {
+    @include flex-centered;
+   
+  }
+
+  &__left {
+    flex: 0 0 10%;
+    width: 10%;
+    svg {
+      @include mq("sm", max) {
+        @include rem(width, 80px);
+        @include rem(height, 22px);
+      }
+    }
+  }
+
+  &__middle{
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-gray-darken;
+    @include font-weight(400);
+    @include rem(font-size, 20px);
+    @include rem(line-height, 27px);
+
+    @include mq("sm", max) {
+      @include rem(font-size, 16px);
+      @include rem(line-height, 23px);
+    }
+
+    text-transform: capitalize;
+
+    strong {
+      color: $color-red;
+      text-transform: lowercase;
+    }
+  }
+}

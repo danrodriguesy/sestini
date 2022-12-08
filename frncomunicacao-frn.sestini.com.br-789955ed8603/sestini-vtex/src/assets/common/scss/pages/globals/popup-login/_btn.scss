@@ -1,0 +1,116 @@
+.vtexIdUI-show-app {
+    height: 400px !important;
+}
+
+.vtexIdUI {
+    .vtexIdUI-main-content {
+        .btn,
+        .btn-success,
+        .btn-large {
+            @extend %popup-login-common__btn-base;
+            border: 1px solid $color-black !important;
+            color: $color-black !important;
+        }
+        .vtexIdUI-send-email,
+        .vtexIdUI-create-account {
+            @include flex-centered;
+            &::before {
+                content: "Acesso rápido por e-mail";
+                text-transform: none !important;
+            }
+            font-family: $font-primary;
+            text-transform: none;
+            span {
+                display: none;
+            }
+            &:active,
+            &:focus,
+            &:hover {
+                color: $color-white !important;
+                background-color: $color-black !important;
+            }
+        }
+        .vtexIdUI-create-account {
+            &::before {
+                display: none;
+            }
+        }
+        #vtexIdUI-facebook {
+            background: $color-facebook;
+            background-image: url(/arquivos/icon-facebook-login.png);
+            background-repeat: no-repeat;
+            @include rem(background-size, 19px);
+            @include rem(background-position, 10px 8px);
+            border: none !important;
+            &:active,
+            &:focus,
+            &:hover {
+                background: lighten($color-facebook, 5%);
+                background-image: url(/arquivos/icon-facebook-login.png);
+                background-repeat: no-repeat;
+                @include rem(background-size, 19px);
+                @include rem(background-position, 10px 8px);
+            }
+            span {
+                font-family: $font-primary;
+                color: $color-white;
+                font-size: 14px !important;
+            }
+            p {
+                @include mq('sm') {
+                    @include rem(margin-left, 16px);
+                }
+            }
+        }
+        #vtexIdUI-google-plus {
+            background-image: url(/arquivos/icon-google-login.png);
+            background-repeat: no-repeat;
+            @include rem(background-size, 19px);
+            @include rem(background-position, 10px 8px);
+            background-color: $color-white !important;
+            border: solid 1px $color-gray-darkest !important;
+            span {
+                color: $color-black;
+                font-family: $font-primary;
+                @include rem(font-size, 14px !important);
+            }
+            p {
+                @include mq('sm') {
+                    @include rem(margin-left, 5px);
+                }
+            }
+            &:hover {
+                background-image: url(/arquivos/icon-google-login.png);
+                background-repeat: no-repeat;
+                @include rem(background-size, 19px);
+                @include rem(background-position, 10px 8px);
+            }
+        }
+        .vtexIdUI-others-send-email {
+            &:active,
+            &:focus,
+            &:hover {
+                font-family: $font-primary;
+                background-color: $color-black;
+                color: $color-white;
+                span {
+                    color: $color-white;
+                }
+            }
+        }
+        #confirmLoginAccessKeyBtn,
+        #tryChangePswdBtn,
+        #changePswdBtn,
+        #sendAccessKeyBtn,
+        #classicLoginBtn {
+            font-family: $font-primary;
+            background: $color-white;
+            color: $color-black;
+            &:active,
+            &:focus,
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.x-footer {
+  background-color: $color-gray-lighten;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}

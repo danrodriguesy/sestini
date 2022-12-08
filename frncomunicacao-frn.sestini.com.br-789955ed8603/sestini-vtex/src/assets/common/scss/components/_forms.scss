@@ -1,0 +1,276 @@
+%form {
+    $local--field-space: 5px;
+    $local--font-size: 12px;
+
+    @mixin input-format {
+        color: $color-gray-dark;
+        border: 1px solid $color-gray;
+        font-size: $local--font-size;
+        padding-left: 14px;
+        padding-right: 14px;
+        transition: all 0.3s;
+        width: 100%;
+        @include placeholder($color-black, 1);
+        @include mq("sm", max) {
+            font-size: 15px;
+        }
+    }
+
+    &__group {
+        display: flex;
+        margin-bottom: $local--field-space;
+
+        &.has--two-columns {
+            .x-form__field {
+                width: 48.5%;
+            }
+        }
+    }
+
+    &__elements {
+        position: relative;
+
+        label {
+            @extend %form__label;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="file"],
+        select {
+            @extend %form__input;
+        }
+
+        input[type="checkbox"] {
+            @extend %form__checkbox-default;
+        }
+
+        input[type="radio"] {
+            @extend %form__radio;
+        }
+
+        textarea {
+            @extend %form__textarea;
+        }
+
+        input,
+        select,
+        textarea {
+            &.error {
+                border: 1px solid $color-red-dark !important;
+            }
+        }
+
+        label {
+            &.error {
+                color: $color-red-dark;
+                font-size: 10px;
+                position: absolute;
+                top: -16px;
+                right: 3px;
+            }
+        }
+    }
+
+    &__group-position {
+        width: 100%;
+    }
+
+    &__group-left {
+        @include rem(margin-right, $local--field-space);
+    }
+
+    &__submit {
+        @extend %btn--primary;
+    }
+
+    &__input {
+        @include input-format;
+        min-height: $input-height;
+    }
+
+    &__textarea {
+        @include input-format;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        transition: all 0.3s;
+    }
+
+    &__label {
+        display: block;
+        font-size: $local--font-size;
+        margin-bottom: 3px;
+        @include mq("sm", max) {
+            font-size: 15px;
+        }
+    }
+
+    &__label-link {
+        font-size: 12px;
+        margin-top: 4px;
+        color: $color-gray-darken;
+
+        &:hover {
+            @include link-hover($color-primary);
+            text-decoration: underline;
+        }
+    }
+
+    /**
+     * Example checkbox markup
+     * <div class="x-form__checkbox-field">
+     *     <input id="" class="x-form__checkbox" type="checkbox" name="" />
+     *     <label class="x-form__checkbox-label" for="">Label hidden</label>
+     *     <p class="x-form__checkbox-text">Label shown</p>
+     * </div>
+     */
+    &__checkbox-field {
+        display: flex;
+        align-items: center;
+    }
+
+    &__checkbox {
+        visibility: hidden;
+        width: 0 !important;
+
+        &:checked {
+            + label + .x-form__checkbox-label, // For jQuery Validate Plugin
+            + .x-form__checkbox-label {
+                &:before {
+                    background: $color-secondary;
+                }
+            }
+        }
+    }
+
+    &__checkbox-label {
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: relative;
+        text-indent: -999px;
+        overflow: hidden;
+        border: 1px solid $color-secondary;
+        cursor: pointer;
+        margin-right: 8px;
+
+        &:before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            margin: auto;
+            transition: all 0.4s ease;
+        }
+    }
+
+    &__checkbox-text {
+        font-size: 12px;
+    }
+
+    /**
+     * Checkbox default
+     */
+    &__checkbox-default {
+        margin-right: 0;
+    }
+
+    &__checkbox-default-group {
+        display: flex;
+        align-items: center;
+        min-height: $input-height;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+
+    &__radio {
+        margin-right: $local--field-space / 2;
+    }
+
+    &__radio-position {
+        display: flex;
+        align-items: center;
+        height: $input-height;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+
+    &__radio-field {
+        margin-right: $local--field-space * 2;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    /**
+     * Example file markup
+     * <label class="x-form__file">
+     *     <input id="" class="x-form__file-input js--contact-form-file-input" name="contact_file" type="file" />
+     *     <span class="x-form__file-control js--contact-form-file-control" data-file-name="Escolher arquivo..." data-btn-name="Selecionar"></span>
+     * </label>
+     */
+    &__file {
+        cursor: pointer;
+        margin-bottom: 0 !important;
+        position: relative;
+        width: 100%;
+    }
+
+    &__file-input {
+        font-size: 0 !important;
+        height: $input-height;
+        width: 100%;
+    }
+
+    &__file-control {
+        @extend %form__input;
+        border: none;
+        left: 0;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        &:before {
+            @extend %btn--primary;
+            content: attr(data-btn-name);
+            padding-left: 12px;
+            padding-right: 12px;
+            position: absolute;
+            right: -1px;
+            top: -1px;
+            z-index: 1;
+            transition: background-color 0.3s ease-out;
+        }
+
+        &:after {
+            content: attr(data-file-name);
+        }
+    }
+
+    &__btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+        margin-bottom: 16px;
+
+        &.has--to-left {
+            width: 160px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

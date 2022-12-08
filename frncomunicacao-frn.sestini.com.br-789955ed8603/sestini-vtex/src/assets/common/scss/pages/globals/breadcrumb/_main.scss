@@ -1,0 +1,120 @@
+.x-breadcrumb {
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include mq("sm", max) {
+      @include rem(padding, 4px 16px);
+      justify-content: flex-start;
+
+      body.is--category &,
+      body.is--departament &,
+      body.is--serach-result & {
+        padding: 0;
+      }
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      a {
+        margin-left: 0;
+        padding-left: 0;
+        &:before {
+          content: "";
+          @include rem(font-size, 10px);
+        }
+        @include mq("sm", max) {
+          @include rem(margin-right, 26px);
+          @include rem(font-size, 0 !important);
+          &:before {
+            content: "home";
+          }
+        }
+      }
+    }
+  }
+
+  a,
+  p {
+    color: #000;
+    @include rem(padding-left, 5px);
+    @include rem(padding-right, 5px);
+    @include rem(margin-left, 5px);
+    @include rem(margin-right, 5px);
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+
+    @include mq("sm") {
+      font-family: "Raleway";
+      font-weight: 500;
+      color: #000;
+      @include rem(font-size, 14px);
+      &:before {
+        content: "/";
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        transform: translateY(-50%);
+        @include rem(font-size, 6px);
+      }
+    }
+
+    @include mq("sm", max) {
+      @include rem(font-size, 10px);
+      @include font-weight(light);
+      &:before {
+        content: ">";
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        transform: translateY(-50%);
+        @include rem(font-size, 6px);
+      }
+    }
+
+    body.is--category &,
+    body.is--departament &,
+    body.is--serach-result & {
+      @include mq("sm", max) {
+        @include rem(font-size, 10px);
+        color: $color-gray-dark;
+        letter-spacing: 1.5px;
+        &:first-child {
+          @include rem(margin-right, 6px);
+          &:before {
+            @include rem(font-size, 10px);
+          }
+        }
+      }
+
+      &:before {
+        @include rem(font-size, 8px);
+        left: -7px;
+      }
+    }
+  }
+
+  a {
+    &:hover {
+      color: $color-black;
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    display: flex;
+    align-items: center;
+
+    body.is--category &,
+    body.is--departament &,
+    body.is--serach-result & {
+      @include font-weight(normal);
+    }
+  }
+}

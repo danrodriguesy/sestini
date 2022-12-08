@@ -1,0 +1,43 @@
+section(class='x-product__buy-together-container' rv-class-visually-hidden='product.buyTogether.hasBuyTogether | neg')
+  h3(class='x-title')
+    | #[strong Leve] também
+  div(class='js--shelf-buy-together visually-hidden ')
+    <vtex:contentPlaceHolder id='Compre Junto - Acessórios' />
+
+  div(class='x-product__buy-together-wrapper')
+    ul(class='x-buy-together__items' rv-if='product.buyTogether.hasBuyTogether')
+      li(class='x-buy-together__item' rv-each-buytogether='product.buyTogether.products')
+        article(class='x-buy-together__item-wrapper')
+          div(class='x-buy-together__image-wrapper')
+            img(class='x-buy-together__image',
+              rv-src='buytogether.image.imageUrl',
+              rv-alt='buytogether.name'
+              rv-title='buytogether.name')/
+          div(class='x-buy-together__info')
+            h2(class='x-buy-together__name', rv-html='buytogether.name')
+            div(class='x-buy-together__rated')
+              div(class='trustvox-showcase' style='text-align: center')
+                div(rv-data-trustvox-product-code='buytogether.productId')
+            div(class='x-buy-together__price-info')
+              ins(class='x-buy-together__best-price',
+                rv-text='buytogether.bestPrice | formatPrice',
+                rv-if='buytogether.bestPrice | gt 0')
+
+    div(class='x-buy-together__total')
+      div(class='x-buy-together__total-wrapper')
+        p(class='x-buy-together__total-description')
+          | Compre os #[span(rv-html='product.buyTogether.totalProducts')] produtos por
+
+        div(class='x-buy-together__total-price')
+          del(class='x-buy-together__total-old-price',
+            rv-if='product.buyTogether.totalListPrice | gt 0')
+            | #[span(rv-text='product.buyTogether.totalListPrice | formatPrice')]
+
+          ins(class='x-buy-together__total-best-price',
+            rv-if='product.buyTogether.totalBestPrice | gt 0')
+            | #[span(rv-text='product.buyTogether.totalBestPrice | formatPrice')]
+
+        button(class='x-buy-together__buy-btn',
+          rv-on-click='controller.addToCartBuyTogether',
+          type='button')
+          | Comprar junto

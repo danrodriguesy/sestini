@@ -1,0 +1,96 @@
+.x-institutional__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include rem(margin-bottom, 10px);
+  }
+
+  &-half {
+    & + & {
+      @include rem(margin-left, 10px);
+    }
+  }
+
+  &-label {
+    display: flex;
+    flex-direction: column;
+    color: $color-gray-darken;
+    width: 100%;
+    @include font-weight(bold);
+    @include rem(font-size, 12px);
+    @include rem(line-height, 20px);
+
+    &-file {
+      @include flex-centered;
+      width: 100%;
+      border: solid 1px $color-red;
+      color: $color-red;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      @include font-weight(bold);
+      @include rem(height, 30px);
+      @include rem(font-size, 12px);
+      @include rem(margin-top, 5px);
+      @include rem(line-height, 20px);
+
+      * {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &-input {
+    border: solid 1px #dee3e9;
+    width: 100%;
+    @include font-weight(400);
+    @include rem(padding, 5px 10px);
+    @include rem(font-size, 12px);
+    @include rem(margin-top, 5px);
+    @include rem(line-height, 17px);
+    @include rem(border-radius, 4px);
+
+    &-file {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  &-textarea {
+    border: solid 1px #dee3e9;
+    width: 100%;
+    resize: none;
+    @include font-weight(400);
+    @include rem(height, 120px);
+    @include rem(padding, 5px 10px);
+    @include rem(font-size, 12px);
+    @include rem(margin-top, 5px);
+    @include rem(line-height, 17px);
+    @include rem(border-radius, 4px);
+  }
+
+  &-button {
+    margin: auto;
+    background-color: $color-red;
+    color: $color-white;
+    text-transform: uppercase;
+    width: 100%;
+    @include font-weight(bold);
+    @include rem(height, 40px);
+    @include rem(font-size, 14px);
+    @include rem(margin-top, 25px);
+    @include rem(line-height, 19px);
+    @include rem(border-radius, 4px);
+    @include rem(letter-spacing, 2px);
+  }
+}

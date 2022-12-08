@@ -1,0 +1,32 @@
+include ./../../../common/_mixins/_mixin__header-minicart.pug
+
+div(class='x-header__utilities')
+  ul(class='x-header__utilities-list')
+    li(class='x-header__utilities-item')
+      a(class='x-header__utilities-link', href='/Institucional/nossas-lojas', title='Nossas lojas')
+        <vtex.cmc:svgIconStore/>
+
+    li(class='x-header__utilities-item')
+      a(class='x-header__utilities-link is--wishlist', href='/account/wishlist', title='Wishlist')
+        <vtex.cmc:svgIconWishlist/>
+
+    li(class='x-header__utilities-item is--login')
+      a(class='x-header__login-btn js--login-btn', href='/account', title='Login')
+        <vtex.cmc:svgIconLogin/>
+        |minha conta
+      div(class='x-header__account-drop')
+        nav(class='x-header__account-nav')
+          a(class='x-header__account-link js--login-btn', href='/account#/profile', title='Minha conta')
+            |minha conta
+          a(class='x-header__account-link', href='/account#/orders', title='Meus pedidos')
+            |meus pedidos
+          a(class='x-header__account-link', href='/account/wishlist', title='Minha wishlist')
+            |minha wishlist
+          a(class='x-header__account-link', href='/institucional/fale-conosco', title='Fale Conosco')
+            |fale conosco
+          a(class='x-header__account-link is--logout', href='/no-cache/user/logout', title='Sair')
+            |sair
+
+    li(class='x-header__utilities-item')
+      //- Mixin Header Minicart
+      +headerMinicart

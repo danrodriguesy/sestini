@@ -1,0 +1,43 @@
+.x-home__week-offers {
+  &-container {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+
+    // Hiding Wishlist icon
+    .x-wishlist__add-btn-wrapper {
+      display: none;
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+    @extend %placeholder;
+
+    .slick-slider {
+      .slick-prev,
+      .slick-next {
+        z-index: 5;
+        &:before {
+          color: $color-red;
+        }
+      }
+
+      .slick-prev {
+        left: -15px;
+      }
+
+      .slick-next {
+        right: -10px;
+      }
+    }
+
+    .slick-list {
+      padding: 0;
+    }
+  }
+}

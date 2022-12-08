@@ -1,0 +1,64 @@
+
+- var $customClass = ''
+
+include ./../../common/_mixins/_mixin__general-wishlist-button.pug
+
+block vars
+
+!= '#set($productId = $product.Id)\n'
+!= '#set($productTitle = $product.HtmlEscapedName)\n'
+!= '#set($productLink = $product.Uri)\n'
+!= '#set($productListPrice = $product.ListPrice)\n'
+!= '#set($productBestPrice = $product.BestPrice)\n'
+!= '#set($productInstallmentValue = $product.InstallmentValue)\n'
+
+article(class=`x-shelf__item ${$customClass} js--shelf-item`, data-product-id='$productId')
+  input(type='hidden', class='js--shelf-product-id', value='$productId')/
+  input(type='hidden', class='js--shelf-product-departament', value='$product.DepartmentName')/
+  input(type='hidden', class='js--shelf-product-category', value='$product.CategoryName')/
+  input(type='hidden', class='js--shelf-product-name', value='$product.Name')/
+
+  div(class='x-shelf__img-container')
+    block shelfImage
+
+    div(class='x-wishlist__add-btn-wrapper')
+      +generalWishlistButton('$productId', 'all')
+
+  div(class='x-shelf__content')
+    h2(class='x-shelf__title') $productTitle
+    //- div(class='x-shelf__rated')
+    //-   div(data-trustvox-product-code="$productId")
+
+    != '\n#if ($product.IsInStock)\n'
+    p(class='x-shelf__price-container')
+      //- != '\n#if ($product.NumbersOfInstallment == 1)\n'
+      != '\n#if ($product.HasBestPrice)\n'
+      del(class='x-shelf__old-price') $productListPrice
+      span(class='x-shelf__best-price') $productBestPrice
+      != '\n#else\n'
+      del(class='x-shelf__old-price is--empty') &nbsp;
+      span(class='x-shelf__best-price') $productBestPrice
+      != '\n#end\n'
+      //- != '\n#end\n'
+
+      //- != '\n#if ($product.NumbersOfInstallment > 1)\n'
+      //- if $isOffer
+      //-   p(class='x-shelf__price-text')
+      //-     span(class='x-shelf__best-price') $productBestPrice
+      //-     div(class='x-shelf__installments-container')
+      //-       div(class='x-shelf__installments') em até ${product.NumbersOfInstallment}x de $productInstallmentValue no cartão ou $productBestPrice no boleto a vista
+
+      //- else
+      //-   p(class='x-shelf__price-text')
+      //-     span(class='x-shelf__best-price') por: $productBestPrice
+      //-     div(class='x-shelf__installments-container')
+      //-       div(class='x-shelf__installments') ou ${product.NumbersOfInstallment}x de $productInstallmentValue
+      //- != '\n#end\n'
+
+      div(class='x-shelf__buy-wrapper')
+        a(href='$productLink', class='x-shelf__buy', title='$productTitle', data-product-id='$productId') comprar
+
+    != '\n#else\n'
+    div(class='x-shelf__out-of-stock')
+      p(class='x-shelf__out-of-stock-text') produto indisponível
+    != '\n#end\n'

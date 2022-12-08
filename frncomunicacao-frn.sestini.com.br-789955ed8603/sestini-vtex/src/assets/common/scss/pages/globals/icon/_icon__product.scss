@@ -1,0 +1,21 @@
+
+.icon-how-to-care {
+    @include rem(width, 16px);
+}
+
+.icon-size-chart {
+    @include rem(width, 16px);
+}
+
+.icon-product-zoom {
+    @include rem(height, 20px);
+    @include rem(width, 20px);
+
+    &__cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 8px;
+    }
+}

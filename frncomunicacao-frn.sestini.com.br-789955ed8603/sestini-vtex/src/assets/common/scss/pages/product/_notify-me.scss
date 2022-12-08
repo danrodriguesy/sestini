@@ -1,0 +1,104 @@
+.x-product {
+  &__notifyme {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    padding-top: 20px;
+
+    @include mq("sm") {
+      max-width: 300px;
+      padding: 5px;
+      padding-top: 10px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      font-family: $font-primary;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+
+      svg {
+        @include rem(margin-right, 20px);
+      }
+
+      @include mq("sm", max) {
+        margin: auto;
+      }
+    }
+
+    &-label,
+    &-wrapper {
+      width: 100%;
+      display: block !important;
+    }
+
+    &-label {
+      color: $color-gray-darken;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 20px;
+      &:nth-child(1) {
+        margin-top: 10px;
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include mq("sm", max) {
+        padding: 0 20px;
+      }
+    }
+
+    &-success {
+      background: #d9d9d9;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 10px;
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    &-input {
+      width: 100%;
+      background: $color-white;
+      border: solid 1px #dee3e9;
+      color: $color-gray-darken;
+      font-weight: 400;
+      padding: 4px 15px;
+      font-size: 12px;
+      line-height: 20px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+
+      &[type="submit"] {
+        @include flex-centered;
+        text-transform: capitalize;
+        flex: 1;
+        color: $color-white;
+        font-family: $font-primary;
+        background-color: #5aa03e;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 6.5px 0;
+        font-size: 14px;
+        line-height: 20px;
+        border-radius: 4px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

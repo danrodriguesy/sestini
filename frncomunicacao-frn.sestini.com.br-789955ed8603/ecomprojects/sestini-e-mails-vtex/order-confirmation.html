@@ -1,0 +1,760 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{orders.0.sellers.0.name}}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style type="text/css">
+    .emailContainer {
+      max-width: 594px;
+    }
+
+    .emailContainer2 {
+      max-width: 650px;
+    }
+
+    .flexibleGrid {
+      max-width: 10px;
+    }
+
+    .flexibleGrid-menor {
+      max-width: 10px;
+    }
+
+    @media only screen and (max-width:550px) {
+      img.m-full {
+        width: 100% !important;
+      }
+
+      .bga {
+        background: #0FC !important;
+      }
+
+      .bgb {
+        background: #6F9 !important;
+      }
+
+      .m-auto {
+        margin: 0 auto !important;
+      }
+
+      table.m-full {
+        width: 600px !important
+      }
+
+      table.m-center {
+        float: none !important;
+        margin: auto !important;
+      }
+
+      table.m-hide {
+        display: none !important;
+      }
+
+      td.m-center {
+        text-align: center !important;
+      }
+
+      td.m-left {
+        text-align: left !important;
+      }
+
+      td.m-fonte {
+        font-size: 14px !important;
+      }
+
+      td.m-hide {
+        display: none !important;
+      }
+
+      td.cor {
+        color: #CFF
+      }
+
+      td.coll {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      td.t-padding {
+        padding-top: 20px !important;
+      }
+
+      td.b-padding {
+        padding-bottom: 20px !important;
+      }
+
+      td.l-padding {
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+      }
+
+      td.nl-padding {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+    }
+  </style>
+  <style>
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+  </style>
+  <style>
+    @media (max-width: 600px) {
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+  <style>
+    @media screen and (min-width: 30em) {
+
+      .ph4-ns {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+      }
+
+      .mv4-ns {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+      }
+    }
+
+    /*custom style*/
+    .x-header__logo {
+      width: 100%;
+      box-shadow: 0 4px 4px -2px #F4F4F4;
+      -moz-box-shadow: 0 4px 4px -2px #F4F4F4;
+      -webkit-box-shadow: 0 4px 4px -2px #F4F4F4;
+    }
+
+    .x-header__logo img,
+    .x-footer__logo img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .x-fake-header {
+      height: 40px;
+      display: block;
+      width: 100%;
+      position: relative;
+    }
+
+    .x-title__logo {
+      color: #EC0000;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1;
+
+    }
+
+    .x-title__logo span {
+      line-height: 1;
+      font-weight: 700;
+      color: #EC0000;
+      text-decoration: none;
+    }
+
+    .x-title {
+      color: #EC0000;
+      font-size: 17px;
+      font-family: Open Sans;
+      text-transform: uppercase;
+
+    }
+
+    .x-barra-title {
+
+      box-shadow: 0 4px 4px -2px #F4F4F4;
+      -moz-box-shadow: 0 4px 4px -2px #F4F4F4;
+      -webkit-box-shadow: 0 4px 4px -2px #F4F4F4;
+    }
+
+    .x-order-id {
+      color: #000000;
+    }
+
+    .x-footer__logo {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+
+    .x-footer__message {
+      color: #717171;
+      display: inline;
+      padding: 5px 0px;
+
+    }
+
+    .x-footer__bottom-bar {
+      height: 100%;
+      background-color: #000;
+      display: block;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .x-footer__network-- {
+      width: 8%;
+      display: inline-block;
+      padding: 15px 0;
+      margin-left: 50px;
+    }
+
+    .x-footer_banner span {
+      font-weight: bolder;
+      display: block;
+      margin-top: -5px;
+    }
+
+    @media(max-width:768px) {
+      .x-footer__message {
+        padding: 10px 9px;
+
+      }
+
+      .x-footer__network-- {
+        padding: 10px 0px;
+        margin-left: 5%;
+
+      }
+    }
+
+    @media(max-width:768px) {
+      .x-barra-title {
+        padding: 10px 12px;
+
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color:#ffffff; margin:0;">
+  <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="background-color:#ffffff"
+    bgcolor="#ffffff">
+    <tr>
+      <td align="center" valign="top">
+        <!-- logo da empresa -->
+
+        <!-- Fim logo da empresa -->
+
+        <table style='max-width: 600px;margin: 0 auto;' border="0" cellpadding="0" cellspacing="0" width="100%">
+
+          <tr>
+            <td width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
+              <table style='width: 100%;'>
+                <tbody>
+                  <tr>
+                    <td align="center" colspan='4'>
+                      <!-- logo da empresa -->
+                      <p class='x-header__logo'
+                        style="padding-top: 10px;padding-bottom: 10px; margin: 0 auto; max-width:650px;text-align:center;">
+                        <img alt="Sestini" border="0" width="auto"
+                          src="https://sestini.vteximg.com.br/arquivos/name.png"
+                          style="vertical-align: top; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; border: none; max-height:30px !important;"></img>
+                      </p>
+                      <!-- Fim logo da empresa -->
+                    </td>
+                  </tr>
+                  <tr style='padding-top: 10px;'>
+                    <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px 0;'
+                      align="center">
+                      <a href='https://www.sestini.com.br/busca/juvenil'
+                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>JOVEM</a>
+                    </td>
+                    <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc' align="center">
+                      <a href='https://www.sestini.com.br/infantil'
+                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>INFANTIL</a>
+                    </td>
+                    <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc' align="center">
+                      <a href='https://www.sestini.com.br/viagem/malas'
+                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>VIAGEM</a>
+                    </td>
+                    <td style='border-top: 1px solid #ccc; border-bottom: 1px solid #ccc' align="center">
+                      <a href='https://www.sestini.com.br/executivo'
+                        style='text-decoration: none; font-size: 12px; font-family: Montserrat; color: #cccccc; font-weight: 600; margin-top: 10px;'>EXECUTIVO</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top">
+
+            </td>
+          </tr>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%"
+          style="background-color:#ffffff; border-radius:3px!important; max-width:650px">
+          <tr>
+            <td align="center" valign="top">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                style=";color:#282828;border-bottom:0;font-family:Montserrat,Arial,sans-serif;line-height:100%;vertical-align:middle; max-width:600px">
+                <tr>
+                  <td style="padding:15px 48px;">
+                    <h1
+                      style='font-family: Montserrat;margin: 0; margin-top: 10px;font-size: 20px; color: #43C300; text-align:center;'>
+                      O SEU PEDIDO FOI REALIZADO COM SUCESSO!</h1>
+
+                    <p
+                      style="font-family: Montserrat,sans-serif;font-size: 17px;color: #848484;text-align: center;margin: 5px 0;">
+                      Acompanhe abaixo todos os detalhes</p>
+                  </td>
+                </tr>
+              </table>
+          </tr>
+          <!-- Status do Pedido -->
+          <tr style="box-sizing: border-box !important;">
+            <td class="ph4-ns"
+              style="font-size: 14px; line-height: 20px; box-sizing: border-box; border-collapse: collapse; width: 100%; padding-bottom: 2rem; text-align: center !important; font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"
+              align="center">
+              <div style="box-sizing: border-box; margin-top: 2rem !important;">
+                <img src="https://sestini.vteximg.com.br/arquivos/transacionalRealizado.png" style="margin-top: -20px"
+                  alt="pagamento realizado">
+
+                <div
+                  style="box-sizing: border-box; color: #848484;font-weight: bold;font-size: 14px; margin-top: 20px !important;">
+                  PEDIDO <span class='x-order-id'
+                    style="color: #848484;font-weight: 700 !important;">#{{orders.0.orderId}}</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fim Status do Pedido -->
+
+          <!-- Numero do Pedido-->
+          <tr>
+            <td align="center" valign="top">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:650px">
+                <tr>
+                  <td valign="top">
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top" style="padding:0px 0px 0 0px">
+                          <div
+                            style="color:#4d4d4d;font-family:Montserrat,Arial,sans-serif;font-size:13px;line-height:150%;text-align:center">
+                            {{#each orders}}
+                            <table cellspacing="0" cellpadding="0" style="width:100%" border="0">
+                              <tr class="x-barra-title"
+                                style="border-radius: 4px;letter-spacing: 1px;background: #FAFAFA;font-family: Montserrat,sans-serif;font-size: 12px;font-weight: bold;color:#662C62;">
+                                <td
+                                  style="text-align:left;padding:7px 0px; color:#000000; font-weight:700;letter-spacing:1px;color:#000;height:40px;text-align:left;padding-left:25px">
+                                  PRODUTO</td>
+                                <td
+                                  style="text-align:left;padding:7px 0px; color:#000000; font-weight:700;letter-spacing:1px;color:#000;height:40px;text-align:center;padding-right:15px">
+                                  PREÇO</td>
+                                <td
+                                  style="text-align:left;padding:7px 0px; color:#000000; font-weight:700;letter-spacing:1px;color:#000;height:40px;text-align:center;padding-right:5px">
+                                  QTD</td>
+                                <td
+                                  style="text-align:left;padding:7px 0px; color:#000000; font-weight:700;letter-spacing:1px;color:#000;height:40px;text-align:center;padding-right:5px">
+                                  TOTAL</td>
+                              </tr>
+                              {{#each items}}
+                              <tr style="color:#4d4d4d;font-size:12px;">
+                                <td
+                                  style="text-align:left;vertical-align:middle;border-bottom:1px solid #e7e7e7;word-wrap:break-word;padding:12px">
+                                  <table>
+                                    <tr>
+
+                                      <img src="{{imageUrl}}" width="70" height="70" style="float:left" />
+
+                                      <td style="color:#4d4d4d;font-size:12px; padding:25px 0 0 20px">{{name}}
+
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+
+                                <td class="resultTotal"
+                                  style="text-align:center;vertical-align:middle;border-bottom:1px solid #EDEDED ;padding:12px 0">
+                                  R${{formatCurrency sellingPrice}}
+                                <td
+                                  style="text-align:center;vertical-align:middle;border-bottom:1px solid #EDEDED ;padding:12px">
+                                  {{quantity}}</td>
+                                <td class="resultTotal"
+                                  style="text-align:center;vertical-align:middle;border-bottom:1px solid #EDEDED ;padding:12px 0">
+                                  R${{formatCurrency sellingPrice}}
+                                </td>
+                              </tr>
+                              {{/each}}
+                            </table>
+                            {{#each bundleItems}} {{#if name}}
+                            <table cellspacing="0" cellpadding="0"
+                              style="width:100%; border-top:1px solid #e7e7e7; border-left:1px solid #e7e7e7;border-right:1px solid #e7e7e7;font-size:12px; font-family:Montserrat,Arial,sans-serif;"
+                              border="0">
+                              <tr>
+                                <td
+                                  style="text-align:left;vertical-align:middle;border-bottom:1px solid #e7e7e7;word-wrap:break-word;padding:12px; font-family:Montserrat,Arial,sans-serif;">
+                                  {{name}}
+                                </td>
+                                <td
+                                  style="text-align:left;vertical-align:middle;border-bottom:1px solid #e7e7e7;padding:12px; font-family:Montserrat,Arial,sans-serif;">
+                                  R$ {{formatCurrency price}}</td>
+                              </tr>
+                            </table>
+                            {{/if}} {{/each}}
+                            {{/each}}
+
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                  style="border-top:0; margin-bottom: 35px;max-width:650px">
+                  <tr>
+                    <td align="center" valign="top">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:650px ">
+                        <tr>
+                          <td valign="top">
+
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                <td valign="top" style="padding: 5px 0px 20px 0px">
+                                  <div
+                                    style="color:#282828;font-weight: bold; font-family:Montserrat,Arial,sans-serif;font-size:14px;line-height:150%;text-align:center;">
+
+                                    <table cellspacing="0" cellpadding="0" style="width:100%; padding-top: 20px;"
+                                      border: 1px solid #e7e7e7 border="0">
+                                      <tr style="background-color:#fafafa;">
+                                        {{#each orders}}
+                                        {{#if giftRegistryData}}
+                                        <td valign="top" style="padding: 0 12px 0px 12px;">
+                                          <font
+                                            style="text-align:left;color:#000000;display:block;font-family:Montserrat,Arial,sans-serif;font-size:18px;font-weight:bold; ">
+                                            {{giftRegistryData.description}}
+                                        </td>
+
+                                        {{else}}
+
+                                        <td valign="top" style="font-size: 12px;color:#282828;line-height: 22px">
+                                          <table style="width: 100%;">
+                                            <tr style=" font-weight: 500;">
+                                              <th style="padding-top:10px; padding-left:15px;width:33.3%;">
+                                                <font
+                                                  style="text-align:left;color:black;text-transform: uppercase;display:block;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:bold;">
+                                                  Endereço de Entrega
+                                                </font>
+                                              </th>
+                                              <th style="padding-top:10px; padding-left:15px;width:33.3%;">
+                                                <font
+                                                  style="text-align:left;;color:black;text-transform: uppercase;;display:block;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:bold;">
+                                                  Tipo de Entrega
+                                                </font>
+                                              </th>
+                                              <th style="padding-top:10px; padding-left:15px;width:33.3%;">
+                                                <font valign="top"
+                                                  style="text-align:left;;color:black;text-transform: uppercase;;display:block;font-family:Montserrat,Arial,sans-serif;font-size:14px;font-weight:bold;">
+                                                  Forma de Pagamento
+                                                </font>
+                                              </th>
+
+                                            </tr>
+                                            <tr style=" font-weight: 500;">
+                                              <td
+                                                style="color: #939393; font-size: 13px; text-align: left;padding-left:15px;padding-top:10px;padding-bottom:15px;">
+                                                <span>
+                                                  {{shippingData.address.street}}, {{shippingData.address.number}},
+                                                  {{shippingData.address.complement}}
+                                                  <br> {{shippingData.address.neighborhood}} -<br>
+                                                  {{shippingData.address.city}} - {{shippingData.address.state}}
+                                                  <br> {{shippingData.address.postalCode}}
+                                                  -{{shippingData.address.country}}
+                                                  {{/if}}
+
+                                                </span>
+                                              </td>
+                                              <td
+                                                style="color: #939393;font-size: 13px;  padding: 2px 0px 70px 1px; text-align: left;padding-left:15px">
+                                                <span>
+
+                                                  {{shippingData.logisticsInfo.0.selectedSla}}
+
+                                                </span>
+
+
+                                              </td>
+
+
+                                              <td
+                                                style="color: #939393;font-size: 13px;  padding: 2px 0px 70px 1px; text-align: left;padding-left:15px;">
+                                                {{#eq split false}}
+                                                <span>
+                                                  {{#each paymentData.transactions.0.payments}}
+                                                  {{paymentSystemName}} R$ {{formatCurrency value}}
+                                                </span>
+                                                {{/each}}
+                                                {{/eq}}
+                                                {{#eq split true}}
+                                                {{#each paymentData.transactions.0.payments}}
+                                                <span>
+                                                  {{paymentSystemName}} R$ {{formatCurrency value}}
+                                                </span>
+                                                {{/each}}
+                                                {{/eq}}
+                                                {{#eq split undefined}}
+                                                <span>
+                                                  {{#each paymentData.transactions.0.payments}}
+                                                  {{paymentSystemName}} R$ {{formatCurrency value}}
+                                                </span>
+                                                {{/each}}
+                                                {{/eq}}
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        style="font-size: 12px;color:#282828;line-height: 22px; font-family:Montserrat,Arial,sans-serif;">
+
+                                        <td
+                                          style="text-align:left; font-size: 12px;color:#282828; font-family:Montserrat,Arial,sans-serif;">
+
+                                        </td>
+                                      <tr align="right" style="text-align:right;padding:12px;line-height: 22px">
+                                        {{#eq paymentSystemName 'Boleto Bancário'}}
+                                        <a style="color: #ffffff;background: #FF8723; display:block; text-decoration: none; padding:10px 10px 10px 10px; border-radius:10px;text-align:center;margin: 5px auto 10px; font-family:Montserrat,Arial,sans-serif;font-size:15px;width: 25%"
+                                          href="{{replace url '{Installment}' installments}}" class="button">imprimir
+                                          boleto
+                                        </a>
+                                        {{/eq}}
+                                      </tr>
+
+                              </tr>
+                              {{#eq split true}}
+                              <tr>
+                                {{#each paymentData.transactions.0.payments}}
+
+                              <tr align="right"
+                                style="text-align:right;padding:12px; font-family:Montserrat,Arial,sans-serif;">
+                                {{#eq paymentSystemName 'Boleto Bancário'}}
+                                <a style="color: #ffffff;background: #FF8723; display:block; text-decoration: none; padding:10px 10px 10px 10px; border-radius:10px;text-align:center;margin: 5px auto 10px; font-family:Montserrat,Arial,sans-serif;font-size:15px;width: 25%"
+                                  href="{{replace url '{Installment}' installments}}" class="button">imprimir boleto
+                                </a>
+                                {{/eq}}
+                              </tr>
+                              {{/each}}
+                        </tr>
+                        {{/eq}} {{#eq split undefined}}
+                        <tr>
+
+                        </tr>
+                        <tr>
+                          {{#each paymentData.transactions.0.payments}}
+                        <tr align="right" style="text-align:right;padding:12px">
+                          {{#eq paymentSystemName 'Boleto Bancário'}}
+
+                          <span>
+                            <a style="width: 100%;background: #EC0000; color: #fff; display:inline-block;text-decoration: none;padding:12px 0px;border:1px solid #EC0000;border-color: #EC0000; border-radius:4px;text-align:center;margin-top:25px;"
+                              href="{{replace url '{Installment}' installments}}" class="button"><span
+                                style="font-size:16px;"><span>Imprimir boleto</span></span></a>
+                          </span> {{/eq}}
+
+                        </tr>
+                        {{/each}}
+                  </tr>
+                  {{/eq}}
+
+                  <table cellspacing="0" cellpadding="0"
+                    style="width:100%; margin-top:35px; font-size: 13px; font-family:Montserrat,Arial,sans-serif; "
+                    border="0">
+                    {{#each totals}} {{#if value}}
+                    <tr style=" font-weight: 500; font-family:Montserrat,Arial,sans-serif;">
+                      <td
+                        style="background:#fafafa;padding: 12px 20px;text-align:left;font-weight:bold; text-transform: uppercase">
+                        {{#eq id "Items"}}Subtotal{{/eq}} {{#eq id "Shipping"}}Valor de entrega {{/eq}}
+                      </td>
+
+                      <td style="background:#fafafa;padding: 12px 20px;text-align:right;">R$ {{formatCurrency value}}
+                      </td>
+                    </tr>
+                    {{/if}} {{/each}} {{#if value}}
+                    <tr style="font-weight: 400; font-size: 14px; font-family:Montserrat,Arial,sans-serif;">
+                      <td style="text-align:left;background:#fafafa;padding: 12px 20px;font-weight:bold">TOTAL</td>
+                      <td style="background:#fafafa;padding: 12px 20px;text-align:right;color:green; font-weight:bold">
+                        R$
+                        {{formatCurrency value}}</td>
+                    </tr>
+                    {{/if}}
+                  </table>
+                </table>
+                </div>
+                {{/each}}
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+
+  </table>
+
+  <tr>
+    <td align="center" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-top:0; max-width:650px">
+        <tr>
+          <td style="text-align:center; height: 40px; font-size:11px; letter-spacing:px; padding-bottom: 37px">
+            <a href="https://www.sestini.com.br/_secure/account/orders#/" title="Acompanhar meu Pedido"
+              style="margin-top: 2px; border-radius: 4px;font-family: Montserrat,sans-serif; text-decoration: none; padding: 13px 30px; font-weight: bold;font-size: 14px;text-transform: uppercase; color:#fff; background-color: #43C300;">ACOMPANHE
+              O SEU PEDIDO</a>
+          </td>
+        </tr>
+
+        <!-- INICIO FOOTER -->
+        <table style='width: 100%;max-width: 600px; margin: 0 auto;'>
+          <tbody>
+            <tr>
+              <td align='center'>
+                <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                  src='https://sestini.vteximg.com.br/arquivos/Escolar.png' alt='Baixinho na escola' />
+              </td>
+              <td align='center'>
+                <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                  src='https://sestini.vteximg.com.br/arquivos/Trabalho.png' alt='Baixinho na escola' />
+              </td>
+              <td align='center'>
+                <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                  src='https://sestini.vteximg.com.br/arquivos/Viagem.png' alt='Baixinho na escola' />
+              </td>
+              <td align='center'>
+                <img style='border-radius: 50%; width: 100px; height: auto;margin-top: 30px;'
+                  src='https://sestini.vteximg.com.br/arquivos/Universidade.png' alt='Baixinho na escola' />
+              </td>
+            </tr>
+            <tr>
+              <td align='center'>
+                <p style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                  BAIXINHO NA ESCOLA</p>
+              </td>
+              <td align='center'>
+                <p style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                  RUMO AO TRABALHO</p>
+              </td>
+              <td align='center'>
+                <p style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                  VOU VIAJAR</p>
+              </td>
+              <td align='center'>
+                <p style="margin-top: 10px; font-family: Montserrat; font-size: 10px; color: #ccc; font-weight: 600">
+                  ENTREI NA FACUL</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan='4'>
+                <p
+                  style='margin-top: 30px; margin-bottom: 20px; text-align: center; font-family: Montserrat; font-size: 14px; font-weight: bold; color: rgb(135, 135, 135)'>
+                  CONFIRA AS VANTAGENS DO NOSSO SITE</p>
+              </td>
+            </tr>
+            <tr>
+              <td align='center'>
+                <img style='height: 50px; width: auto'
+                  src='https://sestini.vteximg.com.br/arquivos/shipping-email-icon.png' alt='Frete Grátis' />
+              </td>
+              <td align='center'>
+                <img style='height: 50px; width: auto'
+                  src='https://sestini.vteximg.com.br/arquivos/credit-card-email-icon.png' alt='Cartão de crédito' />
+              </td>
+              <td align='center'>
+                <img style='height: 50px; width: auto'
+                  src='https://sestini.vteximg.com.br/arquivos/location-email-icon.png' alt='Localização' />
+              </td>
+              <td align='center'>
+                <img style='height: 50px; width: auto' src='https://sestini.vteximg.com.br/arquivos/chat-email-icon.png'
+                  alt='Chat' />
+              </td>
+            </tr>
+            <tr>
+              <td align='center'>
+                <p
+                  style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                  Frete Grátis</p>
+                <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>ou
+                  com valor reduzido</p>
+              </td>
+              <td align='center'>
+                <p
+                  style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                  Parcele</p>
+                <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>Em
+                  até 10x sem juros</p>
+              </td>
+              <td align='center'>
+                <p
+                  style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                  Endereço</p>
+                <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>
+                  Conheça nossas lojas</p>
+              </td>
+              <td align='center'>
+                <p
+                  style='margin-top: 10px; color: #ccc; margin-bottom: 0; font-family: Montserrat; font-weight: 600; font-size: 14px;'>
+                  Atendimento</p>
+                <p style='color: #ccc; margin-top: 0; font-family: Montserrat; font-size: 14px; font-weight: normal;'>
+                  Entre em contato conosco</p>
+              </td>
+            </tr>
+            <tr>
+              <td align='center' colspan='4'>
+                <a href='https://pt-br.facebook.com/sestinioficial'><img
+                    style='width: 25px;height: auto;margin-top: 25px;'
+                    src='https://sestini.vteximg.com.br/arquivos/facebook-email-icon.png' alt='Facebook' /></a>
+                <a href='https://www.instagram.com/sestinioficial/'><img
+                    style='width: 25px;margin: 0 10px;height: auto;'
+                    src='https://sestini.vteximg.com.br/arquivos/instagram-email-icon.png' alt='Instagram' /></a>
+                <a href='https://www.linkedin.com/company/sestini-mercantil/mycompany/'><img
+                    style='width: 25px;height: auto;'
+                    src='https://sestini.vteximg.com.br/arquivos/linkedin-email-icon.png' alt='Linkedin' /></a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan='4'>
+                <p
+                  style='margin-top: 20px; text-align: center; font-family: Montserrat; font-size: 10px; margin-bottom: 10px; font-weight: bold; color: rgb(65, 65, 65)'>
+                  Sestini Mercantil LTDA | Av. Pascoal
+                  Thomeu, 1.141, Villa Nova Bonsucesso |
+                  Guarulhos - SP</p>
+                <p
+                  style='text-align: center; font-family: Montserrat; font-size: 10px;font-weight: normal; color: rgb(65, 65, 65)'>
+                  As Imagens deste site são meramente ilustrativas, fotos poderão conter itens não inclusos no produto.
+                  Preços válidos apenas para compras neste site. Sestini® 2013 – 2020. Todos os direitos reservados.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- FINAL FOOTER -->
+  </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+</body>
+
+</html>

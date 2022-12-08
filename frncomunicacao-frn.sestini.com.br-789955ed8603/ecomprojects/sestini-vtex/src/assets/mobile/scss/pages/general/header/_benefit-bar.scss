@@ -1,0 +1,37 @@
+.x-header-container__benefits {
+    display: flex;
+    background: $color-black;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &-wrapper {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    &-item {
+        color: $color-white;
+        font-family: $font-primary;
+        text-align: center;
+        text-decoration: none;
+        font-size: 9px;
+
+        b {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 9px;
+        }
+
+        .rules {
+            font-size: 7px;
+            font-weight: 300;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+    }
+}

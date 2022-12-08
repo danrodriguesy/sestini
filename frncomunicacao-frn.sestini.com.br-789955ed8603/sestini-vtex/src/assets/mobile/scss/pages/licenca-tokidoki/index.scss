@@ -1,0 +1,54 @@
+.tokidoki {
+    max-width: 1450px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    &__content {
+        &-title {
+            font-family: $font-primary;
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        &-middle {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-family: $font-primary;
+                font-weight: normal;
+                font-size: 14px;
+                margin-top: 25px;
+
+                &.bold {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &-bottom {
+            h2 {
+                font-family: $font-primary;
+                font-weight: bold;
+                font-size: 14px;
+                margin-top: 20px;
+                margin-bottom: 25px;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            img {
+                width: auto;
+                height: 90px;
+                margin: 30px;
+            }
+        }
+    }
+}

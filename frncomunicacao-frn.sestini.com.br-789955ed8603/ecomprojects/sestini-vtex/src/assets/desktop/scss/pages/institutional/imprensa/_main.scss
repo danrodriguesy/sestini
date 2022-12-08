@@ -1,0 +1,18 @@
+.x-institutional {
+  &__top {
+    width: 100%;
+    margin: auto;
+    @include rem(margin-top, 35px);
+    @include rem(margin-bottom, 55px);
+    @include rem(max-width, 485px);
+    @include rem(min-height, 315px);
+
+    &-text {
+      text-align: center;
+      color: rgba($color-black, 0.5);
+      @include font-weight(400);
+      @include rem(font-size, 14px);
+      @include rem(line-height, 18px);
+    }
+  }
+}

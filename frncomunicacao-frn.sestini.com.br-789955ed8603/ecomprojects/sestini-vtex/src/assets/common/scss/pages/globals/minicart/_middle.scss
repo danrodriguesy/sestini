@@ -1,0 +1,156 @@
+.x-minicart {
+  &__middle {
+    border-bottom: solid 1px #dee3e9;
+    @include rem(padding-top, 20px);
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+
+
+    @include mq("sm", max) {
+      @include rem(padding-top, 10px);
+    }
+
+  }
+
+  &__items {
+    height: 100%;
+    overflow-y: auto;
+
+    @include scrollbar(5px, $color-red, rgba(#939393, 0.43));
+  }
+
+  &__content{
+    height: 100%;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 10px;
+
+    &-container {
+      & + & {
+        border-top: 1px solid #dee3e9;
+        @include rem(margin-top, 10px);
+        @include rem(padding-top, 20px);
+      }
+    }
+
+    &-left {
+      @include flex-centered;
+      width: 100%;
+      @include rem(max-width, 70px);
+    }
+
+    &-right {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include rem(max-width, 225px);
+
+      @include mq("sm", max) {
+        @include rem(margin-left, 30px);
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      @include rem(max-width, 125px);
+    }
+
+    &-title {
+      width: 100%;
+      font-family: $font-primary;
+      @include font-weight(400);
+      @include rem(font-size, 12px);
+      @include rem(line-height, 17px);
+      @include rem(margin-bottom, 5px);
+      @include mq("md", max) {
+        font-size: 10px
+      }
+    }
+
+    &-best-price {
+      font-family: $font-primary;
+      color: #5aa03e;
+      @include font-weight(bold);
+      @include rem(font-size, 14px);
+      @include rem(line-height, 19px);
+    }
+
+    &-old-price {
+      font-family: $font-primary;
+      @extend %price-style__old-price;
+
+      @include mq("md", min) {
+        letter-spacing: 1px;
+      }
+
+      @include mq("sm") {
+        display: none;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include rem(height, 75px);
+    }
+
+    &-remove {
+      font-family: $font-primary;
+      text-align: right;
+      color: $color-red;
+      @include font-weight(400);
+      @include rem(font-size, 10px);
+      @include rem(line-height, 12px);
+    }
+
+    &-qty-val {
+      @extend %qty-selector__val;
+      @include mq("md", max) {
+        width: 15px;
+      }
+    }
+
+    &-qty-wrapper {
+      @extend %qty-selector__wrapper;
+      border-radius: 4px;
+
+      @include mq("md", max) {
+        padding: 3px 0 !important;
+      }
+    }
+  }
+
+  &__item-qty-btn {
+    @extend %qty-selector__btn;
+
+    &:before {
+      @include rem(font-size, 8px);
+    }
+
+    @include rem(width, 20px);
+  }
+
+  &__amount-wrapper {
+    span {
+      display: inline-block;
+      vertical-align: middle;
+
+      svg {
+        @include rem(width, 20px);
+        @include rem(height, 20px);
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.x-header {
+  &__utilities-item {
+    &.is--login {
+      position: relative;
+
+      &:hover {
+        .x-header__account-drop {
+          opacity: 1;
+          visibility: visible;
+          z-index: z("header-account-drop");
+        }
+      }
+
+      &:not(.is--logged) {
+        .x-header__account-link.is--logout {
+          display: none;
+        }
+      }
+    }
+
+    &.is--logged {
+      .x-header__login-label {
+        display: inline-blocks;
+        font-size: 12px;
+        padding-left: 5px;
+        width: 96px;
+        @include ellipsis;
+
+        strong {
+          margin-right: 4px;
+        }
+      }
+
+      .x-header__account-drop {
+        display: block;
+      }
+
+      .x-header__account-link.is--logout {
+        display: block;
+      }
+    }
+  }
+
+  &__login-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__account-drop {
+    position: fixed;
+    opacity: 0;
+    right: calc(50% - 555px);
+    visibility: hidden;
+    z-index: -1;
+    transition: all 0.3s ease-in;
+    width: 210px;
+    top: 86px;
+
+    .is--active & {
+      right: calc(50% - 595px);
+      top: 62px;
+    }
+  }
+
+  &__account-nav {
+    background: rgba($color-white, 0.97);
+    padding: 18px 0;
+  }
+
+  &__account-link {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+
+    & + & {
+      margin-top: 15px;
+    }
+
+    &:hover {
+      @include font-weight(bold);
+    }
+  }
+}

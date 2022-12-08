@@ -1,0 +1,118 @@
+.x-quick-view {
+  &__img-container {
+    @include mq("sm") {
+      min-height: 569px;
+      max-height: 570px;
+    }
+
+    @include mq("sm", max) {
+      min-height: 400px;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-bottom: 40px;
+    }
+
+    &.has--placeholder * {
+      opacity: 0;
+      @extend %product-common-placeholder-transition;
+    }
+  }
+
+  &__img-content {
+    @include mq("sm") {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__img-left {
+    @include mq("sm") {
+      width: 100%;
+      max-width: 80px;
+      max-height: 429px;
+    }
+  }
+
+  &__img-right {
+    width: calc(100% - 110px);
+    margin-left: 30px;
+  }
+
+  &__img-main {
+    max-width: 100%;
+
+    @extend %slick-arrows-product;
+    @extend %slick-dots;
+
+    .slick-track {
+      margin: 0 auto;
+    }
+  }
+
+  &__img-main-content {
+    .zoomImg {
+      cursor: crosshair;
+      background-color: $color-white;
+    }
+  }
+
+  &__img-main-item {
+    width: 100%;
+    object-fit: contain;
+    max-width: 475px;
+    max-height: 569px;
+  }
+
+  &__img-nav {
+    width: 100%;
+    margin: 0 auto;
+    @include rem(max-width, 80px);
+
+    @extend %slick-arrows-product;
+
+    .slick-prev {
+      top: 0% !important;
+      left: 7% !important;
+      transform: translate(50%, -50%);
+      background: #fff !important;
+      border: 1px solid #d9d9d9 !important;
+    }
+
+    .slick-next {
+      bottom: -35px !important;
+      left: 8%;
+      transform: translate(50%, -50%);
+      background: #fff !important;
+      border: 1px solid #d9d9d9 !important;
+    }
+
+    &,
+    .slick-list,
+    .slick-track {
+      // Height for vertical navigation glitch
+      height: 570px !important;
+      padding: 0 !important;
+    }
+  }
+
+  &__img-main-content {
+    border: 1px solid #c9c9c9 !important;
+  }
+
+  &__img-nav-content {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 3px solid #d9d9d9 !important;
+
+    &.slick-current {
+      border-bottom: 3px solid $color-red !important;
+    }
+  }
+
+  &__img-nav-item {
+    object-fit: contain;
+    margin: auto;
+    @include rem(max-height, 80px);
+  }
+}

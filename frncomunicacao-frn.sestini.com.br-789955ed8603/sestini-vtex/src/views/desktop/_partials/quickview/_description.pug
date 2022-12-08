@@ -1,0 +1,42 @@
+div(class='x-quick-view__description-wrapper')
+  ul(class='x-quick-view__description-items')
+    li(class='x-quick-view__description-item js--product-description',
+      rv-show="product.dimensionsDescription")
+      button(class='x-quick-view__description-button js--product-description-button', title='dimensões') Dimensões
+      div(class='x-quick-view__description-content')
+        div(class='x-quick-view__description-text', rv-if="product.height")
+          strong Altura
+          span(rv-html='product.height')
+        div(class='x-quick-view__description-text', rv-if="product.width")
+          strong Largura
+          span(rv-html='product.width')
+        div(class='x-quick-view__description-text', rv-if="product.depth")
+          strong Profundidade
+          span(rv-html='product.depth')
+        div(class='x-quick-view__description-text', rv-if="product.weight")
+          strong Peso
+          span(rv-html='product.weight')
+    li(class='x-quick-view__description-item js--product-description',
+      rv-show="product.featuresDescription")
+      button(class='x-quick-view__description-button js--product-description-button', title='características') Características
+      div(class='x-quick-view__description-content')
+        div(class='x-quick-view__description-text', rv-if="product.strap")
+          strong Alça
+          span(rv-html='product.strap')
+        div(class='x-quick-view__description-text', rv-if="product.compartiments")
+          strong Compartimentos
+          span(rv-html='product.compartiments')
+        div(class='x-quick-view__description-text', rv-if="product.color")
+          strong Cor
+          span(rv-html='product.color')
+        div(class='x-quick-view__description-text', rv-if="product.ocasion")
+          strong Ocasião
+          span(rv-html='product.ocasion')
+        div(class='x-quick-view__description-text', rv-if="product.size")
+          strong Tamanho
+          span(rv-html='product.size')
+    li(class='x-quick-view__description-item js--product-description is--opened',
+      rv-show="product.selfDescription")
+      button(class='x-quick-view__description-button is--opened js--product-description-button', title='descrição') Descrição
+      div(class='x-quick-view__description-content',
+        rv-html='product.selfDescription')

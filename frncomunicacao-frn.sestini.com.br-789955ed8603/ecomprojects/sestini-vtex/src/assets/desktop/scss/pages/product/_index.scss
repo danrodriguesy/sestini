@@ -1,0 +1,138 @@
+@import "../../../../common/scss/pages/product/index";
+@import "./main-shelf";
+@import "./searched-shelf";
+@import "./bottom-buy-bar";
+
+.x-product__most-searched-wrapper .slick-list{
+    min-height: 400px;
+}
+// Disable second label trustvox
+.ts-customer-questions__title {
+    display: none !important;
+}
+
+.x-product__most-searched-container {
+    max-width: 1300px !important;
+    margin: 0 auto;
+    padding: 20px 30px;
+    .x-title {
+        text-align: left;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .x-shelf__item {
+        margin: 0 10px;
+        box-shadow: none !important;
+        min-height: 330px;
+    }
+}
+
+.modal__product-images__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    box-shadow: 1px 1px 5px #ebebeb;
+    border-radius: 5px;
+    margin: 50px;
+    background: $color-white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+    overflow: hidden;
+    .left {
+        flex: 0 0 80%;
+        max-width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 450px;
+            width: auto;
+        }
+    }
+    .right {
+        flex: 0 0 10%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        img {
+            border: 1px solid #ebebeb;
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+            margin-top: 5px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            padding: 5px;
+            &.active {
+                border: 1px solid $color-red;
+                border-radius: 4px;
+            }
+        }
+        img:nth-child(1) {
+            margin-top: 0;
+        }
+    }
+    #modal-big-product-carouser-close-btn {
+        font-family: $font-primary;
+        font-size: 20px;
+        font-weight: 600;
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        color: #c12a21;
+        cursor: pointer;
+    }
+}
+
+.magnify {
+    min-width: 0;
+    min-height: 0;
+    animation: none;
+    border: none;
+    float: none;
+    margin: 0;
+    opacity: 1;
+    outline: none;
+    overflow: visible;
+    padding: 0;
+    text-indent: 0;
+    transform: none;
+    transition: none;
+    position: relative;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    display: inline-block;
+    z-index: 1;
+    .magnify-lens {
+        min-width: 0;
+        min-height: 0;
+        animation: none;
+        border: none;
+        float: none;
+        margin: 0;
+        opacity: 1;
+        outline: none;
+        overflow: visible;
+        padding: 0;
+        text-indent: 0;
+        transform: none;
+        transition: none;
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), inset 0 0 30px 2px rgba(0, 0, 0, 0.25);
+        cursor: none;
+        display: none;
+        z-index: 99;
+    }
+}

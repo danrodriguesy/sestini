@@ -1,0 +1,15 @@
+div(class='x-store-locator__left')
+  div(class='x-store-locator__title')
+    h1(class='x-title') Nossas #[strong Lojas]
+    h2(class='x-store-locator__subtitle') Encontre a unidade mais #[br/] próxima de você
+
+  div(class='x-store-locator__selectors')
+    div(class='x-store-locator__select-container')
+      div(class='x-store-locator__select-wrapper')
+        include ./_states.pug
+      div(class='x-store-locator__select-wrapper')
+        include ./_cities.pug
+
+    div(class='x-store-locator__stores')
+      include ./_stores.pug
+

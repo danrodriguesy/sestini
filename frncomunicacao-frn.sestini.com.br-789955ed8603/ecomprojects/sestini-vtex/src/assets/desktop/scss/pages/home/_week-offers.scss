@@ -1,0 +1,58 @@
+.x-home__week-offers {
+    .x-shelf__item {
+        height: 315px !important;
+    }
+    &-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1300px;
+        padding: 0px 30px;
+        margin: 0 auto;
+        // Hiding Wishlist icon
+        .x-wishlist__add-btn-wrapper {
+            display: none;
+        }
+    }
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .slick-list {
+            min-height: 400px !important;
+        }
+        .slick-slide {
+            margin: 0 10px;
+        }
+        .slick-next,
+        .slick-prev {
+            position: absolute;
+            z-index: 2 !important;
+            top: 35%;
+            opacity: 1;
+            font-weight: 600;
+            transform: translate(50%, -50%);
+            &:before {
+                color: $color-red !important;
+            }
+        }
+        .slick-next {
+            right: -10px;
+        }
+        .slick-prev {
+            left: -30px;
+        }
+    }
+    &-left,
+    &-right {
+        @extend %placeholder;
+    }
+    &-left {
+        min-height: 350px;
+        width: 40%;
+    }
+    &-right {
+        min-height: 325px;
+        width: 55%;
+    }
+}

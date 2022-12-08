@@ -1,0 +1,104 @@
+@import "../../../../common/scss/pages/product/index";
+@import "./main-shelf";
+@import "./shipping";
+.x-product__most-searched {
+    .slick-track {
+        &>li {
+            margin: 0 10px !important;
+        }
+    }
+    .slick-dots {
+        li {
+            font-size: 0;
+            text-indent: 9999px;
+            cursor: pointer;
+            margin: 2px;
+            background-color: #fff;
+            width: 10px;
+            height: 10px;
+            border: 1px solid $color-red;
+            transform: skewX(10deg) skewY(0);
+            &.slick-active {
+                background: $color-red;
+            }
+        }
+    }
+    &-container-title {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.x-product__most-searched:nth-child(1) .x-title::after {
+    left: 30px !important
+}
+
+.x-product__most-searched:nth-child(2) .x-title::after {
+    left: 30px !important
+}
+
+.ts-customer-questions__title {
+    display: none !important;
+}
+
+.modal__product-images__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    box-shadow: 1px 1px 5px #ebebeb;
+    border-radius: 5px;
+    margin: 25px;
+    background: $color-white;
+    display: flex;
+    align-items: center;
+    #carousel-big-images {
+        width: 100%;
+        @include mq("sm", max) {
+            .product-big-image-carousel {
+                touch-action: auto;
+            }
+        }
+    }
+    #close-modal-big-product {
+        font-family: $font-primary;
+        font-size: 20px;
+        font-weight: 600;
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        color: #c12a21;
+        cursor: pointer;
+    }
+    .slick-next,
+    .slick-prev {
+        background: transparent;
+    }
+    .slick-next.slick-arrow,
+    .slick-prev.slick-arrow {
+        position: absolute;
+        z-index: 10 !important;
+        top: 50%;
+        opacity: 1;
+        font-weight: 600;
+        transform: translate(50%, -50%);
+        right: 20px;
+        &:before {
+            content: "〉";
+            font-size: 36px;
+            line-height: 1;
+            color: $color-red;
+            opacity: 0.75;
+            border: none !important;
+            transform: rotate(0deg) !important;
+        }
+    }
+    .slick-prev.slick-arrow {
+        left: 0;
+        &:before {
+            content: "〈";
+        }
+    }
+}

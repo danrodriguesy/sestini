@@ -1,0 +1,19 @@
+
+.icon-wishlist-remove {
+    display: none;
+}
+
+body {
+    &.is--wishlist {
+        .icon-wishlist-remove {
+            display: block;
+            @include rem(height, 20px);
+            @include rem(width, 20px);
+        }
+
+        .icon-wishlist,
+        .icon-wishlist-loader {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,187 @@
+.x-account__content {
+    .modal-header {
+        @include mq("sm") {
+            display: none;
+        }
+    }
+
+    .profile-detail-display {
+        position: relative;
+
+        @include headings(5, 6) {
+            padding: 0;
+            font-size: 14px;
+        }
+
+        @include headings(5) {
+            @include mq("sm", max) {
+                text-transform: uppercase;
+            }
+        }
+
+        > h4 {
+            display: block;
+            color: #000;
+            font-size: 22px;
+            @include mq("sm", max) {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .address-display-block {
+        > h4 {
+            position: absolute;
+            right: 50%;
+            transform: translateX(113%);
+            top: -50px;
+        }
+    }
+
+    .profile-detail-display-email {
+        border-bottom: 1px solid #cbcbcb;
+        color: #6e6e6e;
+        display: block;
+        font-size: 12px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+        @include mq("sm", max) {
+            background: #fff;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    }
+
+    .profile-detail-display-info,
+    .address-display-unit-info {
+        font-size: 14px;
+
+        > span {
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+    }
+
+    .profile-detail-display-info {
+        > span {
+            padding-bottom: 15px;
+        }
+        .title {
+            @include mq("sm", max) {
+                color: #000;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+        }
+        .data {
+            @include mq("sm", max) {
+                color: #6e6e6e;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .edit-address-link {
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        font-size: 0;
+        top: 5px;
+        right: 0px;
+        margin-bottom: 8px;
+
+        a {
+            color: $color-black;
+            text-decoration: underline;
+            font-weight: 900;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+    }
+
+    .address-display-unit,
+    .myo-orders-listing {
+        margin-bottom: 12px;
+
+        @include mq("sm", max) {
+            position: relative;
+            padding: 12px 12px 6px 12px;
+
+            p {
+                display: block;
+                font-size: 14px;
+            }
+
+            h5 {
+                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .address-display-unit {
+        position: relative;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+
+        &:not(:last-of-type) {
+            border-bottom: solid 1px $color-black;
+        }
+    }
+
+    .myo-orders-listing {
+        @include mq("sm", max) {
+            text-align: center;
+            padding-bottom: 20px;
+
+            div {
+                margin: 0 auto;
+                padding: 0;
+                width: 70%;
+
+                h1 {
+                    text-transform: uppercase;
+                    margin: 0;
+                    color: inherit;
+                    font-size: 14px;
+                    display: block;
+                    margin-bottom: 10px;
+                    line-height: 22px;
+                }
+            }
+
+            a {
+                text-transform: uppercase;
+                text-decoration: underline;
+                font-weight: 700;
+                margin: 0;
+                color: inherit;
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // Button
+    .edit-profile-link {
+        margin-top: 12px;
+
+        @include mq("sm", max) {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    .new-address-link {
+        @include mq("sm", max) {
+            margin: 0 12px;
+        }
+    }
+}

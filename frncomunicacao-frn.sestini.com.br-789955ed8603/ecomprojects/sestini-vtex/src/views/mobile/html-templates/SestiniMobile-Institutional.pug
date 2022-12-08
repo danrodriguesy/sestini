@@ -1,0 +1,14 @@
+extends ./../_layouts/_mobile-institutional-base.pug
+
+//- Template variables
+block vars
+  - var $templateName = 'institutional'
+  - var $templateClass = 'institutional'
+
+//- Main Content
+block institutionalContent
+  section(class='x-institutional__navigation')
+    h1(class='x-title is--institutional-title')
+      strong Institucional
+
+    vtex:template(id='SestiniCommon-InstitutionalMenu')/

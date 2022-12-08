@@ -1,0 +1,14 @@
+@import "./header/index";
+@import "./footer/index";
+@import "./main";
+#smarthint-search-result {
+    top: 170px !important;
+}
+
+#smarthint-search-result li.mala-de-viagem-sacolas-e-mais-sestini {
+    height: unset !important;
+}
+
+#smarthint-search-result .x-shelf__item.has--carousel {
+    padding: 10px 0 !important;
+}

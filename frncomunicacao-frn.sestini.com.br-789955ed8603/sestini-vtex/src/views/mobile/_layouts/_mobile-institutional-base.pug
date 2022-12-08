@@ -1,0 +1,18 @@
+
+extends ./_mobile-base.pug
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-mobile-institutional.css`, media='all')/
+
+//- Main Content
+block content
+  div(class='x-institutional__content')
+    vtex:template(id='SestiniCommon-Breadcrumb')/
+    section(class='x-institutional__container')
+      block institutionalContent
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`/arquivos/sestini-mobile-institutional.js`)

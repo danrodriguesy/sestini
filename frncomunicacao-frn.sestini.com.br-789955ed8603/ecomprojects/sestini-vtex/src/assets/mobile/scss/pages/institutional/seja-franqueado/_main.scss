@@ -1,0 +1,20 @@
+.x-institutional {
+  &__top {
+    width: 100%;
+    margin: auto;
+    @include rem(margin-bottom, 20px);
+
+    &-text {
+      font-family: $font-primary;
+      color: rgba($color-black, 0.5);
+      @include font-weight(400);
+      @include rem(font-size, 12px);
+      @include rem(line-height, 22px);
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    @include rem(margin-bottom, 45px);
+  }
+}

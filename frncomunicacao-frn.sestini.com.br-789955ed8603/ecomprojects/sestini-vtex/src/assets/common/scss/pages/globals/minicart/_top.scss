@@ -1,0 +1,85 @@
+.x-minicart {
+  &__top {
+    background-color: #f8f8f8;
+    @include rem(height, 50px);
+
+    @include mq("sm", max) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__header {
+    @include flex-spaced;
+    @include rem(height, 50px);
+
+    @include mq("sm", max) {
+      position: relative;
+      width: 100%;
+      @include flex-centered;
+      @include rem(height, $minicart-header-height-mobile);
+    }
+  }
+
+  &__title {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    color: $color-gray-darkest;
+    @include font-weight(600);
+    @include rem(font-size, 18px);
+
+    & > strong{
+      font-weight: 600;
+    }
+  }
+
+  &__amount {
+    @include flex-centered;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $color-red;
+    color: $color-white;
+    @include font-weight(bold);
+    @include rem(left, 12px);
+    @include rem(bottom, -5px);
+    @include rem(width, 14px);
+    @include rem(height, 14px);
+    @include rem(font-size, 7px);
+    @include rem(line-height, 9px);
+
+    .is--active & {
+      @include mq("sm") {
+        @include rem(left, 5px);
+      }
+    }
+
+    @include mq("sm", max) {
+      @include rem(left, 7px);
+      @include rem(bottom, -3px);
+      @include rem(font-size, 7px);
+      @include rem(line-height, 7px);
+    }
+  }
+
+  &__empty-btn-close {
+    .icon-close-popup {
+      @include rem(height, 16px);
+      @include rem(width, 16px);
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    @include rem(height, 16px);
+    @include rem(width, 16px);
+
+    svg {
+      pointer-events: none;
+    }
+
+    @include mq("sm", max) {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

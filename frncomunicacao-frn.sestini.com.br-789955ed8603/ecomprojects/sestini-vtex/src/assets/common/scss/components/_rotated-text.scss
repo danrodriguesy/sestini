@@ -1,0 +1,59 @@
+
+%rotated-text {
+    $box-width: 24px;
+
+    @include mq('sm') {
+        display: inline-block;
+        overflow: hidden;
+        width: $box-width;
+    }
+
+    &__inner {
+        @include mq('sm') {
+            @include prevent-rendering;
+            display: inline-block;
+            white-space: nowrap;
+            // this is for shity "non IE" browsers that dosn't support writing-mode
+            // transform: translate($box-width, 0) rotate(90deg); // To Bottom
+            transform: translate(0, 100%) rotate(-90deg); // To Top
+            transform-origin: 0 0;
+
+            // IE9+
+            -ms-transform: none;
+            -ms-transform-origin: none;
+
+            // IE8+
+            -ms-writing-mode: tb-rl;
+
+            // IE7 and below
+            *writing-mode: tb-rl;
+
+            &:before {
+                content: '';
+                float: left;
+                margin-top: 100%;
+            }
+        }
+    }
+
+    &__btn {
+        &:before {
+            @extend %iconfont;
+        }
+
+        @include mq('sm') {
+            @include flex-centered;
+            border: 1px solid $color-gray-dark;
+            border-radius: 50%;
+            margin-top: 24px;
+            height: 24px;
+            width: 24px;
+
+            &:before {
+                content: '\EA03';
+                color: $color-gray-dark;
+                font-size: 10px;
+            }
+        }
+    }
+}

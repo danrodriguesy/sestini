@@ -1,0 +1,40 @@
+.x-shelf__item {
+    min-height: 325px !important;
+    &.is--offer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+        .x-shelf__content {
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .x-shelf__title {
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-family: $font-primary;
+        }
+        .x-shelf__price {
+            &-container {
+                margin-top: 5px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
+        .x-shelf__best-price {
+            color: #5aa03e;
+        }
+    }
+}
+
+.x-shelf__item.has--carousel.is--offer {
+    min-height: 315px !important;
+    height: unset !important;
+}

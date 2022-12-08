@@ -1,0 +1,13 @@
+header(class='x-header')
+  div(class='x-header__container')
+    div(class='x-header__left')
+      div(class='x-header__logo')
+        a(class='x-header__logo-link', title='Sestini', href='/')
+          include ./../../custom-elements/svg-icons/svgIconLogo.pug
+
+    div(class='x-header__middle')
+      h2(class='x-header__title js--checkout-title') meu #[strong carrinho]
+
+    div(class='x-header__right')
+      include ./../../custom-elements/svg-icons/svgIconCheckoutSecurity.pug
+

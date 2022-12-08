@@ -1,0 +1,11 @@
+//- Id: 0f0ef354-2eba-4206-948b-f79301d3b217
+
+- var $customClass = ''
+- var $shelfType = ''
+
+block vars
+
+!= '#set($productId = $product.Id)\n'
+
+article(class=`x-shelf__item ${$customClass} js--shelf-item-color`, data-product-id='$productId')
+  input(type='hidden', class='js--shelf-color-product-id', value='$productId')/

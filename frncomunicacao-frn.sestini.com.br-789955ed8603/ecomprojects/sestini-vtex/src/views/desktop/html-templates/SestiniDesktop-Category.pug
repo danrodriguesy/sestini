@@ -1,0 +1,42 @@
+
+extends ./../_layouts/_desktop-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'category'
+  - var $templateClass = 'category'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block content
+  article(class='x-category__main-container')
+    div(class='hidden-heading') <vtex.cmc:searchTitle/>
+
+    div(class='x-category__top')
+      include ./../_partials/category/_top.pug
+
+    div(class='x-category__content')
+      div(class='x-category__left')
+        include ./../_partials/category/_filter.pug
+
+      section(class='x-category__right')
+        include ./../_partials/category/_order.pug
+        include ./../_partials/category/_products.pug
+
+//- Footer
+block append footer
+  div(class='x-category__filters-vtex is--hide')
+    <vtex.cmc:searchNavigator/>
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript').
+    var scriptContent = $('.resultItemsWrapper').children('script').html();
+    eval('window.'+ /(PageClick_)([0-9]+)/g.exec(scriptContent)[0] +' = function() {}');
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

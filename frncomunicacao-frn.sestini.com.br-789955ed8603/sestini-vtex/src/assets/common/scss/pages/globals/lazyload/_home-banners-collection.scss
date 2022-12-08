@@ -1,0 +1,34 @@
+@include mq("sm") {
+  .x-banners-collection__left {
+    .x-banners-collection__img-wrapper {
+      &:first-child {
+        img.has--placeloader {
+          padding: 68% 47%;
+        }
+      }
+
+      &:last-child {
+        img.has--placeloader {
+          padding: 50% 47%;
+        }
+      }
+    }
+  }
+
+  .x-banners-collection__right {
+    .x-banners-collection__img-wrapper {
+      img.has--placeloader {
+        padding: 71% 49%;
+      }
+    }
+  }
+}
+
+// Mobile
+@include mq("sm", max) {
+  .x-banners-collection__img-wrapper {
+    img.has--placeloader {
+      padding: 68% 50%;
+    }
+  }
+}

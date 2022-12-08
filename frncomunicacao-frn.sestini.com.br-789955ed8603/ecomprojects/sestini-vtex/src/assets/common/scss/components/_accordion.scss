@@ -1,0 +1,24 @@
+%accordion {
+    &__container {
+        padding: 0;
+    }
+
+    &__title {
+        @extend %drop__text;
+        border-bottom: 1px solid $color-black;
+        font-size: 13px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0;
+        text-transform: none;
+        letter-spacing: 0;
+        height: auto !important;
+        cursor: pointer;
+    }
+
+    &__content {
+        display: none;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

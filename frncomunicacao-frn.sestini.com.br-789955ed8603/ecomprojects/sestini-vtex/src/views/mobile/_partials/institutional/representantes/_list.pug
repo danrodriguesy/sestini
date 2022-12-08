@@ -1,0 +1,8 @@
+div(class='x-institutional__bottom')
+  ul(class='x-institutional__items')
+    li(rv-each-item='items', class='x-institutional__item')
+      strong(class='x-institutional__item-title', rv-text='item.estado')
+      p(class='x-institutional__item-type', rv-text='item.cargo')
+      p(class='x-institutional__item-responsable', rv-text='item.responsavel')
+      p(class='x-institutional__item-region', rv-text='item.telefone')
+      p(class='x-institutional__item-email', rv-text='item.email')

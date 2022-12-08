@@ -1,0 +1,134 @@
+.x-store-locator {
+  &__content {
+    @extend %container;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include rem(margin-bottom, 50px);
+
+    .x-title {
+      @include rem(margin-bottom, 5px);
+    }
+  }
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    width: 30%;
+  }
+
+  &__right {
+    @include flex-centered;
+    width: 100%;
+    @include rem(min-height, 568px);
+    width: 60%;
+  }
+
+  &__map {
+    @include flex-centered;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    @include rem(max-width, 395px);
+  }
+
+  &__subtitle {
+    font-family: $font-primary;
+    color: rgba($color-black, 0.5);
+    @include font-weight(400);
+    @include rem(font-size, 14px);
+    @include rem(line-height, 18px);
+    @include rem(margin-bottom, 15px);
+  }
+
+  &__select {
+    display: block !important;
+    @include flex-centered;
+    font-family: $font-primary;
+    color: $color-black;
+    text-align: center;
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    text-align: center;
+    text-align-last: center;
+    border: solid 1px #dee3e9;
+    @include rem(padding, 8px 0);
+    @include rem(font-size, 14px);
+    @include rem(max-width, 395px);
+    @include rem(line-height, 18px);
+    @include rem(border-radius, 4px);
+    position: relative;
+
+    &:first-child {
+      @include rem(margin-right, 7px);
+    }
+
+    &-container {
+      display: flex;
+    }
+
+    &-wrapper {
+      width: 100%;
+      position: relative;
+      @include rem(margin-bottom, 35px);
+      @include rem(margin-right, 7px);
+
+      &::after {
+        content: "";
+        position: absolute;
+        @include rem(top, 12px);
+        @include rem(right, 15px);
+        @include arrow-generate(down, 8px, 2px);
+        border-color: $color-black;
+      }
+    }
+  }
+
+  &__stores {
+    overflow-y: auto;
+    @include scrollbar(3px, $color-red, rgba(#939393, 0.43));
+    @include rem(max-height, 365px);
+  }
+
+  &__store {
+    &-detail {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      @include rem(margin-bottom, 35px);
+      @include rem(padding-right, 80px);
+    }
+
+    &-name {
+      color: $color-black;
+      font-family: $font-primary;
+      text-transform: uppercase;
+      @include font-weight(bold);
+      @include rem(font-size, 18px);
+      @include rem(line-height, 18px);
+      @include rem(margin-bottom, 5px);
+    }
+
+    &-contact,
+    &-email,
+    &-address {
+      font-family: $font-primary;
+      color: rgba($color-black, 0.5);
+      @include rem(font-size, 14px);
+      @include rem(line-height, 20px);
+    }
+  }
+}

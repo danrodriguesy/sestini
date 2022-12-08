@@ -1,0 +1,65 @@
+.x-institutional {
+  &__top {
+    width: 100%;
+
+    &-text {
+      font-family: $font-primary;
+      color: rgba($color-black, 0.5);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      
+    }
+  }
+
+  &__bottom {
+    margin-top: 20px;
+  }
+
+  &__select {
+    color: $color-gray-darkest;
+    text-align: center;
+    border: solid 1px #dee3e9;
+    @include rem(width, 395px);
+    @include rem(padding, 4px 0);
+    @include rem(font-size, 14px);
+    @include rem(line-height, 26px);
+    @include rem(margin-left, 40px);
+    @include rem(border-radius, 4px);
+    @include rem(margin-bottom, 40px);
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    @include scrollbar(5px, $color-red, rgba(#939393, 0.43));
+    @include rem(max-height, 700px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include rem(margin-bottom, 25px);
+
+    &-title {
+      font-family: $font-primary;
+      color: $color-black;
+      @include font-weight(bold);
+      @include rem(font-size, 18px);
+      @include rem(line-height, 18px);
+      @include rem(margin-bottom, 10px);
+    }
+
+    &-type,
+    &-responsable,
+    &-region,
+    &-email {
+      font-family: $font-primary;
+      color: rgba($color-black, 0.5);
+      @include font-weight(400);
+      @include rem(font-size, 14px);
+      @include rem(line-height, 20px);
+    }
+  }
+}

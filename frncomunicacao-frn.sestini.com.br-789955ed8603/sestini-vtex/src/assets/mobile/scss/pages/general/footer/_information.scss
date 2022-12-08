@@ -1,0 +1,45 @@
+.x-footer__information {
+  display: flex;
+  flex-direction: column;
+
+  &-payment {
+    margin-bottom: 20px;
+  }
+
+  &-payment,
+  &-security {
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 18px;
+  }
+  
+  &-payment{
+    border-bottom: 1px solid #c9c9c9;
+  }
+
+  &-title {
+    color: $color-black;
+    font-style: normal;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .icon-reclame-aqui{
+    height: 42px;
+    width: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("/arquivos/icon-trustvox.png");
+  }
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniMobile-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-mobile-product.css" media="all"/>
+    <style type="text/css">
+      .trustvox-widget-rating .ts-shelf-container,
+      .trustvox-widget-rating .trustvox-shelf-container {display: inline-block;}
+      .trustvox-widget-rating span.rating-click-here {
+          top: -3px;
+          display: inline-block;
+          position: relative;
+          color: #DAA81D;
+          font-size: 12px;
+      }
+      .trustvox-widget-rating:hover span.rating-click-here {text-decoration: underline;}
+      
+      
+    </style>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniMobile-Header"/>
+    <main class="x-product__main" role="main">
+      <article class="x-product__main-container js--product">
+        <div class="x-product__breadcrumb has--placeholder" rv-class-has--placeholder="product.isLoading">
+          <ul class="x-product__breadcrumb-items">
+            <li class="x-product__breadcrumb-item"><a class="x-product__breadcrumb-link" href="/" title="Home">Home</a></li>
+            <li class="x-product__breadcrumb-item" rv-each-category="product.categories"><a class="x-product__breadcrumb-link" rv-href="category.link" rv-title="category.name" rv-text="category.name"></a></li>
+          </ul>
+        </div>
+        <section class="x-product__container">
+          <article class="x-product__left">
+            <div class="x-product__name-wrapper has--placeholder" rv-class-has--placeholder="product.isLoading">
+              <h1 class="x-product__name" rv-text="product.name">
+                <div class="hidden-heading"><vtex.cmc:productName/></div><small class="x-product__reference">Cod. Referência: <vtex.cmc:skuReference/></small>
+              </h1>
+            </div>
+            <section class="x-product__img-container has--placeholder" rv-class-has--placeholder="product.isLoading">
+              <div class="x-product__img-content">
+                <div class="x-product__img-main js--product-img-main">
+                  <div class="x-product__img-main-content js--product-img-main-content" rv-each-main-img="product.mainImgs" rv-data-src="main-img.imageUrl | productImgSize 475 530"><img class="x-product__img-main-item" rv-src="main-img.imageUrl" rv-title="product.name" rv-alt="product.name"/></div>
+                </div>
+                <div class="x-product__img-disclaimer">Imagem Meramente Ilustrativa</div>
+              </div>
+            </section>
+          </article>
+          <article class="x-product__right">
+            <section class="x-product__main-info">
+              <div class="x-product__qty-amount-left has--placeholder" rv-class-has--placeholder="product.isLoading"><span rv-html="product.skuQtyText"></span></div>
+              <div class="x-product__colors-title">Cores</div>
+              <div class="x-product__colors-wrapper">
+                <div class="x-product__colors has--placeholder" rv-hide="product.currentSize | lte 1" rv-class-has--placeholder="product.isLoading">
+                  <div class="x-product__colors-container">
+                    <div class="x-product__colors--items js--product-color">
+                      <div class="x-product__colors-content js--product-color-container"><a class="x-product__select-color" rv-each-color="product.currentSize" rv-href="color.link"><img rv-src="color.image" alt="color.skuname"/></a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="x-product__colors has--placeholder" rv-hide="product.skuJson.skus | lte 1" rv-class-has--placeholder="product.isLoading" style="display: none;">
+                  <div class="x-product__colors-container">
+                    <div class="x-product__colors--items js--product-color">
+                      <div class="x-product__colors-content js--product-color-container">
+                        <div class="x-product__select-color" rv-class-is--available="color.available" rv-on-click="controller.selectSku" rv-each-color="product.skuJson.skus" rv-data-sku="color.sku"><img rv-src="color.image" alt="color.skuname"/></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="x-product__sizes has--placeholder" rv-show="product.categoryId | eq '3'" rv-class-has--placeholder="product.isLoading">
+                <div class="x-product__sizes js--product-sizes">
+                  <div class="x-product__sizes-content">
+                    <div class="x-product__select-sizes" rv-each-size="product.sizes | propertyList"><a rv-each-value="size.value | firstItem" rv-html="size.key" rv-href="value.link | stripHost" rv-title="size.key"></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="x-product__bottom-info-wrapper has--placeholder" rv-class-has--placeholder="product.isLoading">
+                <div class="x-product__info">
+                  <div class="x-product__price-info">
+                    <div class="x-product__price-wrapper has--placeholder" rv-if="product.available" rv-class-has--placeholder="product.isLoading">
+                      <del class="x-product__old-price" rv-if="product.listPrice | gt 0"><span rv-text="product.listPrice | formatPrice"></span></del><ins class="x-product__best-price" rv-if="product.bestPrice | gt 0"><span rv-text="product.bestPrice | formatPrice"></span></ins>
+                    </div>
+                    <div class="x-product__installments-wrapper" rv-if="product.installments | gt 1">Em até <span rv-text="product.installments"></span>X de <span rv-text="product.installmentsValue | formatPrice"></span></div>
+                  </div>
+                  <button class="x-product-wishlist__add-btn" title="Adicionar a wishlist" data-wishlist-add="data-wishlist-add" rv-data-wishlist-product-id="product.skuJson.productId">
+                    <p class="x-product-wishlist__add-btn-add">Adicionar a wishlist</p>
+                    <p class="x-product-wishlist__add-btn-remove">Remover da wishlist</p>
+                  </button>
+                </div>
+              </div>
+              <div class="x-product__shipping has--placeholder" rv-hide="product.skuNotAvailable" rv-class-has--placeholder="product.isLoading">
+                <div class="x-product__shipping-wrapper">
+                  <form class="x-product__shipping-form" rv-on-submit="controller.calculateShipping">
+                    <label class="x-product__shipping-label" for="x-product-postal">Calcular frete:</label>
+                    <div class="x-product__shipping-input-wrapper">
+                      <input class="x-product__shipping-input" type="text" maxlength="9" minlength="9" required="true" placeholder="digite seu CEP" rv-on-keyup="controller.formatPostalCode"/>
+                      <button class="x-product__shipping-submit" type="submit">Calcular</button>
+                    </div>
+                    <div class="x-product__shipping-erro" rv-show="product.shippingCalculatedError">preencha um CEP válido</div>
+                  </form>
+                  <div class="x-product__shipping-discovery"><a class="x-product__shipping-discovery-link" target="_blank" title="Não sei meu CEP" href="http://www.buscacep.correios.com.br/sistemas/buscacep/">Não sei meu CEP</a></div>
+                </div>
+                <div class="x-product__shipping-result" rv-show="product.isShippingCalculated">
+                  <div class="x-product__shipping-row" rv-each-shipping="product.shippingResult">
+                    <div class="x-product__shipping-value" rv-html="shipping.shippingValue"></div>
+                    <div class="x-product__shipping-type" rv-html="shipping.shippingType"></div>
+                    <div class="x-product__shipping-sla" rv-html="shipping.shippingText"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="x-product__notifyme has--placeholder" rv-show="product.skuNotAvailable" rv-class-has--placeholder="product.isLoading">
+                <div class="x-product__notifyme-header">
+                  <button class="x-product__notifyme-title" rv-on-click="controller.enableNotifyMe">
+                    <vtex.cmc:svgIconEmail/>Me avise quando chegar</button>
+                </div>
+                <div class="x-product__notifyme-wrapper" rv-show="product.notifyMeActive">
+                  <form class="x-product__notifyme-form" rv-on-submit="controller.sendNotifyMe">
+                    <label class="x-product__notifyme-label">Nome
+                      <input class="x-product__notifyme-input js--notifyme-input-name" type="text" required="true"/>
+                    </label>
+                    <label class="x-product__notifyme-label">E-mail
+                      <input class="x-product__notifyme-input js--notifyme-input-email" type="email" required="true"/>
+                    </label>
+                    <input class="x-product__notifyme-input js--notifyme-input-skuId" type="hidden" data-sku=""/>
+                    <input class="x-product__notifyme-input js--notifyme-button" type="submit" value="Enviar"/>
+                  </form>
+                  <div class="x-product__notifyme-success" rv-show="product.notifyMeSent">Obrigado! Você recebera um e-mail <br/> quando o produto estiver <br/>disponível novamente.</div>
+                </div>
+              </div>
+              <div class="x-product__tech-information-container has--placeholder" rv-class-has--placeholder="product.isLoading" rv-show="product.hasSpecs">
+                <h5 class="x-product__tech-information-title">Informações técnicas</h5>
+                <div class="x-product__tech-information-wrapper">
+                  <ul class="x-product__tech-information-items">
+                    <li class="x-product__tech-information-item" rv-each-spec="product.specs"><img class="x-product__tech-information-image" rv-src="spec.imageUrl" rv-title="spec.name" rv-alt="spec.name"/>
+                      <p class="x-product__tech-information-name" rv-html="spec.name"></p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            <div class="x-product__fixed has--placeholder" rv-class-has--placeholder="product.isLoading" rv-hide="product.skuNotAvailable">
+              <div class="x-product__qty-container" rv-if="product.available | gt 0">
+                <div class="x-product__qty-wrapper">
+                  <div class="x-product__qty-wrapper--hidden is--hide">
+                    <button class="x-product__qty-btn has--minus" rv-on-click="controller.removeItem" rv-disabled="product.skuNotAvailable"></button>
+                    <input class="x-product__qty-val" type="text" readonly="readonly" rv-value="product.qty | pad"/>
+                    <button class="x-product__qty-btn has--plus" rv-on-click="controller.addItem" rv-disabled="product.skuNotAvailable"></button>
+                  </div>
+                  <select class="x-product__qty-select js--qty-select" rv-on-change="controller.updateQtyValue"></select>
+                </div>
+              </div>
+              <div class="x-product__buy-btn-wrapper">
+                <button class="x-product__buy-btn js--add-to-cart" rv-on-click="controller.addToCart" rv-disabled="product.skuNotAvailable" rv-data-product-qty="product.qty" rv-data-product-sku="product.skuId" rv-text="product.buyBtn"></button>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="x-product__description-container">
+          <div class="x-product__description-wrapper">
+            <ul class="x-product__description-items">
+              <li class="x-product__description-item js--product-description" rv-show="product.dimensionsDescription">
+                <button class="x-product__description-button js--product-description-button" title="dimensões">Dimensões</button>
+                <div class="x-product__description-content">
+                  <div class="x-product__description-text" rv-if="product.height"><strong>Altura</strong><span rv-html="product.height"></span></div>
+                  <div class="x-product__description-text" rv-if="product.width"><strong>Largura</strong><span rv-html="product.width"></span></div>
+                  <div class="x-product__description-text" rv-if="product.depth"><strong>Profundidade</strong><span rv-html="product.depth"></span></div>
+                  <div class="x-product__description-text" rv-if="product.weight"><strong>Peso</strong><span rv-html="product.weight"></span></div>
+                </div>
+              </li>
+              <li class="x-product__description-item js--product-description" rv-show="product.featuresDescription">
+                <button class="x-product__description-button js--product-description-button" title="características">Características</button>
+                <div class="x-product__description-content">
+                  <div class="x-product__description-text" rv-if="product.strap"><strong>Alça</strong><span rv-html="product.strap"></span></div>
+                  <div class="x-product__description-text" rv-if="product.compartiments"><strong>Compartimentos</strong><span rv-html="product.compartiments"></span></div>
+                  <div class="x-product__description-text" rv-if="product.color"><strong>Cor</strong><span rv-html="product.color"></span></div>
+                  <div class="x-product__description-text" rv-if="product.ocasion"><strong>Ocasião</strong><span rv-html="product.ocasion"></span></div>
+                  <div class="x-product__description-text" rv-if="product.size"><strong>Tamanho</strong><span rv-html="product.size"></span></div>
+                </div>
+              </li>
+              <li class="x-product__description-item js--product-description is--opened" rv-show="product.selfDescription">
+                <button class="x-product__description-button is--opened js--product-description-button" title="descrição">Descrição</button>
+                <div class="x-product__description-content" rv-html="product.selfDescription"></div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <div class="x-product__buy-together">
+          <section class="x-product__buy-together-container" rv-class-visually-hidden="product.buyTogether.hasBuyTogether | neg">
+            <h3 class="x-title"><strong>Leve</strong> também</h3>
+            <div class="js--shelf-buy-together visually-hidden "><vtex:contentPlaceHolder id='Compre Junto - Acessórios' /></div>
+            <div class="x-product__buy-together-wrapper">
+              <ul class="x-buy-together__items" rv-if="product.buyTogether.hasBuyTogether">
+                <li class="x-buy-together__item" rv-each-buytogether="product.buyTogether.products">
+                  <article class="x-buy-together__item-wrapper">
+                    <div class="x-buy-together__image-wrapper"><img class="x-buy-together__image" rv-src="buytogether.image.imageUrl" rv-alt="buytogether.name" rv-title="buytogether.name"/></div>
+                    <div class="x-buy-together__info">
+                      <h2 class="x-buy-together__name" rv-html="buytogether.name"></h2>
+                      <div class="x-buy-together__rated">
+                        <div class="trustvox-showcase" style="text-align: center">
+                          <div rv-data-trustvox-product-code="buytogether.productId"></div>
+                        </div>
+                      </div>
+                      <div class="x-buy-together__price-info"><ins class="x-buy-together__best-price" rv-text="buytogether.bestPrice | formatPrice" rv-if="buytogether.bestPrice | gt 0"></ins></div>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+              <div class="x-buy-together__total">
+                <div class="x-buy-together__total-wrapper">
+                  <p class="x-buy-together__total-description">Compre os <span rv-html="product.buyTogether.totalProducts"></span> produtos por</p>
+                  <div class="x-buy-together__total-price">
+                    <del class="x-buy-together__total-old-price" rv-if="product.buyTogether.totalListPrice | gt 0"><span rv-text="product.buyTogether.totalListPrice | formatPrice"></span></del><ins class="x-buy-together__total-best-price" rv-if="product.buyTogether.totalBestPrice | gt 0"><span rv-text="product.buyTogether.totalBestPrice | formatPrice"></span></ins>
+                  </div>
+                  <button class="x-buy-together__buy-btn" rv-on-click="controller.addToCartBuyTogether" type="button">Comprar junto</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="x-product__most-searched">
+          <div class="x-product__most-searched-container">
+            <h3 class="x-title"><strong>Quem</strong> viu <strong>levou</strong></h3>
+            <div class="x-product__most-searched-wrapper js--products-searched-shelf has--placeholder"><vtex:contentPlaceHolder id="Quem Viu Levou" /></div>
+          </div>
+        </section>
+        <section class="x-product__reviews">
+          <div class="x-product__review-container">
+            <h3 class="x-title trustvox-container" id="trustvox-reviews">Veja a <strong>opinião</strong> de <br/> quem <strong>comprou</strong></h3>
+            <div class="x-product__review-wrapper js--products-review has--placeholder" rv-class-has--placeholder="product.isLoading">
+              <div id="_trustvox_widget"></div>
+            </div>
+          </div>
+        </section>
+        <section class="x-product__colors-shelf js--shelf-colors visually-hidden "><vtex:contentPlaceHolder id="Cores SKU - Produtos Similares" /></section>
+      </article>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniMobile-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniMobile-Scripts"/>
+    <vtex:template id="SestiniCommon-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-mobile-product.js"></script>
+    <script type="text/javascript">
+      window._trustvox =  [];
+      _trustvox.push(['_storeId', '81534']);
+      
+      _trustvox.push(['_productId',  skuJson.productId]);
+      _trustvox.push(['_productName', skuJson.name]);
+      _trustvox.push(['_productPhotos', [skuJson.skus[0].image]]);
+      
+      $(document).ready(function() {
+        $('.trustvox-fluid-jump').on('click', function(event) {
+            event.preventDefault();
+            var offset = $($(this).attr('href')).offset().top;
+            $('html, body').animate({scrollTop:offset}, 500);
+        });
+      });
+      
+    </script>
+    <script type="text/javascript" async="true" src="//static.trustvox.com.br/sincero/sincero.js"></script>
+  </body>
+</html>

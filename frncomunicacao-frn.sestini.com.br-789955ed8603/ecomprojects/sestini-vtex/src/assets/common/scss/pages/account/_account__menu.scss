@@ -1,0 +1,54 @@
+.x-account {
+    .x-title__main {
+        display: block;
+        color: #916A35;
+        font-size: 30px;
+        padding-bottom: 20px;
+        @include mq('sm', max) {
+            text-align: center;
+        }
+    }
+    &-menu {
+        &__items {
+            a {
+                color: #000;
+                position: relative;
+                font-size: 12px;
+                line-height: 40px;
+            }
+            .is--active {
+                a {
+                    color: #916A35;
+                    &::after {
+                        content: '';
+                        background: #916A35;
+                        height: 1px;
+                        width: calc(100% + 20px);
+                        position: absolute;
+                        bottom: -2px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__navigation {
+        @include mq('sm', max) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                display: block;
+                color: #000;
+                font-size: 12px;
+                &:first-child {
+                    margin: 0 20px 0 0;
+                }
+                &.is--active {
+                    color: #916A35;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

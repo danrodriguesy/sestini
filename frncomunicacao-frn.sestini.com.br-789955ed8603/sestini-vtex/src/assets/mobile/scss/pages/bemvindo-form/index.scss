@@ -1,0 +1,236 @@
+.x-contact {
+  &__main {
+    padding: 20px;
+  }
+
+  &-form {
+    background: $color-white;
+    font-family: $font-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 28px;
+      line-height: 30px;
+      text-align: center;
+      font-weight: 600;
+
+      strong {
+        color: $color-red;
+      }
+    }
+
+    h2 {
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      color: #757575;
+      padding: 20px;
+      padding-top: 10px;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-primary;
+    }
+
+    &-label {
+      font-weight: 600;
+      font-size: 14px;
+      padding-bottom: 5px;
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &-help {
+      color: #757575;
+      font-size: 10px;
+      padding-bottom: 5px;
+      font-weight: 500;
+    }
+
+    &-input {
+      border: 2px solid #757575;
+      color: #111;
+      border-radius: 4px;
+      height: 40px;
+      font-weight: 500;
+      margin: 15px 0;
+      margin-top: 0;
+      padding: 3px 10px;
+    }
+
+    &-input-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 5px 0;
+
+      label {
+        margin-left: 5px;
+      }
+    }
+
+    &-checkbox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 5px;
+
+      label {
+        margin-left: 5px;
+        font-size: 10px;
+      }
+    }
+
+    .message {
+      display: none;
+      font-size: 10px;
+      color: $color-red;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: $color-green;
+      margin: 0 auto;
+      margin-top: 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      color: $color-white;
+      transition: 0.6s all;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+#input-message {
+  height: 100px !important;
+}
+
+#message-form {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+
+  &.success {
+    color: $color-green;
+  }
+}
+
+#form-aditional-info {
+  margin-top: 20px;
+  p {
+    font-family: $font-primary;
+    font-size: 10px;
+    color: #c4c4c4;
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+.modal-bemvindo-form {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 55;
+
+  &-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $color-white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    &-paragraph {
+      font-family: $font-primary;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
+      color: #3a3a3a;
+      margin: 0 auto;
+      background: $color-white;
+
+      &.coupon {
+        font-size: 20px;
+        letter-spacing: 5px;
+        color: $color-red;
+        position: relative;
+      }
+
+      #copy-icon {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width='478' height='478' viewBox='0 0 478 478' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M341.333 85.333H51.2C22.923 85.333 0 108.256 0 136.533V426.666C0 454.943 22.923 477.866 51.2 477.866H341.333C369.61 477.866 392.533 454.943 392.533 426.666V136.533C392.533 108.256 369.61 85.333 341.333 85.333ZM358.4 426.667C358.4 436.093 350.759 443.734 341.333 443.734H51.2C41.774 443.734 34.133 436.093 34.133 426.667V136.533C34.133 127.107 41.774 119.466 51.2 119.466H341.333C350.759 119.466 358.4 127.107 358.4 136.533V426.667Z' fill='black'/%3E%3Cpath d='M426.667 0H119.467C91.19 0 68.267 22.923 68.267 51.2C68.267 60.626 75.908 68.267 85.334 68.267C94.76 68.267 102.4 60.626 102.4 51.2C102.4 41.774 110.041 34.133 119.467 34.133H426.667C436.093 34.133 443.734 41.774 443.734 51.2V358.4C443.734 367.826 436.093 375.467 426.667 375.467C417.241 375.467 409.6 383.108 409.6 392.534C409.6 401.96 417.241 409.601 426.667 409.601C454.944 409.601 477.867 386.678 477.867 358.401V51.2C477.867 22.923 454.944 0 426.667 0Z' fill='black'/%3E%3C/svg%3E%0A");
+        cursor: pointer;
+
+        .success {
+          color: $color-green;
+          font-size: 8px;
+          letter-spacing: normal;
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &-button {
+      background: $color-black;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $color-white;
+      padding: 10px 30px;
+      margin: 10px auto;
+    }
+  }
+
+  img {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.loader {
+  border: 3px solid #c4c4c4;
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,95 @@
+.x-product__bottom-buy-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $color-white;
+    border-top: 1px solid #e5e5e5;
+    padding: 10px;
+    display: none;
+    z-index: 5;
+    
+    &-container {
+        max-width: 1450px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__left {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        &-img img {
+            height: 100px;
+            width: auto;
+        }
+
+        &-name {
+            font-family: $font-primary;
+            font-weight: 600;
+            font-size: 16px;
+            margin-left: 20px;
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__right {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        &-price {
+            margin-right: 20px;
+            font-family: $font-primary;
+            font-size: 16px;
+            font-weight: 600;
+
+            .de {
+                text-decoration: line-through;
+                color: #929292;
+            }
+
+            .por {
+                font-size: 18px;
+            }
+
+            .installments {
+                color: #939393;
+                font-size: 12px;
+                font-weight: normal;
+                b {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &-buy a {
+            border-radius: 4px;
+            background-color: #5aa03e;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-family: $font-primary;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.5s all;
+            padding: 10px 20px;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}

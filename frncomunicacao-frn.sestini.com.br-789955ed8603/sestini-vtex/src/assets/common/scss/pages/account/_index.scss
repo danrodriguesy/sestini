@@ -1,0 +1,168 @@
+@import "./__common";
+@import "./main";
+@import "./items-default";
+@import "./orders-main";
+@import "./create-card";
+@import "./wishlist__main";
+.vtex-account__cards-list,
+.vtex-account__create-card {
+    @include mq("sm", max) {
+        margin-top: 20px !important;
+    }
+}
+
+.vtex-account__cards-list {
+    @include mq("sm", max) {
+        div {
+            justify-content: center;
+            text-align: center;
+        }
+        .items-center {
+            justify-content: center;
+        }
+        .mb7 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.vtex-account__address-list {
+    article>main>div {
+        height: unset !important;
+        padding: 0 !important;
+    }
+}
+
+.vtex-account__address-create,
+.vtex-account__address-edit {
+    .address-summary {
+        span {
+            font-size: 12px;
+        }
+        .c-link span {
+            text-decoration: underline;
+        }
+    }
+    .vtex-address-form__street,
+    .vtex-address-form__number,
+    .vtex-address-form__complement,
+    .vtex-address-form__neighborhood,
+    .vtex-address-form__reference,
+    .vtex-address-form__receiverName {
+        padding-bottom: 5px !important;
+    }
+}
+
+.vtex-input__help-text {
+    margin-top: 0 !important;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>main>div.w-40-ns.w-100-s>div:nth-child(2)>article>main>div.vtex-account__password-box.w-100>div>div>div.h1.w1.absolute.ba.bw1.br1.b--action-primary.bg-action-primary.mr3 {
+    background: #000 !important;
+}
+
+.x-account .vtex-modal__modal {
+    .mt7 {
+        padding-top: 15px;
+    }
+    .vtex-button {
+        &.bg-action-primary {
+            background: $color-green !important;
+        }
+    }
+}
+
+.vtex-account__page {
+    padding: 20px;
+    border: 1px solid #ebebeb;
+    .t-heading-3 {
+        font-family: $font-primary;
+        color: #666;
+        font-size: 20px;
+    }
+}
+
+.mb6 {
+    margin-bottom: 5px;
+}
+
+.mt7 {
+    margin: 0 !important;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>main>div.w-40-ns.w-100-s>div:nth-child(2)>article>main>div.c-muted-2.pt2.pb6 {
+    display: none;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>main>div.w-40-ns.w-100-s>div:nth-child(2)>article>main>div.vtex-account__password-box.w-100>div {
+    margin-top: 10px !important;
+    font-weight: 400;
+}
+
+.bg-action-primary {
+    border: none !important;
+    background: $color-white !important;
+}
+
+#root>form>div.w-100>div.flex.mt5>button>div,
+#force-shipping-fields>div,
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>div>article>main>form>button,
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>main>div.w-40-ns.w-100-s>div.pb5.pr5-ns.flex-auto.mw6-ns>article>main>div.pt4.flex.justify-center>button>div,
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>div>article>main>button>div,
+body>main>section.x-account__container>div>div>div>div>div>div>section>header>div.db-m.dn>div>div.c-on-base.flex.flex-wrap.flex-row.justify-between.mt0>div.vtex-pageHeader__children.order-2.order-0-ns.mt0-ns>a>button,
+body>main>section>div>div>div>div>div>div>section>header>div.db.dn-m>div>div.c-on-base.flex.flex-wrap.flex-row.justify-between.mt0>div.vtex-pageHeader__children.order-2.order-0-ns.mt0-ns {
+    border: 1px solid $color-black !important;
+    border-radius: 4px;
+    height: 40px;
+    background: $color-white !important;
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-black;
+    transition: 0.4s all;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+#force-shipping-fields>div {
+    margin-left: 10px;
+    padding: 0px 10px !important;
+    height: 30px !important;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>div>article>main>form>button {
+    margin: 0 !important;
+    color: $color-black !important;
+    width: 100% !important;
+}
+
+.h5 {
+    height: unset !important;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>div>section>div>article>div.cf.pa5.pa6-l.bg-base.bt-0 {
+    border: 1px solid #ebebeb;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>div>section>div>article>div.cf.pa5.pa6-l.bg-base.bt-0>div.cf.fr.db.w-100.w-30-ns.pt0-xl.pt5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-primary;
+}
+
+.myo-details-btn {
+    color: $color-black !important;
+}
+
+body>main>section.x-account__container>div>div>div>div>div>div>section>main>div>section>div>article>div.cf.pa5.pa6-l.bg-base.bt-0>div.cf.fr.db.w-100.w-30-ns.pt0-xl.pt5>a.myo-invoice-btn.c-link.hover-c-link.pa0.bg-transparent.bn.cf.db.link.tl.w5.f6.fw4.flex.items-center.mb5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body>main>section>div>div>div>div>div>div>section>header>div.db.dn-m>div>div.c-on-base.flex.flex-wrap.flex-row.justify-between.mt0>div.vtex-pageHeader__children.order-2.order-0-ns.mt0-ns {
+    margin: 0 auto;
+}

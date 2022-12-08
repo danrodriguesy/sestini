@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniMobile-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-mobile-institutional.css" media="all"/>
+    <link rel="stylesheet" href="/arquivos/sestini-mobile-representantes.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniMobile-Header"/>
+    <main class="x-representantes__main" role="main">
+      <div class="x-institutional__content">
+        <vtex:template id="SestiniCommon-Breadcrumb"/>
+        <section class="x-institutional__container">
+          <div class="x-institutional__top">
+            <h1 class="x-title"><strong>Representantes</strong></h1>
+            <div class="x-institutional__top-text"><vtex:contentPlaceHolder id="Texto - Representantes" /></div>
+          </div>
+          <div class="x-institutional__bottom">
+            <ul class="x-institutional__items">
+              <li class="x-institutional__item" rv-each-item="items"><strong class="x-institutional__item-title" rv-text="item.estado"></strong>
+                <p class="x-institutional__item-type" rv-text="item.cargo"></p>
+                <p class="x-institutional__item-responsable" rv-text="item.responsavel"></p>
+                <p class="x-institutional__item-region" rv-text="item.telefone"></p>
+                <p class="x-institutional__item-email" rv-text="item.email"></p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniMobile-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniMobile-Scripts"/>
+    <vtex:template id="SestiniCommon-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-mobile-institutional.js"></script>
+    <script type="text/javascript" src="/arquivos/sestini-mobile-representantes.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+.x-home,
+.x-product,
+.x-empty-search {
+  .slick-list {
+    :not(.is--offer) {
+      .x-shelf__placeloader {
+        &.has--placeloader {
+          @include rem(padding, 94.5px 78.5px);
+
+          @include mq("sm", max) {
+            @include rem(padding, 73px 61.5px);
+          }
+        }
+      }
+    }
+    .is--offer {
+      .x-shelf__placeloader {
+        &.has--placeloader {
+          @include mq("sm", max) {
+            @include rem(padding, 100px 99px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,456 @@
+.x-category {
+    &__filter {
+        &-button {
+            @include font-weight(bold);
+            z-index: z("category-filter-button");
+            @include mq("sm") {
+                position: relative;
+                font-size: 14px;
+                line-height: 18px;
+                padding-right: 20px;
+            }
+            @include mq("sm", max) {
+                @include flex-centered;
+                width: 100%;
+                background-color: $color-green;
+                font-family: $font-primary;
+                color: $color-white;
+                z-index: z("category-filter");
+                padding: 5px 0;
+                line-height: 32px;
+                border-radius: 4px;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+            svg {
+                @include mq("sm", max) {
+                    margin-right: 10px;
+                }
+            }
+            &::after {
+                @include mq("sm") {
+                    content: "";
+                    position: absolute;
+                    will-change: transform;
+                    transition: transform 225ms ease-in-out;
+                    right: 0px;
+                    top: 4px;
+                    @include arrow-generate(down, 7px, 2px);
+                    border-color: $color-black;
+                    will-change: transform;
+                    transition: transform 600ms ease-in-out;
+                }
+            }
+            &.is--active {
+                &::after {
+                    @include mq("sm") {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        &-name {
+            font-family: $font-primary;
+            text-transform: capitalize;
+            color: $color-black;
+            cursor: pointer;
+            position: relative;
+            &.is--opened {
+                &:after {
+                    content: "-";
+                }
+                max-height: 1000px;
+            }
+            &:after {
+                content: "+";
+                font-size: 23px;
+                font-family: $font-primary;
+                font-weight: 400;
+                position: absolute;
+                right: 8px;
+            }
+            @include mq("sm") {
+                font-weight: 600;
+                padding-bottom: 10px;
+                font-size: 14px;
+                line-height: 14px;
+            }
+            @include mq("sm", max) {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 16px;
+                padding-bottom: 15px;
+                &::after {
+                    top: 2px !important;
+                }
+            }
+            &::after {
+                @include mq("sm", max) {
+                    content: "+";
+                    font-size: 23px;
+                    font-family: $font-primary;
+                    font-weight: 400;
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+    &__filters {
+        display: flex;
+        transition: all 600ms ease-in-out;
+        &.headroom--unpinned {
+            @include mq("md", min) {
+                transform: translateY(100%);
+            }
+        }
+        @include mq("sm") {
+            @include rem(margin-left, 20px);
+        }
+        @include mq("sm", max) {
+            position: fixed;
+            @include flex-centered;
+            width: 100%;
+            bottom: 0;
+            z-index: z("category-filter-button");
+            background-color: #e6e6e6;
+        }
+        &-close-button {
+            @include flex-centered;
+            position: absolute;
+            @include mq("sm") {
+                right: calc(50% - 620px);
+                top: 21px;
+                width: 13px;
+                height: 13px;
+            }
+            @include mq("sm", max) {
+                top: 10px;
+                right: 10px;
+                width: 11px;
+                height: 11px;
+            }
+            svg {
+                @include mq("sm", max) {
+                    fill: #939393;
+                    stroke: #939393;
+                }
+            }
+        }
+        &-content {
+            width: 100%;
+            left: 0;
+            position: relative;
+            margin-bottom: 43px;
+            @include mq("sm") {
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
+                will-change: opacity;
+                transition: opacity 225ms ease-in-out;
+                background-color: rgba($color-white, 0.97);
+                box-shadow: 0 3px 6px rgba($color-black, 0.16);
+                top: -20px;
+                padding: 40px 0;
+                min-height: 395px;
+            }
+            @include mq("sm", max) {
+                position: fixed;
+                background-color: $color-white;
+                will-change: transform;
+                transition: transform 225ms ease-in-out;
+                transform: translateY(100%);
+                bottom: 0;
+                overflow-y: auto;
+                padding-top: 40px;
+                max-height: 470px;
+            }
+            &.is--active {
+                @include mq("sm") {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                @include mq("sm", max) {
+                    transform: translateY(0%);
+                }
+            }
+        }
+        &-label {
+            font-family: $font-primary;
+            text-transform: capitalize;
+            color: $color-black;
+            cursor: pointer;
+            position: relative;
+            &:after {
+                content: "+";
+                font-size: 23px;
+                font-family: $font-primary;
+                font-weight: 400;
+                position: absolute;
+                @include rem(right, 8px);
+            }
+            @include mq("sm") {
+                font-weight: 600;
+                padding-bottom: 10px;
+                font-size: 14px;
+                line-height: 14px;
+            }
+            @include mq("sm", max) {
+                display: flex;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 16px;
+                padding-bottom: 15px;
+                padding-top: 7px;
+                justify-content: flex-start;
+                &::after {
+                    top: 5px !important;
+                }
+            }
+            &::after {
+                @include mq("sm", max) {
+                    content: "+";
+                    font-size: 23px;
+                    font-family: $font-primary;
+                    font-weight: 400;
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                }
+            }
+            &.is--opened {
+                max-height: 1000px;
+                &::after {
+                    content: "-";
+                }
+            }
+        }
+        &-dinamics {
+            display: flex;
+            width: 100%;
+            @include mq("sm", max) {
+                flex-direction: column;
+            }
+            &-item {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                will-change: max-height;
+                transition: max-height 300ms ease-in-out;
+                overflow: hidden;
+                border-bottom: 1px solid #e7e7e7;
+                padding-top: 3px;
+                max-height: 30px;
+                &--more {
+                    display: none;
+                }
+                &.is--opened {
+                    max-height: 1000px;
+                }
+                @include mq("sm", max) {
+                    border-bottom: solid 1px $color-gray-lighter;
+                    overflow: hidden;
+                    will-change: max-height;
+                    transition: max-height 600ms ease-in-out;
+                    padding: 0 20px;
+                    padding-top: 4px;
+                    max-height: 40px;
+                }
+                &+.x-category__filters-dinamics-item {
+                    @include mq("sm") {
+                        margin-left: 85px;
+                    }
+                    @include mq("sm", max) {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        &-wrapper {
+            max-height: 0px;
+            overflow: hidden;
+            @include mq("sm", max) {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            &.is--opened {
+                max-height: 1000px;
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            label {
+                margin-left: 10px;
+                margin-top: 10px;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                .x-checkbox__complement {
+                    display: none;
+                }
+                a {
+                    cursor: pointer;
+                    color: $color-gray-darkest-2;
+                    display: flex;
+                    align-items: center;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                input[type="checkbox"] {
+                    cursor: pointer;
+                    border: 1px solid $color-gray-darkest-2;
+                    box-shadow: none;
+                    border-radius: 0;
+                    outline: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    transition: all 225ms ease-in-out;
+                    margin-right: 20px;
+                    width: 18px;
+                    height: 18px;
+                    &:checked {
+                        background: url(/arquivos/check-symbol.png) center center no-repeat $color-red;
+                        border: 1px solid $color-red;
+                        border-radius: 4px;
+                        background-size: 16px 16px;
+                    }
+                }
+            }
+            // Category Tree Handler
+            h3,
+            h4 {
+                cursor: pointer;
+                color: $color-gray-darkest-2;
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                margin-bottom: 20px;
+                span {
+                    cursor: pointer;
+                    background: url(/arquivos/check-symbol.png) center center no-repeat $color-red;
+                    background-size: 16px 16px;
+                    border: 1px solid $color-red;
+                    box-shadow: none;
+                    border-radius: 0;
+                    outline: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    transition: all 225ms ease-in-out;
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 20px;
+                    border-radius: 4px;
+                }
+            }
+            h4 {
+                position: relative;
+                &.even {
+                    &::before {
+                        content: "";
+                        cursor: pointer;
+                        display: flex;
+                        border: 1px solid $color-gray-darkest-2;
+                        box-shadow: none;
+                        border-radius: 0;
+                        outline: none;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+                        appearance: none;
+                        transition: all 225ms ease-in-out;
+                        width: 18px;
+                        height: 18px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+            h3 {
+                span {
+                    cursor: pointer;
+                    background: url(/arquivos/check-symbol.png) center center no-repeat $color-red;
+                    background-size: 16px 16px;
+                    border: 1px solid $color-red;
+                    box-shadow: none;
+                    border-radius: 0;
+                    outline: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    transition: all 225ms ease-in-out;
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 20px;
+                    border-radius: 4px;
+                }
+            }
+        }
+        &-open {
+            position: fixed;
+            bottom: 0;
+            left: 5%;
+            width: 90%;
+            z-index: 5013;
+            cursor: pointer;
+            background: #e0457b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height: 50px;
+            p {
+                display: block;
+                color: #fff;
+                font-weight: bold;
+                font-size: 16px;
+                margin-left: 10px;
+            }
+        }
+    }
+    // Buttons Wrapper
+    &__btn-wrapper {
+        @include mq("sm") {
+            margin-top: 30px;
+            position: absolute;
+            right: calc(50% - 610px);
+            bottom: 35px;
+        }
+        @include mq("sm", max) {
+            @include flex-centered;
+            padding: 5px 25px;
+        }
+    }
+    &__clear-btn {
+        text-transform: uppercase;
+        @include flex-centered;
+        text-align: center;
+        font-weight: bold;
+        font-family: $font-primary;
+        font-size: 12px;
+        line-height: 12px;
+        border-radius: 4px;
+        padding: 10px 0;
+        transition: 0.6s all;
+        &:hover {
+            opacity: 0.6;
+        }
+        @include mq("sm") {
+            border: solid 1px $color-red;
+            color: $color-red;
+        }
+        @include mq("sm", max) {
+            color: $color-red;
+            flex: 1;
+            text-decoration: underline;
+        }
+    }
+}

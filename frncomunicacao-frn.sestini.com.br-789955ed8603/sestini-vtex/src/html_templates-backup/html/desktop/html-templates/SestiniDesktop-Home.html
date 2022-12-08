@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniDesktop-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-home.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+  </head>
+  <body>
+    <vtex:template id="SestiniDesktop-Header"/>
+    <main class="x-home__main" role="main">
+      <div class="x-home__content">
+        <section class="x-home__main-banner">
+          <h1 class="hidden-heading">Sestini</h1>
+          <div class="x-home__main-banner-container">
+            <div class="x-home__main-banner-items js--main-banner"><vtex:contentPlaceHolder id="Banner Principal" /></div>
+          </div>
+        </section>
+        <section class="x-home__benefits">
+          <div class="x-home__benefits-container">
+            <ul class="x-home__benefits-items">
+              <li class="x-home__benefits-item"><span class="x-home__benefits-item-icon"><vtex.cmc:svgIconTruck /></span>
+                <p class="x-home__benefits-item-text"><strong>Frete grátis &nbsp;</strong>ou <br/>
+                  com <strong>valor reduzido</strong>
+                </p>
+              </li>
+              <li class="x-home__benefits-item"><span class="x-home__benefits-item-icon"><vtex.cmc:svgIconWarranty/></span>
+                <p class="x-home__benefits-item-text"><strong>Super garantia sestini</strong><br/>por tempo <strong>ilimitado</strong></p>
+              </li>
+              <li class="x-home__benefits-item"><span class="x-home__benefits-item-icon"><vtex.cmc:svgIconCard/></span>
+                <p class="x-home__benefits-item-text"><strong>Parcele &nbsp;</strong>em até <br/><strong>10x sem juros</strong></p>
+              </li>
+              <li class="x-home__benefits-item"><span class="x-home__benefits-item-icon"><vtex.cmc:svgIconExchange/></span>
+                <p class="x-home__benefits-item-text">Troca fácil <br/><strong>1º troca grátis</strong></p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="x-home__tabbed-shelf">
+          <div class="x-home__tabbed-shelf-container">
+            <ul class="x-home__tabbed-shelf-selectors">
+              <li class="x-home__tabbed-shelf-selector">
+                <button class="x-home__tabbed-shelf-selector-button js--home-tabbed-shelf" title="mochilas">mochilas</button>
+              </li>
+              <li class="x-home__tabbed-shelf-selector">
+                <button class="x-home__tabbed-shelf-selector-button js--home-tabbed-shelf" title="estojos">estojos</button>
+              </li>
+              <li class="x-home__tabbed-shelf-selector">
+                <button class="x-home__tabbed-shelf-selector-button js--home-tabbed-shelf" title="lancheiras">lancheiras</button>
+              </li>
+              <li class="x-home__tabbed-shelf-selector">
+                <button class="x-home__tabbed-shelf-selector-button js--home-tabbed-shelf" title="malas">malas</button>
+              </li>
+              <li class="x-home__tabbed-shelf-selector">
+                <button class="x-home__tabbed-shelf-selector-button js--home-tabbed-shelf" title="bolsas">bolsas</button>
+              </li>
+            </ul>
+            <ul class="x-home__tabbed-shelf-contents js--home-tabbed-shelf-contents has--placeholder">
+              <li class="x-home__tabbed-shelf-content js--home-tabbed-shelf-content">
+                <div class="x-home__tabbed-shelf-content-wrapper js--home-tabbed-content-shelf"><vtex:contentPlaceHolder id="Prateleira Mochilas" /></div>
+              </li>
+              <li class="x-home__tabbed-shelf-content js--home-tabbed-shelf-content">
+                <div class="x-home__tabbed-shelf-content-wrapper js--home-tabbed-content-shelf"><vtex:contentPlaceHolder id="Prateleira Estojos" /></div>
+              </li>
+              <li class="x-home__tabbed-shelf-content js--home-tabbed-shelf-content">
+                <div class="x-home__tabbed-shelf-content-wrapper js--home-tabbed-content-shelf"><vtex:contentPlaceHolder id="Prateleira Lancheiras" /></div>
+              </li>
+              <li class="x-home__tabbed-shelf-content js--home-tabbed-shelf-content">
+                <div class="x-home__tabbed-shelf-content-wrapper js--home-tabbed-content-shelf"><vtex:contentPlaceHolder id="Prateleira Malas" /></div>
+              </li>
+              <li class="x-home__tabbed-shelf-content js--home-tabbed-shelf-content">
+                <div class="x-home__tabbed-shelf-content-wrapper js--home-tabbed-content-shelf"><vtex:contentPlaceHolder id="Prateleira Bolsas" /></div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="x-home__category-bullets">
+          <div class="x-home__category-bullets-container">
+            <h3 class="x-title">Encontre a <strong>Sestini Perfeita</strong> para a <strong>Ocasião</strong></h3>
+            <div class="x-home__category-bullets-items"><vtex:contentPlaceHolder id="Banners Categorias" /></div>
+          </div>
+        </section>
+        <section class="x-home__week-offers">
+          <div class="x-home__week-offers-container">
+            <h3 class="x-title"><strong>Ofertas</strong> da <strong>Semana</strong></h3>
+            <div class="x-home__week-offers-wrapper">
+              <div class="x-home__week-offers-left js--home-week-offer-left has--placeholder"><vtex:contentPlaceHolder id="Ofertas da Semana - Vitrine Esquerda" /></div>
+              <div class="x-home__week-offers-right js--home-week-offer-right has--placeholder"><vtex:contentPlaceHolder id="Ofertas da Semana - Vitrine Direita" /></div>
+            </div>
+          </div>
+        </section>
+        <section class="x-home__banners">
+          <div class="x-home__banners-container">
+            <div class="x-home__banners-wrapper">
+              <div class="x-home__banners-left"><vtex:contentPlaceHolder id="Banner Esquerda - Metade" /></div>
+              <div class="x-home__banners-right"><vtex:contentPlaceHolder id="Banners Direita - Um Quarto" /></div>
+            </div>
+          </div>
+        </section>
+        <section class="x-home__products-searched">
+          <div class="x-home__products-searched-container">
+            <h3 class="x-title"><strong>Produtos</strong> mais <strong>Buscados</strong></h3>
+            <div class="x-home__products-searched-wrapper js--products-searched-shelf has--placeholder"><vtex:contentPlaceHolder id="Produtos Pesquisados" /></div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniDesktop-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniDesktop-Scripts"/>
+    <vtex:template id="SestiniDesktop-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-home.js"></script>
+  </body>
+</html>

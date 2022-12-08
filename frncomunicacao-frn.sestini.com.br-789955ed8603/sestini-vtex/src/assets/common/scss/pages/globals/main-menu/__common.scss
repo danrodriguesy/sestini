@@ -1,0 +1,17 @@
+
+%main-menu-common {
+    &__background {
+        background-color: rgba($color-white, .9);
+    }
+
+    &__menu-link-style {
+        color: $color-black;
+        text-transform: uppercase;
+        @include rem(font-size, 11px);
+        @include mq('sm', max) {
+            @include rem(font-size, 16px);
+        }        
+        @include font-weight(light);
+        letter-spacing: 2px;
+    }
+}

@@ -1,0 +1,10 @@
+
+mixin accountScript
+    script(type='text/javascript').
+        document.addEventListener('DOMContentLoaded', function(ev) {
+            document.querySelectorAll('link').forEach(function(link) {
+                if ( link.href.match(/bootstrap/) || link.href.match(/style.css/) || link.href.match(/font-awesome/) ) {
+                    link.parentNode.removeChild(link);
+                }
+            });
+        });

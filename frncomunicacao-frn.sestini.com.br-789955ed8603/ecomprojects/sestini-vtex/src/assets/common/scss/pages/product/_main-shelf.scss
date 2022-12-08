@@ -1,0 +1,50 @@
+.x-product {
+  &__main-shelf {
+    @extend %shelves-carousel__main-shelf;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+    @include mq("sm", max) {
+      margin: 0;
+      .slick-prev {
+        left: 0;
+      }
+      .slick-next {
+        right: 0;
+      }
+    }
+
+    &--title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $color-gray-darken;
+      text-transform: uppercase;
+      font-family: $font-primary;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 30px;
+      
+      span {
+        font-family: $font-primary;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 5px;
+      }
+    }
+
+    &-container {
+      max-width: 100%;
+
+      .x-shelf__item {
+        margin: 0 5px;
+      }
+    }
+  }
+}

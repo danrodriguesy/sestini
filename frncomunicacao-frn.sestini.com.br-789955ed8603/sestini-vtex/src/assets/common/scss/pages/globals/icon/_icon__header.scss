@@ -1,0 +1,47 @@
+
+.icon-logo {
+    .x-header__logo-link & {
+        @include rem(width, 124px);
+
+        @include mq('sm', max) {
+            @include rem(width, 82px);
+        }
+    }
+
+    .x-main-banner__logo-link & {
+        @include rem(width, 140px);
+    }
+}
+
+.icon-store {
+    @include rem(height, 16px);
+    @include rem(width, 16px);
+}
+
+.icon-search {
+    @include rem(height, 16px);
+    @include rem(width, 16px);
+}
+
+.icon-close {
+    @include rem(height, 14px);
+    @include rem(width, 14px);
+}
+
+.icon-wishlist,
+.icon-wishlist-loader {
+    @include rem(height, 16px);
+    @include rem(width, 16px);
+    fill: $color-gray-darken;
+}
+
+.icon-login {
+    @include rem(height, 16px);
+    @include rem(width, 16px);
+}
+
+.icon-minicart {
+    @include rem(height, 16px);
+    @include rem(width, 16px);
+    fill: $color-black;
+}

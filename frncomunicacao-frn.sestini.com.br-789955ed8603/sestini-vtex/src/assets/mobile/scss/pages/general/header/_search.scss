@@ -1,0 +1,137 @@
+.x-header-menu__search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-group {
+        position: relative;
+        margin: 5px 10px;
+    }
+    &-form {
+        flex: 0 0 70%;
+    }
+    &-image-search {
+        flex: 0 0 10%;
+        height: 100%;
+        border-radius: 6px;
+        background: #f2f2f2;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px;
+        margin: 5px;
+        #close-search-image {
+            position: absolute;
+            top: 10px;
+            font-weight: 600;
+            font-family: $font-primary;
+            font-size: 14px;
+            right: 15px;
+        }
+        #cam-icon {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 25px;
+            width: 30px;
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 420.8 420.8' style='enable-background:new 0 0 420.8 420.8;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M406.8,96.4c-8.4-8.8-20-14-33.2-14h-66.4v-0.8c0-10-4-19.6-10.8-26c-6.8-6.8-16-10.8-26-10.8h-120 c-10.4,0-19.6,4-26.4,10.8c-6.8,6.8-10.8,16-10.8,26v0.8h-66c-13.2,0-24.8,5.2-33.2,14c-8.4,8.4-14,20.4-14,33.2v199.2 C0,342,5.2,353.6,14,362c8.4,8.4,20.4,14,33.2,14h326.4c13.2,0,24.8-5.2,33.2-14c8.4-8.4,14-20.4,14-33.2V129.6 C420.8,116.4,415.6,104.8,406.8,96.4z M400,328.8h-0.4c0,7.2-2.8,13.6-7.6,18.4s-11.2,7.6-18.4,7.6H47.2 c-7.2,0-13.6-2.8-18.4-7.6c-4.8-4.8-7.6-11.2-7.6-18.4V129.6c0-7.2,2.8-13.6,7.6-18.4s11.2-7.6,18.4-7.6h77.2 c6,0,10.8-4.8,10.8-10.8V81.2c0-4.4,1.6-8.4,4.4-11.2s6.8-4.4,11.2-4.4h119.6c4.4,0,8.4,1.6,11.2,4.4c2.8,2.8,4.4,6.8,4.4,11.2 v11.6c0,6,4.8,10.8,10.8,10.8H374c7.2,0,13.6,2.8,18.4,7.6s7.6,11.2,7.6,18.4V328.8z'/%3E%3Cpath d='M210.4,130.8c-27.2,0-52,11.2-69.6,28.8c-18,18-28.8,42.4-28.8,69.6s11.2,52,28.8,69.6c18,18,42.4,28.8,69.6,28.8 s52-11.2,69.6-28.8c18-18,28.8-42.4,28.8-69.6s-11.2-52-28.8-69.6C262.4,142,237.6,130.8,210.4,130.8z M264.8,284 c-14,13.6-33.2,22.4-54.4,22.4S170,297.6,156,284c-14-14-22.4-33.2-22.4-54.4c0-21.2,8.8-40.4,22.4-54.4 c14-14,33.2-22.4,54.4-22.4s40.4,8.8,54.4,22.4c14,14,22.4,33.2,22.4,54.4C287.6,250.8,278.8,270,264.8,284z'/%3E%3Ccircle cx='352.8' cy='150' r='19.6'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+        &-hover {
+            display: none;
+            position: absolute;
+            top: 47px;
+            right: 0px;
+            width: 300px;
+            box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.3);
+            padding: 35px 15px 25px;
+            border-radius: 6px;
+            font-family: $font-primary;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #f4f4f4;
+            &.openned {
+                display: flex !important;
+            }
+            &::before {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                top: -5px;
+                right: 18px;
+                width: 15px;
+                height: 15px;
+                transform: rotate(45deg);
+                box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.3);
+            }
+            #cam-icon {
+                height: 50px !important;
+                width: 60px !important;
+            }
+            &-title {
+                font-weight: 600;
+                font-size: 26px;
+                margin: 10px 0;
+            }
+            &-text {
+                font-size: 14px;
+                font-weight: normal;
+            }
+            &-button {
+                margin-top: 10px;
+                font-weight: 600;
+                text-align: center;
+                width: 100%;
+                border-radius: 6px;
+                padding: 5px;
+                text-transform: uppercase;
+                background: $color-black;
+                color: $color-white;
+                transition: 0.4s all;
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    &-input {
+        border-radius: 4px;
+        width: 100%;
+        background: #f2f2f2;
+        color: $color-black;
+        padding: 10px;
+        padding-right: 70px;
+        font-size: 16px;
+        line-height: 12px;
+        font-family: $font-primary;
+        font-weight: 600;
+    }
+    &-icon {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translate(50%, -50%);
+    }
+}
+
+.x-header-menu__voicesearch-icon {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 48%;
+    transform: translate(50%, -50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 22px;
+    width: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg height='511pt' viewBox='-90 1 511 511.99899' width='511pt' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m332.464844 275.082031c0-8.429687-6.835938-15.265625-15.269532-15.265625-8.433593 0-15.269531 6.835938-15.269531 15.265625 0 74.6875-60.757812 135.445313-135.445312 135.445313-74.683594 0-135.441407-60.757813-135.441407-135.445313 0-8.429687-6.835937-15.265625-15.269531-15.265625-8.433593 0-15.269531 6.835938-15.269531 15.265625 0 86.378907 66.320312 157.539063 150.710938 165.273438v41.105469h-56.664063c-8.433594 0-15.269531 6.835937-15.269531 15.269531 0 8.433593 6.835937 15.269531 15.269531 15.269531h143.871094c8.429687 0 15.265625-6.835938 15.265625-15.269531 0-8.433594-6.835938-15.269531-15.265625-15.269531h-56.667969v-41.105469c84.394531-7.730469 150.714844-78.894531 150.714844-165.273438zm0 0'/%3E%3Cpath d='m166.480469 372.851562c53.910156 0 97.769531-43.859374 97.769531-97.769531v-177.316406c0-53.90625-43.859375-97.765625-97.769531-97.765625-53.90625 0-97.765625 43.859375-97.765625 97.765625v177.316406c0 53.910157 43.859375 97.769531 97.765625 97.769531zm-67.230469-275.085937c0-37.070313 30.160156-67.226563 67.230469-67.226563 37.070312 0 67.230469 30.15625 67.230469 67.226563v177.316406c0 37.070313-30.160157 67.230469-67.230469 67.230469-37.070313 0-67.230469-30.160156-67.230469-67.230469zm0 0'/%3E%3C/svg%3E");
+    &.is--active {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 435.2 435.2' style='enable-background:new 0 0 435.2 435.2;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M356.864,224.768c0-8.704-6.656-15.36-15.36-15.36s-15.36,6.656-15.36,15.36c0,59.904-48.64,108.544-108.544,108.544 c-59.904,0-108.544-48.64-108.544-108.544c0-8.704-6.656-15.36-15.36-15.36c-8.704,0-15.36,6.656-15.36,15.36 c0,71.168,53.248,131.072,123.904,138.752v40.96h-55.808c-8.704,0-15.36,6.656-15.36,15.36s6.656,15.36,15.36,15.36h142.336 c8.704,0,15.36-6.656,15.36-15.36s-6.656-15.36-15.36-15.36H232.96v-40.96C303.616,355.84,356.864,295.936,356.864,224.768z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cg%3E%3Cpath d='M217.6,0c-47.104,0-85.504,38.4-85.504,85.504v138.752c0,47.616,38.4,85.504,85.504,86.016 c47.104,0,85.504-38.4,85.504-85.504V85.504C303.104,38.4,264.704,0,217.6,0z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+}
+
+#smarthint-search-products .slick-that-disabled> :nth-child(1n) {
+    padding: 0 !important;
+}

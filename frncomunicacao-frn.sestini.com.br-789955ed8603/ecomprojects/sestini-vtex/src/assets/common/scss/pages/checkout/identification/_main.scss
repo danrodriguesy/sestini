@@ -1,0 +1,202 @@
+.body-order-form {
+  .container {
+    @include mq("sm", max) {
+      padding: 0 !important;
+    }
+  }
+  .orderform-template-holder {
+    width: 100%;
+
+    .link.link-cart.pull-right {
+      display: none;
+    }
+
+    #client-profile-data {
+      // User Identification
+      .client-pre-email {
+        border: 0;
+
+        @include mq("sm", max) {
+          width: calc(100% - 60px);
+        }
+        .client-pre-email-h {
+          margin: 0;
+        }
+
+        label {
+          @include rem(margin-top, 20px);
+
+          @include mq("sm", max) {
+            @include rem(margin-top, 40px);
+          }
+
+          &::before {
+            content: "Informe o seu e-mail";
+            @include flex-centered;
+            font-family: $font-primary;
+            text-align: left;
+            text-transform: uppercase;
+            @include font-weight(bold);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 17px);
+            @include rem(margin-bottom, 10px);
+            @include rem(letter-spacing, 1px);
+          }
+
+          span,
+          small {
+            display: none;
+          }
+        }
+
+        // Input E-mail Holder
+        .client-email {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          @include mq("sm") {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            @include rem(max-width, 315px);
+            @include rem(margin-bottom, 30px);
+          }
+
+          @include mq("sm", max) {
+            @include rem(padding, 0 20px);
+            @include rem(margin-bottom, 40px);
+          }
+
+          // E-mail input
+          #client-pre-email {
+            width: 100%;
+            color: #1f1f1f;
+            margin: 0;
+            font-family: $font-primary;
+            font-weight: 600;
+            border: solid 1px #ebebeb;
+            box-shadow: unset;
+            height: unset;
+            @include rem(padding, 4px 10px);
+            @include rem(font-size, 11px);
+            @include rem(line-height, 27px);
+            @include rem(margin-bottom, 25px);
+          }
+
+          // E-mail Button
+          #btn-client-pre-email {
+            position: relative;
+            box-shadow: unset;
+            background: unset;
+            font-family: $font-primary;
+            background-color: #5bb75b;
+            color: $color-white;
+            text-transform: uppercase;
+            border: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+            margin: auto;
+            text-shadow: unset;
+            @include font-weight(bold);
+            @include rem(max-width, 195px);
+            @include rem(font-size, 12px);
+            @include rem(line-height, 40px);
+            @include rem(border-radius, 4px);
+            @include rem(letter-spacing, 1px);
+            transition: 0.5s all;
+
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+
+        // Information Holder
+        .emailInfo {
+          border: 0;
+          background: unset;
+          padding: 0;
+          width: 100%;
+          overflow: visible;
+
+          @include mq("sm") {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            @include rem(max-width, 315px);
+          }
+
+          @include mq("sm", max) {
+            @include rem(padding, 0 30px);
+          }
+
+          // Removing all icons
+          i {
+            display: none;
+          }
+
+          h3 {
+            font-family: $font-primary;
+            font-size: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+            @include rem(margin-bottom, 10px);
+
+            &::before,
+            &::after {
+              text-transform: uppercase;
+              text-align: center;
+              color: $color-gray-darken;
+              @include font-weight(bold);
+              @include rem(font-size, 12px);
+              @include rem(line-height, 17px);
+              @include rem(letter-spacing, 1px);
+            }
+
+            &::before {
+              content: "Usamos seu e-mail";
+            }
+
+            &::after {
+              content: "De forma 100% segura para:";
+            }
+          }
+
+          ul {
+            margin: 0;
+
+            @include mq("sm", max) {
+              @include rem(padding-left, 10px);
+            }
+            li {
+              position: relative;
+              span {
+                display: flex;
+                align-items: center;
+                color: $color-gray-darkest;
+                font-family: $font-primary;
+                @include rem(font-size, 13px);
+                @include rem(line-height, 26px);
+              }
+
+              &::before {
+                content: "";
+                border-radius: 50%;
+                background-color: #5bb75b;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                @include rem(left, -13px);
+                @include rem(height, 6px);
+                @include rem(width, 6px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

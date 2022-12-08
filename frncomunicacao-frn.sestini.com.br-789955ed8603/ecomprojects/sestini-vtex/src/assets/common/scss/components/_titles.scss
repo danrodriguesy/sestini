@@ -1,0 +1,72 @@
+
+%title {
+    /**
+     * <div class="title--primary"><p>Foo</p></div>
+     * <div class="title--primary"><p><strong>Bar</strong></p></div>
+     */
+    &--primary {
+        margin-bottom: 24px;
+
+        p {
+            font-size: 12px;
+            text-align: center;
+            color: $color-black;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        strong {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+            color: $color-primary;
+            position: relative;
+        }
+    }
+
+    &--secondary {
+        margin-bottom: 24px;
+
+        p {
+            color: $color-secondary;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    /**
+     * For single element text
+     *
+     * <h2>Foo</h2>
+     * <p>Bar</p>
+     */
+    &--primary-single {
+        display: block;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        font-size: 28px;
+        font-weight: bold;
+        color: $color-primary;
+        position: relative;
+        text-align: center;
+    }
+
+    /**
+     * Decoration for primary titles
+     */
+    &--primary-decoration {
+        padding-bottom: 12px;
+
+        &:after {
+            content: '';
+            width: 48px;
+            height: 5px;
+            background-color: $color-primary;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

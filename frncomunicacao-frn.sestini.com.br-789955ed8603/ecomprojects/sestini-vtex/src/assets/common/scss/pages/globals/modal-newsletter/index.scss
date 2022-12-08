@@ -1,0 +1,124 @@
+.modal-newsletter {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 4px;
+    width: 240px;
+    height: 445px;
+    z-index: 9999;
+    box-shadow: -1px -1px 0px #000;
+
+    #close-modal-bf-newsletter{
+        font-family: $font-primary;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover{
+            opacity: .6;
+        }
+    }
+
+    &__header {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url("/arquivos/background-popup-newsletter.png");
+        background-size: contain;
+        border-top-left-radius: 4px;
+
+        &-title,
+        &-subtitle {
+            font-family: $font-primary;
+            font-size: 18px;
+            color: $color-white;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 0 5px #000;
+
+            & > strong {
+                text-shadow: none;
+                font-size: 22px;
+                color: $color-black;
+                text-transform: uppercase;
+            }
+        }
+
+        &-subtitle {
+            margin-top: 10px;
+        }
+
+        &-description {
+            font-size: 12px;
+            text-align: center;
+            font-family: $font-primary;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: $color-black;
+            font-weight: 600;
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            &-input {
+                border: 1px solid $color-black;
+                font-family: $font-primary;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                height: 30px;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 3px 5px;
+            }
+
+            &-button {
+                font-family: $font-primary;
+                border: 2px solid $color-black;
+                font-size: 12px;
+                background: rgb(44, 44, 44);
+                border-radius: 25px;
+                text-transform: uppercase;
+                font-weight: 600;
+                color: #f8d930;
+                width: 60%;
+                align-self: flex-end;
+                padding: 3px 0;
+                transition: all 0.6s;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        #message-newsletter-bf{
+            font-family: $font-primary;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 10px;
+
+            &.success{
+                color: #5aa03e;
+            }
+
+            &.error{
+                color: $color-red;
+            }
+        }
+    }
+
+    &__footer {
+        background-image: url("/arquivos/footer-popup-newsletter.png");
+        height: 159px;
+        width: 240px;
+        background-repeat: no-repeat;
+    }
+}

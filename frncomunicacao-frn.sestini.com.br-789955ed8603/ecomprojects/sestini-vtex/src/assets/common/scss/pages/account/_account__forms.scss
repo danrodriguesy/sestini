@@ -1,0 +1,357 @@
+// Address Form
+.x-account__address,
+.x-account__user {
+    .x-form__group {
+        @include mq("sm") {
+            margin-bottom: 16px;
+        }
+
+        @include mq("sm", max) {
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            border: 1px solid #e2e2e2;
+            border-radius: 4px;
+            width: 100%;
+            outline: none;
+            color: #6e6e6e;
+            box-shadow: none;
+            text-shadow: none;
+            background: #fff;
+            font-size: 14px;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 15px;
+        }
+    }
+}
+
+.x-account__user {
+    .form-personal-data-name,
+    .form-personal-data-surname,
+    .form-personal-data-cpf,
+    .form-personal-data-date-of-birth,
+    .form-contact-data-corporate-name,
+    .form-contact-data-business-document,
+    .form-contact-data-email,
+    .form-contact-data-telephone,
+    .form-contact-data-cellphone {
+        @include mq("sm") {
+            margin-right: 12px;
+        }
+
+        @include mq("sm", max) {
+            margin-bottom: 12px;
+        }
+    }
+
+    .form-personal-data-name {
+        width: 33.33%;
+    }
+
+    .form-personal-data-surname {
+        width: 33.33%;
+    }
+
+    .form-personal-data-nickname {
+        width: 33.33%;
+    }
+
+    .form-personal-data-cpf {
+        width: 33.33%;
+    }
+
+    .form-personal-data-date-of-birth {
+        width: 33.33%;
+    }
+
+    .form-personal-data-gender {
+        width: 33.33%;
+    }
+
+    .form-contact-data-corporate-name {
+        width: 50%;
+    }
+
+    .form-contact-data-fancy-name {
+        width: 50%;
+    }
+
+    .form-contact-data-business-document {
+        width: 50%;
+    }
+
+    .form-contact-data-state-registration {
+        width: 50%;
+    }
+
+    .form-contact-data-email {
+        width: 50%;
+    }
+
+    .form-contact-data-telephone {
+        width: 50%;
+        margin-right: 0;
+    }
+
+    .form-contact-data-cellphone {
+        width: 50%;
+    }
+
+    @include mq("sm", max) {
+        .form-personal-data-name {
+            width: 100%;
+        }
+
+        .form-personal-data-surname {
+            width: 100%;
+        }
+
+        .form-personal-data-nickname {
+            width: 100%;
+        }
+
+        .form-personal-data-cpf {
+            width: 100%;
+        }
+
+        .form-personal-data-date-of-birth {
+            width: 100%;
+        }
+
+        .form-personal-data-gender {
+            width: 100%;
+        }
+
+        .form-contact-data-corporate-name {
+            width: 100%;
+        }
+
+        .form-contact-data-fancy-name {
+            width: 100%;
+        }
+
+        .form-contact-data-business-document {
+            width: 100%;
+        }
+
+        .form-contact-data-state-registration {
+            width: 100%;
+        }
+
+        .form-contact-data-email {
+            width: 100%;
+        }
+
+        .form-contact-data-telephone {
+            width: 100%;
+        }
+
+        .form-contact-data-cellphone {
+            width: 100%;
+        }
+    }
+
+    .form-personal-data-gender {
+        .controls {
+            display: flex;
+            padding-top: 7px;
+
+            label {
+                cursor: pointer;
+                padding-left: 24px;
+                position: relative;
+                width: 50%;
+
+                &:before,
+                &:after {
+                    content: "";
+                    position: absolute;
+                }
+
+                &:before {
+                    border: 1px solid #d9d9d9;
+                    top: 0;
+                    left: 0;
+                    height: 16px;
+                    width: 16px;
+                }
+
+                &:after {
+                    height: 10px;
+                    width: 10px;
+                    top: 3px;
+                    left: 3px;
+                }
+
+                &.is--active {
+                    &:after {
+                        background-color: $color-black;
+                    }
+                }
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+        }
+    }
+
+    .form-business-data-name {
+        margin-bottom: 12px;
+
+        a {
+            color: $color-gray-dark;
+            font-size: 12px;
+            font-style: italic;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.x-account__address {
+    .address-form-addressee,
+    .address-form-addressee,
+    .address-form-address-type,
+    .address-form-street-name,
+    .address-form-number,
+    .address-form-reference,
+    .address-form-neighborhood,
+    .address-form-state {
+        @include mq("sm") {
+            margin-right: 12px;
+        }
+
+        @include mq("sm", max) {
+            margin-bottom: 12px;
+        }
+    }
+
+    .address-form-addressee.is--first {
+        width: 30%;
+    }
+
+    .address-form-addressee.is--second {
+        width: 40%;
+    }
+
+    .address-form-address-type {
+        width: 15%;
+    }
+
+    .address-form-cep {
+        width: 15%;
+    }
+
+    .address-form-street-name {
+        width: 70%;
+    }
+
+    .address-form-number {
+        width: 10%;
+    }
+
+    .address-form-complement {
+        width: 25%;
+    }
+
+    .address-form-reference {
+        width: 30%;
+    }
+
+    .address-form-neighborhood {
+        width: 35%;
+    }
+
+    .address-form-state {
+        width: 10%;
+    }
+
+    .address-form-city {
+        width: 25%;
+    }
+
+    @include mq("sm", max) {
+        .address-form-addressee.is--first {
+            width: 100%;
+        }
+
+        .address-form-addressee.is--second {
+            width: 100%;
+        }
+
+        .address-form-address-type {
+            width: 100%;
+        }
+
+        .address-form-cep {
+            width: 100%;
+        }
+
+        .address-form-street-name {
+            width: 100%;
+        }
+
+        .address-form-number,
+        .address-form-state {
+            width: 25%;
+            margin-right: 5%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .address-form-complement,
+        .address-form-city {
+            width: 70%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .address-form-reference {
+            width: 50%;
+            margin-right: 5%;
+            display: inline-block;
+            vertical-align: top;
+            .control-label {
+                font-size: 13px !important;
+            }
+        }
+
+        .address-form-neighborhood {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}
+
+#editar-perfil-conteudo {
+    h5 {
+        font-weight: lighter !important;
+        font-size: 12px !important;
+        @include rem(letter-spacing, 3px);
+    }
+
+    .profile-detail-form-personal-data {
+        h5.span5 {
+            font-size: 0 !important;
+        }
+    }
+
+    .profile-detail-form-contact-data {
+        margin-top: 50px;
+
+        > h5 {
+            display: none;
+        }
+    }
+}

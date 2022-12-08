@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+  <head>
+    <vtex:template id="SestiniCommon-ResourceHints"/>
+    <vtex:template id="SestiniCommon-Head"/>
+    <vtex:metaTags/>
+    <vtex:template id="SestiniCommon-JsonLd"/>
+    <vtex:template id="SestiniCommon-Styles"/>
+    <vtex:template id="SestiniDesktop-Styles"/>
+    <link rel="stylesheet" href="/arquivos/sestini-desktop-account.css" media="all"/>
+    <vtex:template id="SestiniCommon-ThemeScripts"/>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function(ev) {
+          document.querySelectorAll('link').forEach(function(link) {
+              if ( link.href.match(/bootstrap/) || link.href.match(/style.css/) || link.href.match(/font-awesome/) ) {
+                  link.parentNode.removeChild(link);
+              }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <vtex:template id="SestiniDesktop-Header"/>
+    <main class="x-account__main" role="main">
+      <section class="x-account-title">
+        <h1 class="x-account__title">minha <strong>conta</strong></h1>
+      </section>
+      <section class="x-account__container">
+        <div class="x-account__content">
+          <div class="x-account__user"><vtex.cmc:accountUserProfile/></div>
+        </div>
+      </section>
+    </main>
+    <vtex:template id="SestiniCommon-Newsletter"/>
+    <vtex:template id="SestiniDesktop-Footer"/>
+    <vtex:template id="SestiniCommon-Copyright"/>
+    <vtex:template id="SestiniCommon-Partners"/>
+    <vtex:template id="SestiniCommon-AjaxLoader"/>
+    <vtex:template id="SestiniCommon-Overlay"/>
+    <vtex:template id="SestiniCommon-Minicart"/>
+    <vtex:template id="SestiniCommon-Scripts"/>
+    <vtex:template id="SestiniDesktop-Scripts"/>
+    <vtex:template id="SestiniDesktop-GoogleFonts"/>
+    <vtex:template id="SestiniCommon-ClearCache"/>
+    <script type="text/javascript" src="/arquivos/sestini-desktop-account.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+.x-header-category-menu {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        display: none !important;
+    }
+    border-bottom: 1px solid #ccc;
+    a {
+        padding: 0;
+        margin: 0;
+        font-family: $font-primary;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-right: 13px;
+        padding: 10px;
+        padding-top: 5px;
+        color: #353535;
+    }
+}

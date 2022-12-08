@@ -1,0 +1,46 @@
+.x-product__breadcrumb {
+  width: 100%;
+  min-height: 17px;
+  margin: 20px 0;
+
+  @include mq("sm", max) {
+    margin: 0;
+  }
+
+  &-items {
+    @include mq("sm", max) {
+      flex-wrap: wrap;
+      padding: 0 16px;
+    }
+
+    .has--placeholder & {
+      opacity: 0;
+    }
+
+    display: flex;
+    @extend %product-common-placeholder-transition;
+  }
+
+  &-item {
+    font-family: $font-primary;
+    color: $color-gray;
+    text-transform: capitalize;
+    position: relative;
+    font-size: 12px;
+    line-height: 14px;
+
+    @include mq("sm", max) {
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    & + & {
+      padding-left: 10px;
+      margin-left: 10px;
+      border-left: 1px solid $color-gray;
+    }
+  }
+}

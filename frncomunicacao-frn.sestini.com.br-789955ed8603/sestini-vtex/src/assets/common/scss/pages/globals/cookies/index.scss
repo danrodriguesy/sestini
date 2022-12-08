@@ -1,0 +1,57 @@
+.x-cookies{
+    background: $color-black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
+
+    &-content{
+        max-width: 1450px;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &-text{
+            flex: 0 0 85%;
+            text-align: center;
+            @include mq("sm", max) {
+                flex: 0 0 100%;
+            }
+            color: $color-white;
+            font-size: 14px;
+            font-family: $font-primary;
+            & > a{
+                font-weight: 700;
+                text-decoration: underline;
+            }
+        }
+
+        &-button{
+            flex: 0 0 15%;
+
+            @include mq("sm", max) {
+                flex: 0 0 100%;
+                margin-top: 20px;
+            }
+            padding: 5px 0;
+            width: 100%;
+            border: 1px solid $color-white;
+            border-radius: 6px;
+            font-weight: 600;
+            color: $color-white;
+            transition: .4s all ease-in-out;
+            font-family: $font-primary;
+            text-transform: uppercase;
+
+            &:hover{
+                color: $color-black;
+                background: $color-white;
+                transition: .4s all ease-in;
+            }
+        }
+    }
+}

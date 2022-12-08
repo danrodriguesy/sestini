@@ -1,0 +1,30 @@
+
+extends ./../_layouts/_desktop-base.pug
+
+
+//- Template variables
+block vars
+  - var $templateName = 'store-locator'
+  - var $templateClass = 'store-locator'
+
+
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-institutional.css`, media='all')/
+  link(rel='stylesheet', href=`/arquivos/sestini-desktop-${$templateName}.css`, media='all')/
+
+
+//- Main Content
+block content
+  div(class='x-store-locator__content')
+    vtex:template(id='SestiniCommon-Breadcrumb')/
+    div(class='x-store-locator__wrapper js--store-locator')
+      include ../_partials/institutional/store-locator/_left.pug
+      include ../_partials/institutional/store-locator/_right.pug
+
+
+//- Page scripts
+block append scripts
+  script(type='text/javascript', src=`//maps.googleapis.com/maps/api/js?key=AIzaSyAbq0GppEKvluSGUWR-VRKDb7CRvYazF8g`)
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-institutional.js`)
+  script(type='text/javascript', src=`/arquivos/sestini-desktop-${$templateName}.js`)

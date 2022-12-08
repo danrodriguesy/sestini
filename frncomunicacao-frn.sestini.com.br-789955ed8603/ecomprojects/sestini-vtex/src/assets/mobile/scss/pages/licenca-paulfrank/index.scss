@@ -1,0 +1,101 @@
+.paulfrank {
+    max-width: 1450px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    &__content {
+        &-title {
+            font-family: $font-primary;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 25px;
+        }
+
+        &-middle {
+            display: flex;
+            flex-direction: column;
+            p {
+                font-family: $font-primary;
+                font-weight: normal;
+                font-size: 14px;
+                margin-top: 25px;
+
+                &.bold {
+                    font-weight: 600;
+                    margin-top: 0px;
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+
+            &-item:nth-child(1) > img {
+                background-color: #ea0029;
+            }
+            &-item:nth-child(2) > img {
+                background-color: #f7b5cd;
+            }
+            &-item:nth-child(3) > img {
+                background-color: #3085c8;
+            }
+            &-item:nth-child(4) > img {
+                background-color: #ffc629;
+            }
+            &-item:nth-child(5) > img {
+                background-color: #0b0b11;
+            }
+            &-item:nth-child(6) > img {
+                background-color: #f8df8d;
+            }
+            &-item:nth-child(7) > img {
+                background-color: #76bc21;
+            }
+            &-item:nth-child(8) > img {
+                background-color: #a65a2a;
+            }
+
+            &-item {
+                flex: 0 0 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    height: 130px;
+                    width: 130px;
+                    margin-top: 50px;
+                    border-radius: 50%;
+                    padding: 10px;
+                }
+                p {
+                    margin-top: 5px;
+                    font-family: $font-primary;
+                    font-weight: 400;
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+        }
+
+        &-video {
+            h2 {
+                font-family: $font-primary;
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            iframe {
+                width: 100%;
+            }
+        }
+    }
+}

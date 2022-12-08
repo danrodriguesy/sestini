@@ -1,0 +1,580 @@
+.x-shelf {
+    >h2 {
+        display: none;
+    }
+    ul>li {
+        &::after {
+            display: none !important;
+        }
+    }
+    &__item {
+        position: relative;
+        margin: auto;
+        transition: all 300ms ease-in-out;
+        @include rem(padding, 5px 8px);
+        padding-bottom: 2px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        min-height: 245px;
+        @include mq("sm", max) {
+            min-height: 320px;
+        }
+        &:not(.has--search) {
+            &:hover {
+                @include mq("sm") {
+                    transform: scale(1.05);
+                    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.16), 0 1px 18px 0px rgba(0, 0, 0, 0.16), 0 6px 6px 0px rgba(0, 0, 0, 0.16);
+                    .x-wishlist__add-btn-wrapper {
+                        opacity: 1;
+                    }
+                }
+                .x-shelf__buy-wrapper {
+                    opacity: 1;
+                }
+            }
+        }
+        &.is--offer {
+            display: flex;
+            @include mq("sm", max) {
+                align-items: flex-end;
+            }
+        }
+        &.has--category {
+            min-height: 300px;
+            @include mq("sm", max) {
+                min-height: 315px;
+            }
+        }
+        &.has--wishlist-list {
+            .x-wishlist__add-btn-wrapper {
+                opacity: 1;
+            }
+            .x-shelf__buy-wrapper {
+                max-width: 100%;
+            }
+        }
+        &.has--carousel {
+            @include mq("sm", max) {
+                @include rem(padding, 0 16px);
+            }
+            &.is--offer {
+                height: 315px;
+                @include mq("sm", max) {
+                    // padding: 0;
+                    @include rem(margin, 0 2px);
+                }
+            }
+        }
+        &.has--search {
+            @include mq("sm", max) {
+                display: flex;
+                padding: 0;
+            }
+            .x-shelf__title {
+                text-align: center;
+            }
+            .x-shelf__price-container {
+                flex-direction: column !important;
+            }
+            .x-shelf__installments {
+                font-size: 14px;
+                color: $color-gray-medium-2;
+            }
+            .x-shelf__best-price {
+                font-size: 24px;
+            }
+        }
+    }
+    &__img-container {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        .has--search & {
+            @include mq("sm", max) {
+                @include rem(max-width, 60px);
+            }
+        }
+        .is--offer & {
+            @include rem(padding, 0 10px);
+        }
+        img {
+            max-width: 100%;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+            .has--search & {
+                mix-blend-mode: multiply;
+            }
+        }
+        &:hover {
+            @include mq("sm") {
+                .x-shelf__buy-wrapper {
+                    opacity: 0.65;
+                }
+                .x-shelf__img-front {
+                    opacity: 0;
+                }
+                .x-shelf__img-back {
+                    opacity: 1;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+    &__img-front,
+    &__img-back {
+        @include prevent-rendering;
+        transition: opacity 0.75s;
+        will-change: transition, transform;
+    }
+    &__img-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__buy-wrapper {
+        @include flex-centered;
+        background-color: $color-green;
+        width: 100%;
+        border: solid 1px $color-green;
+        @include rem(height, 35px);
+        @include mq("sm") {
+            transition: opacity 0.3s;
+            position: absolute;
+            left: 0;
+            will-change: opacity;
+            z-index: 5;
+            opacity: 0;
+            transition: all 600ms ease-in-out;
+            @include rem(bottom, -35px);
+            @include rem(border-bottom-right-radius, 4px);
+            @include rem(border-bottom-left-radius, 4px);
+        }
+        .has--search & {
+            position: relative;
+            opacity: 1;
+            bottom: 0;
+            @include rem(margin-top, 10px);
+            @include rem(max-width, 110px);
+            @include rem(min-width, 110px);
+            @include rem(border-radius, 4px);
+            @include mq("sm", max) {
+                display: none;
+            }
+        }
+        .has--wishlist-list & {
+            display: none;
+        }
+        @include mq("sm", max) {
+            @include rem(margin-top, 10px);
+            @include rem(max-width, 110px);
+            @include rem(border-radius, 4px);
+            @include rem(top, 150px);
+            position: absolute;
+            display: none;
+        }
+        .is--offer & {
+            @include rem(top, 178px);
+            @include rem(border-radius, 4px);
+            margin-top: 20px;
+            @include mq("sm", max) {
+                @include rem(max-width, 150px);
+            }
+        }
+    }
+    &__buy {
+        color: $color-white;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-primary;
+        @include font-weight(bold);
+        @include rem(font-size, 14px);
+        @include rem(line-height, 20px);
+    }
+    &__content {
+        @include rem(padding-top, 16px);
+        @include rem(padding-bottom, 5px);
+        @include mq(sm, max) {}
+        .is--offer & {
+            position: relative;
+        }
+        .is--offer & {
+            flex-shrink: 0;
+            @include mq("sm") {
+                @include rem(width, 229px);
+            }
+            @include mq("sm", max) {
+                @include rem(width, 175px);
+            }
+        }
+        .has--search & {
+            @include mq("sm", max) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+                width: calc(100% - 60px);
+            }
+        }
+    }
+    &__rated {
+        text-align: center;
+        .is--offer & {
+            text-align: left;
+        }
+    }
+    &__title {
+        color: $color-black;
+        overflow: hidden;
+        @include font-weight(600);
+        @include rem(font-size, 12px);
+        @include rem(line-height, 12px);
+        margin-bottom: 5px;
+        font-family: $font-primary;
+        .has--search & {
+            @include rem(font-size, 14px);
+            @include rem(line-height, 18px);
+            @include mq("sm") {
+                @include rem(margin-bottom, 4px);
+            }
+            @include mq("sm", max) {
+                text-align: left;
+                margin: 0;
+                @include rem(font-size, 12px);
+                @include rem(line-height, 17px);
+            }
+        }
+        .is--offer & {
+            text-align: left;
+            @include mq("sm") {
+                @include font-weight(300);
+                @include rem(width, 229px);
+                @include rem(max-height, 52px);
+                @include rem(font-size, 20px);
+                @include rem(line-height, 26px);
+                @include rem(margin-bottom, 15px);
+            }
+            @include mq("sm", max) {
+                @include font-weight(300);
+                min-height: auto;
+                @include rem(width, 130px);
+                @include rem(max-height, 38px);
+                @include rem(font-size, 12px);
+                @include rem(line-height, 18px);
+                @include rem(margin-bottom, 10px);
+                .is--empty {
+                    display: none;
+                }
+            }
+        }
+        @include mq("sm", max) {
+            @include rem(font-size, 12px);
+        }
+    }
+    &__price-text {
+        // @include rem(padding-bottom, 15px);
+        .x-shelf__best-price {
+            @include rem(font-size, 14px);
+            @include rem(line-height, 19px);
+        }
+    }
+    &__price-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include mq("sm", max) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .is--offer & {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+    &__old-price {
+        color: $color-gray-medium-2;
+        font-size: 10px;
+        font-weight: 600;
+        margin-right: 3px;
+        font-family: $font-primary;
+        .is--offer & {
+            @include rem(margin-left, 10px);
+            @include mq("sm") {
+                @include rem(font-size, 22px);
+                @include rem(line-height, 22px);
+            }
+        }
+        &.is--empty {
+            display: none;
+            &::before {
+                display: none;
+            }
+        }
+    }
+    &__best-price {
+        @extend %price-style__best-price;
+        font-family: $font-primary;
+        color: #5aa03e;
+        font-size: 14px;
+        line-height: 14px;
+        .has--search & {
+            @include rem(font-size, 18px);
+            @include rem(line-height, 23px);
+            @include mq("sm", max) {
+                color: $color-green;
+                @include rem(font-size, 14px);
+                @include rem(line-height, 19px);
+            }
+        }
+        .is--offer & {
+            @include rem(font-size, 39px);
+            @include rem(line-height, 49px);
+            @include mq("sm", max) {
+                color: $color-gray-darkest;
+                @include rem(font-size, 23px);
+                @include rem(line-height, 29px);
+            }
+        }
+    }
+    &__installments-value {
+        color: $color-gray-medium-2;
+        font-size: 10px;
+        font-weight: regular;
+        font-family: $font-primary;
+        &>b {
+            font-weight: bold;
+        }
+        @include mq(sm, max) {
+            font-size: 7px;
+        }
+    }
+    &__installments-container {
+        // @include rem(padding-top, 6px);
+    }
+    &__installments {
+        color: $color-gray-medium-2;
+        font-size: 12px;
+        font-weight: 600;
+        font-family: $font-primary;
+        .is--offer & {
+            color: $color-gray-medium-2;
+            @include font-weight(400);
+            @include rem(font-size, 14px);
+            @include rem(line-height, 20px);
+            @include mq("sm") {
+                @include rem(margin-top, 10px);
+            }
+            @include mq("sm", max) {
+                @include rem(font-size, 9px);
+                @include rem(line-height, 14px);
+                @include rem(padding-top, 10px);
+            }
+        }
+        .has--search & {
+            @include mq("sm", max) {
+                display: none;
+            }
+        }
+        .has--carousel & {
+            @include mq("sm", max) {
+                @include rem(font-size, 15px);
+            }
+        }
+    }
+    &__out-of-stock-text {
+        text-align: center;
+        color: $color-red;
+        font-family: $font-primary;
+        text-transform: uppercase;
+        @include font-weight(600);
+        @include rem(font-size, 10px);
+    }
+    &__percent {
+        display: none;
+    }
+    .x-wishlist__add-btn {
+        top: 5px !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 20px;
+        width: 20px;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 -28 512.001 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 455.516c-7.29 0-14.316-2.641-19.793-7.438-20.684-18.086-40.625-35.082-58.219-50.074l-.09-.078c-51.582-43.957-96.125-81.918-127.117-119.313C16.137 236.81 0 197.172 0 153.871c0-42.07 14.426-80.883 40.617-109.293C67.121 15.832 103.488 0 143.031 0c29.555 0 56.621 9.344 80.446 27.77C235.5 37.07 246.398 48.453 256 61.73c9.605-13.277 20.5-24.66 32.527-33.96C312.352 9.344 339.418 0 368.973 0c39.539 0 75.91 15.832 102.414 44.578C497.578 72.988 512 111.801 512 153.871c0 43.3-16.133 82.938-50.777 124.738-30.993 37.399-75.532 75.356-127.106 119.309-17.625 15.016-37.597 32.039-58.328 50.168a30.046 30.046 0 0 1-19.789 7.43zM143.031 29.992c-31.066 0-59.605 12.399-80.367 34.914-21.07 22.856-32.676 54.45-32.676 88.965 0 36.418 13.535 68.988 43.883 105.606 29.332 35.394 72.961 72.574 123.477 115.625l.093.078c17.66 15.05 37.68 32.113 58.516 50.332 20.961-18.254 41.012-35.344 58.707-50.418 50.512-43.051 94.137-80.223 123.469-115.617 30.344-36.618 43.879-69.188 43.879-105.606 0-34.516-11.606-66.11-32.676-88.965-20.758-22.515-49.3-34.914-80.363-34.914-22.758 0-43.653 7.235-62.102 21.5-16.441 12.719-27.894 28.797-34.61 40.047-3.452 5.785-9.53 9.238-16.261 9.238s-12.809-3.453-16.262-9.238c-6.71-11.25-18.164-27.328-34.61-40.047-18.448-14.265-39.343-21.5-62.097-21.5zm0 0'/%3E%3C/svg%3E");
+        &.is--active {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='512' height='456' viewBox='0 0 512 456' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M471.383 44.578C444.879 15.832 408.512 0 368.973 0c-29.555 0-56.621 9.344-80.45 27.77C276.5 37.07 265.605 48.45 256 61.73c-9.602-13.277-20.5-24.66-32.527-33.96C199.648 9.344 172.582 0 143.027 0c-39.539 0-75.91 15.832-102.414 44.578C14.426 72.988 0 111.801 0 153.871c0 43.301 16.137 82.938 50.781 124.742 30.992 37.395 75.535 75.356 127.117 119.313 17.614 15.012 37.579 32.027 58.309 50.152A30.024 30.024 0 0 0 256 455.516a30.03 30.03 0 0 0 19.785-7.43c20.731-18.129 40.707-35.152 58.328-50.172 51.575-43.949 96.117-81.906 127.11-119.305C495.867 236.809 512 197.172 512 153.867c0-42.066-14.426-80.879-40.617-109.289z' fill='%23E4332D'/%3E%3C/svg%3E");
+        }
+    }
+    .x-wishlist__add-btn-wrapper {
+        opacity: 1;
+        transition: opacity 0.75s;
+        z-index: 3;
+        svg {
+            pointer-events: none;
+            display: none;
+        }
+        @include mq("sm",
+        max) {
+            display: none;
+        }
+    }
+}
+
+.is--offer .x-shelf__old-price.is--empty {
+    @include mq(sm,
+    max) {
+        display: none;
+    }
+}
+
+.shelf-product-flag__discount {
+    position: absolute;
+    top: 40px;
+    right: -4px;
+    padding: 2px 8px;
+    border-radius: 2px 2px 0 2px;
+    letter-spacing: 1px;
+    background: $color-red;
+    color: $color-white;
+    font-size: 9px;
+    line-height: 10px;
+    z-index: 10;
+    font-weight: 400;
+    &:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -5.5px;
+        border-bottom: 6px solid transparent;
+        border-left: 4px solid $color-red;
+        width: 0;
+        height: 0;
+    }
+    @include mq(sm, max) {
+        padding: 3px 8px;
+        top: 5px;
+    }
+    &>span {
+        font-family: $font-primary;
+    }
+}
+
+.shelf-product-flag__blackfriday {
+    font-family: $font-primary;
+    font-size: 8px !important;
+    letter-spacing: 2px !important;
+    padding: 0 5px !important;
+    top: -4px !important;
+    &:after {
+        content: "";
+        right: 0;
+        bottom: -4px;
+        position: absolute;
+        border-bottom: 0 solid transparent;
+        width: 0;
+        height: 0;
+        border-right: 3px solid transparent;
+        border-top: 4px solid $color-black;
+    }
+}
+
+.shelf-product-flag__consumidor {
+    font-family: $font-primary;
+    font-size: 8px !important;
+    letter-spacing: 2px !important;
+    top: 42px;
+    position: absolute;
+    z-index: 2;
+    background: yellow;
+    left: -41px;
+    padding: 5px;
+    border-bottom-left-radius: 6px;
+    transform: rotate(270deg);
+    font-weight: 600;
+}
+
+.shelf-product-flag__present {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg id='Capa_1' enable-background='new 0 0 512 512' height='512' viewBox='0 0 512 512' width='512' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fbe77b'%3E%3Cpath d='m214.374 64.52s-64.52-64.52-139.447-64.52c-43.707 0-60.358 29.138-60.358 58.276s17.691 58.276 49.951 58.276h149.854z'/%3E%3Cpath d='m214.374 64.52s-64.52-64.52-139.447-64.52c-43.707 0-60.358 29.138-60.358 58.276s17.691 58.276 49.951 58.276h149.854z'/%3E%3Cpath d='m297.626 64.52s64.52-64.52 139.447-64.52c43.707 0 60.358 29.138 60.358 58.276s-17.691 58.276-49.951 58.276h-149.854z'/%3E%3C/g%3E%3Cpath d='m492 199.805h-472c-11.046 0-20-8.954-20-20v-43.252c0-11.046 8.954-20 20-20h472c11.046 0 20 8.954 20 20v43.252c0 11.046-8.954 20-20 20z' fill='%23fb636f'/%3E%3Cpath d='m484.943 116.553v83.252h6.453c11.379 0 20.604-9.225 20.604-20.604v-42.045c0-11.379-9.225-20.604-20.604-20.604h-6.453z' fill='%23fa4954'/%3E%3Cpath d='m193.561 116.553h124.878v83.252h-124.878z' fill='%23fbe77b'/%3E%3Cpath d='m464.943 512h-417.886c-11.046 0-20-8.954-20-20v-292.195h457.886v292.195c0 11.046-8.954 20-20 20z' fill='%23fb636f'/%3E%3Cpath d='m27.057 199.805h457.886v24.976h-457.886z' fill='%23fa4954'/%3E%3Cpath d='m214.374 199.805h83.252v312.195h-83.252z' fill='%23fbe77b'/%3E%3Cpath d='m214.374 199.805h83.252v24.976h-83.252z' fill='%23fcdd2e'/%3E%3Cpath d='m326.764 95.74c-4.333 0-8.045-2.65-9.611-6.416 2.685-.986 5.58-1.951 8.585-2.798 4.107-1.158 6.498-5.426 5.341-9.533s-5.425-6.499-9.533-5.341c-1.773.5-3.505 1.035-5.189 1.589v-24.848c-11.859 9.256-18.732 16.127-18.732 16.127v52.033h149.855c17.376 0 30.516-8.46 38.951-20.813z' fill='%23fcdd2e'/%3E%3Cpath d='m195.642 48.393v24.848c-1.683-.554-3.416-1.089-5.189-1.589-4.104-1.157-8.375 1.233-9.533 5.341-1.157 4.107 1.233 8.375 5.341 9.533 2.998.845 5.895 1.812 8.584 2.8-1.566 3.765-5.278 6.413-9.61 6.413h-159.666c8.435 12.353 21.575 20.813 38.951 20.813h149.854v-52.032s-6.873-6.871-18.732-16.127z' fill='%23fcdd2e'/%3E%3Cpath d='m297.626 116.553h-83.252v-52.602c0-7.732 6.268-14 14-14h55.252c7.732 0 14 6.268 14 14z' fill='%23fbe77b'/%3E%3Cpath d='m214.374 95.74h83.252v20.813h-83.252z' fill='%23fcdd2e'/%3E%3C/svg%3E");
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+    @include mq(sm,
+    max) {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+.shelf-product-flag__bordo {
+    display: flex !important;
+    color: transparent !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='25' viewBox='0 0 19 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M16.2249 10.6141L16.7113 10.1278C17.0174 9.82161 17.0174 9.32344 16.7113 9.01721C16.5629 8.86897 16.3658 8.78726 16.1559 8.78726C15.9985 8.78726 15.848 8.8333 15.7201 8.91903L15.6177 8.57507L16.1441 8.04849C16.4504 7.74226 16.4504 7.24409 16.1441 6.93799C15.8623 6.65603 15.4179 6.63437 15.1102 6.87159L14.4863 4.7772C14.7355 4.53725 14.9741 4.30379 15.199 4.07889C15.8471 3.43065 16.3741 2.74467 16.6829 2.14701C17.2047 1.13691 16.9863 0.596969 16.7112 0.321876C16.4362 0.0467823 15.8963 -0.171502 14.886 0.35028C14.2885 0.658966 13.6024 1.18594 12.9543 1.83418C12.7294 2.05908 12.4958 2.29759 12.256 2.54675L10.1615 1.92289C10.3987 1.61524 10.377 1.17089 10.0952 0.888924C9.78897 0.582832 9.29079 0.582702 8.9847 0.888924L8.45812 1.4155L8.11403 1.31304C8.19976 1.18503 8.2458 1.03458 8.2458 0.877121C8.2458 0.667396 8.16409 0.470123 8.01584 0.321876C7.70975 0.0156544 7.21144 0.0156544 6.90535 0.321876L6.41911 0.80812L3.94067 0.0698689C3.85235 0.0436696 3.75689 0.0677938 3.69191 0.132903L3.05391 0.770897C2.94678 0.877899 2.96092 1.06091 3.0831 1.15027L9.33645 5.72751C7.92648 7.31724 6.56826 8.90891 5.60939 10.0461L3.76999 9.33861C3.67751 9.30307 3.57284 9.32525 3.50281 9.39529L2.74665 10.1514C2.64886 10.2494 2.64886 10.408 2.74665 10.5058L6.52728 14.2864C6.62377 14.383 6.78512 14.383 6.88175 14.2864L7.63777 13.5304C7.70781 13.4603 7.73011 13.3555 7.69445 13.2631L6.98706 11.4238C8.12427 10.4649 9.71582 9.10671 11.3057 7.69661L11.8024 8.37546C11.8906 8.49595 12.0695 8.51151 12.1777 8.40879C12.2678 8.32319 12.2802 8.17961 12.207 8.07948L11.6818 7.36198C12.5132 6.61997 13.3342 5.87134 14.0791 5.16591L16.4402 13.0925L16.1146 13.4181L12.8693 8.9844C12.7876 8.87273 12.6308 8.84847 12.5192 8.93019C12.4074 9.01203 12.3831 9.16883 12.4649 9.2805L15.8829 13.9501C15.9723 14.0723 16.1553 14.0864 16.2623 13.9793L16.9003 13.3413C16.9654 13.2763 16.9895 13.1807 16.9633 13.0925L16.2249 10.6141ZM9.33917 1.24339C9.44864 1.13393 9.63139 1.13393 9.74085 1.24339C9.85162 1.35416 9.85162 1.53431 9.74085 1.64507L9.62334 1.76258L9.00429 1.57815L9.33917 1.24339ZM7.25982 0.676345C7.37046 0.565582 7.55074 0.565582 7.6615 0.676345C7.77227 0.787109 7.77227 0.967262 7.6615 1.07803L7.5842 1.1552L6.96527 0.970894L7.25982 0.676345ZM3.615 0.918495L3.94067 0.592948L11.8673 2.954C11.1618 3.699 10.4132 4.52 9.67107 5.35138L3.615 0.918495ZM3.7421 9.86493L5.26802 10.4518C4.88528 10.9076 4.59177 11.2602 4.41862 11.4689L3.27829 10.3286L3.7421 9.86493ZM4.77464 11.825C5.6483 10.7709 10.2663 5.23102 13.3088 2.18852C13.9124 1.58476 14.5713 1.07712 15.1161 0.795669C15.5252 0.584259 16.0725 0.392043 16.3568 0.676345C16.6411 0.960648 16.4488 1.50798 16.2375 1.91705C15.9561 2.46192 15.4483 3.12067 14.8445 3.72442C11.8023 6.76666 6.2623 11.3848 5.20823 12.2585L4.77464 11.825ZM7.16825 13.2911L6.70458 13.7548L5.56426 12.6144C5.77281 12.4414 6.1256 12.1479 6.58136 11.7652L7.16825 13.2911ZM15.9552 9.37168C16.0659 9.26092 16.2461 9.26092 16.3568 9.37168C16.4676 9.48245 16.4676 9.6626 16.3568 9.77336L16.0623 10.0679L15.8779 9.44898L15.9552 9.37168ZM15.3881 7.29233C15.4988 7.18157 15.679 7.1817 15.7898 7.29233C15.8993 7.4018 15.8993 7.58455 15.7898 7.69402L15.4549 8.0289L15.2705 7.40984L15.3881 7.29233Z' fill='black'/%3E%3Cpath d='M15.0437 14.4667L12.9051 16.6053C12.8139 16.6966 12.8078 16.8473 12.8918 16.9454C12.9855 17.0549 13.1576 17.0617 13.2596 16.9598L15.3982 14.8212C15.4961 14.7233 15.4961 14.5646 15.3982 14.4667C15.3004 14.3689 15.1417 14.3689 15.0437 14.4667V14.4667Z' fill='black'/%3E%3Cpath d='M14.3289 13.7518C14.4268 13.654 14.4268 13.4953 14.3289 13.3975C14.2311 13.2996 14.0723 13.2996 13.9745 13.3975L12.6378 14.734C12.5466 14.8253 12.5405 14.9761 12.6245 15.0741C12.7182 15.1836 12.8903 15.1905 12.9923 15.0885L14.3289 13.7518Z' fill='black'/%3E%3Cpath d='M13.5269 12.4152C13.6248 12.3173 13.6248 12.1585 13.5269 12.0607C13.429 11.9628 13.2704 11.9628 13.1725 12.0607L12.2368 12.9964C12.1456 13.0876 12.1395 13.2384 12.2236 13.3365C12.3172 13.4459 12.4893 13.4528 12.5913 13.3509L13.5269 12.4152Z' fill='black'/%3E%3Cpath d='M2.5665 1.76854C2.46858 1.67074 2.30983 1.67074 2.21203 1.76854L0.073412 3.90729C-0.0245114 4.00508 -0.0245114 4.16383 0.073412 4.26163C0.169909 4.35812 0.331255 4.35812 0.427882 4.26163L2.5665 2.12301C2.6643 2.02508 2.6643 1.86646 2.5665 1.76854Z' fill='black'/%3E%3Cpath d='M3.63575 2.83791C3.53782 2.73998 3.3792 2.73998 3.28141 2.83791L1.94472 4.1746C1.85341 4.26577 1.84744 4.41649 1.93136 4.51454C2.02513 4.62401 2.19712 4.63088 2.29906 4.52894L3.63575 3.19238C3.73367 3.09445 3.73367 2.9357 3.63575 2.83791Z' fill='black'/%3E%3Cpath d='M3.68232 4.93C3.77895 5.02649 3.94017 5.02649 4.03679 4.93L4.97245 3.99434C5.07024 3.89642 5.07024 3.7378 4.97245 3.63987C4.87452 3.54208 4.7159 3.54208 4.61798 3.63987L3.68232 4.57553C3.58453 4.67345 3.58453 4.83207 3.68232 4.93Z' fill='black'/%3E%3C/g%3E%3Cpath d='M3.33 20.834C3.606 20.894 3.818 21.014 3.966 21.194C4.118 21.37 4.194 21.598 4.194 21.878C4.194 22.238 4.06 22.516 3.792 22.712C3.528 22.904 3.136 23 2.616 23H0.684V18.8H2.496C2.964 18.8 3.326 18.894 3.582 19.082C3.842 19.27 3.972 19.536 3.972 19.88C3.972 20.112 3.914 20.31 3.798 20.474C3.686 20.634 3.53 20.754 3.33 20.834ZM1.128 19.166V20.69H2.466C2.806 20.69 3.068 20.626 3.252 20.498C3.436 20.366 3.528 20.176 3.528 19.928C3.528 19.68 3.436 19.492 3.252 19.364C3.068 19.232 2.806 19.166 2.466 19.166H1.128ZM2.61 22.634C2.986 22.634 3.27 22.57 3.462 22.442C3.654 22.314 3.75 22.114 3.75 21.842C3.75 21.318 3.37 21.056 2.61 21.056H1.128V22.634H2.61ZM6.40744 23.03C6.10344 23.03 5.82944 22.962 5.58544 22.826C5.34144 22.686 5.14944 22.494 5.00944 22.25C4.86944 22.006 4.79944 21.73 4.79944 21.422C4.79944 21.114 4.86944 20.838 5.00944 20.594C5.14944 20.35 5.34144 20.16 5.58544 20.024C5.82944 19.888 6.10344 19.82 6.40744 19.82C6.71144 19.82 6.98544 19.888 7.22944 20.024C7.47344 20.16 7.66344 20.35 7.79944 20.594C7.93944 20.838 8.00944 21.114 8.00944 21.422C8.00944 21.73 7.93944 22.006 7.79944 22.25C7.66344 22.494 7.47344 22.686 7.22944 22.826C6.98544 22.962 6.71144 23.03 6.40744 23.03ZM6.40744 22.652C6.63144 22.652 6.83144 22.602 7.00744 22.502C7.18744 22.398 7.32744 22.252 7.42744 22.064C7.52744 21.876 7.57744 21.662 7.57744 21.422C7.57744 21.182 7.52744 20.968 7.42744 20.78C7.32744 20.592 7.18744 20.448 7.00744 20.348C6.83144 20.244 6.63144 20.192 6.40744 20.192C6.18344 20.192 5.98144 20.244 5.80144 20.348C5.62544 20.448 5.48544 20.592 5.38144 20.78C5.28144 20.968 5.23144 21.182 5.23144 21.422C5.23144 21.662 5.28144 21.876 5.38144 22.064C5.48544 22.252 5.62544 22.398 5.80144 22.502C5.98144 22.602 6.18344 22.652 6.40744 22.652ZM9.28716 20.462C9.38716 20.25 9.53516 20.09 9.73116 19.982C9.93116 19.874 10.1772 19.82 10.4692 19.82V20.234L10.3672 20.228C10.0352 20.228 9.77516 20.33 9.58716 20.534C9.39916 20.738 9.30516 21.024 9.30516 21.392V23H8.87916V19.844H9.28716V20.462ZM14.0912 18.548V23H13.6832V22.376C13.5552 22.588 13.3852 22.75 13.1732 22.862C12.9652 22.974 12.7292 23.03 12.4652 23.03C12.1692 23.03 11.9012 22.962 11.6612 22.826C11.4212 22.69 11.2332 22.5 11.0972 22.256C10.9612 22.012 10.8932 21.734 10.8932 21.422C10.8932 21.11 10.9612 20.832 11.0972 20.588C11.2332 20.344 11.4212 20.156 11.6612 20.024C11.9012 19.888 12.1692 19.82 12.4652 19.82C12.7212 19.82 12.9512 19.874 13.1552 19.982C13.3632 20.086 13.5332 20.24 13.6652 20.444V18.548H14.0912ZM12.5012 22.652C12.7212 22.652 12.9192 22.602 13.0952 22.502C13.2752 22.398 13.4152 22.252 13.5152 22.064C13.6192 21.876 13.6712 21.662 13.6712 21.422C13.6712 21.182 13.6192 20.968 13.5152 20.78C13.4152 20.592 13.2752 20.448 13.0952 20.348C12.9192 20.244 12.7212 20.192 12.5012 20.192C12.2772 20.192 12.0752 20.244 11.8952 20.348C11.7192 20.448 11.5792 20.592 11.4752 20.78C11.3752 20.968 11.3252 21.182 11.3252 21.422C11.3252 21.662 11.3752 21.876 11.4752 22.064C11.5792 22.252 11.7192 22.398 11.8952 22.502C12.0752 22.602 12.2772 22.652 12.5012 22.652ZM16.5676 23.03C16.2636 23.03 15.9896 22.962 15.7456 22.826C15.5016 22.686 15.3096 22.494 15.1696 22.25C15.0296 22.006 14.9596 21.73 14.9596 21.422C14.9596 21.114 15.0296 20.838 15.1696 20.594C15.3096 20.35 15.5016 20.16 15.7456 20.024C15.9896 19.888 16.2636 19.82 16.5676 19.82C16.8716 19.82 17.1456 19.888 17.3896 20.024C17.6336 20.16 17.8236 20.35 17.9596 20.594C18.0996 20.838 18.1696 21.114 18.1696 21.422C18.1696 21.73 18.0996 22.006 17.9596 22.25C17.8236 22.494 17.6336 22.686 17.3896 22.826C17.1456 22.962 16.8716 23.03 16.5676 23.03ZM16.5676 22.652C16.7916 22.652 16.9916 22.602 17.1676 22.502C17.3476 22.398 17.4876 22.252 17.5876 22.064C17.6876 21.876 17.7376 21.662 17.7376 21.422C17.7376 21.182 17.6876 20.968 17.5876 20.78C17.4876 20.592 17.3476 20.448 17.1676 20.348C16.9916 20.244 16.7916 20.192 16.5676 20.192C16.3436 20.192 16.1416 20.244 15.9616 20.348C15.7856 20.448 15.6456 20.592 15.5416 20.78C15.4416 20.968 15.3916 21.182 15.3916 21.422C15.3916 21.662 15.4416 21.876 15.5416 22.064C15.6456 22.252 15.7856 22.398 15.9616 22.502C16.1416 22.602 16.3436 22.652 16.5676 22.652Z' fill='black'/%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='17' height='17' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    height: 40px;
+    width: 40px;
+    @include mq(sm,
+    max) {
+        left: 3px;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+#smarthint-search-result-body {
+    .x-shelf__item {
+        @include mq(sm,
+        max) {
+            height: unset !important;
+            padding: 5px;
+        }
+    }
+    .x-shelf__buy-wrapper {
+        left: 0 !important;
+        bottom: 0 !important;
+    }
+    .x-shelf__title {
+        text-align: center !important;
+    }
+    .x-shelf__price-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+        margin: 10px 0;
+        font-family: $font-primary !important;
+        .x-shelf__best-price {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+    }
+    .x-shelf__content {
+        min-height: 130px !important;
+        @include mq(sm,
+        max) {
+            min-height: 100px !important;
+        }
+    }
+}
+
+#smarthint-search-result-message {
+    font-family: $font-primary !important;
+    margin-left: 0 !important;
+}
